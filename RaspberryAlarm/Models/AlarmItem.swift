@@ -12,13 +12,13 @@ import Foundation
 Object that has every info to make an Alarm
  
  - timeToWakeUp : (Hour, Minute)
- - heatAmount : on scale of Minute. Http Request will be fired on (timeToWakeUP - heatAmount)
+ - timeToHeat : on scale of Minute. Http Request will be fired on (timeToWakeUP - heatAmount)
  - snoozeAmount : on scale of Minute. Should be initialized in range of 0..<60
  - daysToRepeat : Mon/Tue/Wed/Thu/Fri/Sat/Sun
 */
 struct AlarmItem {
     var timeToWakeUp:(Int,Int)
-    var heatAmount:Int = 15
+    var timeToHeat:Int = 15
     var snoozeAmount:Int = 15
     var repeatDays:[Day]?
 }
@@ -44,7 +44,8 @@ extension AlarmItem{
             return nil
         }
         self.timeToWakeUp = time
-        self.heatAmount = heatAmount
+        self.timeToHeat
+         = heatAmount
         self.snoozeAmount = snoozeAmount
         self.repeatDays = repeatDays
     }

@@ -18,6 +18,8 @@
 		FF9CF6EA1FB70BC90033E3E3 /* AlarmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6E91FB70BC90033E3E3 /* AlarmItem.swift */; };
 		FF9CF6EE1FB715D40033E3E3 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6ED1FB715D40033E3E3 /* Day.swift */; };
 		FF9CF6F11FB71E1B0033E3E3 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6F01FB71E1B0033E3E3 /* DataCenter.swift */; };
+		FF9CF6F31FB7280F0033E3E3 /* SetUpAlarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF6F21FB7280F0033E3E3 /* SetUpAlarm.storyboard */; };
+		FF9CF6F51FB7283C0033E3E3 /* SetUpAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6F41FB7283C0033E3E3 /* SetUpAlarmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		FF9CF6E91FB70BC90033E3E3 /* AlarmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmItem.swift; sourceTree = "<group>"; };
 		FF9CF6ED1FB715D40033E3E3 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		FF9CF6F01FB71E1B0033E3E3 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		FF9CF6F21FB7280F0033E3E3 /* SetUpAlarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetUpAlarm.storyboard; sourceTree = "<group>"; };
+		FF9CF6F41FB7283C0033E3E3 /* SetUpAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpAlarmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 			children = (
 				FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */,
 				FF9CF6EF1FB71E0B0033E3E3 /* Models */,
+				FF9CF6F61FB728420033E3E3 /* AllarmSetup */,
 				FF9CF6E81FB70BA00033E3E3 /* AlarmList */,
 				FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */,
 				FF9CF6C11FB6F5940033E3E3 /* LaunchScreen.storyboard */,
@@ -151,6 +156,15 @@
 				FF9CF6F01FB71E1B0033E3E3 /* DataCenter.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FF9CF6F61FB728420033E3E3 /* AllarmSetup */ = {
+			isa = PBXGroup;
+			children = (
+				FF9CF6F21FB7280F0033E3E3 /* SetUpAlarm.storyboard */,
+				FF9CF6F41FB7283C0033E3E3 /* SetUpAlarmViewController.swift */,
+			);
+			path = AllarmSetup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +276,7 @@
 			files = (
 				FF9CF6C31FB6F5940033E3E3 /* LaunchScreen.storyboard in Resources */,
 				FF9CF6C01FB6F5940033E3E3 /* Assets.xcassets in Resources */,
+				FF9CF6F31FB7280F0033E3E3 /* SetUpAlarm.storyboard in Resources */,
 				FF9CF6BE1FB6F5940033E3E3 /* AlarmList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +307,7 @@
 				FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */,
 				FF9CF6EA1FB70BC90033E3E3 /* AlarmItem.swift in Sources */,
 				FF9CF6EE1FB715D40033E3E3 /* Day.swift in Sources */,
+				FF9CF6F51FB7283C0033E3E3 /* SetUpAlarmViewController.swift in Sources */,
 				FF9CF6B91FB6F5940033E3E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
