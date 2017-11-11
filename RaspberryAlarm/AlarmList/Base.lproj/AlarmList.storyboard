@@ -167,15 +167,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfb-L0-Ogh">
+                                <rect key="frame" x="319" y="37.5" width="40" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <state key="normal" title="➕"/>
+                                <connections>
+                                    <segue destination="wIz-iZ-xJr" kind="show" id="icp-Pt-2ma"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99709838628768921" blue="0.95452862977981567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Kt7-DO-sxp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="IQZ-sA-jWQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vtX-cL-fYl" secondAttribute="bottom" id="Ll3-cX-ncw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yfb-L0-Ogh" secondAttribute="trailing" constant="16" id="RWB-va-tOq"/>
                             <constraint firstItem="vtX-cL-fYl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cD3-GH-dQU"/>
                             <constraint firstItem="vtX-cL-fYl" firstAttribute="top" secondItem="Kt7-DO-sxp" secondAttribute="bottom" constant="10" id="eEz-O1-51N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vtX-cL-fYl" secondAttribute="trailing" id="jjX-d3-J9Y"/>
                             <constraint firstItem="Kt7-DO-sxp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="lz1-21-mKC"/>
+                            <constraint firstItem="Yfb-L0-Ogh" firstAttribute="centerY" secondItem="Kt7-DO-sxp" secondAttribute="centerY" id="tWa-k3-glw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -186,6 +196,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--SetUpAlarm-->
+        <scene sceneID="H3R-Kn-OB8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SetUpAlarm" id="wIz-iZ-xJr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJI-V8-m34" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="-98"/>
         </scene>
     </scenes>
 </document>
