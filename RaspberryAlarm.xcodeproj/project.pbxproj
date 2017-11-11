@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF9CF6B91FB6F5940033E3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */; };
+		FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6BA1FB6F5940033E3E3 /* AlarmListViewController.swift */; };
+		FF9CF6BE1FB6F5940033E3E3 /* AlarmList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF6BC1FB6F5940033E3E3 /* AlarmList.storyboard */; };
+		FF9CF6C01FB6F5940033E3E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */; };
+		FF9CF6C31FB6F5940033E3E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF6C11FB6F5940033E3E3 /* LaunchScreen.storyboard */; };
+		FF9CF6CE1FB6F5940033E3E3 /* RaspberryAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6CD1FB6F5940033E3E3 /* RaspberryAlarmTests.swift */; };
+		FF9CF6D91FB6F5940033E3E3 /* RaspberryAlarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6D81FB6F5940033E3E3 /* RaspberryAlarmUITests.swift */; };
+		FF9CF6E71FB6F6040033E3E3 /* AlarmItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6E61FB6F6040033E3E3 /* AlarmItemCell.swift */; };
+		FF9CF6EA1FB70BC90033E3E3 /* AlarmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6E91FB70BC90033E3E3 /* AlarmItem.swift */; };
+		FF9CF6EE1FB715D40033E3E3 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6ED1FB715D40033E3E3 /* Day.swift */; };
+		FF9CF6F11FB71E1B0033E3E3 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6F01FB71E1B0033E3E3 /* DataCenter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF9CF6CA1FB6F5940033E3E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF9CF6B41FB6F5940033E3E3;
+			remoteInfo = RaspberryAlarm;
+		};
+		FF9CF6D51FB6F5940033E3E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF9CF6B41FB6F5940033E3E3;
+			remoteInfo = RaspberryAlarm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF9CF6B51FB6F5940033E3E3 /* RaspberryAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspberryAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF9CF6BA1FB6F5940033E3E3 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
+		FF9CF6BD1FB6F5940033E3E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AlarmList.storyboard; sourceTree = "<group>"; };
+		FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF9CF6C21FB6F5940033E3E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF9CF6C41FB6F5940033E3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF9CF6C91FB6F5940033E3E3 /* RaspberryAlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaspberryAlarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF9CF6CD1FB6F5940033E3E3 /* RaspberryAlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspberryAlarmTests.swift; sourceTree = "<group>"; };
+		FF9CF6CF1FB6F5940033E3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF9CF6D41FB6F5940033E3E3 /* RaspberryAlarmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaspberryAlarmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF9CF6D81FB6F5940033E3E3 /* RaspberryAlarmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspberryAlarmUITests.swift; sourceTree = "<group>"; };
+		FF9CF6DA1FB6F5940033E3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF9CF6E61FB6F6040033E3E3 /* AlarmItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmItemCell.swift; sourceTree = "<group>"; };
+		FF9CF6E91FB70BC90033E3E3 /* AlarmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmItem.swift; sourceTree = "<group>"; };
+		FF9CF6ED1FB715D40033E3E3 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		FF9CF6F01FB71E1B0033E3E3 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF9CF6B21FB6F5940033E3E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF9CF6C61FB6F5940033E3E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF9CF6D11FB6F5940033E3E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF9CF6AC1FB6F5940033E3E3 = {
+			isa = PBXGroup;
+			children = (
+				FF9CF6B71FB6F5940033E3E3 /* RaspberryAlarm */,
+				FF9CF6CC1FB6F5940033E3E3 /* RaspberryAlarmTests */,
+				FF9CF6D71FB6F5940033E3E3 /* RaspberryAlarmUITests */,
+				FF9CF6B61FB6F5940033E3E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF9CF6B61FB6F5940033E3E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF9CF6B51FB6F5940033E3E3 /* RaspberryAlarm.app */,
+				FF9CF6C91FB6F5940033E3E3 /* RaspberryAlarmTests.xctest */,
+				FF9CF6D41FB6F5940033E3E3 /* RaspberryAlarmUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF9CF6B71FB6F5940033E3E3 /* RaspberryAlarm */ = {
+			isa = PBXGroup;
+			children = (
+				FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */,
+				FF9CF6EF1FB71E0B0033E3E3 /* Models */,
+				FF9CF6E81FB70BA00033E3E3 /* AlarmList */,
+				FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */,
+				FF9CF6C11FB6F5940033E3E3 /* LaunchScreen.storyboard */,
+				FF9CF6C41FB6F5940033E3E3 /* Info.plist */,
+			);
+			path = RaspberryAlarm;
+			sourceTree = "<group>";
+		};
+		FF9CF6CC1FB6F5940033E3E3 /* RaspberryAlarmTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF9CF6CD1FB6F5940033E3E3 /* RaspberryAlarmTests.swift */,
+				FF9CF6CF1FB6F5940033E3E3 /* Info.plist */,
+			);
+			path = RaspberryAlarmTests;
+			sourceTree = "<group>";
+		};
+		FF9CF6D71FB6F5940033E3E3 /* RaspberryAlarmUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF9CF6D81FB6F5940033E3E3 /* RaspberryAlarmUITests.swift */,
+				FF9CF6DA1FB6F5940033E3E3 /* Info.plist */,
+			);
+			path = RaspberryAlarmUITests;
+			sourceTree = "<group>";
+		};
+		FF9CF6E81FB70BA00033E3E3 /* AlarmList */ = {
+			isa = PBXGroup;
+			children = (
+				FF9CF6BA1FB6F5940033E3E3 /* AlarmListViewController.swift */,
+				FF9CF6E61FB6F6040033E3E3 /* AlarmItemCell.swift */,
+				FF9CF6BC1FB6F5940033E3E3 /* AlarmList.storyboard */,
+			);
+			path = AlarmList;
+			sourceTree = "<group>";
+		};
+		FF9CF6EF1FB71E0B0033E3E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF9CF6E91FB70BC90033E3E3 /* AlarmItem.swift */,
+				FF9CF6ED1FB715D40033E3E3 /* Day.swift */,
+				FF9CF6F01FB71E1B0033E3E3 /* DataCenter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF9CF6DD1FB6F5940033E3E3 /* Build configuration list for PBXNativeTarget "RaspberryAlarm" */;
+			buildPhases = (
+				FF9CF6B11FB6F5940033E3E3 /* Sources */,
+				FF9CF6B21FB6F5940033E3E3 /* Frameworks */,
+				FF9CF6B31FB6F5940033E3E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaspberryAlarm;
+			productName = RaspberryAlarm;
+			productReference = FF9CF6B51FB6F5940033E3E3 /* RaspberryAlarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF9CF6C81FB6F5940033E3E3 /* RaspberryAlarmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF9CF6E01FB6F5940033E3E3 /* Build configuration list for PBXNativeTarget "RaspberryAlarmTests" */;
+			buildPhases = (
+				FF9CF6C51FB6F5940033E3E3 /* Sources */,
+				FF9CF6C61FB6F5940033E3E3 /* Frameworks */,
+				FF9CF6C71FB6F5940033E3E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF9CF6CB1FB6F5940033E3E3 /* PBXTargetDependency */,
+			);
+			name = RaspberryAlarmTests;
+			productName = RaspberryAlarmTests;
+			productReference = FF9CF6C91FB6F5940033E3E3 /* RaspberryAlarmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF9CF6D31FB6F5940033E3E3 /* RaspberryAlarmUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF9CF6E31FB6F5940033E3E3 /* Build configuration list for PBXNativeTarget "RaspberryAlarmUITests" */;
+			buildPhases = (
+				FF9CF6D01FB6F5940033E3E3 /* Sources */,
+				FF9CF6D11FB6F5940033E3E3 /* Frameworks */,
+				FF9CF6D21FB6F5940033E3E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF9CF6D61FB6F5940033E3E3 /* PBXTargetDependency */,
+			);
+			name = RaspberryAlarmUITests;
+			productName = RaspberryAlarmUITests;
+			productReference = FF9CF6D41FB6F5940033E3E3 /* RaspberryAlarmUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF9CF6AD1FB6F5940033E3E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "류성두";
+				TargetAttributes = {
+					FF9CF6B41FB6F5940033E3E3 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					FF9CF6C81FB6F5940033E3E3 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FF9CF6B41FB6F5940033E3E3;
+					};
+					FF9CF6D31FB6F5940033E3E3 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FF9CF6B41FB6F5940033E3E3;
+					};
+				};
+			};
+			buildConfigurationList = FF9CF6B01FB6F5940033E3E3 /* Build configuration list for PBXProject "RaspberryAlarm" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF9CF6AC1FB6F5940033E3E3;
+			productRefGroup = FF9CF6B61FB6F5940033E3E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */,
+				FF9CF6C81FB6F5940033E3E3 /* RaspberryAlarmTests */,
+				FF9CF6D31FB6F5940033E3E3 /* RaspberryAlarmUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF9CF6B31FB6F5940033E3E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF9CF6C31FB6F5940033E3E3 /* LaunchScreen.storyboard in Resources */,
+				FF9CF6C01FB6F5940033E3E3 /* Assets.xcassets in Resources */,
+				FF9CF6BE1FB6F5940033E3E3 /* AlarmList.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF9CF6C71FB6F5940033E3E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF9CF6D21FB6F5940033E3E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF9CF6B11FB6F5940033E3E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF9CF6F11FB71E1B0033E3E3 /* DataCenter.swift in Sources */,
+				FF9CF6E71FB6F6040033E3E3 /* AlarmItemCell.swift in Sources */,
+				FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */,
+				FF9CF6EA1FB70BC90033E3E3 /* AlarmItem.swift in Sources */,
+				FF9CF6EE1FB715D40033E3E3 /* Day.swift in Sources */,
+				FF9CF6B91FB6F5940033E3E3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF9CF6C51FB6F5940033E3E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF9CF6CE1FB6F5940033E3E3 /* RaspberryAlarmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF9CF6D01FB6F5940033E3E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF9CF6D91FB6F5940033E3E3 /* RaspberryAlarmUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF9CF6CB1FB6F5940033E3E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */;
+			targetProxy = FF9CF6CA1FB6F5940033E3E3 /* PBXContainerItemProxy */;
+		};
+		FF9CF6D61FB6F5940033E3E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */;
+			targetProxy = FF9CF6D51FB6F5940033E3E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FF9CF6BC1FB6F5940033E3E3 /* AlarmList.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF9CF6BD1FB6F5940033E3E3 /* Base */,
+			);
+			name = AlarmList.storyboard;
+			sourceTree = "<group>";
+		};
+		FF9CF6C11FB6F5940033E3E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF9CF6C21FB6F5940033E3E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF9CF6DB1FB6F5940033E3E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF9CF6DC1FB6F5940033E3E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF9CF6DE1FB6F5940033E3E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = RaspberryAlarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RaspberryAlarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF9CF6DF1FB6F5940033E3E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = RaspberryAlarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RaspberryAlarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF9CF6E11FB6F5940033E3E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = RaspberryAlarmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RaspberryAlarmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaspberryAlarm.app/RaspberryAlarm";
+			};
+			name = Debug;
+		};
+		FF9CF6E21FB6F5940033E3E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = RaspberryAlarmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RaspberryAlarmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaspberryAlarm.app/RaspberryAlarm";
+			};
+			name = Release;
+		};
+		FF9CF6E41FB6F5940033E3E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = RaspberryAlarmUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RaspberryAlarmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaspberryAlarm;
+			};
+			name = Debug;
+		};
+		FF9CF6E51FB6F5940033E3E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = RaspberryAlarmUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RaspberryAlarmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaspberryAlarm;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF9CF6B01FB6F5940033E3E3 /* Build configuration list for PBXProject "RaspberryAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF9CF6DB1FB6F5940033E3E3 /* Debug */,
+				FF9CF6DC1FB6F5940033E3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF9CF6DD1FB6F5940033E3E3 /* Build configuration list for PBXNativeTarget "RaspberryAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF9CF6DE1FB6F5940033E3E3 /* Debug */,
+				FF9CF6DF1FB6F5940033E3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF9CF6E01FB6F5940033E3E3 /* Build configuration list for PBXNativeTarget "RaspberryAlarmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF9CF6E11FB6F5940033E3E3 /* Debug */,
+				FF9CF6E21FB6F5940033E3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF9CF6E31FB6F5940033E3E3 /* Build configuration list for PBXNativeTarget "RaspberryAlarmUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF9CF6E41FB6F5940033E3E3 /* Debug */,
+				FF9CF6E51FB6F5940033E3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
+}
