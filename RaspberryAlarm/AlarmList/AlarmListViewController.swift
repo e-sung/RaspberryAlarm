@@ -17,10 +17,6 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
         super.viewDidLoad()
         alarmListView.delegate = self
         alarmListView.dataSource = self
-        
-
-
-        // Do any additional setup after loading the view, typically from a nib.
     }
 }
 
