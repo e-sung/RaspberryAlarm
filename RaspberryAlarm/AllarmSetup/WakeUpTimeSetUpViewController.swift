@@ -11,9 +11,18 @@ import UIKit
 class WakeUpTimeSetUpViewController: UIViewController {
 
     var alarmItem:AlarmItem!
-
+    var timeValue:(Int,Int)!
+    
+    @IBAction func timeChangeHandler(_ sender: UIDatePicker) {
+        let formatter = DateFormatter(); formatter.dateFormat = "HH:mm"
+        let dateString = formatter.string(from: sender.date)
+        let hour = Int(dateString.split(separator: ":")[0])!
+        let minute = Int(dateString.split(separator: ":")[1])!
+        self.timeValue = (hour,minute)
+    }
+    
     @IBAction func confirmButtonHandler(_ sender: UIBarButtonItem) {
-        self.alarmItem = AlarmItem((8,30))!
+        self.alarmItem = AlarmItem(timeValue)!
         performSegue(withIdentifier: "unwindToSetUpAlarmVC", sender: self)
     }
     
@@ -24,23 +33,11 @@ class WakeUpTimeSetUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        timeValue = alarmItem.timeToWakeUp
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

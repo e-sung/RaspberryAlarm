@@ -121,15 +121,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mwq-Vd-VGp">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwq-Vd-VGp">
                                 <rect key="frame" x="0.0" y="252" width="375" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="532153089.76564401">
-                                    <!--2017-11-12 04:18:09 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="532128600.76564401">
+                                    <!--2017-11-11 21:30:00 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="timeChangeHandler:" destination="emi-Fy-9DJ" eventType="valueChanged" id="rj9-CM-E66"/>
+                                </connections>
                             </datePicker>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.99709838630000003" blue="0.95452862979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="zA0-uG-Voc"/>
                     </view>
                     <navigationItem key="navigationItem" title="기상시간 설정" id="h4i-74-OaK">
