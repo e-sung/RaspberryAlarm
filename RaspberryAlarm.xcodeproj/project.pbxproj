@@ -21,6 +21,7 @@
 		FF9CF6F31FB7280F0033E3E3 /* SetUpAlarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF6F21FB7280F0033E3E3 /* SetUpAlarm.storyboard */; };
 		FF9CF6F51FB7283C0033E3E3 /* SetUpAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6F41FB7283C0033E3E3 /* SetUpAlarmViewController.swift */; };
 		FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */; };
+		FF9CF6FC1FB7F4A70033E3E3 /* WakeUpTimeSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6FB1FB7F4A70033E3E3 /* WakeUpTimeSetUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		FF9CF6F21FB7280F0033E3E3 /* SetUpAlarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetUpAlarm.storyboard; sourceTree = "<group>"; };
 		FF9CF6F41FB7283C0033E3E3 /* SetUpAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpAlarmViewController.swift; sourceTree = "<group>"; };
 		FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSettingCell.swift; sourceTree = "<group>"; };
+		FF9CF6FB1FB7F4A70033E3E3 /* WakeUpTimeSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeUpTimeSetUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				FF9CF6F21FB7280F0033E3E3 /* SetUpAlarm.storyboard */,
 				FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */,
+				FF9CF6FB1FB7F4A70033E3E3 /* WakeUpTimeSetUpViewController.swift */,
 				FF9CF6F41FB7283C0033E3E3 /* SetUpAlarmViewController.swift */,
 			);
 			path = AllarmSetup;
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF9CF6F11FB71E1B0033E3E3 /* DataCenter.swift in Sources */,
+				FF9CF6FC1FB7F4A70033E3E3 /* WakeUpTimeSetUpViewController.swift in Sources */,
 				FF9CF6E71FB6F6040033E3E3 /* AlarmItemCell.swift in Sources */,
 				FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */,
 				FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */,

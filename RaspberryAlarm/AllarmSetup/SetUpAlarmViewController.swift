@@ -71,6 +71,16 @@ extension SetUpAlarmViewController{
         }
         return CGFloat(100)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.item {
+        case 0:
+            let nextVC = storyboard?.instantiateViewController(withIdentifier: "WakeUpTimeSetUp") as! WakeUpTimeSetUpViewController
+            self.show(nextVC, sender: nil)
+        default:
+            print("Unidentified indexPath")
+        }
+    }
 }
 
 extension SetUpAlarmViewController{
