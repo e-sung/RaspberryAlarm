@@ -11,6 +11,12 @@ import UIKit
 class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var alarmListView:UITableView!
+    @IBAction func addButtonHandler(_ sender: UIButton) {
+        let newAlarmItem = DataCenter.main.defaultAlarm
+        DataCenter.main.alarmItems.append(newAlarmItem)
+        alarmListView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         alarmListView.delegate = self
@@ -18,6 +24,17 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
     }
     override func viewWillAppear(_ animated: Bool) {
         alarmListView.reloadData()
+    }
+}
+
+extension AlarmListViewController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! SetUpAlarmNavigationViewController
+        let indexToSend = sender as! Int
+        nextVC.indexOfAlarmToSetUp = indexToSend
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return false
     }
 }
 
@@ -36,4 +53,9 @@ extension AlarmListViewController{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(100)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showSetUpAlarm", sender: indexPath.item)
+    }
+
 }

@@ -8,23 +8,30 @@
 
 import UIKit
 
-class SetUpAlarmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SliderSettingCellDelegate{
+class SetUpAlarmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SliderSettingCellDelegate, UINavigationControllerDelegate{
     
-    var alarmItem:AlarmItem = AlarmItem((7,30))!
+    var alarmItem:AlarmItem!
+    var navControllerVC:SetUpAlarmNavigationViewController!
 
     @IBOutlet weak var settingItemTV: UITableView!
     @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func confirmButotnHandler(_ sender: UIBarButtonItem){
-        DataCenter.main.alarmItems.append(alarmItem)
+        DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp] = self.alarmItem
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func unwindToSetUpAlarmVC(segue:UIStoryboardSegue) {
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingItemTV.delegate = self
         settingItemTV.dataSource = self
+        navControllerVC = navigationController as! SetUpAlarmNavigationViewController
+        self.alarmItem = DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp]
     }
 }
 
@@ -73,13 +80,17 @@ extension SetUpAlarmViewController{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.item {
-        case 0:
-            let nextVC = storyboard?.instantiateViewController(withIdentifier: "WakeUpTimeSetUp") as! WakeUpTimeSetUpViewController
-            self.show(nextVC, sender: nil)
-        default:
-            print("Unidentified indexPath")
-        }
+//        performSegue(withIdentifier: "showWakeUpTimeSetUp", sender: self)
+    }
+}
+
+extension SetUpAlarmViewController{
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return true
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var nextVC = segue.destination as! WakeUpTimeSetUpViewController
+        nextVC.alarmItem = self.alarmItem
     }
 }
 

@@ -156,6 +156,7 @@
                                         <color key="backgroundColor" red="1" green="0.99709838628768921" blue="0.95452862977981567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="timeLB" destination="LBg-Ll-VJL" id="qqu-ZU-90O"/>
+                                            <segue destination="wIz-iZ-xJr" kind="presentation" identifier="showSetUpAlarm" id="bjV-pH-g9w"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -172,7 +173,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <state key="normal" title="➕"/>
                                 <connections>
-                                    <segue destination="wIz-iZ-xJr" kind="show" id="icp-Pt-2ma"/>
+                                    <action selector="addButtonHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ib2-we-DKy"/>
                                 </connections>
                             </button>
                         </subviews>

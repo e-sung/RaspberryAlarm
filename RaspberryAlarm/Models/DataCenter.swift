@@ -10,5 +10,6 @@ import Foundation
 
 class DataCenter{
     static var main:DataCenter = DataCenter()
+    let defaultAlarm = AlarmItem((6,30))!
     var alarmItems:[AlarmItem] = []
 }

@@ -1,5 +1,5 @@
 //
-//  WakeUpTimeSetUpViewController.swift
+//  SetUpAlarmNavigationViewController.swift
 //  RaspberryAlarm
 //
 //  Created by 류성두 on 2017. 11. 12..
@@ -8,22 +8,12 @@
 
 import UIKit
 
-class WakeUpTimeSetUpViewController: UIViewController {
+class SetUpAlarmNavigationViewController: UINavigationController {
 
-    var alarmItem:AlarmItem!
-
-    @IBAction func confirmButtonHandler(_ sender: UIBarButtonItem) {
-        self.alarmItem = AlarmItem((8,30))!
-        performSegue(withIdentifier: "unwindToSetUpAlarmVC", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let originVC = segue.destination as! SetUpAlarmViewController
-        originVC.alarmItem = self.alarmItem
-    }
-    
+    var indexOfAlarmToSetUp:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
@@ -31,7 +21,7 @@ class WakeUpTimeSetUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 
     /*
     // MARK: - Navigation
