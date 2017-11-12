@@ -23,6 +23,7 @@
 		FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */; };
 		FF9CF6FE1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6FD1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift */; };
 		FF9CF7001FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6FF1FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift */; };
+		FFD257331FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSettingCell.swift; sourceTree = "<group>"; };
 		FF9CF6FD1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpAlarmNavigationViewController.swift; sourceTree = "<group>"; };
 		FF9CF6FF1FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeUpTimeSetUpViewController.swift; sourceTree = "<group>"; };
+		FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDaysSetUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				FF9CF6F21FB7280F0033E3E3 /* SetUpAlarm.storyboard */,
 				FF9CF6FF1FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift */,
 				FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */,
+				FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */,
 				FF9CF6FD1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift */,
 				FF9CF6F41FB7283C0033E3E3 /* SetUpAlarmViewController.swift */,
 			);
@@ -315,6 +318,7 @@
 				FF9CF6E71FB6F6040033E3E3 /* AlarmItemCell.swift in Sources */,
 				FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */,
 				FF9CF6FE1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift in Sources */,
+				FFD257331FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift in Sources */,
 				FF9CF7001FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift in Sources */,
 				FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */,
 				FF9CF6EA1FB70BC90033E3E3 /* AlarmItem.swift in Sources */,
