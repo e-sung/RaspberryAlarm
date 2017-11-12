@@ -96,7 +96,11 @@
                                 <action selector="cancelButtonHandler:" destination="58J-Bx-hIW" id="y6h-ew-hXk"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="확인" id="oRq-fI-pzy"/>
+                        <barButtonItem key="rightBarButtonItem" title="확인" id="oRq-fI-pzy">
+                            <connections>
+                                <action selector="confirmButotnHandler:" destination="58J-Bx-hIW" id="jlT-A1-xQQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="settingItemTV" destination="k4e-Rn-brK" id="kBp-My-hjT"/>

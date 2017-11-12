@@ -16,6 +16,10 @@ class SetUpAlarmViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    @IBAction func confirmButotnHandler(_ sender: UIBarButtonItem){
+        DataCenter.main.alarmItems.append(alarmItem)
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

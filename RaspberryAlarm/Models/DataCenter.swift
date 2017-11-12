@@ -11,5 +11,4 @@ import Foundation
 class DataCenter{
     static var main:DataCenter = DataCenter()
     var alarmItems:[AlarmItem] = []
-    
 }

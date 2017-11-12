@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AlarmListViewController.swift
 //  RaspberryAlarm
 //
 //  Created by 류성두 on 2017. 11. 11..
@@ -10,25 +10,26 @@ import UIKit
 
 class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource{
     
-    let alarmItem = AlarmItem((7, 30))!
-    
     @IBOutlet weak var alarmListView:UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         alarmListView.delegate = self
         alarmListView.dataSource = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        alarmListView.reloadData()
+    }
 }
 
 extension AlarmListViewController{
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return DataCenter.main.alarmItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let alarmItemCell = tableView.dequeueReusableCell(withIdentifier: "alarmItemCell", for: indexPath) as! AlarmItemCell
-        alarmItemCell.alarmItem = self.alarmItem
+        alarmItemCell.alarmItem = DataCenter.main.alarmItems[indexPath.item]
         return alarmItemCell
     }
     
