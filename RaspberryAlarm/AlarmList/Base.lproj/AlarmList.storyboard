@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vtX-cL-fYl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vtX-cL-fYl">
                                 <rect key="frame" x="0.0" y="98" width="375" height="569"/>
                                 <color key="backgroundColor" red="1" green="0.99709838628768921" blue="0.95452862977981567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="1" green="0.99709838628768921" blue="0.95452862977981567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -154,6 +154,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.99709838628768921" blue="0.95452862977981567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="timeLB" destination="LBg-Ll-VJL" id="qqu-ZU-90O"/>
                                             <segue destination="wIz-iZ-xJr" kind="presentation" identifier="showSetUpAlarm" id="bjV-pH-g9w"/>
@@ -176,13 +177,20 @@
                                     <action selector="addButtonHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ib2-we-DKy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxe-dB-Ooa">
+                                <rect key="frame" x="290" y="563" width="65" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="🌙"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99709838628768921" blue="0.95452862977981567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Kt7-DO-sxp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="IQZ-sA-jWQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vtX-cL-fYl" secondAttribute="bottom" id="Ll3-cX-ncw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lxe-dB-Ooa" secondAttribute="bottom" constant="20" id="QXe-VE-QG8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yfb-L0-Ogh" secondAttribute="trailing" constant="16" id="RWB-va-tOq"/>
                             <constraint firstItem="vtX-cL-fYl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cD3-GH-dQU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lxe-dB-Ooa" secondAttribute="trailing" constant="20" id="cYk-QR-CNo"/>
                             <constraint firstItem="vtX-cL-fYl" firstAttribute="top" secondItem="Kt7-DO-sxp" secondAttribute="bottom" constant="10" id="eEz-O1-51N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vtX-cL-fYl" secondAttribute="trailing" id="jjX-d3-J9Y"/>
                             <constraint firstItem="Kt7-DO-sxp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="lz1-21-mKC"/>
