@@ -19,6 +19,14 @@ class AlarmItemCell: UITableViewCell {
             let hour = newItem.timeToWakeUp.0
             let minute = newItem.timeToWakeUp.1
             self.timeLB.text = "\(hour):\(minute)"
+            for i in 1...7{
+                let dayLB = self.viewWithTag(i) as! UILabel
+                if newItem.repeatDays.contains(Day(rawValue: i)!){
+                    dayLB.textColor = UIColor.green
+                }else{
+                    dayLB.textColor = UIColor.lightGray
+                }
+            }
         }
     }
     private var _alarmItem:AlarmItem!
