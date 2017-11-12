@@ -80,17 +80,30 @@ extension SetUpAlarmViewController{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "showWakeUpTimeSetUp", sender: self)
+        switch indexPath.item {
+        case 0:
+            performSegue(withIdentifier: "showWakeUpTimeSetUp", sender: indexPath.item)
+        case 1:
+            performSegue(withIdentifier: "showRepeatDaysSetUp", sender: indexPath.item)
+        default:
+           print("unexpected indexPath")
+        }
     }
 }
 
 extension SetUpAlarmViewController{
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return true
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var nextVC = segue.destination as! WakeUpTimeSetUpViewController
-        nextVC.alarmItem = self.alarmItem
+        let rowIndex = sender as! Int
+        switch rowIndex{
+        case 0:
+            let nextVC = segue.destination as! WakeUpTimeSetUpViewController
+            nextVC.alarmItem = self.alarmItem
+        case 1:
+            let nextVC = segue.destination as! RepeatDaySetUpViewController
+            nextVC.alarmItem = self.alarmItem
+        default:
+            print("unidentified segue identifier")
+        }
     }
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepeatDaySetUpViewController: UIViewController, AlarmSetter {
+class RepeatDaySetUpViewController: UIViewController{
     
     var alarmItem: AlarmItem!
     var newRepeatDays:[Day] = []
@@ -20,7 +20,7 @@ class RepeatDaySetUpViewController: UIViewController, AlarmSetter {
                 newRepeatDays.append(Day(rawValue: i)!)
             }
         }
-        performSegue(withIdentifier: "fromRepeatDaysToMainSetUp", sender: self)
+        performSegue(withIdentifier: "unwindRepeatDaysSetup", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,7 +61,7 @@ class RepeatDaySetUpViewController: UIViewController, AlarmSetter {
     }
     override func viewDidAppear(_ animated: Bool) {
         for i in 1...7{
-            if alarmItem.repeatDays.contains(Day(rawValue: i)!){
+            if (alarmItem.repeatDays.contains(Day(rawValue: i)!)){
                 let dayButton = self.view.viewWithTag(i) as! UIButton
                 dayButton.isSelected = true
             }

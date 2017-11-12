@@ -20,7 +20,7 @@ struct AlarmItem {
     var timeToWakeUp:(Int,Int)
     var timeToHeat:Int = 15
     var snoozeAmount:Int = 15
-    var repeatDays:[Day]?
+    var repeatDays:[Day] = [.Mon,.Tue,.Wed,.Thu,.Fri]
 }
 
 //MARK: Initializers
