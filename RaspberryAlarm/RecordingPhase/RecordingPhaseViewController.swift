@@ -59,9 +59,13 @@ class RecordingPhaseViewController: UIViewController {
                 remainingTime = (24*60 - currentTime) + wakeUpTime
             }
             let remainingHour = Int(remainingTime/60)
-            let remainingMinute = remainingTime%60
+            let remainingMinute = remainingTime%60 - 1
             let remainingSecond = 59 - currentSecond
             self.remainingTimeLB.text = "\(remainingHour):\(remainingMinute):\(remainingSecond)"
+            
+            if remainingTime == 0 {
+                self.performSegue(withIdentifier: "showRingingPhase", sender: nil)
+            }
         }
         timer.fire()
     }

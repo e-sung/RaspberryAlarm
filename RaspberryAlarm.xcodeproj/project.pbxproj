@@ -26,6 +26,7 @@
 		FF9CF6FE1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6FD1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift */; };
 		FF9CF7001FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6FF1FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift */; };
 		FFD257331FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */; };
+		FFF1C0711FB95B6A007C0093 /* RingingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		FF9CF6FD1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpAlarmNavigationViewController.swift; sourceTree = "<group>"; };
 		FF9CF6FF1FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeUpTimeSetUpViewController.swift; sourceTree = "<group>"; };
 		FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDaysSetUpViewController.swift; sourceTree = "<group>"; };
+		FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingPhaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */,
+				FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */,
 				FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */,
 			);
 			path = RecordingPhase;
@@ -340,6 +343,7 @@
 				FF9CF6EA1FB70BC90033E3E3 /* AlarmItem.swift in Sources */,
 				FF9CF6EE1FB715D40033E3E3 /* Day.swift in Sources */,
 				FF9CF6F51FB7283C0033E3E3 /* SetUpAlarmViewController.swift in Sources */,
+				FFF1C0711FB95B6A007C0093 /* RingingPhaseViewController.swift in Sources */,
 				FF9CF6B91FB6F5940033E3E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
