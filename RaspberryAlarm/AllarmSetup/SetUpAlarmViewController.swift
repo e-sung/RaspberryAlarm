@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SetUpAlarmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SliderSettingCellDelegate, UINavigationControllerDelegate{
+class SetUpAlarmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate{
     
     var alarmItem:AlarmItem!
     var navControllerVC:SetUpAlarmNavigationViewController!
-
+    
     @IBOutlet weak var settingItemTV: UITableView!
     @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -23,7 +23,6 @@ class SetUpAlarmViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func unwindToSetUpAlarmVC(segue:UIStoryboardSegue) {
-        
     }
     
     override func viewDidLoad() {
@@ -42,6 +41,7 @@ extension SetUpAlarmViewController{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var reuseId = ""
+        
         var cellTitle = ""
         switch indexPath.item {
         case 0:
@@ -59,6 +59,7 @@ extension SetUpAlarmViewController{
         default:
             print("Unidentified indexPath")
         }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseId)!
         if indexPath.item<2{
             cell.textLabel?.text = cellTitle
@@ -86,13 +87,13 @@ extension SetUpAlarmViewController{
         case 1:
             performSegue(withIdentifier: "showRepeatDaysSetUp", sender: indexPath.item)
         default:
-           print("unexpected indexPath")
+            print("unexpected indexPath")
         }
     }
 }
 
 extension SetUpAlarmViewController{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // TODO use Protocol TO do this
         let rowIndex = sender as! Int
         switch rowIndex{
         case 0:
@@ -107,7 +108,7 @@ extension SetUpAlarmViewController{
     }
 }
 
-extension SetUpAlarmViewController{
+extension SetUpAlarmViewController:SliderSettingCellDelegate{
     func didSliderValueChanged(_ changer: String, _ changedValue: Int) {
         if changer == "스누즈 설정"{
             alarmItem.snoozeAmount = changedValue

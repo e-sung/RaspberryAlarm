@@ -11,13 +11,15 @@ import UIKit
 class WakeUpTimeSetUpViewController: UIViewController {
 
     var alarmItem:AlarmItem!
-    var timeValue:(Int,Int)!
+    private var timeValue:(Int,Int)!
     
     @IBAction func timeChangeHandler(_ sender: UIDatePicker) {
         let formatter = DateFormatter(); formatter.dateFormat = "HH:mm"
         let dateString = formatter.string(from: sender.date)
+        
         let hour = Int(dateString.split(separator: ":")[0])!
         let minute = Int(dateString.split(separator: ":")[1])!
+        
         self.timeValue = (hour,minute)
     }
     
@@ -34,10 +36,5 @@ class WakeUpTimeSetUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timeValue = alarmItem.timeToWakeUp
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

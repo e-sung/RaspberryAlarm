@@ -66,4 +66,9 @@ extension AlarmListViewController{
         performSegue(withIdentifier: "showSetUpAlarm", sender: indexPath.item)
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        DataCenter.main.alarmItems.remove(at: indexPath.item)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+
 }
