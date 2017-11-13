@@ -18,7 +18,7 @@
         <!--Recording Phase View Controller-->
         <scene sceneID="vhs-Yn-LwS">
             <objects>
-                <viewController id="0gf-Va-GIK" customClass="RecordingPhaseViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recordingPhase" id="0gf-Va-GIK" customClass="RecordingPhaseViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lRC-vx-0nG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,6 +120,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="terminateButtonHandler:" destination="95C-OT-JPt" eventType="touchUpInside" id="C0G-4A-jr1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.99709838628768921" blue="0.95452862977981567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -142,6 +145,7 @@
                     </view>
                     <connections>
                         <segue destination="uvB-wJ-mjh" kind="unwind" identifier="unwindToRecordingPhase" unwindAction="unwindToRecordingPhaseWithSegue:" id="D5O-Bi-nFY"/>
+                        <segue destination="uvB-wJ-mjh" kind="unwind" identifier="unwindToAlarmList" unwindAction="unwindToAlarmListWithSegue:" id="EVI-i3-vzN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="as3-YA-4qq" userLabel="First Responder" sceneMemberID="firstResponder"/>

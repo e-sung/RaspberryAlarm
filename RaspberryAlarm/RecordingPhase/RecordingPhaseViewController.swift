@@ -9,13 +9,15 @@
 import UIKit
 
 class RecordingPhaseViewController: UIViewController {
-
+    
     
     var phase:Phase!
+    var timer:Timer!
     @IBOutlet weak var currentTimeLB: UILabel!
     @IBOutlet weak var remainingTimeLB: UILabel!
     
     @IBAction func cancelButtonHandler(_ sender: UIButton) {
+        timer.invalidate()
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
@@ -24,13 +26,43 @@ class RecordingPhaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         phase = Phase.recordingSleep
-        // Do any additional setup after loading the view.
+//        let alarmTerminationNoti = Notification(name: .init("AlarmTerminated"))
+//        NotificationCenter.default.addObserver(forName: alarmTerminationNoti.name , object: nil, queue: nil) { (noti) in
+//            print("Broadcast recieved")
+//            self.dismiss(animated: false, completion: {
+//                let recorderTerminatedNoti = Notification(name: .init("RecorderTerminated"))
+//                NotificationCenter.default.post(recorderTerminatedNoti)
+//            })
+//        }
+        setupTimer()
+        timer.fire()
     }
     override func viewWillAppear(_ animated: Bool) {
-        let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            let dateFormatter = DateFormatter()
+        if !timer.isValid && self.phase == Phase.snooze {
+            setupTimer()
+            timer.fire()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let snoozeAmount = sender as? Int else {
+            return
+        }
+        let nextVC = segue.destination as! RingingPhaseViewController
+        nextVC.snoozeAmount = snoozeAmount
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if self.phase == Phase.alarmList {
+            return false
+        }else{
+            return true
+        }
+    }
+    
+    func setupTimer(){
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+            let dateFormatter = DateFormatter(); dateFormatter.dateFormat = "HH:mm:ss"
             let today = Date()
-            dateFormatter.dateFormat = "HH:mm:ss"
             let currentTimeString = dateFormatter.string(from: today)
             self.currentTimeLB.text = currentTimeString
             
@@ -46,9 +78,6 @@ class RecordingPhaseViewController: UIViewController {
             let wakeUpHour = nearestAlarm.timeToWakeUp.0
             let wakeUpMinute = nearestAlarm.timeToWakeUp.1
             var wakeUpTime = wakeUpHour*60 + wakeUpMinute
-            if self.phase == Phase.snooze {
-                wakeUpTime += nearestAlarm.snoozeAmount
-            }
 
             let currentDay = Calendar.current.component(.weekday, from: today)
             let currentHour = Int(currentTimeString.split(separator: ":")[0])!
@@ -60,8 +89,10 @@ class RecordingPhaseViewController: UIViewController {
                 wakeUpTime += 24*60
             }
             
-            var remainingTime = 0
-            if nearestAlarm.repeatDays.contains(Day(rawValue: currentDay)!){
+            var remainingTime = Int.max
+            if self.phase == Phase.snooze {
+                remainingTime = nearestAlarm.snoozeAmount
+            }else if nearestAlarm.repeatDays.contains(Day(rawValue: currentDay)!){
                 remainingTime = wakeUpTime - currentTime
             }else{
                 remainingTime = (24*60 - currentTime) + wakeUpTime
@@ -71,25 +102,12 @@ class RecordingPhaseViewController: UIViewController {
             let remainingSecond = 60 - currentSecond
             self.remainingTimeLB.text = "\(remainingHour):\(remainingMinute):\(remainingSecond)"
             
-            if remainingTime == 0 {
-                self.performSegue(withIdentifier: "showRingingPhase", sender: nearestAlarm.snoozeAmount)
+            print(remainingTime, remainingSecond)
+            if remainingTime == 1 && remainingSecond == 1 {
                 timer.invalidate()
+                self.performSegue(withIdentifier: "showRingingPhase", sender: nearestAlarm.snoozeAmount)
             }
         }
-        timer.fire()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let snoozeAmount = sender as? Int else {
-            return
-        }
-        let nextVC = segue.destination as! RingingPhaseViewController
-        nextVC.snoozeAmount = snoozeAmount
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }

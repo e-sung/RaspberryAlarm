@@ -20,6 +20,10 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
     @IBAction func recordButtonHandler(_ sender: UIButton) {
         performSegue(withIdentifier: "showRecordingPhase", sender: nil)
     }
+    
+    @IBAction func unwindToAlarmList(segue:UIStoryboardSegue) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         alarmListView.delegate = self
