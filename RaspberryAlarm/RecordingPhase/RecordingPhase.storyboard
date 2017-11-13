@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CourierNewBold.ttf">
+            <string>CourierNewPS-BoldMT</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Recording Phase View Controller-->
         <scene sceneID="vhs-Yn-LwS">
@@ -26,10 +31,40 @@
                                     <action selector="cancelButtonHandler:" destination="0gf-Va-GIK" eventType="touchUpInside" id="et1-Z9-m08"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-gD-ZEG">
+                                <rect key="frame" x="19" y="70" width="336.5" height="79.5"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="70"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gv5-gV-zHX">
+                                <rect key="frame" x="67.5" y="315" width="240.5" height="57"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="50"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남은 시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDO-XJ-76a">
+                                <rect key="frame" x="132" y="264" width="110.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.99709838630000003" blue="0.95452862979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YDO-XJ-76a" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="1QF-iv-Qht"/>
+                            <constraint firstItem="Gv5-gV-zHX" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="6CA-LK-fzA"/>
+                            <constraint firstItem="Gv5-gV-zHX" firstAttribute="top" secondItem="YDO-XJ-76a" secondAttribute="bottom" constant="15" id="ItF-ut-tnK"/>
+                            <constraint firstItem="Pfc-gD-ZEG" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="OQk-XG-IfO"/>
+                            <constraint firstItem="Gv5-gV-zHX" firstAttribute="centerY" secondItem="e8p-CB-49I" secondAttribute="centerY" id="QFA-SZ-ju2"/>
+                            <constraint firstItem="Pfc-gD-ZEG" firstAttribute="top" secondItem="e8p-CB-49I" secondAttribute="top" constant="50" id="YDE-oa-u6o"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e8p-CB-49I"/>
                     </view>
+                    <connections>
+                        <outlet property="currentTimeLB" destination="Pfc-gD-ZEG" id="fcC-fK-hTY"/>
+                        <outlet property="remainingTimeLB" destination="Gv5-gV-zHX" id="tle-dJ-2U5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qar-lu-IKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

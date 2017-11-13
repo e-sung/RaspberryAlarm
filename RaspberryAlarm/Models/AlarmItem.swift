@@ -18,6 +18,7 @@ Object that has every info to make an Alarm
 */
 struct AlarmItem {
     var timeToWakeUp:(Int,Int)
+    var isActive:Bool = true
     var timeToHeat:Int = 15
     var snoozeAmount:Int = 15
     var repeatDays:[Day] = [.Mon,.Tue,.Wed,.Thu,.Fri]
