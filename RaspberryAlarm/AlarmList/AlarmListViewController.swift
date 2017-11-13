@@ -17,6 +17,9 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
         alarmListView.reloadData()
     }
     
+    @IBAction func recordButtonHandler(_ sender: UIButton) {
+        performSegue(withIdentifier: "showRecordingPhase", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         alarmListView.delegate = self
@@ -29,9 +32,10 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
 
 extension AlarmListViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! SetUpAlarmNavigationViewController
-        let indexToSend = sender as! Int
-        nextVC.indexOfAlarmToSetUp = indexToSend
+        if let indexToSend = sender as? Int{
+            let nextVC = segue.destination as! SetUpAlarmNavigationViewController
+            nextVC.indexOfAlarmToSetUp = indexToSend
+        }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return false

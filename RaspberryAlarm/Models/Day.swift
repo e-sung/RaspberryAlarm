@@ -9,11 +9,11 @@
 import Foundation
 
 enum Day:Int{
-    case Mon = 1
-    case Tue = 2
-    case Wed = 3
-    case Thu = 4
-    case Fri = 5
-    case Sat = 6
-    case Sun = 7
+    case Sun = 1
+    case Mon = 2
+    case Tue = 3
+    case Wed = 4
+    case Thu = 5
+    case Fri = 6
+    case Sat = 7
 }

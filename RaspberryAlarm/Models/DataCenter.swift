@@ -12,4 +12,9 @@ class DataCenter{
     static var main:DataCenter = DataCenter()
     let defaultAlarm = AlarmItem((6,30))!
     var alarmItems:[AlarmItem] = []
+//    var alarmsOfToday:[AlarmItem]{
+//        get{
+//            let today = Calendar.current.component(.weekday, from: Date())
+//        }
+//    }
 }

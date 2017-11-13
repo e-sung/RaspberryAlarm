@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */; };
+		FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */; };
 		FF9CF6B91FB6F5940033E3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */; };
 		FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6BA1FB6F5940033E3E3 /* AlarmListViewController.swift */; };
 		FF9CF6BE1FB6F5940033E3E3 /* AlarmList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF6BC1FB6F5940033E3E3 /* AlarmList.storyboard */; };
@@ -24,8 +26,6 @@
 		FF9CF6FE1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6FD1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift */; };
 		FF9CF7001FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6FF1FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift */; };
 		FFD257331FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */; };
-		FFD257351FB86E4E002D6B25 /* RecordingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD257341FB86E4D002D6B25 /* RecordingPhase.storyboard */; };
-		FFD257371FB86E73002D6B25 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD257361FB86E73002D6B25 /* RecordingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordingPhase.storyboard; sourceTree = "<group>"; };
+		FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPhaseViewController.swift; sourceTree = "<group>"; };
 		FF9CF6B51FB6F5940033E3E3 /* RaspberryAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspberryAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF9CF6BA1FB6F5940033E3E3 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
@@ -69,8 +71,6 @@
 		FF9CF6FD1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpAlarmNavigationViewController.swift; sourceTree = "<group>"; };
 		FF9CF6FF1FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeUpTimeSetUpViewController.swift; sourceTree = "<group>"; };
 		FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDaysSetUpViewController.swift; sourceTree = "<group>"; };
-		FFD257341FB86E4D002D6B25 /* RecordingPhase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordingPhase.storyboard; sourceTree = "<group>"; };
-		FFD257361FB86E73002D6B25 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF0B04AD1FB87178005DF58E /* RecordingPhase */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */,
+				FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */,
+			);
+			path = RecordingPhase;
+			sourceTree = "<group>";
+		};
 		FF9CF6AC1FB6F5940033E3E3 = {
 			isa = PBXGroup;
 			children = (
@@ -125,10 +134,10 @@
 				FF9CF6EF1FB71E0B0033E3E3 /* Models */,
 				FF9CF6F61FB728420033E3E3 /* AllarmSetup */,
 				FF9CF6E81FB70BA00033E3E3 /* AlarmList */,
-				FFD257381FB86E7E002D6B25 /* RecordingPhase */,
 				FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */,
 				FF9CF6C11FB6F5940033E3E3 /* LaunchScreen.storyboard */,
 				FF9CF6C41FB6F5940033E3E3 /* Info.plist */,
+				FF0B04AD1FB87178005DF58E /* RecordingPhase */,
 			);
 			path = RaspberryAlarm;
 			sourceTree = "<group>";
@@ -182,15 +191,6 @@
 				FF9CF6F41FB7283C0033E3E3 /* SetUpAlarmViewController.swift */,
 			);
 			path = AllarmSetup;
-			sourceTree = "<group>";
-		};
-		FFD257381FB86E7E002D6B25 /* RecordingPhase */ = {
-			isa = PBXGroup;
-			children = (
-				FFD257341FB86E4D002D6B25 /* RecordingPhase.storyboard */,
-				FFD257361FB86E73002D6B25 /* RecordingViewController.swift */,
-			);
-			path = RecordingPhase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +304,7 @@
 				FF9CF6C01FB6F5940033E3E3 /* Assets.xcassets in Resources */,
 				FF9CF6F31FB7280F0033E3E3 /* SetUpAlarm.storyboard in Resources */,
 				FF9CF6BE1FB6F5940033E3E3 /* AlarmList.storyboard in Resources */,
-				FFD257351FB86E4E002D6B25 /* RecordingPhase.storyboard in Resources */,
+				FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,9 +331,9 @@
 			files = (
 				FF9CF6F11FB71E1B0033E3E3 /* DataCenter.swift in Sources */,
 				FF9CF6E71FB6F6040033E3E3 /* AlarmItemCell.swift in Sources */,
+				FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */,
 				FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */,
 				FF9CF6FE1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift in Sources */,
-				FFD257371FB86E73002D6B25 /* RecordingViewController.swift in Sources */,
 				FFD257331FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift in Sources */,
 				FF9CF7001FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift in Sources */,
 				FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */,
