@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
+import AVFoundation
 class RingingPhaseViewController: UIViewController {
 
     var snoozeAmount:Int!
-    
+    var player:AVPlayer?
     @IBAction func snoozeButtonHandler(_ sender: UIButton) {
         performSegue(withIdentifier: "unwindToRecordingPhase", sender: Phase.snooze)
     }
@@ -35,6 +35,13 @@ class RingingPhaseViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        guard let url = Bundle.main.url(forResource: "alarm", withExtension: "mp3") else {
+            print("url wasn't generated")
+            return
+        }
+        let playerItem = AVPlayerItem(url: url)
+        player = AVPlayer(playerItem: playerItem) // TODO : Increase Volume continuously
+        player?.play()
     }
 
     override func didReceiveMemoryWarning() {

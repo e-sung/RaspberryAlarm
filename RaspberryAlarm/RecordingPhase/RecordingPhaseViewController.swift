@@ -7,10 +7,9 @@
 //
 
 import UIKit
-
 class RecordingPhaseViewController: UIViewController {
     
-    
+    // TODO : Record Sleep Phase With HealthKit
     var phase:Phase!
     var timer:Timer!
     @IBOutlet weak var currentTimeLB: UILabel!
@@ -109,5 +108,4 @@ class RecordingPhaseViewController: UIViewController {
             }
         }
     }
-    
 }
