@@ -12,9 +12,19 @@ class DataCenter{
     static var main:DataCenter = DataCenter()
     let defaultAlarm = AlarmItem((6,30))!
     var alarmItems:[AlarmItem] = []
-//    var alarmsOfToday:[AlarmItem]{
-//        get{
-//            let today = Calendar.current.component(.weekday, from: Date())
-//        }
-//    }
+    
+    /**
+    AlarmItems of a day that user specified with parameter
+     - parameter offSet: if 0, it means today. if 1, it means tomorrow
+     */
+    func alarmsOfDay(with offSet:Int, )->[AlarmItem]{
+        var alarmsToReturn:[AlarmItem] = []
+        let day = (Calendar.current.component(.weekday, from: Date()) + 1)%7
+        for item in alarmItems{
+            if item.repeatDays.contains(Day(rawValue: day)!){
+                alarmsToReturn.append(item)
+            }
+        }
+        return alarmsToReturn
+    }
 }
