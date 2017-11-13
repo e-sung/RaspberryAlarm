@@ -24,7 +24,7 @@
                                 <color key="separatorColor" red="1" green="0.99709838628768921" blue="0.95452862977981567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.99709838628768921" blue="0.95452862977981567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmItemCell" rowHeight="100" id="TZG-zO-KoY" customClass="AlarmItemCell" customModule="RaspberryAlarm" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="alarmItemCell" rowHeight="100" id="TZG-zO-KoY" customClass="AlarmItemCell" customModule="RaspberryAlarm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TZG-zO-KoY" id="ZT3-Gb-wZp">
