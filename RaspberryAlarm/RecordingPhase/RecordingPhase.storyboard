@@ -99,6 +99,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="snoozeButtonHandler:" destination="95C-OT-JPt" eventType="touchUpInside" id="T2D-Zh-Wg2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8n-kc-LL1">
                                         <rect key="frame" x="170" y="0.0" width="150" height="150"/>
@@ -137,8 +140,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hBC-ys-Aon"/>
                     </view>
+                    <connections>
+                        <segue destination="uvB-wJ-mjh" kind="unwind" identifier="unwindToRecordingPhase" unwindAction="unwindToRecordingPhaseWithSegue:" id="D5O-Bi-nFY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="as3-YA-4qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uvB-wJ-mjh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="285.60000000000002" y="-99.400299850074973"/>
         </scene>

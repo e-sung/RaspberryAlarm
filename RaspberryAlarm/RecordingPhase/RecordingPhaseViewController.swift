@@ -11,14 +11,19 @@ import UIKit
 class RecordingPhaseViewController: UIViewController {
 
     
+    var phase:Phase!
     @IBOutlet weak var currentTimeLB: UILabel!
     @IBOutlet weak var remainingTimeLB: UILabel!
     
     @IBAction func cancelButtonHandler(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        phase = Phase.recordingSleep
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +46,9 @@ class RecordingPhaseViewController: UIViewController {
             let wakeUpHour = nearestAlarm.timeToWakeUp.0
             let wakeUpMinute = nearestAlarm.timeToWakeUp.1
             var wakeUpTime = wakeUpHour*60 + wakeUpMinute
+            if self.phase == Phase.snooze {
+                wakeUpTime += nearestAlarm.snoozeAmount
+            }
 
             let currentDay = Calendar.current.component(.weekday, from: today)
             let currentHour = Int(currentTimeString.split(separator: ":")[0])!
@@ -60,30 +68,28 @@ class RecordingPhaseViewController: UIViewController {
             }
             let remainingHour = Int(remainingTime/60)
             let remainingMinute = remainingTime%60 - 1
-            let remainingSecond = 59 - currentSecond
+            let remainingSecond = 60 - currentSecond
             self.remainingTimeLB.text = "\(remainingHour):\(remainingMinute):\(remainingSecond)"
             
             if remainingTime == 0 {
-                self.performSegue(withIdentifier: "showRingingPhase", sender: nil)
+                self.performSegue(withIdentifier: "showRingingPhase", sender: nearestAlarm.snoozeAmount)
+                timer.invalidate()
             }
         }
         timer.fire()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let snoozeAmount = sender as? Int else {
+            return
+        }
+        let nextVC = segue.destination as! RingingPhaseViewController
+        nextVC.snoozeAmount = snoozeAmount
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
