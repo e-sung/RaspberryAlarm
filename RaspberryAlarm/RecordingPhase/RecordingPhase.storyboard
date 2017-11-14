@@ -47,6 +47,10 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1R-fD-U6R">
+                                <rect key="frame" x="20" y="169.5" width="335" height="283.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -56,8 +60,12 @@
                             <constraint firstItem="M3H-yo-T3w" firstAttribute="top" secondItem="Gv5-gV-zHX" secondAttribute="bottom" constant="20" id="Inn-RR-5oX"/>
                             <constraint firstItem="e8p-CB-49I" firstAttribute="bottom" secondItem="M3H-yo-T3w" secondAttribute="bottom" constant="41" id="NdC-W5-joR"/>
                             <constraint firstItem="Pfc-gD-ZEG" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="OQk-XG-IfO"/>
+                            <constraint firstItem="e8p-CB-49I" firstAttribute="trailing" secondItem="u1R-fD-U6R" secondAttribute="trailing" constant="20" id="Qsw-ij-HeM"/>
+                            <constraint firstItem="u1R-fD-U6R" firstAttribute="top" secondItem="Pfc-gD-ZEG" secondAttribute="bottom" constant="20" id="TCh-gK-dKy"/>
                             <constraint firstItem="Pfc-gD-ZEG" firstAttribute="top" secondItem="e8p-CB-49I" secondAttribute="top" constant="50" id="YDE-oa-u6o"/>
                             <constraint firstItem="M3H-yo-T3w" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="aTH-pf-qli"/>
+                            <constraint firstItem="u1R-fD-U6R" firstAttribute="leading" secondItem="e8p-CB-49I" secondAttribute="leading" constant="20" id="ndv-VX-dhO"/>
+                            <constraint firstItem="YDO-XJ-76a" firstAttribute="top" secondItem="u1R-fD-U6R" secondAttribute="bottom" constant="20" id="wt4-H3-BpI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e8p-CB-49I"/>
                     </view>
