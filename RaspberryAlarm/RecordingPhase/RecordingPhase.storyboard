@@ -47,7 +47,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1R-fD-U6R">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1R-fD-U6R" customClass="Chart" customModule="SwiftChart">
                                 <rect key="frame" x="20" y="169.5" width="335" height="283.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -70,6 +70,7 @@
                         <viewLayoutGuide key="safeArea" id="e8p-CB-49I"/>
                     </view>
                     <connections>
+                        <outlet property="chart" destination="u1R-fD-U6R" id="qog-UE-K1G"/>
                         <outlet property="currentTimeLB" destination="Pfc-gD-ZEG" id="fcC-fK-hTY"/>
                         <outlet property="remainingTimeLB" destination="Gv5-gV-zHX" id="tle-dJ-2U5"/>
                         <segue destination="95C-OT-JPt" kind="presentation" identifier="showRingingPhase" id="Tva-cF-c6Y"/>
