@@ -16,6 +16,7 @@ class RecordingPhaseViewController: UIViewController {
     var currentDay:Int!
     
     var nearestAlarm:AlarmItem!
+    var remainingSnoozeAmount:Int = 0
     var wakeUpTimeInSeconds:Int{
         get{
             if Timer.currentSecondsOfToday > self.nearestAlarm.wakeUpTimeInSeconds {
@@ -37,22 +38,20 @@ class RecordingPhaseViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let alarm = DataCenter.main.nearestAlarm else {alert(msg:"설정된 알람이 없습니다!"); return}
         self.nearestAlarm = alarm
+        self.remainingSnoozeAmount = alarm.snoozeAmount
         self.currentPhase = Phase.recordingSleep
-        setupTimer()
         startAccelerometers()
         currentDay = Calendar.current.component(.weekday, from: Date())
     }
     override func viewWillAppear(_ animated: Bool) {
-        if !alarmTimer.isValid && self.currentPhase == Phase.snooze {
-            setupTimer()
-            alarmTimer.fire()
-        }
+        setupTimer()
+        alarmTimer.fire()
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -62,15 +61,19 @@ class RecordingPhaseViewController: UIViewController {
     func setupTimer(){
         alarmTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             self.currentTimeLB.text = Timer.currentHHmmss
-            var remainingTime = Int.max
-            if self.currentPhase == Phase.snooze {
-                remainingTime = self.nearestAlarm.snoozeAmount
-            }else if self.nearestAlarm.repeatDays.contains(Day(rawValue: self.currentDay)!){
-                remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
-            }else{
-                remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday + 24*60*60
-            }
             
+            var remainingTime = 0
+            if self.currentPhase == .recordingSleep{
+                if self.nearestAlarm.repeatDays.contains(Day(rawValue: self.currentDay)!){
+                    remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
+                }else{
+                    remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday + 24*60*60
+                }
+            }else if self.currentPhase == .snooze{
+                remainingTime = self.remainingSnoozeAmount
+                self.remainingSnoozeAmount -= 1
+            }
+
             let remainingHour = Int(remainingTime/3600)
             let remainingMinute = Int((remainingTime - remainingHour*3600)/60)
             let remainingSecond = remainingTime - remainingHour*3600 - remainingMinute*60

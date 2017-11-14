@@ -16,9 +16,7 @@ class RingingPhaseViewController: UIViewController {
     }
     
     @IBAction func terminateButtonHandler(_ sender: UIButton) {
-//        let alarmTerminationNoti = Notification(name: .init("AlarmTerminated"))
         self.performSegue(withIdentifier: "unwindToAlarmList", sender: nil)
-//        NotificationCenter.default.post(alarmTerminationNoti)
         let url = URL(string: "http://192.168.0.20:3030")!
         URLSession.shared.dataTask(with: url) { (data, response, error) in
         }.resume()
@@ -29,25 +27,15 @@ class RingingPhaseViewController: UIViewController {
             nextVC.currentPhase = sender as! Phase
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let recorderTerminatedNoti = Notification(name: .init("RecorderTerminated"))
-//        NotificationCenter.default.addObserver(forName: recorderTerminatedNoti.name , object: nil, queue: nil) { (noti) in
-//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard let url = Bundle.main.url(forResource: "alarm", withExtension: "mp3") else {
-            print("url wasn't generated")
-            return
-        }
+        guard let url = Bundle.main.url(forResource: "alarm", withExtension: "mp3") else {return}
         let playerItem = AVPlayerItem(url: url)
         player = AVPlayer(playerItem: playerItem) // TODO : Increase Volume continuously
         player?.play()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
