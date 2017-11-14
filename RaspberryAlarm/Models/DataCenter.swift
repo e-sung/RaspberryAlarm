@@ -15,6 +15,9 @@ class DataCenter{
         didSet(oldVal){
         }
     }
+    /**
+     Name tells Everything
+     */
     var nearestAlarm:AlarmItem?{
         get{
             let currentHour = Calendar.current.component(.hour, from: Date())

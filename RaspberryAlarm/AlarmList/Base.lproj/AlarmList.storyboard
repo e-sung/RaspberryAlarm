@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -216,7 +215,7 @@
                 <viewControllerPlaceholder storyboardName="RecordingPhase" id="7B8-Oc-YV5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9xY-Yt-oFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="824" y="429"/>
+            <point key="canvasLocation" x="745" y="429"/>
         </scene>
         <!--SetUpAlarm-->
         <scene sceneID="H3R-Kn-OB8">
@@ -224,7 +223,7 @@
                 <viewControllerPlaceholder storyboardName="SetUpAlarm" id="wIz-iZ-xJr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJI-V8-m34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724" y="-98"/>
+            <point key="canvasLocation" x="724" y="-154"/>
         </scene>
     </scenes>
 </document>

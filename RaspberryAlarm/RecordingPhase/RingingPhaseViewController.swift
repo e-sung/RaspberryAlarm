@@ -20,6 +20,9 @@ class RingingPhaseViewController: UIViewController {
 //        let alarmTerminationNoti = Notification(name: .init("AlarmTerminated"))
         self.performSegue(withIdentifier: "unwindToAlarmList", sender: nil)
 //        NotificationCenter.default.post(alarmTerminationNoti)
+        let url = URL(string: "http://192.168.0.20:3030")!
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        }.resume()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

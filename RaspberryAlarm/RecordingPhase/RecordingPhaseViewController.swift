@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import CoreMotion
 class RecordingPhaseViewController: UIViewController {
     
     // TODO : Record Sleep Phase With HealthKit
     var phase:Phase!
-    var timer:Timer!
+    var alarmTimer:Timer!
+    var motionSensorTimer:Timer!
+    let motion:CMMotionManager = CMMotionManager()
     @IBOutlet weak var currentTimeLB: UILabel!
     @IBOutlet weak var remainingTimeLB: UILabel!
     
     @IBAction func cancelButtonHandler(_ sender: UIButton) {
-        timer.invalidate()
+        alarmTimer.invalidate()
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
@@ -25,21 +28,14 @@ class RecordingPhaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         phase = Phase.recordingSleep
-//        let alarmTerminationNoti = Notification(name: .init("AlarmTerminated"))
-//        NotificationCenter.default.addObserver(forName: alarmTerminationNoti.name , object: nil, queue: nil) { (noti) in
-//            print("Broadcast recieved")
-//            self.dismiss(animated: false, completion: {
-//                let recorderTerminatedNoti = Notification(name: .init("RecorderTerminated"))
-//                NotificationCenter.default.post(recorderTerminatedNoti)
-//            })
-//        }
         setupTimer()
-        timer.fire()
+        alarmTimer.fire()
+        startAccelerometers()
     }
     override func viewWillAppear(_ animated: Bool) {
-        if !timer.isValid && self.phase == Phase.snooze {
+        if !alarmTimer.isValid && self.phase == Phase.snooze {
             setupTimer()
-            timer.fire()
+            alarmTimer.fire()
         }
     }
     
@@ -59,7 +55,7 @@ class RecordingPhaseViewController: UIViewController {
     }
     
     func setupTimer(){
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+        alarmTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             let dateFormatter = DateFormatter(); dateFormatter.dateFormat = "HH:mm:ss"
             let today = Date()
             let currentTimeString = dateFormatter.string(from: today)
@@ -101,11 +97,38 @@ class RecordingPhaseViewController: UIViewController {
             let remainingSecond = 60 - currentSecond
             self.remainingTimeLB.text = "\(remainingHour):\(remainingMinute):\(remainingSecond)"
             
-            print(remainingTime, remainingSecond)
-            if remainingTime == 1 && remainingSecond == 1 {
+            print(remainingTime, remainingSecond, nearestAlarm.timeToHeat)
+            
+            if remainingTime == nearestAlarm.timeToHeat && remainingSecond == 1{
+                let url = URL(string: "http://192.168.0.20:3030")!
+                URLSession.shared.dataTask(with: url) { (data, response, error) in
+                }.resume()
+            }else if remainingTime == 1 && remainingSecond == 1 {
                 timer.invalidate()
                 self.performSegue(withIdentifier: "showRingingPhase", sender: nearestAlarm.snoozeAmount)
             }
         }
     }
+    
+    func startAccelerometers() {
+        // Make sure the accelerometer hardware is available.
+        if self.motion.isAccelerometerAvailable {
+            self.motion.accelerometerUpdateInterval = 1.0 / 60.0  // 60 Hz
+            self.motion.startAccelerometerUpdates()
+            
+            // Configure a timer to fetch the data.
+            self.motionSensorTimer = Timer(fire: Date(), interval: (1.0/60.0), repeats: true, block: { (timer) in
+                // Get the accelerometer data.
+                if let data = self.motion.accelerometerData {
+                    let x = data.acceleration.x
+                    let y = data.acceleration.y
+                    let z = data.acceleration.z
+                    print(x,y,z)
+                }
+            })
+            // Add the timer to the current run loop.
+            RunLoop.current.add(self.motionSensorTimer!, forMode: .defaultRunLoopMode)
+        }
+    }
+
 }
