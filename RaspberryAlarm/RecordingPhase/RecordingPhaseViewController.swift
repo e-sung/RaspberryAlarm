@@ -70,20 +70,13 @@ class RecordingPhaseViewController: UIViewController {
             self.currentTimeLB.text = Timer.currentHHmmss // 화면에 현재시간을 HH:mm:ss 로 표시
             
             var remainingTime = 0
-            switch self.currentPhase{
-            case .recordingSleep:
+            if self.currentPhase == .recordingSleep {
                 remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
-            case .snooze:
+            }else{
                 remainingTime = self.remainingSnoozeAmount
                 self.remainingSnoozeAmount -= 1
-            default:
-                print("Unexpected phase")
             }
-
-            let remainingHour = Int(remainingTime/3600)
-            let remainingMinute = Int((remainingTime - remainingHour*3600)/60)
-            let remainingSecond = remainingTime - remainingHour*3600 - remainingMinute*60
-            self.remainingTimeLB.text = "\(remainingHour):\(remainingMinute):\(remainingSecond)"
+            self.remainingTimeLB.text = generateHHmmssOutOf(remainingTime)
 
             if remainingTime == self.alarmItem.timeToHeat{
                 let url = URL(string: "http://192.168.0.20:3030")!
@@ -125,6 +118,13 @@ class RecordingPhaseViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func generateHHmmssOutOf(_ seconds:Int)->String{
+        let outputHour = Int(seconds/3600)
+        let outputMinute = Int((seconds - outputHour*3600)/60)
+        let outputSecond = seconds - outputHour*3600 - outputMinute*60
+        return "\(outputHour):\(outputMinute):\(outputSecond)"
     }
 }
 
