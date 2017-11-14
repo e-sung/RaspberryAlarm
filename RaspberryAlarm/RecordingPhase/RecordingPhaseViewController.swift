@@ -60,6 +60,7 @@ class RecordingPhaseViewController: UIViewController {
         alarmTimer.fire()
     }
     
+    // MARK: 매 1초마다 해야 할 일 aka 시간계산 및 표시
     func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             self.currentTimeLB.text = Timer.currentHHmmss
@@ -91,6 +92,7 @@ class RecordingPhaseViewController: UIViewController {
         }
     }
     
+    // MARK: 매 1/30초마다 해야 할 일 aka 가속도센서감지
     func startAccelerometers() {
         // Make sure the accelerometer hardware is available.
         if self.motion.isAccelerometerAvailable {
