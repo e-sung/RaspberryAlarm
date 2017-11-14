@@ -10,7 +10,20 @@ import UIKit
 import CoreMotion
 import SwiftChart
 /**
- - ToDo: Record Sleep Phase With HealthKit
+ # OverView
+ ## 1. 무엇을 하는 놈인가?
+ 크게 두 가지 일을 합니다.
+ 1. 현재시간과 기상시간을 표시:
+ 2. 가속도 센서 감지/그래프 작성:
+
+ ## 2. 그것을 어떻게 하는가?
+ 1. 기상시간 계산 : `func generateAlarmTimer()` 참고
+    1. 가장 근시일에 울려야 할 알람은, DataCenter.main 의 계산속성을 통해서 알 수 있음.
+    2. 근데 이 알람이 울릴 시간이 현재시각보다 과거면(!), 내일 울릴 알람이라고 판단함.
+    3. 앱을 켜두고 잠드는 상황을 상정했기에, "내일 모레" 알람이 울리는 것은 상정하지 않음.
+ 2. 그래프 작성 : `func startAccelerometers()`참고
+ 
+ - ToDo: HealthKit에 수면데이터 저장하기
 */
 class RecordingPhaseViewController: UIViewController {
     
@@ -50,7 +63,7 @@ class RecordingPhaseViewController: UIViewController {
         guard let alarm = DataCenter.main.nearestAlarm else {alert(msg:"설정된 알람이 없습니다!"); return}
         self.alarmItem = alarm
         self.remainingSnoozeAmount = alarm.snoozeAmount
-        self.currentPhase = Phase.recordingSleep
+        self.currentPhase = .recordingSleep
         if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds { //오늘 자고 내일 일어나는 경우
             self.wakeUpTimeInSeconds =  alarmItem.wakeUpTimeInSeconds + 24*60*60
         }else{
@@ -81,11 +94,9 @@ class RecordingPhaseViewController: UIViewController {
             }
             self.remainingTimeLB.text = self.generateHHmmssOutOf(remainingTime)
             
-            if remainingTime%self.chartRefreshRate == 0 {
-                self.sleepData.append(Float(self.smInSeconds))
-                let series = ChartSeries(self.sleepData)
-                self.chart.add(series)
-                self.smInSeconds = 0
+            if remainingTime%self.chartRefreshRate == 0 { // 매 chartRefreshRate초 마다
+                self.reDrawChart() //차트를 새로 그리고
+                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
             }
 
             if remainingTime == self.alarmItem.timeToHeat{
@@ -99,8 +110,17 @@ class RecordingPhaseViewController: UIViewController {
     }
     
     // MARK: 매 1/10초마다 해야 할 일 aka 가속도센서감지
+    /**
+     가속도 센서를 통해, 뒤척임을 감지합니다.
+     
+     1. 현시점의 핸드폰 상태 = x축값 + y축값 + z축값
+     2. 이 값을 "과거의 핸드폰 상태"와 비교
+     3. 비교 결과, 핸드폰이 움직였다고 한다면, 움직임을 smInSeconds(SleepMotionInSeconds)에 기록
+     4. 현시점의 핸드폰상태를 "과거의 핸드폰 상태" 변수에 저장.
+     5. 반복
+     */
     func startAccelerometers() {
-        // Make sure the accelerometer hardware is available.
+        // Make su복re the accelerometer hardware is available.
         if self.motionManager.isAccelerometerAvailable {
             self.motionManager.accelerometerUpdateInterval = 1.0 / self.motionSensingRate
             self.motionManager.startAccelerometerUpdates()
@@ -111,7 +131,7 @@ class RecordingPhaseViewController: UIViewController {
                 // Get the accelerometer data.
                 if let data = self.motionManager.accelerometerData {
                     let x = data.acceleration.x;let y = data.acceleration.y;let z = data.acceleration.z
-                    let currentState = Int(abs((x + y + z)*10))
+                    let currentState = Int(abs((x + y + z)*10)) // 왜 저는 정수가 아니면 뭔가 안심이 안 되는 걸까요...
                     if (currentState - self.lastState) != 0 {
                         self.smInSeconds += 1
                     }
@@ -123,6 +143,11 @@ class RecordingPhaseViewController: UIViewController {
     }
     
 
+    // MARK: 편의상 만든 함수들
+    /**
+     UIAlertController 를 쉽게 쓰게 만드는 함수.
+     - ToDo : 더 쓰일 곳이 생기면, 파일 하나 새로 만들자.
+     */
     func alert(msg:String){
         let alert = UIAlertController(title: "안내", message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .cancel , handler: { (action) in
@@ -131,21 +156,45 @@ class RecordingPhaseViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    /**
+     초단위의 시간을 넣으면 "HH:mm:ss" 형식의 문자열 반환
+     - Remark:
+     Date랑 DateFormatter로 더 똑똑하게 처리할 방법이 있을 것인데...
+     */
     func generateHHmmssOutOf(_ seconds:Int)->String{
         let outputHour = Int(seconds/3600)
         let outputMinute = Int((seconds - outputHour*3600)/60)
         let outputSecond = seconds - outputHour*3600 - outputMinute*60
         return "\(outputHour):\(outputMinute):\(outputSecond)"
     }
+    
+    
+    func reDrawChart(){
+        self.sleepData.append(Float(self.smInSeconds))
+        self.chart.add(ChartSeries(self.sleepData))
+    }
 }
 
 extension Timer{
+    /**
+     현재 시간을 HH:mm:ss 모양의 문자열로 바꿔주는 계산속성
+     
+     - Remark:
+     사실 구현한 내용을 그냥 매번 코드에 써도 되는데,
+     별 것도 아닌게 2줄이나 차지하는게 마음에 안들어서 만들었음
+     */
     static var currentHHmmss:String{
         get{
             let dateFormatter = DateFormatter(); dateFormatter.dateFormat = "HH:mm:ss"
             return dateFormatter.string(from: Date())
         }
     }
+    
+    /**
+    오늘 0시0분0초부터 현시점까지 누적된 초
+     - ToDo:
+     분명히 이거보다 똑똑한 방법이 있을 것이라고 봄.
+     */
     static var currentSecondsOfToday:Int{
         let currentTimeString = Timer.currentHHmmss
         let currentHour = Int(currentTimeString.split(separator: ":")[0])!
