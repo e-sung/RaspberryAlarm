@@ -11,8 +11,21 @@ import CoreMotion
 class RecordingPhaseViewController: UIViewController {
     
     // TODO : Record Sleep Phase With HealthKit
-    var phase:Phase!
+    var currentPhase:Phase!
     var alarmTimer:Timer!
+    var currentDay:Int!
+    
+    var nearestAlarm:AlarmItem!
+    var wakeUpTimeInSeconds:Int{
+        get{
+            if Timer.currentSecondsOfToday > self.nearestAlarm.wakeUpTimeInSeconds {
+                return nearestAlarm.wakeUpTimeInSeconds + 24*60*60
+            }else{
+                return nearestAlarm.wakeUpTimeInSeconds
+            }
+        }
+    }
+    
     var motionSensorTimer:Timer!
     let motion:CMMotionManager = CMMotionManager()
     var lastState = 100
@@ -28,85 +41,50 @@ class RecordingPhaseViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        phase = Phase.recordingSleep
+        guard let alarm = DataCenter.main.nearestAlarm else {alert(msg:"설정된 알람이 없습니다!"); return}
+        self.nearestAlarm = alarm
+        self.currentPhase = Phase.recordingSleep
         setupTimer()
-        alarmTimer.fire()
         startAccelerometers()
+        currentDay = Calendar.current.component(.weekday, from: Date())
     }
     override func viewWillAppear(_ animated: Bool) {
-        if !alarmTimer.isValid && self.phase == Phase.snooze {
+        if !alarmTimer.isValid && self.currentPhase == Phase.snooze {
             setupTimer()
             alarmTimer.fire()
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let snoozeAmount = sender as? Int else {
-            return
-        }
-        let nextVC = segue.destination as! RingingPhaseViewController
-        nextVC.snoozeAmount = snoozeAmount
-    }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if self.phase == Phase.alarmList {
-            return false
-        }else{
-            return true
-        }
+        return self.currentPhase != Phase.alarmList
     }
     
     func setupTimer(){
         alarmTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            let dateFormatter = DateFormatter(); dateFormatter.dateFormat = "HH:mm:ss"
-            let today = Date()
-            let currentTimeString = dateFormatter.string(from: today)
-            self.currentTimeLB.text = currentTimeString
-            
-            guard let nearestAlarm = DataCenter.main.nearestAlarm else {
-                let alert = UIAlertController(title: "안내", message: "설정된 알람이 없습니다.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "확인", style: .cancel , handler: { (action) in
-                    self.dismiss(animated: true, completion: nil)
-                }))
-                self.present(alert, animated: true, completion: nil)
-                return
-            }
-            
-            let wakeUpHour = nearestAlarm.timeToWakeUp.0
-            let wakeUpMinute = nearestAlarm.timeToWakeUp.1
-            var wakeUpTime = wakeUpHour*60 + wakeUpMinute
-
-            let currentDay = Calendar.current.component(.weekday, from: today)
-            let currentHour = Int(currentTimeString.split(separator: ":")[0])!
-            let currentMinute = Int(currentTimeString.split(separator: ":")[1])!
-            let currentSecond = Int(currentTimeString.split(separator: ":")[2])!
-            let currentTime = currentHour*60 + currentMinute
-            
-            if wakeUpTime < currentTime{
-                wakeUpTime += 24*60
-            }
-            
+            self.currentTimeLB.text = Timer.currentHHmmss
             var remainingTime = Int.max
-            if self.phase == Phase.snooze {
-                remainingTime = nearestAlarm.snoozeAmount
-            }else if nearestAlarm.repeatDays.contains(Day(rawValue: currentDay)!){
-                remainingTime = wakeUpTime - currentTime
+            if self.currentPhase == Phase.snooze {
+                remainingTime = self.nearestAlarm.snoozeAmount
+            }else if self.nearestAlarm.repeatDays.contains(Day(rawValue: self.currentDay)!){
+                remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
             }else{
-                remainingTime = (24*60 - currentTime) + wakeUpTime
+                remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday + 24*60*60
             }
-            let remainingHour = Int(remainingTime/60)
-            let remainingMinute = remainingTime%60 - 1
-            let remainingSecond = 60 - currentSecond
+            
+            let remainingHour = Int(remainingTime/3600)
+            let remainingMinute = Int((remainingTime - remainingHour*3600)/60)
+            let remainingSecond = remainingTime - remainingHour*3600 - remainingMinute*60
             self.remainingTimeLB.text = "\(remainingHour):\(remainingMinute):\(remainingSecond)"
-            
-//            print(remainingTime, remainingSecond, nearestAlarm.timeToHeat)
-            
-            if remainingTime == nearestAlarm.timeToHeat && remainingSecond == 1{
-                let url = URL(string: "http://192.168.0.20:3030")!
-                URLSession.shared.dataTask(with: url) { (data, response, error) in
-                }.resume()
-            }else if remainingTime == 1 && remainingSecond == 1 {
+
+            print(remainingTime,self.nearestAlarm.timeToHeat)
+            if remainingTime == self.nearestAlarm.timeToHeat{
+                print("Http request has been fired!")
+//                let url = URL(string: "http://192.168.0.20:3030")!
+//                URLSession.shared.dataTask(with: url) { (data, response, error) in
+//                }.resume()
+            }else if remainingTime == 0{
                 timer.invalidate()
-                self.performSegue(withIdentifier: "showRingingPhase", sender: nearestAlarm.snoozeAmount)
+                self.performSegue(withIdentifier: "showRingingPhase", sender: self.nearestAlarm.snoozeAmount)
             }
         }
     }
@@ -132,5 +110,29 @@ class RecordingPhaseViewController: UIViewController {
             RunLoop.current.add(self.motionSensorTimer!, forMode: .defaultRunLoopMode)
         }
     }
+    
 
+    func alert(msg:String){
+        let alert = UIAlertController(title: "안내", message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .cancel , handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension Timer{
+    static var currentHHmmss:String{
+        get{
+            let dateFormatter = DateFormatter(); dateFormatter.dateFormat = "HH:mm:ss"
+            return dateFormatter.string(from: Date())
+        }
+    }
+    static var currentSecondsOfToday:Int{
+        let currentTimeString = Timer.currentHHmmss
+        let currentHour = Int(currentTimeString.split(separator: ":")[0])!
+        let currentMinute = Int(currentTimeString.split(separator: ":")[1])!
+        let currentSecond = Int(currentTimeString.split(separator: ":")[2])!
+        return currentHour*60*60 + currentMinute*60 + currentSecond
+    }
 }

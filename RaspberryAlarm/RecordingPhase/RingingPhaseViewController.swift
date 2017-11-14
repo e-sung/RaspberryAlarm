@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 class RingingPhaseViewController: UIViewController {
 
-    var snoozeAmount:Int!
     var player:AVPlayer?
     @IBAction func snoozeButtonHandler(_ sender: UIButton) {
         performSegue(withIdentifier: "unwindToRecordingPhase", sender: Phase.snooze)
@@ -27,7 +26,7 @@ class RingingPhaseViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC = segue.destination as? RecordingPhaseViewController {
-            nextVC.phase = sender as! Phase
+            nextVC.currentPhase = sender as! Phase
         }
     }
     override func viewDidLoad() {

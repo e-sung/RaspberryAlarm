@@ -18,6 +18,7 @@ class SetUpAlarmViewController: UIViewController, UITableViewDelegate, UITableVi
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func confirmButotnHandler(_ sender: UIBarButtonItem){
+        //TODO BUGFIX!! If user sets "TIME", other settings are being initialized
         DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp] = self.alarmItem
         self.dismiss(animated: true, completion: nil)
     }
@@ -43,6 +44,7 @@ extension SetUpAlarmViewController{
         var reuseId = ""
         
         var cellTitle = ""
+        var sliderValue:Float = 15.0
         switch indexPath.item {
         case 0:
             reuseId = "normalCell"
@@ -53,9 +55,11 @@ extension SetUpAlarmViewController{
         case 2:
             reuseId = "sliderCell"
             cellTitle = "스누즈 설정"
+            sliderValue = Float(alarmItem.snoozeAmount/60)
         case 3:
             reuseId = "sliderCell"
             cellTitle = "전기장판 설정"
+            sliderValue = Float(alarmItem.timeToHeat/60)
         default:
             print("Unidentified indexPath")
         }
@@ -68,6 +72,8 @@ extension SetUpAlarmViewController{
         }else{
             let sliderCell = cell as! SliderSettingCell
             sliderCell.titleLB.text = cellTitle
+            sliderCell.slider.value = sliderValue
+            sliderCell.quantityLB.text = "\(Int(sliderValue))"
             sliderCell.delegate = self
             return sliderCell
         }
@@ -111,9 +117,9 @@ extension SetUpAlarmViewController{
 extension SetUpAlarmViewController:SliderSettingCellDelegate{
     func didSliderValueChanged(_ changer: String, _ changedValue: Int) {
         if changer == "스누즈 설정"{
-            alarmItem.snoozeAmount = changedValue
+            self.alarmItem.snoozeAmount = changedValue*60
         }else{
-            alarmItem.timeToHeat = changedValue
+            self.alarmItem.timeToHeat = changedValue*60
         }
     }
 }

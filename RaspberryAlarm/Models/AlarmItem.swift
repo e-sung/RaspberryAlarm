@@ -19,9 +19,14 @@ Object that has every info to make an Alarm
 struct AlarmItem {
     var timeToWakeUp:(Int,Int)
     var isActive:Bool = true
-    var timeToHeat:Int = 15
-    var snoozeAmount:Int = 15
+    var timeToHeat:Int = 30*60
+    var snoozeAmount:Int = 15*60
     var repeatDays:[Day] = [.Mon,.Tue,.Wed,.Thu,.Fri]
+    var wakeUpTimeInSeconds:Int{
+        get{
+            return self.timeToWakeUp.0*3600 + self.timeToWakeUp.1*60
+        }
+    }
 }
 
 //MARK: Initializers
@@ -45,8 +50,7 @@ extension AlarmItem{
             return nil
         }
         self.timeToWakeUp = time
-        self.timeToHeat
-         = heatAmount
+        self.timeToHeat = heatAmount
         self.snoozeAmount = snoozeAmount
         self.repeatDays = repeatDays
     }
@@ -54,15 +58,15 @@ extension AlarmItem{
 
 //MARK: Helper Functions
 extension AlarmItem{
-    static func validityOfTime(_ hour:Int, _ minute:Int)->Bool{
+    private static func validityOfTime(_ hour:Int, _ minute:Int)->Bool{
         return validityOfHour(hour) && validityOfMinute(minute)
     }
     
-    static func validityOfHour(_ hour:Int)->Bool{
+    private static func validityOfHour(_ hour:Int)->Bool{
         return (hour>=0 && hour<24)
     }
     
-    static func validityOfMinute(_ minute:Int)->Bool{
+    private static func validityOfMinute(_ minute:Int)->Bool{
         return (minute>=0 && minute<60)
     }
 }
