@@ -19,14 +19,16 @@ class RecordingPhaseViewController: UIViewController {
     var alarmTimer:Timer! //현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
     var currentPhase:Phase! // 풀잠중인지 쪽잠중인지의 여부
     var remainingSnoozeAmount:Int = 0 //쪽잠 잘 시간이 얼마나 남았는지 (쪽잠 Phase 때, 1초마다 줄어듬)
-    var sleepData:[Float] = [0.0]
     var wakeUpTimeInSeconds:Int!
 
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
-    var motionSensorTimer:Timer! //  1/10 초마다 불림
+    let motionSensingRate = 10.0 // 가속도 센서 확인할 주기 (단위 :Hz)
+    var motionSensorTimer:Timer! //  motionSensingRate 마다 불림
     let motionManager:CMMotionManager = CMMotionManager()
-    var lastState = 0 // 핸드폰이 흔들렸는지 확인할 기준점
+    let chartRefreshRate = 1 // 그래프 갱신 주기 (단위 :초)
+    var lastState = 0 // 핸드폰이 흔들렸는지 확인할 기준치
     var smInSeconds = 0 //1초동안 핸드폰이 흔들린 횟수
+    var sleepData:[Float] = [0.0] // 수면 그래프를 그릴 자료.
     
     // MARK: IBOutlets
     @IBOutlet weak var currentTimeLB: UILabel!
@@ -79,7 +81,7 @@ class RecordingPhaseViewController: UIViewController {
             }
             self.remainingTimeLB.text = self.generateHHmmssOutOf(remainingTime)
             
-            if remainingTime%5 == 0 {
+            if remainingTime%self.chartRefreshRate == 0 {
                 self.sleepData.append(Float(self.smInSeconds))
                 let series = ChartSeries(self.sleepData)
                 self.chart.add(series)
@@ -100,23 +102,22 @@ class RecordingPhaseViewController: UIViewController {
     func startAccelerometers() {
         // Make sure the accelerometer hardware is available.
         if self.motionManager.isAccelerometerAvailable {
-            self.motionManager.accelerometerUpdateInterval = 1.0 / 10.0  // 10 Hz
+            self.motionManager.accelerometerUpdateInterval = 1.0 / self.motionSensingRate
             self.motionManager.startAccelerometerUpdates()
 
             // Configure a timer to fetch the data.
-            self.motionSensorTimer = Timer(fire: Date(), interval: (1.0/10.0), repeats: true, block: { (timer) in
+            self.motionSensorTimer = Timer(fire: Date(), interval: (1.0/self.motionSensingRate), repeats: true,
+                block: { (timer) in
                 // Get the accelerometer data.
                 if let data = self.motionManager.accelerometerData {
                     let x = data.acceleration.x;let y = data.acceleration.y;let z = data.acceleration.z
                     let currentState = Int(abs((x + y + z)*10))
-
                     if (currentState - self.lastState) != 0 {
                         self.smInSeconds += 1
                     }
                     self.lastState = currentState
                 }
             })
-            // Add the timer to the current run loop.
             RunLoop.current.add(self.motionSensorTimer!, forMode: .defaultRunLoopMode)
         }
     }
