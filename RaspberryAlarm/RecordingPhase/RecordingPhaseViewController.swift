@@ -60,11 +60,6 @@ class RecordingPhaseViewController: UIViewController {
         alarmTimer.fire()
     }
     
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return self.currentPhase != Phase.alarmList
-    }
-    
     func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             self.currentTimeLB.text = Timer.currentHHmmss
