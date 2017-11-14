@@ -23,7 +23,7 @@ class RecordingPhaseViewController: UIViewController {
     var wakeUpTimeInSeconds:Int!
 
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
-    var motionSensorTimer:Timer! //  1/10 불림
+    var motionSensorTimer:Timer! //  1/10 초마다 불림
     let motionManager:CMMotionManager = CMMotionManager()
     var lastState = 0 // 핸드폰이 흔들렸는지 확인할 기준점
     var smInSeconds = 0 //1초동안 핸드폰이 흔들린 횟수
@@ -79,7 +79,7 @@ class RecordingPhaseViewController: UIViewController {
             }
             self.remainingTimeLB.text = self.generateHHmmssOutOf(remainingTime)
             
-            if remainingTime%3 == 0 {
+            if remainingTime%5 == 0 {
                 self.sleepData.append(Float(self.smInSeconds))
                 let series = ChartSeries(self.sleepData)
                 self.chart.add(series)
