@@ -8,30 +8,30 @@
 
 import UIKit
 import CoreMotion
+/**
+ - ToDo: Record Sleep Phase With HealthKit
+*/
 class RecordingPhaseViewController: UIViewController {
-    
-    // TODO : Record Sleep Phase With HealthKit
     
     // MARK: 알람이 울릴 시간을 계산하는데 사용할 전역변수들
     var alarmItem:AlarmItem!
-    var alarmTimer:Timer!
-    var currentDay:Int!
-    var currentPhase:Phase!
-    var remainingSnoozeAmount:Int = 0
+    var alarmTimer:Timer! //현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
+    var currentPhase:Phase! // 풀잠중인지 쪽잠중인지의 여부
+    var remainingSnoozeAmount:Int = 0 //쪽잠 잘 시간이 얼마나 남았는지 (쪽잠 Phase 때, 1초마다 줄어듬)
     var wakeUpTimeInSeconds:Int{
         get{
-            if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds {
+            if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds { //오늘 자고 내일 일어나는 경우
                 return alarmItem.wakeUpTimeInSeconds + 24*60*60
             }else{
-                return alarmItem.wakeUpTimeInSeconds
+                return alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
             }
         }
     }
     
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
-    var motionSensorTimer:Timer!
-    let motion:CMMotionManager = CMMotionManager()
-    var lastState = 100
+    var motionSensorTimer:Timer! //  1/30초마다 불림
+    let motionManager:CMMotionManager = CMMotionManager()
+    var lastState = 0 // 핸드폰이 흔들렸는지 확인할 기준점
     
     // MARK: IBOutlets
     @IBOutlet weak var currentTimeLB: UILabel!
@@ -46,35 +46,38 @@ class RecordingPhaseViewController: UIViewController {
     }
     
     // MARK: 생명주기
+    // 각종 속성 초기화 실시
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let alarm = DataCenter.main.nearestAlarm else {alert(msg:"설정된 알람이 없습니다!"); return}
         self.alarmItem = alarm
         self.remainingSnoozeAmount = alarm.snoozeAmount
         self.currentPhase = Phase.recordingSleep
-        self.currentDay = Calendar.current.component(.weekday, from: Date())
         startAccelerometers()
     }
     override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.isIdleTimerDisabled = true //핸드폰 꺼지는 것 방지
         alarmTimer = generateAlarmTimer()
         alarmTimer.fire()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.isIdleTimerDisabled = false //다시 핸드폰 꺼질 수 있는 상태로 복귀
     }
     
     // MARK: 매 1초마다 해야 할 일 aka 시간계산 및 표시
     func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            self.currentTimeLB.text = Timer.currentHHmmss
+            self.currentTimeLB.text = Timer.currentHHmmss // 화면에 현재시간을 HH:mm:ss 로 표시
             
             var remainingTime = 0
-            if self.currentPhase == .recordingSleep{
-                if self.alarmItem.repeatDays.contains(Day(rawValue: self.currentDay)!){
-                    remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
-                }else{
-                    remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday + 24*60*60
-                }
-            }else if self.currentPhase == .snooze{
+            switch self.currentPhase{
+            case .recordingSleep:
+                remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
+            case .snooze:
                 remainingTime = self.remainingSnoozeAmount
                 self.remainingSnoozeAmount -= 1
+            default:
+                print("Unexpected phase")
             }
 
             let remainingHour = Int(remainingTime/3600)
@@ -95,14 +98,14 @@ class RecordingPhaseViewController: UIViewController {
     // MARK: 매 1/30초마다 해야 할 일 aka 가속도센서감지
     func startAccelerometers() {
         // Make sure the accelerometer hardware is available.
-        if self.motion.isAccelerometerAvailable {
-            self.motion.accelerometerUpdateInterval = 1.0 / 30.0  // 30 Hz
-            self.motion.startAccelerometerUpdates()
+        if self.motionManager.isAccelerometerAvailable {
+            self.motionManager.accelerometerUpdateInterval = 1.0 / 30.0  // 30 Hz
+            self.motionManager.startAccelerometerUpdates()
 
             // Configure a timer to fetch the data.
             self.motionSensorTimer = Timer(fire: Date(), interval: (1.0/30.0), repeats: true, block: { (timer) in
                 // Get the accelerometer data.
-                if let data = self.motion.accelerometerData {
+                if let data = self.motionManager.accelerometerData {
                     let x = data.acceleration.x;let y = data.acceleration.y;let z = data.acceleration.z
                     let currentState = Int(abs((x + y + z)*10))
 
