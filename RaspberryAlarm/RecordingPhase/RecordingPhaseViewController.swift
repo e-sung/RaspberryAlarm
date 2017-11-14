@@ -50,7 +50,7 @@ class RecordingPhaseViewController: UIViewController {
         currentDay = Calendar.current.component(.weekday, from: Date())
     }
     override func viewWillAppear(_ animated: Bool) {
-        setupTimer()
+        setupAlarmTimer()
         alarmTimer.fire()
     }
     
@@ -58,7 +58,7 @@ class RecordingPhaseViewController: UIViewController {
         return self.currentPhase != Phase.alarmList
     }
     
-    func setupTimer(){
+    func startAlarmTimer(){
         alarmTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             self.currentTimeLB.text = Timer.currentHHmmss
             
