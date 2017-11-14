@@ -18,18 +18,10 @@ class RecordingPhaseViewController: UIViewController {
     var alarmTimer:Timer! //현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
     var currentPhase:Phase! // 풀잠중인지 쪽잠중인지의 여부
     var remainingSnoozeAmount:Int = 0 //쪽잠 잘 시간이 얼마나 남았는지 (쪽잠 Phase 때, 1초마다 줄어듬)
-    var wakeUpTimeInSeconds:Int{
-        get{
-            if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds { //오늘 자고 내일 일어나는 경우
-                return alarmItem.wakeUpTimeInSeconds + 24*60*60
-            }else{
-                return alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
-            }
-        }
-    }
-    
+    var wakeUpTimeInSeconds:Int!
+
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
-    var motionSensorTimer:Timer! //  1/30초마다 불림
+    var motionSensorTimer:Timer! //  1/10 불림
     let motionManager:CMMotionManager = CMMotionManager()
     var lastState = 0 // 핸드폰이 흔들렸는지 확인할 기준점
     
@@ -53,6 +45,11 @@ class RecordingPhaseViewController: UIViewController {
         self.alarmItem = alarm
         self.remainingSnoozeAmount = alarm.snoozeAmount
         self.currentPhase = Phase.recordingSleep
+        if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds { //오늘 자고 내일 일어나는 경우
+            self.wakeUpTimeInSeconds =  alarmItem.wakeUpTimeInSeconds + 24*60*60
+        }else{
+            self.wakeUpTimeInSeconds = alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
+        }
         startAccelerometers()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -70,17 +67,16 @@ class RecordingPhaseViewController: UIViewController {
             self.currentTimeLB.text = Timer.currentHHmmss // 화면에 현재시간을 HH:mm:ss 로 표시
             
             var remainingTime = 0
-            if self.currentPhase == .recordingSleep {
+            if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
                 remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
-            }else{
+            }else{ // 쪽잠 자는 경우, 남은 시간
                 remainingTime = self.remainingSnoozeAmount
                 self.remainingSnoozeAmount -= 1
             }
-            self.remainingTimeLB.text = generateHHmmssOutOf(remainingTime)
+            self.remainingTimeLB.text = self.generateHHmmssOutOf(remainingTime)
 
             if remainingTime == self.alarmItem.timeToHeat{
-                let url = URL(string: "http://192.168.0.20:3030")!
-                URLSession.shared.dataTask(with: url).resume()
+                URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
             }else if remainingTime == 0{
                 timer.invalidate()
                 self.performSegue(withIdentifier: "showRingingPhase", sender: self.alarmItem.snoozeAmount)
@@ -88,15 +84,15 @@ class RecordingPhaseViewController: UIViewController {
         }
     }
     
-    // MARK: 매 1/30초마다 해야 할 일 aka 가속도센서감지
+    // MARK: 매 1/10초마다 해야 할 일 aka 가속도센서감지
     func startAccelerometers() {
         // Make sure the accelerometer hardware is available.
         if self.motionManager.isAccelerometerAvailable {
-            self.motionManager.accelerometerUpdateInterval = 1.0 / 30.0  // 30 Hz
+            self.motionManager.accelerometerUpdateInterval = 1.0 / 10.0  // 10 Hz
             self.motionManager.startAccelerometerUpdates()
 
             // Configure a timer to fetch the data.
-            self.motionSensorTimer = Timer(fire: Date(), interval: (1.0/30.0), repeats: true, block: { (timer) in
+            self.motionSensorTimer = Timer(fire: Date(), interval: (1.0/10.0), repeats: true, block: { (timer) in
                 // Get the accelerometer data.
                 if let data = self.motionManager.accelerometerData {
                     let x = data.acceleration.x;let y = data.acceleration.y;let z = data.acceleration.z
