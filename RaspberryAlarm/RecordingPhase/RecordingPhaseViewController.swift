@@ -15,6 +15,7 @@ class RecordingPhaseViewController: UIViewController {
     var alarmTimer:Timer!
     var motionSensorTimer:Timer!
     let motion:CMMotionManager = CMMotionManager()
+    var lastState = 100
     @IBOutlet weak var currentTimeLB: UILabel!
     @IBOutlet weak var remainingTimeLB: UILabel!
     
@@ -97,7 +98,7 @@ class RecordingPhaseViewController: UIViewController {
             let remainingSecond = 60 - currentSecond
             self.remainingTimeLB.text = "\(remainingHour):\(remainingMinute):\(remainingSecond)"
             
-            print(remainingTime, remainingSecond, nearestAlarm.timeToHeat)
+//            print(remainingTime, remainingSecond, nearestAlarm.timeToHeat)
             
             if remainingTime == nearestAlarm.timeToHeat && remainingSecond == 1{
                 let url = URL(string: "http://192.168.0.20:3030")!
@@ -113,17 +114,18 @@ class RecordingPhaseViewController: UIViewController {
     func startAccelerometers() {
         // Make sure the accelerometer hardware is available.
         if self.motion.isAccelerometerAvailable {
-            self.motion.accelerometerUpdateInterval = 1.0 / 60.0  // 60 Hz
+            self.motion.accelerometerUpdateInterval = 1.0 / 30.0  // 30 Hz
             self.motion.startAccelerometerUpdates()
-            
+
             // Configure a timer to fetch the data.
-            self.motionSensorTimer = Timer(fire: Date(), interval: (1.0/60.0), repeats: true, block: { (timer) in
+            self.motionSensorTimer = Timer(fire: Date(), interval: (1.0/30.0), repeats: true, block: { (timer) in
                 // Get the accelerometer data.
                 if let data = self.motion.accelerometerData {
-                    let x = data.acceleration.x
-                    let y = data.acceleration.y
-                    let z = data.acceleration.z
-                    print(x,y,z)
+                    let x = data.acceleration.x;let y = data.acceleration.y;let z = data.acceleration.z
+                    let currentState = Int(abs((x + y + z)*10))
+
+                    print(currentState - self.lastState)
+                    self.lastState = currentState
                 }
             })
             // Add the timer to the current run loop.
