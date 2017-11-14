@@ -88,7 +88,8 @@ class RecordingPhaseViewController: UIViewController {
 
             if remainingTime == self.alarmItem.timeToHeat{
                 URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
-            }else if remainingTime == 0{
+            }
+            if remainingTime == 0{
                 timer.invalidate()
                 self.performSegue(withIdentifier: "showRingingPhase", sender: self.alarmItem.snoozeAmount)
             }
