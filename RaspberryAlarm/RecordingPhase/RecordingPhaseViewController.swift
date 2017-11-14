@@ -11,28 +11,33 @@ import CoreMotion
 class RecordingPhaseViewController: UIViewController {
     
     // TODO : Record Sleep Phase With HealthKit
-    var currentPhase:Phase!
+    
+    // MARK: 알람이 울릴 시간을 계산하는데 사용할 전역변수들
+    var alarmItem:AlarmItem!
     var alarmTimer:Timer!
     var currentDay:Int!
-    
-    var nearestAlarm:AlarmItem!
+    var currentPhase:Phase!
     var remainingSnoozeAmount:Int = 0
     var wakeUpTimeInSeconds:Int{
         get{
-            if Timer.currentSecondsOfToday > self.nearestAlarm.wakeUpTimeInSeconds {
-                return nearestAlarm.wakeUpTimeInSeconds + 24*60*60
+            if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds {
+                return alarmItem.wakeUpTimeInSeconds + 24*60*60
             }else{
-                return nearestAlarm.wakeUpTimeInSeconds
+                return alarmItem.wakeUpTimeInSeconds
             }
         }
     }
     
+    // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
     var motionSensorTimer:Timer!
     let motion:CMMotionManager = CMMotionManager()
     var lastState = 100
+    
+    // MARK: IBOutlets
     @IBOutlet weak var currentTimeLB: UILabel!
     @IBOutlet weak var remainingTimeLB: UILabel!
     
+    // MARK: IBActions
     @IBAction func cancelButtonHandler(_ sender: UIButton) {
         alarmTimer.invalidate()
         self.dismiss(animated: true, completion: nil)
@@ -40,31 +45,33 @@ class RecordingPhaseViewController: UIViewController {
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
     }
     
+    // MARK: 생명주기
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let alarm = DataCenter.main.nearestAlarm else {alert(msg:"설정된 알람이 없습니다!"); return}
-        self.nearestAlarm = alarm
+        self.alarmItem = alarm
         self.remainingSnoozeAmount = alarm.snoozeAmount
         self.currentPhase = Phase.recordingSleep
+        self.currentDay = Calendar.current.component(.weekday, from: Date())
         startAccelerometers()
-        currentDay = Calendar.current.component(.weekday, from: Date())
     }
     override func viewWillAppear(_ animated: Bool) {
-        setupAlarmTimer()
+        alarmTimer = generateAlarmTimer()
         alarmTimer.fire()
     }
+    
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return self.currentPhase != Phase.alarmList
     }
     
-    func startAlarmTimer(){
-        alarmTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+    func generateAlarmTimer()->Timer{
+        return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             self.currentTimeLB.text = Timer.currentHHmmss
             
             var remainingTime = 0
             if self.currentPhase == .recordingSleep{
-                if self.nearestAlarm.repeatDays.contains(Day(rawValue: self.currentDay)!){
+                if self.alarmItem.repeatDays.contains(Day(rawValue: self.currentDay)!){
                     remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
                 }else{
                     remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday + 24*60*60
@@ -79,15 +86,12 @@ class RecordingPhaseViewController: UIViewController {
             let remainingSecond = remainingTime - remainingHour*3600 - remainingMinute*60
             self.remainingTimeLB.text = "\(remainingHour):\(remainingMinute):\(remainingSecond)"
 
-            print(remainingTime,self.nearestAlarm.timeToHeat)
-            if remainingTime == self.nearestAlarm.timeToHeat{
-                print("Http request has been fired!")
-//                let url = URL(string: "http://192.168.0.20:3030")!
-//                URLSession.shared.dataTask(with: url) { (data, response, error) in
-//                }.resume()
+            if remainingTime == self.alarmItem.timeToHeat{
+                let url = URL(string: "http://192.168.0.20:3030")!
+                URLSession.shared.dataTask(with: url).resume()
             }else if remainingTime == 0{
                 timer.invalidate()
-                self.performSegue(withIdentifier: "showRingingPhase", sender: self.nearestAlarm.snoozeAmount)
+                self.performSegue(withIdentifier: "showRingingPhase", sender: self.alarmItem.snoozeAmount)
             }
         }
     }
