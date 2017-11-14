@@ -79,7 +79,7 @@ class RecordingPhaseViewController: UIViewController {
             }
             self.remainingTimeLB.text = self.generateHHmmssOutOf(remainingTime)
             
-            if remainingTime%5 == 0 {
+            if remainingTime%3 == 0 {
                 self.sleepData.append(Float(self.smInSeconds))
                 let series = ChartSeries(self.sleepData)
                 self.chart.add(series)
