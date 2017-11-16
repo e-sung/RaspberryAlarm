@@ -86,7 +86,7 @@ class RecordingPhaseViewController: UIViewController {
         }else{
             self.wakeUpTimeInSeconds = alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
         }
-        startAccelerometers()
+        //startAccelerometers()
     }
     /**
      하는 일
@@ -128,10 +128,10 @@ class RecordingPhaseViewController: UIViewController {
             self.remainingTimeLB.text = self.generateHHmmssOutOf(remainingTime)
             
             // 그래프 새로 그리기
-            if remainingTime%self.chartRefreshRate == 0 {
-                self.reDrawChart() //차트를 새로 그리고
-                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
-            }
+//            if remainingTime%self.chartRefreshRate == 0 {
+//                self.reDrawChart() //차트를 새로 그리고
+//                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
+//            }
 
             if remainingTime == self.alarmItem.timeToHeat{ //전기장판 켜기
                 URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
