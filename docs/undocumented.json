@@ -1,0 +1,950 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmItemCell.swift",
+      "line": 11,
+      "symbol": "AlarmItemCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmItemCell.swift",
+      "line": 13,
+      "symbol": "AlarmItemCell.alarmItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmItemCell.swift",
+      "line": 33,
+      "symbol": "AlarmItemCell.timeLB",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmItemCell.swift",
+      "line": 34,
+      "symbol": "AlarmItemCell.switchToggleHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmItemCell.swift",
+      "line": 37,
+      "symbol": "AlarmItemCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": null,
+      "symbol": "AlarmListViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": null,
+      "symbol": "AlarmListViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 12,
+      "symbol": "AlarmListViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 14,
+      "symbol": "AlarmListViewController.alarmListView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 15,
+      "symbol": "AlarmListViewController.addButtonHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 21,
+      "symbol": "AlarmListViewController.recordButtonHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 25,
+      "symbol": "AlarmListViewController.unwindToAlarmList(segue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 28,
+      "symbol": "AlarmListViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 33,
+      "symbol": "AlarmListViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 39,
+      "symbol": "AlarmListViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 45,
+      "symbol": "AlarmListViewController.shouldPerformSegue(withIdentifier:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 52,
+      "symbol": "AlarmListViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 56,
+      "symbol": "AlarmListViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 62,
+      "symbol": "AlarmListViewController.tableView(_:heightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 66,
+      "symbol": "AlarmListViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
+      "line": 70,
+      "symbol": "AlarmListViewController.tableView(_:commit:forRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 11,
+      "symbol": "RepeatDaySetUpViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 13,
+      "symbol": "RepeatDaySetUpViewController.alarmItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 14,
+      "symbol": "RepeatDaySetUpViewController.newRepeatDays",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 16,
+      "symbol": "RepeatDaySetUpViewController.confirmButtonHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 26,
+      "symbol": "RepeatDaySetUpViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 32,
+      "symbol": "RepeatDaySetUpViewController.mondayTouchHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 36,
+      "symbol": "RepeatDaySetUpViewController.tuesdayTouchHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 40,
+      "symbol": "RepeatDaySetUpViewController.wedsdayTouchHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 44,
+      "symbol": "RepeatDaySetUpViewController.thursdayTouchHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 47,
+      "symbol": "RepeatDaySetUpViewController.fridayTouchHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 51,
+      "symbol": "RepeatDaySetUpViewController.saterdayTouchHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 55,
+      "symbol": "RepeatDaySetUpViewController.sundayTouchHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 59,
+      "symbol": "RepeatDaySetUpViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 62,
+      "symbol": "RepeatDaySetUpViewController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 71,
+      "symbol": "RepeatDaySetUpViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
+      "line": 76,
+      "symbol": "RepeatDaySetUpViewController.toggleButtonState(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmNavigationViewController.swift",
+      "line": 11,
+      "symbol": "SetUpAlarmNavigationViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmNavigationViewController.swift",
+      "line": 13,
+      "symbol": "SetUpAlarmNavigationViewController.indexOfAlarmToSetUp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmNavigationViewController.swift",
+      "line": 14,
+      "symbol": "SetUpAlarmNavigationViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmNavigationViewController.swift",
+      "line": 20,
+      "symbol": "SetUpAlarmNavigationViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": null,
+      "symbol": "SetUpAlarmViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": null,
+      "symbol": "SetUpAlarmViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": null,
+      "symbol": "SetUpAlarmViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 11,
+      "symbol": "SetUpAlarmViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 13,
+      "symbol": "SetUpAlarmViewController.alarmItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 14,
+      "symbol": "SetUpAlarmViewController.navControllerVC",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 16,
+      "symbol": "SetUpAlarmViewController.settingItemTV",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 17,
+      "symbol": "SetUpAlarmViewController.cancelButtonHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 20,
+      "symbol": "SetUpAlarmViewController.confirmButotnHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 26,
+      "symbol": "SetUpAlarmViewController.unwindToSetUpAlarmVC(segue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 29,
+      "symbol": "SetUpAlarmViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 39,
+      "symbol": "SetUpAlarmViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 43,
+      "symbol": "SetUpAlarmViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 82,
+      "symbol": "SetUpAlarmViewController.tableView(_:heightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 89,
+      "symbol": "SetUpAlarmViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 102,
+      "symbol": "SetUpAlarmViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
+      "line": 118,
+      "symbol": "SetUpAlarmViewController.didSliderValueChanged(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 11,
+      "symbol": "SliderSettingCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 13,
+      "symbol": "SliderSettingCell.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 14,
+      "symbol": "SliderSettingCell.titleLB",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 15,
+      "symbol": "SliderSettingCell.quantityLB",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 16,
+      "symbol": "SliderSettingCell.slider",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 18,
+      "symbol": "SliderSettingCell.updateQuantity(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 23,
+      "symbol": "SliderSettingCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 29,
+      "symbol": "SliderSettingCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 35,
+      "symbol": "SliderSettingCellDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
+      "line": 36,
+      "symbol": "SliderSettingCellDelegate.didSliderValueChanged(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/WakeUpTimeSetUpViewController.swift",
+      "line": 11,
+      "symbol": "WakeUpTimeSetUpViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/WakeUpTimeSetUpViewController.swift",
+      "line": 13,
+      "symbol": "WakeUpTimeSetUpViewController.alarmItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/WakeUpTimeSetUpViewController.swift",
+      "line": 16,
+      "symbol": "WakeUpTimeSetUpViewController.timeChangeHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/WakeUpTimeSetUpViewController.swift",
+      "line": 26,
+      "symbol": "WakeUpTimeSetUpViewController.confirmButtonHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/WakeUpTimeSetUpViewController.swift",
+      "line": 31,
+      "symbol": "WakeUpTimeSetUpViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/WakeUpTimeSetUpViewController.swift",
+      "line": 36,
+      "symbol": "WakeUpTimeSetUpViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
+      "line": 17,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
+      "line": 22,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
+      "line": 27,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
+      "line": 32,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
+      "line": 36,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
+      "line": 40,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 20,
+      "symbol": "AlarmItem.timeToWakeUp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 21,
+      "symbol": "AlarmItem.isActive",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 22,
+      "symbol": "AlarmItem.timeToHeat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 23,
+      "symbol": "AlarmItem.snoozeAmount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 24,
+      "symbol": "AlarmItem.repeatDays",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 25,
+      "symbol": "AlarmItem.wakeUpTimeInSeconds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 35,
+      "symbol": "AlarmItem.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 44,
+      "symbol": "AlarmItem.init(_:_:_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/DataCenter.swift",
+      "line": 11,
+      "symbol": "DataCenter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/DataCenter.swift",
+      "line": 12,
+      "symbol": "DataCenter.main",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/DataCenter.swift",
+      "line": 13,
+      "symbol": "DataCenter.defaultAlarm",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/DataCenter.swift",
+      "line": 14,
+      "symbol": "DataCenter.alarmItems",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Day.swift",
+      "line": 11,
+      "symbol": "Day",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Day.swift",
+      "line": 12,
+      "symbol": "Day.Sun",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Day.swift",
+      "line": 13,
+      "symbol": "Day.Mon",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Day.swift",
+      "line": 14,
+      "symbol": "Day.Tue",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Day.swift",
+      "line": 15,
+      "symbol": "Day.Wed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Day.swift",
+      "line": 16,
+      "symbol": "Day.Thu",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Day.swift",
+      "line": 17,
+      "symbol": "Day.Fri",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Day.swift",
+      "line": 18,
+      "symbol": "Day.Sat",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Phase.swift",
+      "line": 11,
+      "symbol": "Phase",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Phase.swift",
+      "line": 12,
+      "symbol": "Phase.alarmList",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Phase.swift",
+      "line": 13,
+      "symbol": "Phase.alarmSetting",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Phase.swift",
+      "line": 14,
+      "symbol": "Phase.alarmSettingSpecific",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Phase.swift",
+      "line": 15,
+      "symbol": "Phase.recordingSleep",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Phase.swift",
+      "line": 16,
+      "symbol": "Phase.snooze",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 31,
+      "symbol": "RecordingPhaseViewController.alarmItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 32,
+      "symbol": "RecordingPhaseViewController.alarmTimer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 33,
+      "symbol": "RecordingPhaseViewController.currentPhase",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 34,
+      "symbol": "RecordingPhaseViewController.remainingSnoozeAmount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 35,
+      "symbol": "RecordingPhaseViewController.wakeUpTimeInSeconds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 38,
+      "symbol": "RecordingPhaseViewController.motionSensingRate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 39,
+      "symbol": "RecordingPhaseViewController.motionSensorTimer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 40,
+      "symbol": "RecordingPhaseViewController.motionManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 41,
+      "symbol": "RecordingPhaseViewController.chartRefreshRate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 42,
+      "symbol": "RecordingPhaseViewController.lastState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 43,
+      "symbol": "RecordingPhaseViewController.smInSeconds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 44,
+      "symbol": "RecordingPhaseViewController.sleepData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 47,
+      "symbol": "RecordingPhaseViewController.currentTimeLB",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 48,
+      "symbol": "RecordingPhaseViewController.remainingTimeLB",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 49,
+      "symbol": "RecordingPhaseViewController.chart",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 52,
+      "symbol": "RecordingPhaseViewController.cancelButtonHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 56,
+      "symbol": "RecordingPhaseViewController.unwindToRecordingPhase(segue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 61,
+      "symbol": "RecordingPhaseViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 74,
+      "symbol": "RecordingPhaseViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 79,
+      "symbol": "RecordingPhaseViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RingingPhaseViewController.swift",
+      "line": 11,
+      "symbol": "RingingPhaseViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RingingPhaseViewController.swift",
+      "line": 13,
+      "symbol": "RingingPhaseViewController.player",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RingingPhaseViewController.swift",
+      "line": 14,
+      "symbol": "RingingPhaseViewController.snoozeButtonHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RingingPhaseViewController.swift",
+      "line": 18,
+      "symbol": "RingingPhaseViewController.terminateButtonHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RingingPhaseViewController.swift",
+      "line": 25,
+      "symbol": "RingingPhaseViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RingingPhaseViewController.swift",
+      "line": 31,
+      "symbol": "RingingPhaseViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RingingPhaseViewController.swift",
+      "line": 35,
+      "symbol": "RingingPhaseViewController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/lyuseongdu/Documents/RaspberryAlarm"
+}

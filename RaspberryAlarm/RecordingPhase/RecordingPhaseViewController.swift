@@ -31,7 +31,7 @@ class RecordingPhaseViewController: UIViewController {
     var alarmItem:AlarmItem!
     var alarmTimer:Timer! //현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
     var currentPhase:Phase! // 풀잠중인지 쪽잠중인지의 여부
-    var remainingSnoozeAmount:Int = 0 //쪽잠 잘 시간이 얼마나 남았는지 (쪽잠 Phase 때, 1초마다 줄어듬)
+    var remainingSnoozeAmount:Int = 0 // 쪽잠 잘 시간이 얼마나 남았는지 (쪽잠 Phase 때, 1초마다 줄어듬)
     var wakeUpTimeInSeconds:Int!
 
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
@@ -81,10 +81,20 @@ class RecordingPhaseViewController: UIViewController {
     }
     
     // MARK: 매 1초마다 해야 할 일 aka 시간계산 및 표시
+    /**
+    매 초마다 해야 할 일들을 정의
+     
+     - Remark: 하는 일 목록
+     1. 남은 시간 계산 및 현재 시간 표시
+        * 풀잠 Phase냐, 쪽잠 Phase냐에 따라 remainingTime의 계산방식이 달라짐
+     2. 매 chartRefreshRate초 마다 그래프 새로 그리기
+     3. 알람 켤 시간/ 전기장판 킬 시간에 알람도 키고 전기장판도 키기.
+     */
     func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             self.currentTimeLB.text = Timer.currentHHmmss // 화면에 현재시간을 HH:mm:ss 로 표시
-            
+           
+            //남은시간 계산
             var remainingTime = 0
             if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
                 remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
@@ -94,15 +104,16 @@ class RecordingPhaseViewController: UIViewController {
             }
             self.remainingTimeLB.text = self.generateHHmmssOutOf(remainingTime)
             
-            if remainingTime%self.chartRefreshRate == 0 { // 매 chartRefreshRate초 마다
+            // 그래프 새로 그리기
+            if remainingTime%self.chartRefreshRate == 0 {
                 self.reDrawChart() //차트를 새로 그리고
                 self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
             }
 
-            if remainingTime == self.alarmItem.timeToHeat{
+            if remainingTime == self.alarmItem.timeToHeat{ //전기장판 켜기
                 URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
             }
-            if remainingTime == 0{
+            if remainingTime == 0{//알람 울리기
                 timer.invalidate()
                 self.performSegue(withIdentifier: "showRingingPhase", sender: self.alarmItem.snoozeAmount)
             }
@@ -168,7 +179,12 @@ class RecordingPhaseViewController: UIViewController {
         return "\(outputHour):\(outputMinute):\(outputSecond)"
     }
     
-    
+    /**
+    그래프 갱신하는 함수
+     사실 실제로 하는 일은 Chart객체에 새 데이터를 집어넣는 것 뿐.
+     - ToDo:
+     chart객체가 실제로 어떻게 View를 업데이트하는지 알아봐야겠다.
+     */
     func reDrawChart(){
         self.sleepData.append(Float(self.smInSeconds))
         self.chart.add(ChartSeries(self.sleepData))

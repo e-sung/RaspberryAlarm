@@ -6,6 +6,20 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		FF4328501FBC8A4300C8ACCA /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FF4328531FBC8A4300C8ACCA /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				FF4328541FBC8A9700C8ACCA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		16262C10571EEB3114A374F9 /* Pods_RaspberryAlarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E8C999EB4677086B5803E0 /* Pods_RaspberryAlarm.framework */; };
 		258055991C2C96E12343D041 /* Pods_RaspberryAlarmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C1396DAED653B163FA1890 /* Pods_RaspberryAlarmTests.framework */; };
@@ -317,6 +331,10 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "류성두";
 				TargetAttributes = {
+					FF4328501FBC8A4300C8ACCA = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					FF9CF6B41FB6F5940033E3E3 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -349,6 +367,7 @@
 				FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */,
 				FF9CF6C81FB6F5940033E3E3 /* RaspberryAlarmTests */,
 				FF9CF6D31FB6F5940033E3E3 /* RaspberryAlarmUITests */,
+				FF4328501FBC8A4300C8ACCA /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -531,6 +550,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaspberryAlarmTests/Pods-RaspberryAlarmTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FF4328541FBC8A9700C8ACCA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"ACME\";\ncompanyID=\"com.ACME\";\ncompanyURL=\"http://ACME.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -606,6 +638,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FF4328511FBC8A4300C8ACCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF4328521FBC8A4300C8ACCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		FF9CF6DB1FB6F5940033E3E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -820,6 +870,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FF4328531FBC8A4300C8ACCA /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF4328511FBC8A4300C8ACCA /* Debug */,
+				FF4328521FBC8A4300C8ACCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FF9CF6B01FB6F5940033E3E3 /* Build configuration list for PBXProject "RaspberryAlarm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
