@@ -9,19 +9,18 @@
 import Foundation
 
 /**
-Object that has every info to make an Alarm
- 
-
- - timeToHeat : on scale of Minute. Http Request will be fired on (timeToWakeUP - heatAmount)
- - snoozeAmount : on scale of Minute. Should be initialized in range of 0..<60
- - daysToRepeat : Mon/Tue/Wed/Thu/Fri/Sat/Sun
-*/
+알람을 울리는데 필요한 정보들
+ 1. 몇 시에 울릴지
+ 2. 무슨 요일에 울릴지
+ 3. 전기장판은 언제 켤지
+ 4. Snooze는 얼마나 할지
+ */
 struct AlarmItem {
     /// 일어날 시간 : (Hour, Minute)
     var timeToWakeUp:(Int,Int)
     /// 전기장판 킬 시간(단위 : 초)
     var timeToHeat:Int = 30*60
-    /// 유효여부 : 메인화면에서, 스위치를 토글함으로써 변경.
+    /// 활성화 여부 : 메인화면에서, 스위치를 토글함으로써 변경.
     /// - ToDo : 사실 스위치 토글은 아직 구현 안 됬음
     var isActive:Bool = true
     /// 스누즈 할 양(단위: 초)
@@ -67,7 +66,7 @@ extension AlarmItem{
 }
 
 //MARK: Helper Functions
-/// 이것들도 처음부터 "일어날 시간"을 "초"로 다뤘으면 필요 없었을 것들. 
+/// 이것들도 처음부터 "일어날 시간"을 "초"로 다뤘으면 필요 없었을 것들.
 extension AlarmItem{
     private static func validityOfTime(_ hour:Int, _ minute:Int)->Bool{
         return validityOfHour(hour) && validityOfMinute(minute)

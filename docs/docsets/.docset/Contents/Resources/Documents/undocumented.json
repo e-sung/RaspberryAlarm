@@ -576,14 +576,56 @@
     },
     {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
-      "line": 44,
+      "line": 20,
+      "symbol": "AlarmItem.timeToWakeUp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 21,
+      "symbol": "AlarmItem.isActive",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 22,
+      "symbol": "AlarmItem.timeToHeat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 23,
+      "symbol": "AlarmItem.snoozeAmount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 24,
+      "symbol": "AlarmItem.repeatDays",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 25,
+      "symbol": "AlarmItem.wakeUpTimeInSeconds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
+      "line": 35,
       "symbol": "AlarmItem.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmItem.swift",
-      "line": 53,
+      "line": 44,
       "symbol": "AlarmItem.init(_:_:_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -712,6 +754,146 @@
       "line": 16,
       "symbol": "Phase.snooze",
       "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 31,
+      "symbol": "RecordingPhaseViewController.alarmItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 32,
+      "symbol": "RecordingPhaseViewController.alarmTimer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 33,
+      "symbol": "RecordingPhaseViewController.currentPhase",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 34,
+      "symbol": "RecordingPhaseViewController.remainingSnoozeAmount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 35,
+      "symbol": "RecordingPhaseViewController.wakeUpTimeInSeconds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 38,
+      "symbol": "RecordingPhaseViewController.motionSensingRate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 39,
+      "symbol": "RecordingPhaseViewController.motionSensorTimer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 40,
+      "symbol": "RecordingPhaseViewController.motionManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 41,
+      "symbol": "RecordingPhaseViewController.chartRefreshRate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 42,
+      "symbol": "RecordingPhaseViewController.lastState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 43,
+      "symbol": "RecordingPhaseViewController.smInSeconds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 44,
+      "symbol": "RecordingPhaseViewController.sleepData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 47,
+      "symbol": "RecordingPhaseViewController.currentTimeLB",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 48,
+      "symbol": "RecordingPhaseViewController.remainingTimeLB",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 49,
+      "symbol": "RecordingPhaseViewController.chart",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 52,
+      "symbol": "RecordingPhaseViewController.cancelButtonHandler(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 56,
+      "symbol": "RecordingPhaseViewController.unwindToRecordingPhase(segue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 61,
+      "symbol": "RecordingPhaseViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 74,
+      "symbol": "RecordingPhaseViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
+      "line": 79,
+      "symbol": "RecordingPhaseViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
