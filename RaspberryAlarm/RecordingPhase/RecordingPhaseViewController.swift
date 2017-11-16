@@ -28,36 +28,53 @@ import SwiftChart
 class RecordingPhaseViewController: UIViewController {
     
     // MARK: 알람이 울릴 시간을 계산하는데 사용할 전역변수들
+    /// [AlarmItem](http://blog.e-sung.net/) 참조
     var alarmItem:AlarmItem!
-    var alarmTimer:Timer! //현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
-    var currentPhase:Phase! // 풀잠중인지 쪽잠중인지의 여부
-    var remainingSnoozeAmount:Int = 0 // 쪽잠 잘 시간이 얼마나 남았는지 (쪽잠 Phase 때, 1초마다 줄어듬)
+    /// 현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
+    var alarmTimer:Timer!
+    /// 풀잠중인지 쪽잠중인지의 여부
+    var currentPhase:Phase!
+    /// 쪽잠 잘 시간이 얼마나 남았는지 : 쪽잠 Phase 때, 1초마다 줄어듬
+    var remainingSnoozeAmount:Int = 0
+    /// 일어날 때 까지 몇 초 남았는지
     var wakeUpTimeInSeconds:Int!
 
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
-    let motionSensingRate = 10.0 // 가속도 센서 확인할 주기 (단위 :Hz)
-    var motionSensorTimer:Timer! //  motionSensingRate 마다 불림
+    /// 가속도 센서 확인할 주기 (단위 :Hz)
+    let motionSensingRate = 10.0
+    ///  motionSensingRate 마다 불리는 타이머
+    var motionSensorTimer:Timer!
+    /// motion을 할 sensing 할 객체
     let motionManager:CMMotionManager = CMMotionManager()
-    let chartRefreshRate = 1 // 그래프 갱신 주기 (단위 :초)
-    var lastState = 0 // 핸드폰이 흔들렸는지 확인할 기준치
-    var smInSeconds = 0 //1초동안 핸드폰이 흔들린 횟수
-    var sleepData:[Float] = [0.0] // 수면 그래프를 그릴 자료.
+    /// 그래프를 새로 그릴 주기 (단위 :초)
+    let chartRefreshRate = 1
+    /// 핸드폰이 흔들렸는지 확인할 기준치 : `func startAccelerometers()`참고
+    var lastState = 0
+    /// 1초동안 핸드폰이 흔들린 횟수 (sleep movements in seconds)
+    var smInSeconds = 0
+    /// 이 데이터를 바탕으로 수면그래프를 그림
+    var sleepData:[Float] = [0.0]
     
     // MARK: IBOutlets
+    /// 현재 시간을 표시할 UILabel
     @IBOutlet weak var currentTimeLB: UILabel!
+    /// 일어날 때 까지 남은 시간을 표시할 UILabel
     @IBOutlet weak var remainingTimeLB: UILabel!
+    /// 뒤척임 기록을 보여주는 차트
     @IBOutlet weak var chart: Chart!
     
     // MARK: IBActions
+    /// 수면기록을 중단하고, 이전 화면으로 돌아가는 버튼
     @IBAction func cancelButtonHandler(_ sender: UIButton) {
         alarmTimer.invalidate()
         self.dismiss(animated: true, completion: nil)
     }
+    /// 실제로 하는 일은 없음. 다른 화면에서 이곳으로 돌아오기 위한 등대의 역할
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
     }
     
     // MARK: 생명주기
-    // 각종 속성 초기화 실시
+    /// 하는 일 : 각종 속성 초기화 실시
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let alarm = DataCenter.main.nearestAlarm else {alert(msg:"설정된 알람이 없습니다!"); return}
@@ -71,11 +88,17 @@ class RecordingPhaseViewController: UIViewController {
         }
         startAccelerometers()
     }
+    /**
+     하는 일
+     1. 핸드폰 꺼지는 것 방지
+     2. alarmTimer 실행
+     */
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.isIdleTimerDisabled = true //핸드폰 꺼지는 것 방지
         alarmTimer = generateAlarmTimer()
         alarmTimer.fire()
     }
+    /// 하는 일 : 다시 핸드폰이 꺼질 수 있는 상태로 복귀시킴
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.isIdleTimerDisabled = false //다시 핸드폰 꺼질 수 있는 상태로 복귀
     }
