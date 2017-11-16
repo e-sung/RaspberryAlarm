@@ -20,13 +20,13 @@ class RepeatDaySetUpViewController: UIViewController{
                 newRepeatDays.append(Day(rawValue: i)!)
             }
         }
+        self.alarmItem.repeatDays = newRepeatDays
         performSegue(withIdentifier: "unwindRepeatDaysSetup", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! SetUpAlarmViewController
-        destinationVC.alarmItem.repeatDays = newRepeatDays
-        print("on repeatDaysViewController:",destinationVC.alarmItem.repeatDays)
+        let nextVC = segue.destination as! SetUpAlarmViewController
+        nextVC.alarmItem.repeatDays = newRepeatDays
     }
     
     @IBAction func mondayTouchHandler(_ sender: UIButton) {
@@ -58,6 +58,8 @@ class RepeatDaySetUpViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let navControllerVC = navigationController as! SetUpAlarmNavigationViewController
+        self.alarmItem = DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp]
     }
     override func viewDidAppear(_ animated: Bool) {
         for i in 1...7{
@@ -67,12 +69,7 @@ class RepeatDaySetUpViewController: UIViewController{
             }
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     func toggleButtonState(_ button:UIButton){
         if button.isSelected {
             button.isSelected = false

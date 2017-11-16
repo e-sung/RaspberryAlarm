@@ -10,8 +10,11 @@ import UIKit
 
 class WakeUpTimeSetUpViewController: UIViewController {
 
-    var alarmItem:AlarmItem!
-    private var timeValue:(Int,Int)!
+    /**
+     - ToDo
+     현재 아이템의 timeToWakeUp을 기본으로 시작하기
+    */
+    private var timeValue:(Int,Int) = (6,30)
     
     @IBAction func timeChangeHandler(_ sender: UIDatePicker) {
         let formatter = DateFormatter(); formatter.dateFormat = "HH:mm"
@@ -19,22 +22,14 @@ class WakeUpTimeSetUpViewController: UIViewController {
         
         let hour = Int(dateString.split(separator: ":")[0])!
         let minute = Int(dateString.split(separator: ":")[1])!
-        
         self.timeValue = (hour,minute)
     }
     
     @IBAction func confirmButtonHandler(_ sender: UIBarButtonItem) {
-        self.alarmItem = AlarmItem(timeValue)!
         performSegue(withIdentifier: "unwindToSetUpAlarmVC", sender: self)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let originVC = segue.destination as! SetUpAlarmViewController
-        originVC.alarmItem = self.alarmItem
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        timeValue = alarmItem.timeToWakeUp
+        let nextVC = segue.destination as! SetUpAlarmViewController
+        nextVC.alarmItem.timeToWakeUp = self.timeValue
     }
 }

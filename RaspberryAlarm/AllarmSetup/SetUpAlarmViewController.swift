@@ -18,7 +18,6 @@ class SetUpAlarmViewController: UIViewController, UITableViewDelegate, UITableVi
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func confirmButotnHandler(_ sender: UIBarButtonItem){
-        //TODO BUGFIX!! If user sets "TIME", other settings are being initialized
         DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp] = self.alarmItem
         self.dismiss(animated: true, completion: nil)
     }
@@ -94,22 +93,6 @@ extension SetUpAlarmViewController{
             performSegue(withIdentifier: "showRepeatDaysSetUp", sender: indexPath.item)
         default:
             print("unexpected indexPath")
-        }
-    }
-}
-
-extension SetUpAlarmViewController{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // TODO use Protocol TO do this
-        let rowIndex = sender as! Int
-        switch rowIndex{
-        case 0:
-            let nextVC = segue.destination as! WakeUpTimeSetUpViewController
-            nextVC.alarmItem = self.alarmItem
-        case 1:
-            let nextVC = segue.destination as! RepeatDaySetUpViewController
-            nextVC.alarmItem = self.alarmItem
-        default:
-            print("unidentified segue identifier")
         }
     }
 }
