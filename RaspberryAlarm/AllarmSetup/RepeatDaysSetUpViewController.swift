@@ -10,7 +10,7 @@ import UIKit
 
 class RepeatDaySetUpViewController: UIViewController{
     
-    var dayButtons:[UIButton]{
+    private var dayButtons:[UIButton]{
         get{
             var buttonsToReturn:[UIButton] = []
             for i in 1...7{
@@ -19,14 +19,14 @@ class RepeatDaySetUpViewController: UIViewController{
             return buttonsToReturn
         }
     }
-    var originalRepeatingDays:[Day]{
+    private var originalRepeatingDays:[Day]{
         get{
             let navControllerVC = navigationController as! SetUpAlarmNavigationViewController
             let alarmItem = DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp]
             return alarmItem.repeatDays
         }
     }
-    var newRepeatingDays:[Day]{
+    private var newRepeatingDays:[Day]{
         get{
             var daysToReturn:[Day] = []
             for button in dayButtons{
@@ -79,7 +79,7 @@ class RepeatDaySetUpViewController: UIViewController{
         color(the: dayButtons, of: originalRepeatingDays)
     }
     
-    func color(the buttons:[UIButton], of repeatingDays:[Day]){
+    private func color(the buttons:[UIButton], of repeatingDays:[Day]){
         for i in 1...7{
             if repeatingDays.contains(Day(rawValue: i)!){
                 buttons[i-1].isSelected = true
@@ -87,7 +87,7 @@ class RepeatDaySetUpViewController: UIViewController{
         }
     }
     
-    func toggleButtonState(_ button:UIButton){
+    private func toggleButtonState(_ button:UIButton){
         if button.isSelected {
             button.isSelected = false
         }else{
