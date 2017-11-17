@@ -10,23 +10,41 @@ import UIKit
 
 class RepeatDaySetUpViewController: UIViewController{
     
-    var alarmItem: AlarmItem!
-    var newRepeatDays:[Day] = []
-    
-    @IBAction func confirmButtonHandler(_ sender: UIBarButtonItem) {
-        for i in 1...7{
-            let dayBt = self.view.viewWithTag(i) as! UIButton
-            if dayBt.state == .selected{
-                newRepeatDays.append(Day(rawValue: i)!)
+    var dayButtons:[UIButton]{
+        get{
+            var buttonsToReturn:[UIButton] = []
+            for i in 1...7{
+                buttonsToReturn.append(self.view.viewWithTag(i) as! UIButton)
             }
+            return buttonsToReturn
         }
-        self.alarmItem.repeatDays = newRepeatDays
+    }
+    var originalRepeatingDays:[Day]{
+        get{
+            let navControllerVC = navigationController as! SetUpAlarmNavigationViewController
+            let alarmItem = DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp]
+            return alarmItem.repeatDays
+        }
+    }
+    var newRepeatingDays:[Day]{
+        get{
+            var daysToReturn:[Day] = []
+            for button in dayButtons{
+                if button.state == .selected{
+                    daysToReturn.append(Day(rawValue: button.tag)!)
+                }
+            }
+            return daysToReturn
+        }
+    }
+
+    @IBAction func confirmButtonHandler(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "unwindRepeatDaysSetup", sender: self)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! SetUpAlarmViewController
-        nextVC.alarmItem.repeatDays = newRepeatDays
+        nextVC.alarmItem.repeatDays = newRepeatingDays
     }
     
     @IBAction func mondayTouchHandler(_ sender: UIButton) {
@@ -58,18 +76,17 @@ class RepeatDaySetUpViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let navControllerVC = navigationController as! SetUpAlarmNavigationViewController
-        self.alarmItem = DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp]
+        color(the: dayButtons, of: originalRepeatingDays)
     }
-    override func viewDidAppear(_ animated: Bool) {
+    
+    func color(the buttons:[UIButton], of repeatingDays:[Day]){
         for i in 1...7{
-            if (alarmItem.repeatDays.contains(Day(rawValue: i)!)){
-                let dayButton = self.view.viewWithTag(i) as! UIButton
-                dayButton.isSelected = true
+            if repeatingDays.contains(Day(rawValue: i)!){
+                buttons[i-1].isSelected = true
             }
         }
     }
-
+    
     func toggleButtonState(_ button:UIButton){
         if button.isSelected {
             button.isSelected = false
@@ -77,5 +94,4 @@ class RepeatDaySetUpViewController: UIViewController{
             button.isSelected = true
         }
     }
-    
 }
