@@ -30,20 +30,20 @@ class RecordingPhaseViewController: UIViewController {
     // MARK: 알람이 울릴 시간을 계산하는데 사용할 전역변수들
     /// [AlarmItem](http://blog.e-sung.net/) 참조
     var alarmItem:AlarmItem!
-    /// 현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
-    var alarmTimer:Timer!
     /// 풀잠중인지 쪽잠중인지의 여부
     var currentPhase:Phase = .recordingSleep
+    /// 현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
+    private var alarmTimer:Timer!
     /// 쪽잠 잘 시간이 얼마나 남았는지 : 쪽잠 Phase 때, 1초마다 줄어듬
-    var remainingSnoozeAmount:Int = 0
+    private var remainingSnoozeAmount:Int = 0
     /// 일어나야 할 시간(단위: 초)
-    var wakeUpTimeInSeconds:Int{
+    private var wakeUpTimeInSeconds:Int{
         get{
             return clarify(self.alarmItem.wakeUpTimeInSeconds)
         }
     }
     /// 일어날 때 까지 남은 시간(단위: 초)
-    var remainingTimeInSeconds:Int{
+    private var remainingTimeInSeconds:Int{
         get{
             if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
                 return self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
@@ -55,31 +55,31 @@ class RecordingPhaseViewController: UIViewController {
 
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
     /// 가속도 센서 확인할 주기 (단위 :Hz)
-    let motionSensingRate = 10.0
+    private let motionSensingRate = 10.0
     ///  motionSensingRate 마다 불리는 타이머
-    var motionSensorTimer:Timer!
+    private var motionSensorTimer:Timer!
     /// motion을 할 sensing 할 객체
-    let motionManager:CMMotionManager = CMMotionManager()
+    private let motionManager:CMMotionManager = CMMotionManager()
     /// 그래프를 새로 그릴 주기 (단위 :초)
-    let chartRefreshRate = 1
+    private let chartRefreshRate = 1
     /// 핸드폰이 흔들렸는지 확인할 기준치 : `func startAccelerometers()`참고
-    var lastState = 0
+    private var lastState = 0
     /// 1초동안 핸드폰이 흔들린 횟수 (sleep movements in seconds)
-    var smInSeconds = 0
+    private var smInSeconds = 0
     /// 이 데이터를 바탕으로 수면그래프를 그림
-    var sleepData:[Float] = [0.0]
+    private var sleepData:[Float] = [0.0]
     
     // MARK: IBOutlets
     /// 현재 시간을 표시할 UILabel
-    @IBOutlet weak var currentTimeLB: UILabel!
+    @IBOutlet private weak var currentTimeLB: UILabel!
     /// 일어날 때 까지 남은 시간을 표시할 UILabel
-    @IBOutlet weak var remainingTimeLB: UILabel!
+    @IBOutlet private weak var remainingTimeLB: UILabel!
     /// 뒤척임 기록을 보여주는 차트
-    @IBOutlet weak var chart: Chart!
+    @IBOutlet private weak var chart: Chart!
     
     // MARK: IBActions
     /// 수면기록을 중단하고, 이전 화면으로 돌아가는 버튼
-    @IBAction func cancelButtonHandler(_ sender: UIButton) {
+    @IBAction private func cancelButtonHandler(_ sender: UIButton) {
         alarmTimer.invalidate()
         self.dismiss(animated: true, completion: nil)
     }
@@ -120,7 +120,7 @@ class RecordingPhaseViewController: UIViewController {
      2. 매 chartRefreshRate초 마다 그래프 새로 그리기
      3. 알람 켤 시간/ 전기장판 킬 시간에 알람도 키고 전기장판도 키기.
      */
-    func generateAlarmTimer()->Timer{
+    private func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             // 시간 표시
             self.currentTimeLB.text = Timer.currentHHmmss
@@ -160,7 +160,7 @@ class RecordingPhaseViewController: UIViewController {
      4. 현시점의 핸드폰상태를 "과거의 핸드폰 상태" 변수에 저장.
      5. 반복
      */
-    func startAccelerometers() {
+    private func startAccelerometers() {
         // Make sure the accelerometer hardware is available.
         if self.motionManager.isAccelerometerAvailable {
             self.motionManager.accelerometerUpdateInterval = 1.0 / self.motionSensingRate
@@ -185,7 +185,7 @@ class RecordingPhaseViewController: UIViewController {
     
 
     // MARK: 편의상 만든 함수들
-    func clarify(_ wakeUpSeconds:Int)->Int{
+    private func clarify(_ wakeUpSeconds:Int)->Int{
         if Timer.currentSecondsOfToday > wakeUpSeconds{
             return alarmItem.wakeUpTimeInSeconds + 24*60*60 //오늘 자고 내일 일어나는 경우
         }else{
@@ -193,7 +193,7 @@ class RecordingPhaseViewController: UIViewController {
         }
     }
     
-    func calculateRemainingTime(until wakeUpSeconds:Int)->Int{
+    private func calculateRemainingTime(until wakeUpSeconds:Int)->Int{
         if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
             return wakeUpSeconds - Timer.currentSecondsOfToday
         }else{ // 쪽잠 자는 경우, 남은 시간
@@ -206,7 +206,7 @@ class RecordingPhaseViewController: UIViewController {
      - Remark:
      Date랑 DateFormatter로 더 똑똑하게 처리할 방법이 있을 것인데...
      */
-    func generateHHmmssOutOf(_ seconds:Int)->String{
+    private func generateHHmmssOutOf(_ seconds:Int)->String{
         let outputHour = Int(seconds/3600)
         let outputMinute = Int((seconds - outputHour*3600)/60)
         let outputSecond = seconds - outputHour*3600 - outputMinute*60
@@ -219,7 +219,7 @@ class RecordingPhaseViewController: UIViewController {
      - ToDo:
      chart객체가 실제로 어떻게 View를 업데이트하는지 알아봐야겠다.
      */
-    func reDrawChart(){
+    private func reDrawChart(){
         self.sleepData.append(Float(self.smInSeconds))
         self.chart.add(ChartSeries(self.sleepData))
     }
