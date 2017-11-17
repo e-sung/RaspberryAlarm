@@ -94,7 +94,6 @@ class RecordingPhaseViewController: UIViewController {
         self.remainingSnoozeAmount = alarmItem.snoozeAmount
     }
     
-
     /**
      하는 일
      1. 핸드폰 꺼지는 것 방지
