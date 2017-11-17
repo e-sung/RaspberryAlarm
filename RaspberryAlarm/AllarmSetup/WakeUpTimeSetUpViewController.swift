@@ -16,11 +16,11 @@ class WakeUpTimeSetUpViewController: UIViewController {
     */
     private var timeValue:(Int,Int) = (6,30)
     
-    @IBAction func timeChangeHandler(_ sender: UIDatePicker) {
+    @IBAction private func timeChangeHandler(_ sender: UIDatePicker) {
         self.timeValue = generateTime(outof: sender.date)
     }
     
-    @IBAction func confirmButtonHandler(_ sender: UIBarButtonItem) {
+    @IBAction private func confirmButtonHandler(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "unwindToSetUpAlarmVC", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,7 +32,7 @@ class WakeUpTimeSetUpViewController: UIViewController {
      튜플 형태의 '시간'객체 생성 : (Hour,minute)
      - Parameter date : DatePicker에서 선택된 시간이 들어가야 함
      */
-    func generateTime(outof date:Date)->(Int,Int){
+    private func generateTime(outof date:Date)->(Int,Int){
         let formatter = DateFormatter(); formatter.dateFormat = "HH:mm"
         let dateString = formatter.string(from: date)
         
