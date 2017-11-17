@@ -56,7 +56,7 @@ class DataCenter{
      */
     private func alarmsOfDay(with offSet:Int, shouldBeSorted:Bool)->[AlarmItem]{
         var alarmsToReturn:[AlarmItem] = []
-        let day = (Calendar.current.component(.weekday, from: Date()) + 1)%7
+        let day = (Calendar.current.component(.weekday, from: Date()))%7
         for item in alarmItems{
             if item.repeatDays.contains(Day(rawValue: day)!){
                 alarmsToReturn.append(item)
