@@ -11,18 +11,18 @@ import AVFoundation
 
 class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var alarmListView:UITableView!
-    @IBAction func addButtonHandler(_ sender: UIButton) {
+    @IBOutlet private weak var alarmListView:UITableView!
+    @IBAction private func addButtonHandler(_ sender: UIButton) {
         let newAlarmItem = DataCenter.main.defaultAlarm
         DataCenter.main.alarmItems.append(newAlarmItem)
         alarmListView.reloadData()
     }
     
-    @IBAction func recordButtonHandler(_ sender: UIButton) {
+    @IBAction private func recordButtonHandler(_ sender: UIButton) {
         if let alarm = DataCenter.main.nearestAlarm {
             performSegue(withIdentifier: "showRecordingPhase", sender: alarm)
         }else{
-           alert(msg: "설정된 알람이 없습니다!")
+          alert(msg: "설정된 알람이 없습니다!")
         }
     }
     
@@ -84,7 +84,7 @@ extension AlarmListViewController{
      UIAlertController 를 쉽게 쓰게 만드는 함수.
      - ToDo : 더 쓰일 곳이 생기면, 파일 하나 새로 만들자.
      */
-    func alert(msg:String){
+    private func alert(msg:String){
         let alert = UIAlertController(title: "안내", message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .cancel , handler: { (action) in
         }))
