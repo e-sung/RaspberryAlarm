@@ -77,6 +77,13 @@ class RecordingPhaseViewController: UIViewController {
     /// 하는 일 : 각종 속성 초기화 실시
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.remainingSnoozeAmount = alarmItem.snoozeAmount
+        self.currentPhase = .recordingSleep
+        if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds { //오늘 자고 내일 일어나는 경우
+            self.wakeUpTimeInSeconds =  alarmItem.wakeUpTimeInSeconds + 24*60*60
+        }else{
+            self.wakeUpTimeInSeconds = alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
+        }
         //startAccelerometers()
     }
     /**
@@ -85,15 +92,6 @@ class RecordingPhaseViewController: UIViewController {
      2. alarmTimer 실행
      */
     override func viewWillAppear(_ animated: Bool) {
-        guard let alarm = DataCenter.main.nearestAlarm else {alert(msg:"설정된 알람이 없습니다!");return}
-        self.alarmItem = alarm
-        self.remainingSnoozeAmount = alarm.snoozeAmount
-        self.currentPhase = .recordingSleep
-        if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds { //오늘 자고 내일 일어나는 경우
-            self.wakeUpTimeInSeconds =  alarmItem.wakeUpTimeInSeconds + 24*60*60
-        }else{
-            self.wakeUpTimeInSeconds = alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
-        }
         UIApplication.shared.isIdleTimerDisabled = true //핸드폰 꺼지는 것 방지
         alarmTimer = generateAlarmTimer()
         alarmTimer.fire()
@@ -178,17 +176,6 @@ class RecordingPhaseViewController: UIViewController {
     
 
     // MARK: 편의상 만든 함수들
-    /**
-     UIAlertController 를 쉽게 쓰게 만드는 함수.
-     - ToDo : 더 쓰일 곳이 생기면, 파일 하나 새로 만들자.
-     */
-    func alert(msg:String){
-        let alert = UIAlertController(title: "안내", message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "확인", style: .cancel , handler: { (action) in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
     
     /**
      초단위의 시간을 넣으면 "HH:mm:ss" 형식의 문자열 반환

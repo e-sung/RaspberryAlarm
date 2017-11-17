@@ -19,7 +19,11 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
     }
     
     @IBAction func recordButtonHandler(_ sender: UIButton) {
-        performSegue(withIdentifier: "showRecordingPhase", sender: nil)
+        if let alarm = DataCenter.main.nearestAlarm {
+            performSegue(withIdentifier: "showRecordingPhase", sender: alarm)
+        }else{
+           alert(msg: "설정된 알람이 없습니다!")
+        }
     }
     
     @IBAction func unwindToAlarmList(segue:UIStoryboardSegue) {
@@ -37,9 +41,10 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
 
 extension AlarmListViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexToSend = sender as? Int{
-            let nextVC = segue.destination as! SetUpAlarmNavigationViewController
-            nextVC.indexOfAlarmToSetUp = indexToSend
+        if let nextVC = segue.destination as? RecordingPhaseViewController{
+            nextVC.alarmItem = sender as! AlarmItem
+        }else if let nextVC = segue.destination as? SetUpAlarmNavigationViewController{
+            nextVC.indexOfAlarmToSetUp = sender as! Int
         }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -72,4 +77,17 @@ extension AlarmListViewController{
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 
+}
+
+extension AlarmListViewController{
+    /**
+     UIAlertController 를 쉽게 쓰게 만드는 함수.
+     - ToDo : 더 쓰일 곳이 생기면, 파일 하나 새로 만들자.
+     */
+    func alert(msg:String){
+        let alert = UIAlertController(title: "안내", message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .cancel , handler: { (action) in
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
