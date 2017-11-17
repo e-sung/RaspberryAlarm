@@ -36,8 +36,18 @@ class RecordingPhaseViewController: UIViewController {
     var currentPhase:Phase!
     /// 쪽잠 잘 시간이 얼마나 남았는지 : 쪽잠 Phase 때, 1초마다 줄어듬
     var remainingSnoozeAmount:Int = 0
-    /// 일어날 때 까지 몇 초 남았는지
+    /// 일어나야 할 시간(단위: 초)
     var wakeUpTimeInSeconds:Int!
+    /// 일어날 때 까지 남은 시간(단위: 초)
+    var remainingTimeInSeconds:Int{
+        get{
+            if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
+                return self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
+            }else{ // 쪽잠 자는 경우, 남은 시간
+                return self.remainingSnoozeAmount
+            }
+        }
+    }
 
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
     /// 가속도 센서 확인할 주기 (단위 :Hz)
@@ -79,13 +89,11 @@ class RecordingPhaseViewController: UIViewController {
         super.viewDidLoad()
         self.remainingSnoozeAmount = alarmItem.snoozeAmount
         self.currentPhase = .recordingSleep
-        if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds { //오늘 자고 내일 일어나는 경우
-            self.wakeUpTimeInSeconds =  alarmItem.wakeUpTimeInSeconds + 24*60*60
-        }else{
-            self.wakeUpTimeInSeconds = alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
-        }
+        self.wakeUpTimeInSeconds = clarify(self.alarmItem.wakeUpTimeInSeconds)
         //startAccelerometers()
     }
+    
+
     /**
      하는 일
      1. 핸드폰 꺼지는 것 방지
@@ -106,35 +114,38 @@ class RecordingPhaseViewController: UIViewController {
     매 초마다 해야 할 일들을 정의
      
      - Remark: 하는 일 목록
-     1. 남은 시간 계산 및 현재 시간 표시
-        * 풀잠 Phase냐, 쪽잠 Phase냐에 따라 remainingTime의 계산방식이 달라짐
+     1. 현재 시간 & 남은 시간 표시
+     2. 쪽잠 Phase일 경우, 남은 snooze시간 줄이기
      2. 매 chartRefreshRate초 마다 그래프 새로 그리기
      3. 알람 켤 시간/ 전기장판 킬 시간에 알람도 키고 전기장판도 키기.
      */
     func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            self.currentTimeLB.text = Timer.currentHHmmss // 화면에 현재시간을 HH:mm:ss 로 표시
+            // 현재시간 표시
+            self.currentTimeLB.text = Timer.currentHHmmss
            
-            //남은시간 계산
-            var remainingTime = 0
-            if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
-                remainingTime = self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
-            }else{ // 쪽잠 자는 경우, 남은 시간
-                remainingTime = self.remainingSnoozeAmount
-                self.remainingSnoozeAmount -= 1
-            }
+            //남은시간 표시
+            let remainingTime = self.remainingTimeInSeconds
             self.remainingTimeLB.text = self.generateHHmmssOutOf(remainingTime)
             
+            //쪽잠자는 경우, 남은 snooze 시간 줄이기
+            if self.currentPhase == .snooze {
+                self.remainingSnoozeAmount -= 1
+            }
+
             // 그래프 새로 그리기
 //            if remainingTime%self.chartRefreshRate == 0 {
 //                self.reDrawChart() //차트를 새로 그리고
 //                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
 //            }
 
-            if remainingTime == self.alarmItem.timeToHeat{ //전기장판 켜기
+            //전기장판 켜기
+            if remainingTime == self.alarmItem.timeToHeat{
                 URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
             }
-            if remainingTime == 0{//알람 울리기
+            
+            //알람 울리기
+            if remainingTime == 0{
                 timer.invalidate()
                 self.performSegue(withIdentifier: "showRingingPhase", sender: self.alarmItem.snoozeAmount)
             }
@@ -152,7 +163,7 @@ class RecordingPhaseViewController: UIViewController {
      5. 반복
      */
     func startAccelerometers() {
-        // Make su복re the accelerometer hardware is available.
+        // Make sure the accelerometer hardware is available.
         if self.motionManager.isAccelerometerAvailable {
             self.motionManager.accelerometerUpdateInterval = 1.0 / self.motionSensingRate
             self.motionManager.startAccelerometerUpdates()
@@ -176,6 +187,21 @@ class RecordingPhaseViewController: UIViewController {
     
 
     // MARK: 편의상 만든 함수들
+    func clarify(_ wakeUpSeconds:Int)->Int{
+        if Timer.currentSecondsOfToday > wakeUpSeconds{
+            return alarmItem.wakeUpTimeInSeconds + 24*60*60 //오늘 자고 내일 일어나는 경우
+        }else{
+            return alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
+        }
+    }
+    
+    func calculateRemainingTime(until wakeUpSeconds:Int)->Int{
+        if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
+            return wakeUpSeconds - Timer.currentSecondsOfToday
+        }else{ // 쪽잠 자는 경우, 남은 시간
+            return self.remainingSnoozeAmount
+        }
+    }
     
     /**
      초단위의 시간을 넣으면 "HH:mm:ss" 형식의 문자열 반환
