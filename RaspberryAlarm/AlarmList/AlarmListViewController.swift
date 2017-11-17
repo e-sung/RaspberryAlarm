@@ -27,8 +27,8 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
     }
     
     @IBAction func unwindToAlarmList(segue:UIStoryboardSegue) {
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         alarmListView.delegate = self

@@ -9,32 +9,44 @@
 import UIKit
 
 class AlarmItemCell: UITableViewCell {
-    
+    var dayLabels:[UILabel]{
+        get{
+            var labelsToReturn:[UILabel] = []
+            for i in 1...7{
+                labelsToReturn.append(self.viewWithTag(i) as! UILabel)
+            }
+            return labelsToReturn
+        }
+    }
     var alarmItem:AlarmItem{
         get{
             return _alarmItem
         }
         set(newItem){
             self._alarmItem = newItem
-            let hour = newItem.timeToWakeUp.0
-            let minute = newItem.timeToWakeUp.1
-            self.timeLB.text = "\(hour):\(minute)"
-            for i in 1...7{
-                let dayLB = self.viewWithTag(i) as! UILabel
-                if newItem.repeatDays.contains(Day(rawValue: i)!){
-                    dayLB.textColor = UIColor.green
-                }else{
-                    dayLB.textColor = UIColor.lightGray
-                }
-            }
+            self.timeLB.text = generateTimeLableText(with: newItem.timeToWakeUp)
+            color(the: self.dayLabels, of: newItem.repeatDays)
         }
     }
+    
+
     private var _alarmItem:AlarmItem!
     @IBOutlet weak var timeLB:UILabel!
     @IBAction func switchToggleHandler(_ sender:UISwitch){
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func generateTimeLableText(with time:(Int,Int))->String{
+        return "\(time.0):\(time.1)"
     }
+    
+    func color(the dayLabels:[UILabel], of repeatingDays:[Day]){
+        for label in dayLabels{
+            if repeatingDays.contains(Day(rawValue: label.tag)!){
+                label.textColor = .green
+            }else{
+                label.textColor = .lightGray
+            }
+        }
+    }
+    
 }
