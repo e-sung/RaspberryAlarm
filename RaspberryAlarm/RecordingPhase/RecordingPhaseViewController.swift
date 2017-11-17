@@ -77,15 +77,6 @@ class RecordingPhaseViewController: UIViewController {
     /// 하는 일 : 각종 속성 초기화 실시
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let alarm = DataCenter.main.nearestAlarm else {alert(msg:"설정된 알람이 없습니다!"); return}
-        self.alarmItem = alarm
-        self.remainingSnoozeAmount = alarm.snoozeAmount
-        self.currentPhase = .recordingSleep
-        if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds { //오늘 자고 내일 일어나는 경우
-            self.wakeUpTimeInSeconds =  alarmItem.wakeUpTimeInSeconds + 24*60*60
-        }else{
-            self.wakeUpTimeInSeconds = alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
-        }
         //startAccelerometers()
     }
     /**
@@ -94,6 +85,15 @@ class RecordingPhaseViewController: UIViewController {
      2. alarmTimer 실행
      */
     override func viewWillAppear(_ animated: Bool) {
+        guard let alarm = DataCenter.main.nearestAlarm else {alert(msg:"설정된 알람이 없습니다!");return}
+        self.alarmItem = alarm
+        self.remainingSnoozeAmount = alarm.snoozeAmount
+        self.currentPhase = .recordingSleep
+        if Timer.currentSecondsOfToday > self.alarmItem.wakeUpTimeInSeconds { //오늘 자고 내일 일어나는 경우
+            self.wakeUpTimeInSeconds =  alarmItem.wakeUpTimeInSeconds + 24*60*60
+        }else{
+            self.wakeUpTimeInSeconds = alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
+        }
         UIApplication.shared.isIdleTimerDisabled = true //핸드폰 꺼지는 것 방지
         alarmTimer = generateAlarmTimer()
         alarmTimer.fire()
