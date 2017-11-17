@@ -70,10 +70,9 @@ extension SetUpAlarmViewController{
             return cell
         }else{
             let sliderCell = cell as! SliderSettingCell
-            sliderCell.titleLB.text = cellTitle
-            sliderCell.slider.value = sliderValue
-            sliderCell.quantityLB.text = "\(Int(sliderValue))"
             sliderCell.delegate = self
+            sliderCell.title = cellTitle
+            sliderCell.quantity = sliderValue
             return sliderCell
         }
     }

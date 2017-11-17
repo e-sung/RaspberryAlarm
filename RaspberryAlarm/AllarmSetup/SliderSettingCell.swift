@@ -11,11 +11,28 @@ import UIKit
 class SliderSettingCell: UITableViewCell{
 
     var delegate:SliderSettingCellDelegate!
-    @IBOutlet weak var titleLB:UILabel!
-    @IBOutlet weak var quantityLB:UILabel!
-    @IBOutlet weak var slider:UISlider!
-
-    @IBAction func updateQuantity(_ sender:UISlider){
+    var title:String?{
+        get{
+            return titleLB.text
+        }
+        set(newVal){
+            titleLB.text = newVal
+        }
+    }
+    var quantity:Float?{
+        get{
+            return slider.value
+        }
+        set(newVal){
+            slider.value = newVal!
+            quantityLB.text = "\(Int(newVal!))"
+        }
+    }
+    @IBOutlet private weak var titleLB:UILabel!
+    @IBOutlet private weak var quantityLB:UILabel!
+    @IBOutlet private weak var slider:UISlider!
+    
+    @IBAction private func updateQuantity(_ sender:UISlider){
         quantityLB.text = "\(Int(sender.value))"
         delegate.didSliderValueChanged(titleLB.text!, Int(sender.value))
     }
@@ -23,12 +40,6 @@ class SliderSettingCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         quantityLB.text = "\(Int(slider.value))"
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
 }
 
