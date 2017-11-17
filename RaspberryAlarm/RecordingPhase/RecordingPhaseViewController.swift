@@ -33,11 +33,15 @@ class RecordingPhaseViewController: UIViewController {
     /// 현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
     var alarmTimer:Timer!
     /// 풀잠중인지 쪽잠중인지의 여부
-    var currentPhase:Phase!
+    var currentPhase:Phase = .recordingSleep
     /// 쪽잠 잘 시간이 얼마나 남았는지 : 쪽잠 Phase 때, 1초마다 줄어듬
     var remainingSnoozeAmount:Int = 0
     /// 일어나야 할 시간(단위: 초)
-    var wakeUpTimeInSeconds:Int!
+    var wakeUpTimeInSeconds:Int{
+        get{
+            return clarify(self.alarmItem.wakeUpTimeInSeconds)
+        }
+    }
     /// 일어날 때 까지 남은 시간(단위: 초)
     var remainingTimeInSeconds:Int{
         get{
@@ -88,9 +92,6 @@ class RecordingPhaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.remainingSnoozeAmount = alarmItem.snoozeAmount
-        self.currentPhase = .recordingSleep
-        self.wakeUpTimeInSeconds = clarify(self.alarmItem.wakeUpTimeInSeconds)
-        //startAccelerometers()
     }
     
 
@@ -99,7 +100,7 @@ class RecordingPhaseViewController: UIViewController {
      1. 핸드폰 꺼지는 것 방지
      2. alarmTimer 실행
      */
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         UIApplication.shared.isIdleTimerDisabled = true //핸드폰 꺼지는 것 방지
         alarmTimer = generateAlarmTimer()
         alarmTimer.fire()
@@ -114,19 +115,16 @@ class RecordingPhaseViewController: UIViewController {
     매 초마다 해야 할 일들을 정의
      
      - Remark: 하는 일 목록
-     1. 현재 시간 & 남은 시간 표시
+     1. 시간 표시
      2. 쪽잠 Phase일 경우, 남은 snooze시간 줄이기
      2. 매 chartRefreshRate초 마다 그래프 새로 그리기
      3. 알람 켤 시간/ 전기장판 킬 시간에 알람도 키고 전기장판도 키기.
      */
     func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            // 현재시간 표시
+            // 시간 표시
             self.currentTimeLB.text = Timer.currentHHmmss
-           
-            //남은시간 표시
-            let remainingTime = self.remainingTimeInSeconds
-            self.remainingTimeLB.text = self.generateHHmmssOutOf(remainingTime)
+            self.remainingTimeLB.text = self.generateHHmmssOutOf(self.remainingTimeInSeconds)
             
             //쪽잠자는 경우, 남은 snooze 시간 줄이기
             if self.currentPhase == .snooze {
@@ -140,12 +138,12 @@ class RecordingPhaseViewController: UIViewController {
 //            }
 
             //전기장판 켜기
-            if remainingTime == self.alarmItem.timeToHeat{
+            if self.remainingTimeInSeconds == self.alarmItem.timeToHeat{
                 URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
             }
             
             //알람 울리기
-            if remainingTime == 0{
+            if self.remainingTimeInSeconds == 0{
                 timer.invalidate()
                 self.performSegue(withIdentifier: "showRingingPhase", sender: self.alarmItem.snoozeAmount)
             }
