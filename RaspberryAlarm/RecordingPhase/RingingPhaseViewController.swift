@@ -27,11 +27,7 @@ class RingingPhaseViewController: UIViewController {
             nextVC.currentPhase = sender as! Phase
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         guard let url = Bundle.main.url(forResource: "alarm", withExtension: "mp3") else {return}
         let playerItem = AVPlayerItem(url: url)
