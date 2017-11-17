@@ -11,13 +11,13 @@ import UIKit
 class SetUpAlarmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate{
     
     var alarmItem:AlarmItem!
-    var navControllerVC:SetUpAlarmNavigationViewController!
+    private var navControllerVC:SetUpAlarmNavigationViewController!
     
-    @IBOutlet weak var settingItemTV: UITableView!
-    @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {
+    @IBOutlet private weak var settingItemTV: UITableView!
+    @IBAction private func cancelButtonHandler(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func confirmButotnHandler(_ sender: UIBarButtonItem){
+    @IBAction private func confirmButotnHandler(_ sender: UIBarButtonItem){
         DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp] = self.alarmItem
         self.dismiss(animated: true, completion: nil)
     }
