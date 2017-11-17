@@ -9,15 +9,6 @@
 import UIKit
 
 class AlarmItemCell: UITableViewCell {
-    var dayLabels:[UILabel]{
-        get{
-            var labelsToReturn:[UILabel] = []
-            for i in 1...7{
-                labelsToReturn.append(self.viewWithTag(i) as! UILabel)
-            }
-            return labelsToReturn
-        }
-    }
     var alarmItem:AlarmItem{
         get{
             return _alarmItem
@@ -29,17 +20,26 @@ class AlarmItemCell: UITableViewCell {
         }
     }
     
-
-    private var _alarmItem:AlarmItem!
-    @IBOutlet weak var timeLB:UILabel!
-    @IBAction func switchToggleHandler(_ sender:UISwitch){
+    private var dayLabels:[UILabel]{
+        get{
+            var labelsToReturn:[UILabel] = []
+            for i in 1...7{
+                labelsToReturn.append(self.viewWithTag(i) as! UILabel)
+            }
+            return labelsToReturn
+        }
     }
 
-    func generateTimeLableText(with time:(Int,Int))->String{
+    private var _alarmItem:AlarmItem!
+    @IBOutlet private weak var timeLB:UILabel!
+    @IBAction private func switchToggleHandler(_ sender:UISwitch){
+    }
+
+    private func generateTimeLableText(with time:(Int,Int))->String{
         return "\(time.0):\(time.1)"
     }
     
-    func color(the dayLabels:[UILabel], of repeatingDays:[Day]){
+    private func color(the dayLabels:[UILabel], of repeatingDays:[Day]){
         for label in dayLabels{
             if repeatingDays.contains(Day(rawValue: label.tag)!){
                 label.textColor = .green
@@ -48,5 +48,4 @@ class AlarmItemCell: UITableViewCell {
             }
         }
     }
-    
 }
