@@ -36,7 +36,7 @@ class DataCenter{
                 Date(timeInterval: 24*60*60, since: Date())))!
 
             for item in AlarmItem.availableAlarms(on: today, given: alarmItems){
-                if item.timeToWakeUp.absoluteSeconds > Date.currentAbsoluteSecond{
+                if item.timeToWakeUp.absoluteSeconds > Date().absoluteSeconds{
                     return item
                 }
             }
@@ -49,15 +49,4 @@ class DataCenter{
         }
     }
     
-}
-
-extension Date{
-    static var currentAbsoluteSecond:Int{
-        get{
-            let currentHour = Calendar.current.component(.hour, from: Date())
-            let currentMinute = Calendar.current.component(.minute, from: Date())
-            let currentSecond = Calendar.current.component(.second, from: Date())
-            return currentHour*60*60 + currentMinute*60 + currentSecond
-        }
-    }
 }

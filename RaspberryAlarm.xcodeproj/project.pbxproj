@@ -27,6 +27,7 @@
 		FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */; };
 		FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */; };
 		FF881ECA1FBFC9B200EF25F2 /* AlarmTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881EC91FBFC9B200EF25F2 /* AlarmTime.swift */; };
+		FF881F0B1FC0183200EF25F2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0A1FC0183200EF25F2 /* Date.swift */; };
 		FF9CF6B91FB6F5940033E3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */; };
 		FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6BA1FB6F5940033E3E3 /* AlarmListViewController.swift */; };
 		FF9CF6BE1FB6F5940033E3E3 /* AlarmList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF6BC1FB6F5940033E3E3 /* AlarmList.storyboard */; };
@@ -78,6 +79,7 @@
 		FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordingPhase.storyboard; sourceTree = "<group>"; };
 		FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPhaseViewController.swift; sourceTree = "<group>"; };
 		FF881EC91FBFC9B200EF25F2 /* AlarmTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTime.swift; sourceTree = "<group>"; };
+		FF881F0A1FC0183200EF25F2 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FF9CF6B51FB6F5940033E3E3 /* RaspberryAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspberryAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF9CF6BA1FB6F5940033E3E3 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 			path = RecordingPhase;
 			sourceTree = "<group>";
 		};
+		FF881F091FC0182100EF25F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF881F0A1FC0183200EF25F2 /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FF9CF6AC1FB6F5940033E3E3 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */,
+				FF881F091FC0182100EF25F2 /* Extensions */,
 				FF9CF6EF1FB71E0B0033E3E3 /* Models */,
 				FF9CF6F61FB728420033E3E3 /* AllarmSetup */,
 				FF0B04AD1FB87178005DF58E /* RecordingPhase */,
@@ -571,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF9CF6F11FB71E1B0033E3E3 /* DataCenter.swift in Sources */,
+				FF881F0B1FC0183200EF25F2 /* Date.swift in Sources */,
 				FF9CF6E71FB6F6040033E3E3 /* AlarmItemCell.swift in Sources */,
 				FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */,
 				FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */,
