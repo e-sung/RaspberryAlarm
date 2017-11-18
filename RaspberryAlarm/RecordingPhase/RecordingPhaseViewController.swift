@@ -30,22 +30,14 @@ class RecordingPhaseViewController: UIViewController {
     // MARK: 알람이 울릴 시간을 계산하는데 사용할 전역변수들
     /// [AlarmItem](http://blog.e-sung.net/) 참조
     var alarmItem:AlarmItem!
-    /// 풀잠중인지 쪽잠중인지의 여부
-    var currentPhase:Phase = .recordingSleep
     /// 현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
     private var alarmTimer:Timer!
-    /// 쪽잠 잘 시간이 얼마나 남았는지 : 쪽잠 Phase 때, 1초마다 줄어듬
-    private var remainingSnoozeAmount:Int = 0
     /// 일어나야 할 시간(단위: 초)
     private var wakeUpTimeInSeconds:Int!
     /// 일어날 때 까지 남은 시간(단위: 초)
     private var remainingTimeInSeconds:Int{
         get{
-            if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
-                return self.wakeUpTimeInSeconds - Timer.currentAbsoluteSecond
-            }else{ // 쪽잠 자는 경우, 남은 시간
-                return self.remainingSnoozeAmount
-            }
+            return self.wakeUpTimeInSeconds - Timer.currentAbsoluteSecond
         }
     }
 
@@ -81,6 +73,7 @@ class RecordingPhaseViewController: UIViewController {
     }
     /// 실제로 하는 일은 없음. 다른 화면에서 이곳으로 돌아오기 위한 등대의 역할
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
+        self.wakeUpTimeInSeconds = Timer.currentAbsoluteSecond + self.alarmItem.snoozeAmount
     }
     
     // MARK: 생명주기
@@ -88,7 +81,6 @@ class RecordingPhaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.wakeUpTimeInSeconds = clarify(alarmItem.timeToWakeUp.absoluteSeconds)
-        self.remainingSnoozeAmount = alarmItem.snoozeAmount
     }
     
     /**
@@ -112,7 +104,6 @@ class RecordingPhaseViewController: UIViewController {
      
      - Remark: 하는 일 목록
      1. 시간 표시
-     2. 쪽잠 Phase일 경우, 남은 snooze시간 줄이기
      2. 매 chartRefreshRate초 마다 그래프 새로 그리기
      3. 알람 켤 시간/ 전기장판 킬 시간에 알람도 키고 전기장판도 키기.
      */
@@ -122,11 +113,6 @@ class RecordingPhaseViewController: UIViewController {
             self.currentTimeLB.text = Timer.currentHHmmss
             self.remainingTimeLB.text = self.generateHHmmssOutOf(self.remainingTimeInSeconds)
             
-            //쪽잠자는 경우, 남은 snooze 시간 줄이기
-            if self.currentPhase == .snooze {
-                self.remainingSnoozeAmount -= 1
-            }
-
             // 그래프 새로 그리기
 //            if remainingTime%self.chartRefreshRate == 0 {
 //                self.reDrawChart() //차트를 새로 그리고
@@ -141,7 +127,7 @@ class RecordingPhaseViewController: UIViewController {
             //알람 울리기
             if self.remainingTimeInSeconds == 0{
                 timer.invalidate()
-                self.performSegue(withIdentifier: "showRingingPhase", sender: self.alarmItem.snoozeAmount)
+                self.performSegue(withIdentifier: "showRingingPhase", sender: self)
             }
         }
     }
@@ -186,14 +172,6 @@ class RecordingPhaseViewController: UIViewController {
             return wakeUpSeconds + 24*60*60 //오늘 자고 내일 일어나는 경우
         }else{
             return wakeUpSeconds //오늘 자고 오늘 일어나는 경우
-        }
-    }
-    
-    private func calculateRemainingTime(until wakeUpSeconds:Int)->Int{
-        if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
-            return wakeUpSeconds - Timer.currentAbsoluteSecond
-        }else{ // 쪽잠 자는 경우, 남은 시간
-            return self.remainingSnoozeAmount
         }
     }
     
