@@ -110,7 +110,7 @@ class RecordingPhaseViewController: UIViewController {
     private func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             // 시간 표시
-            self.currentTimeLB.text = Date.currentHHmmss
+            self.currentTimeLB.text = Date.format(seconds: Date().absoluteSeconds, with: "HH:mm:ss")
             self.remainingTimeLB.text = Date.format(seconds: self.remainingTimeInSeconds, with: "HH:mm:ss")
 
             // 그래프 새로 그리기
