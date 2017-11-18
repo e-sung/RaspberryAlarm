@@ -17,9 +17,10 @@ import Foundation
  */
 
 typealias Second = Int
+/// 기본값 : 6시 30분에 일어나는 알람
 struct AlarmItem {
     /// 일어날 시간 : (단위 : 초/ 기준: 00시00분00초)
-    var timeToWakeUp:AlarmTime
+    var timeToWakeUp:AlarmTime = AlarmTime(hour: 6, minute: 30)
     /// 전기장판 킬 시간(단위 : 초)
     var timeToHeat:Second = 30*60
     /// 활성화 여부 : 메인화면에서, 스위치를 토글함으로써 변경.
@@ -31,10 +32,6 @@ struct AlarmItem {
     /// - ToDo : 생각해보니 더 적절한 변수명이 있을 것 같다.
     var repeatDays:[Day] = [.Mon,.Tue,.Wed,.Thu,.Fri]
     
-    init(on time:AlarmTime) {
-        self.timeToWakeUp = time
-    }
-
     /**
      ````
      let todayAlarms = alarmsOfDay(with 0)

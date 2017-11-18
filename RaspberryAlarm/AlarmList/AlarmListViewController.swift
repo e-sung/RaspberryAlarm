@@ -13,7 +13,7 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
     
     @IBOutlet private weak var alarmListView:UITableView!
     @IBAction private func addButtonHandler(_ sender: UIButton) {
-        let newAlarmItem = DataCenter.main.defaultAlarm
+        let newAlarmItem = AlarmItem()
         DataCenter.main.alarmItems.append(newAlarmItem)
         alarmListView.reloadData()
     }

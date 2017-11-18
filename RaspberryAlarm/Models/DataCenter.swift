@@ -15,8 +15,6 @@ import Foundation
 class DataCenter{
     /// 싱글턴 객체
     static var main:DataCenter = DataCenter()
-    /// 어차피 대부분의 사람은 6시30분에 일어나니까, 기본값으로 6시 30분을 주었음
-    let defaultAlarm = AlarmItem(on: AlarmTime(hour: 6, minute: 30, second: 0))
     /// 초기화면에 표시되어야 할 모든 알람들의 배열
     var alarmItems:[AlarmItem] = []
     /**
