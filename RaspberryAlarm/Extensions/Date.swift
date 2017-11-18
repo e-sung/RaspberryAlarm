@@ -11,10 +11,10 @@ import Foundation
 extension Date{
     var absoluteSeconds:Int{
         get{
-            let currentHour = Calendar.current.component(.hour, from: self)
-            let currentMinute = Calendar.current.component(.minute, from: self)
-            let currentSecond = Calendar.current.component(.second, from: self)
-            return currentHour*60*60 + currentMinute*60 + currentSecond
+            let hour = Calendar.current.component(.hour, from: self)
+            let minute = Calendar.current.component(.minute, from: self)
+            let second = Calendar.current.component(.second, from: self)
+            return hour*60*60 + minute*60 + second
         }
     }
     /**
