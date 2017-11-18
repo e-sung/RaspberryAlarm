@@ -19,7 +19,7 @@ import Foundation
 typealias Second = Int
 /// 기본값 : 6시 30분에 일어나는 알람
 struct AlarmItem {
-    /// 일어날 시간 : (단위 : 초/ 기준: 00시00분00초)
+    /// 일어날 시간 : 기본값 = 6시 30분
     var timeToWakeUp:AlarmTime = AlarmTime(hour: 6, minute: 30)
     /// 전기장판 킬 시간(단위 : 초)
     var timeToHeat:Second = 30*60
@@ -33,11 +33,10 @@ struct AlarmItem {
     var repeatDays:[Day] = [.Mon,.Tue,.Wed,.Thu,.Fri]
     
     /**
-     ````
-     let todayAlarms = alarmsOfDay(with 0)
-     let tomorrowAlarms = alarmsOfDay(with 1)
-     ````
-     - parameter offSet: 내가 궁금한 날짜와 오늘 사이의 간격
+     주어진 alarms 배열을 필터링하여 , 특정 day에 울리는 알람들의 배열을 반환
+     
+     - parameter day : 필터 기준
+     - parameter alarms : 필터 대상
      - parameter shouldBeSorted : true로 설정하면, "가장 먼저 울릴 순"으로 정렬된 배열이 나옴
      */
     static func availableAlarms(on day:Day, given alarms:[AlarmItem], sorted:Bool = true)->[AlarmItem]{
