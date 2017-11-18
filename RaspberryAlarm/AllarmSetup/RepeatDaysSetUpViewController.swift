@@ -48,30 +48,30 @@ class RepeatDaySetUpViewController: UIViewController{
     }
     
     @IBAction func mondayTouchHandler(_ sender: UIButton) {
-        toggleButtonState(sender)
+        sender.toggle()
     }
     
     @IBAction func tuesdayTouchHandler(_ sender: UIButton) {
-        toggleButtonState(sender)
+        sender.toggle()
     }
     
     @IBAction func wedsdayTouchHandler(_ sender: UIButton) {
-        toggleButtonState(sender)
+        sender.toggle()
     }
     
     @IBAction func thursdayTouchHandler(_ sender: UIButton) {
-        toggleButtonState(sender)
+        sender.toggle()
     }
     @IBAction func fridayTouchHandler(_ sender: UIButton) {
-        toggleButtonState(sender)
+        sender.toggle()
     }
     
     @IBAction func saterdayTouchHandler(_ sender: UIButton) {
-        toggleButtonState(sender)
+        sender.toggle()
     }
     
     @IBAction func sundayTouchHandler(_ sender: UIButton) {
-        toggleButtonState(sender)
+        sender.toggle()
     }
     
     override func viewDidLoad() {
@@ -86,12 +86,14 @@ class RepeatDaySetUpViewController: UIViewController{
             }
         }
     }
-    
-    private func toggleButtonState(_ button:UIButton){
-        if button.isSelected {
-            button.isSelected = false
+}
+
+extension UIButton{
+    func toggle(){
+        if self.isSelected{
+            self.isSelected = false
         }else{
-            button.isSelected = true
+            self.isSelected = true
         }
     }
 }
