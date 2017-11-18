@@ -16,7 +16,7 @@ class DataCenter{
     /// 싱글턴 객체
     static var main:DataCenter = DataCenter()
     /// 어차피 대부분의 사람은 6시30분에 일어나니까, 기본값으로 6시 30분을 주었음
-    let defaultAlarm = AlarmItem((6,30))!
+    let defaultAlarm = AlarmItem(on: AlarmTime(hour: 6, minute: 30, second: 0))
     /// 초기화면에 표시되어야 할 모든 알람들의 배열
     var alarmItems:[AlarmItem] = []
     /**
@@ -31,11 +31,9 @@ class DataCenter{
     */
     var nearestAlarm:AlarmItem?{
         get{
-            let currentHour = Calendar.current.component(.hour, from: Date())
-            let currentMinute = Calendar.current.component(.minute, from: Date())
-            for item in alarmsOfDay(with: 0, shouldBeSorted: true){
-                if item.timeToWakeUp.0 > currentHour &&
-                    item.timeToWakeUp.1 > currentMinute{
+            let alarmsOfToday = alarmsOfDay(with: 0, shouldBeSorted: true)
+            for item in alarmsOfToday{
+                if item.timeToWakeUp.absoluteSeconds > Timer.currentAbsoluteSecond{
                     return item
                 }
             }
@@ -66,11 +64,22 @@ class DataCenter{
         }
         if shouldBeSorted {
             alarmsToReturn.sort { (item1, item2) -> Bool in
-                let wt1 = item1.timeToWakeUp.0*60 + item1.timeToWakeUp.1
-                let wt2 = item2.timeToWakeUp.0*60 + item2.timeToWakeUp.1
+                let wt1 = item1.timeToWakeUp.absoluteSeconds
+                let wt2 = item2.timeToWakeUp.absoluteSeconds
                 return wt1 < wt2
             }
         }
         return alarmsToReturn
+    }
+}
+
+extension Timer{
+    static var currentAbsoluteSecond:Int{
+        get{
+            let currentHour = Calendar.current.component(.hour, from: Date())
+            let currentMinute = Calendar.current.component(.minute, from: Date())
+            let currentSecond = Calendar.current.component(.second, from: Date())
+            return currentHour*60*60 + currentMinute*60 + currentSecond
+        }
     }
 }

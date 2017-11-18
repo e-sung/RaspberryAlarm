@@ -15,7 +15,7 @@ class AlarmItemCell: UITableViewCell {
         }
         set(newItem){
             self._alarmItem = newItem
-            self.timeLB.text = generateTimeLableText(with: newItem.timeToWakeUp)
+            self.timeLB.text = DateFormatter.formatHHmmss(alarmTime: newItem.timeToWakeUp)
             color(the: self.dayLabels, of: newItem.repeatDays)
         }
     }
@@ -35,10 +35,6 @@ class AlarmItemCell: UITableViewCell {
     @IBAction private func switchToggleHandler(_ sender:UISwitch){
     }
 
-    private func generateTimeLableText(with time:(Int,Int))->String{
-        return "\(time.0):\(time.1)"
-    }
-    
     private func color(the dayLabels:[UILabel], of repeatingDays:[Day]){
         for label in dayLabels{
             if repeatingDays.contains(Day(rawValue: label.tag)!){
@@ -47,5 +43,14 @@ class AlarmItemCell: UITableViewCell {
                 label.textColor = .lightGray
             }
         }
+    }
+    
+}
+
+extension DateFormatter{
+    static func formatHHmmss(alarmTime:AlarmTime)->String{
+        let hour:String = alarmTime.hour<10 ? "0\(alarmTime.hour)" : "\(alarmTime.hour)"
+        let minute:String = alarmTime.minute<10 ? "0\(alarmTime.minute)" : "\(alarmTime.minute)"
+        return "\(hour):\(minute)"
     }
 }

@@ -37,16 +37,12 @@ class RecordingPhaseViewController: UIViewController {
     /// 쪽잠 잘 시간이 얼마나 남았는지 : 쪽잠 Phase 때, 1초마다 줄어듬
     private var remainingSnoozeAmount:Int = 0
     /// 일어나야 할 시간(단위: 초)
-    private var wakeUpTimeInSeconds:Int{
-        get{
-            return clarify(self.alarmItem.wakeUpTimeInSeconds)
-        }
-    }
+    private var wakeUpTimeInSeconds:Int!
     /// 일어날 때 까지 남은 시간(단위: 초)
     private var remainingTimeInSeconds:Int{
         get{
             if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
-                return self.wakeUpTimeInSeconds - Timer.currentSecondsOfToday
+                return self.wakeUpTimeInSeconds - Timer.currentAbsoluteSecond
             }else{ // 쪽잠 자는 경우, 남은 시간
                 return self.remainingSnoozeAmount
             }
@@ -91,6 +87,7 @@ class RecordingPhaseViewController: UIViewController {
     /// 하는 일 : 각종 속성 초기화 실시
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.wakeUpTimeInSeconds = clarify(alarmItem.timeToWakeUp.absoluteSeconds)
         self.remainingSnoozeAmount = alarmItem.snoozeAmount
     }
     
@@ -185,16 +182,16 @@ class RecordingPhaseViewController: UIViewController {
 
     // MARK: 편의상 만든 함수들
     private func clarify(_ wakeUpSeconds:Int)->Int{
-        if Timer.currentSecondsOfToday > wakeUpSeconds{
-            return alarmItem.wakeUpTimeInSeconds + 24*60*60 //오늘 자고 내일 일어나는 경우
+        if Timer.currentAbsoluteSecond > wakeUpSeconds{
+            return wakeUpSeconds + 24*60*60 //오늘 자고 내일 일어나는 경우
         }else{
-            return alarmItem.wakeUpTimeInSeconds //오늘 자고 오늘 일어나는 경우
+            return wakeUpSeconds //오늘 자고 오늘 일어나는 경우
         }
     }
     
     private func calculateRemainingTime(until wakeUpSeconds:Int)->Int{
         if self.currentPhase == .recordingSleep { //풀잠 자는 경우, 남은 시간
-            return wakeUpSeconds - Timer.currentSecondsOfToday
+            return wakeUpSeconds - Timer.currentAbsoluteSecond
         }else{ // 쪽잠 자는 경우, 남은 시간
             return self.remainingSnoozeAmount
         }
@@ -237,18 +234,5 @@ extension Timer{
             let dateFormatter = DateFormatter(); dateFormatter.dateFormat = "HH:mm:ss"
             return dateFormatter.string(from: Date())
         }
-    }
-    
-    /**
-    오늘 0시0분0초부터 현시점까지 누적된 초
-     - ToDo:
-     분명히 이거보다 똑똑한 방법이 있을 것이라고 봄.
-     */
-    static var currentSecondsOfToday:Int{
-        let currentTimeString = Timer.currentHHmmss
-        let currentHour = Int(currentTimeString.split(separator: ":")[0])!
-        let currentMinute = Int(currentTimeString.split(separator: ":")[1])!
-        let currentSecond = Int(currentTimeString.split(separator: ":")[2])!
-        return currentHour*60*60 + currentMinute*60 + currentSecond
     }
 }

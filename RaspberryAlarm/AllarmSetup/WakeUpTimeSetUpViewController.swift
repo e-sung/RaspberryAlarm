@@ -14,7 +14,7 @@ class WakeUpTimeSetUpViewController: UIViewController {
      - ToDo
      현재 아이템의 timeToWakeUp을 기본으로 시작하기
     */
-    private var timeValue:(Int,Int) = (6,30)
+    private var timeValue:AlarmTime!
     
     @IBAction private func timeChangeHandler(_ sender: UIDatePicker) {
         self.timeValue = generateTime(outof: sender.date)
@@ -32,12 +32,12 @@ class WakeUpTimeSetUpViewController: UIViewController {
      튜플 형태의 '시간'객체 생성 : (Hour,minute)
      - Parameter date : DatePicker에서 선택된 시간이 들어가야 함
      */
-    private func generateTime(outof date:Date)->(Int,Int){
+    private func generateTime(outof date:Date)->AlarmTime {
         let formatter = DateFormatter(); formatter.dateFormat = "HH:mm"
         let dateString = formatter.string(from: date)
         
         let hour = Int(dateString.split(separator: ":")[0])!
         let minute = Int(dateString.split(separator: ":")[1])!
-        return (hour,minute)
+        return AlarmTime(hour: hour, minute: minute, second: 0)
     }
 }
