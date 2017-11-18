@@ -37,7 +37,7 @@ class RecordingPhaseViewController: UIViewController {
     /// 일어날 때 까지 남은 시간(단위: 초)
     private var remainingTimeInSeconds:Int{
         get{
-            return self.wakeUpTimeInSeconds - Timer.currentAbsoluteSecond
+            return self.wakeUpTimeInSeconds - Date.currentAbsoluteSecond
         }
     }
 
@@ -73,7 +73,7 @@ class RecordingPhaseViewController: UIViewController {
     }
     /// 실제로 하는 일은 없음. 다른 화면에서 이곳으로 돌아오기 위한 등대의 역할
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
-        self.wakeUpTimeInSeconds = Timer.currentAbsoluteSecond + self.alarmItem.snoozeAmount
+        self.wakeUpTimeInSeconds = Date.currentAbsoluteSecond + self.alarmItem.snoozeAmount
     }
     
     // MARK: 생명주기
@@ -110,9 +110,9 @@ class RecordingPhaseViewController: UIViewController {
     private func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             // 시간 표시
-            self.currentTimeLB.text = Timer.currentHHmmss
-            self.remainingTimeLB.text = self.generateHHmmssOutOf(self.remainingTimeInSeconds)
-            
+            self.currentTimeLB.text = Date.currentHHmmss
+            self.remainingTimeLB.text = Date.format(seconds: self.  remainingTimeInSeconds, with: "HH:mm:ss")
+
             // 그래프 새로 그리기
 //            if remainingTime%self.chartRefreshRate == 0 {
 //                self.reDrawChart() //차트를 새로 그리고
@@ -168,25 +168,14 @@ class RecordingPhaseViewController: UIViewController {
 
     // MARK: 편의상 만든 함수들
     private func clarify(_ wakeUpSeconds:Int)->Int{
-        if Timer.currentAbsoluteSecond > wakeUpSeconds{
+        if Date.currentAbsoluteSecond > wakeUpSeconds{
             return wakeUpSeconds + 24*60*60 //오늘 자고 내일 일어나는 경우
         }else{
             return wakeUpSeconds //오늘 자고 오늘 일어나는 경우
         }
     }
     
-    /**
-     초단위의 시간을 넣으면 "HH:mm:ss" 형식의 문자열 반환
-     - Remark:
-     Date랑 DateFormatter로 더 똑똑하게 처리할 방법이 있을 것인데...
-     */
-    private func generateHHmmssOutOf(_ seconds:Int)->String{
-        let outputHour = Int(seconds/3600)
-        let outputMinute = Int((seconds - outputHour*3600)/60)
-        let outputSecond = seconds - outputHour*3600 - outputMinute*60
-        return "\(outputHour):\(outputMinute):\(outputSecond)"
-    }
-    
+
     /**
     그래프 갱신하는 함수
      사실 실제로 하는 일은 Chart객체에 새 데이터를 집어넣는 것 뿐.
@@ -199,7 +188,7 @@ class RecordingPhaseViewController: UIViewController {
     }
 }
 
-extension Timer{
+extension Date{
     /**
      현재 시간을 HH:mm:ss 모양의 문자열로 바꿔주는 계산속성
      
@@ -212,5 +201,13 @@ extension Timer{
             let dateFormatter = DateFormatter(); dateFormatter.dateFormat = "HH:mm:ss"
             return dateFormatter.string(from: Date())
         }
+    }
+    /**
+     초단위의 시간을 넣으면 "HH:mm:ss" 형식의 문자열 반환
+     */
+    static func format(seconds:Int, with dateFormat:String)->String{
+        let formatter = DateFormatter(); formatter.dateFormat = dateFormat
+        let today = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+        return formatter.string(from: Date(timeInterval: Double(seconds), since: today))
     }
 }
