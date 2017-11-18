@@ -17,7 +17,7 @@ class WakeUpTimeSetUpViewController: UIViewController {
     private var timeValue:AlarmTime!
     
     @IBAction private func timeChangeHandler(_ sender: UIDatePicker) {
-        self.timeValue = generateTime(outof: sender.date)
+        self.timeValue = AlarmTime(with: sender.date)
     }
     
     @IBAction private func confirmButtonHandler(_ sender: UIBarButtonItem) {
@@ -26,18 +26,5 @@ class WakeUpTimeSetUpViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! SetUpAlarmViewController
         nextVC.alarmItem.timeToWakeUp = self.timeValue
-    }
-    
-    /**
-     튜플 형태의 '시간'객체 생성 : (Hour,minute)
-     - Parameter date : DatePicker에서 선택된 시간이 들어가야 함
-     */
-    private func generateTime(outof date:Date)->AlarmTime {
-        let formatter = DateFormatter(); formatter.dateFormat = "HH:mm"
-        let dateString = formatter.string(from: date)
-        
-        let hour = Int(dateString.split(separator: ":")[0])!
-        let minute = Int(dateString.split(separator: ":")[1])!
-        return AlarmTime(hour: hour, minute: minute, second: 0)
     }
 }
