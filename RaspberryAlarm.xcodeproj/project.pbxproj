@@ -30,6 +30,7 @@
 		FF881F0B1FC0183200EF25F2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0A1FC0183200EF25F2 /* Date.swift */; };
 		FF881F0D1FC01AE300EF25F2 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0C1FC01AE200EF25F2 /* UIViewController.swift */; };
 		FF881F0F1FC01D7E00EF25F2 /* DateExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0E1FC01D7E00EF25F2 /* DateExtensionsTest.swift */; };
+		FF881F561FC05FA100EF25F2 /* DataCenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F551FC05FA100EF25F2 /* DataCenterTest.swift */; };
 		FF9CF6B91FB6F5940033E3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */; };
 		FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6BA1FB6F5940033E3E3 /* AlarmListViewController.swift */; };
 		FF9CF6BE1FB6F5940033E3E3 /* AlarmList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF6BC1FB6F5940033E3E3 /* AlarmList.storyboard */; };
@@ -84,6 +85,7 @@
 		FF881F0A1FC0183200EF25F2 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FF881F0C1FC01AE200EF25F2 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		FF881F0E1FC01D7E00EF25F2 /* DateExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionsTest.swift; sourceTree = "<group>"; };
+		FF881F551FC05FA100EF25F2 /* DataCenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenterTest.swift; sourceTree = "<group>"; };
 		FF9CF6B51FB6F5940033E3E3 /* RaspberryAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspberryAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF9CF6BA1FB6F5940033E3E3 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9CF6CD1FB6F5940033E3E3 /* RaspberryAlarmTests.swift */,
+				FF881F551FC05FA100EF25F2 /* DataCenterTest.swift */,
 				FF9CF6CF1FB6F5940033E3E3 /* Info.plist */,
 				FF881F0E1FC01D7E00EF25F2 /* DateExtensionsTest.swift */,
 			);
@@ -610,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF881F561FC05FA100EF25F2 /* DataCenterTest.swift in Sources */,
 				FF9CF6CE1FB6F5940033E3E3 /* RaspberryAlarmTests.swift in Sources */,
 				FF881F0F1FC01D7E00EF25F2 /* DateExtensionsTest.swift in Sources */,
 			);
