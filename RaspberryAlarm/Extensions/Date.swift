@@ -9,7 +9,7 @@
 import Foundation
 
 extension Date{
-    
+    static let mainDateFormat = "HH:mm:ss"
     var absoluteSeconds:Int{
         get{
             let hour = Calendar.current.component(.hour, from: self)
