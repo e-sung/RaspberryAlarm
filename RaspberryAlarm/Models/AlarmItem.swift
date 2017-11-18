@@ -34,8 +34,7 @@ struct AlarmItem {
     init(on time:AlarmTime) {
         self.timeToWakeUp = time
     }
-    
-    
+
     /**
      ````
      let todayAlarms = alarmsOfDay(with 0)

@@ -22,7 +22,7 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
         if let alarm = DataCenter.main.nearestAlarm {
             performSegue(withIdentifier: "showRecordingPhase", sender: alarm)
         }else{
-          alert(msg: "설정된 알람이 없습니다!")
+          self.alert(msg: "설정된 알람이 없습니다!")
         }
     }
     
@@ -77,17 +77,4 @@ extension AlarmListViewController{
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 
-}
-
-extension AlarmListViewController{
-    /**
-     UIAlertController 를 쉽게 쓰게 만드는 함수.
-     - ToDo : 더 쓰일 곳이 생기면, 파일 하나 새로 만들자.
-     */
-    private func alert(msg:String){
-        let alert = UIAlertController(title: "안내", message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "확인", style: .cancel , handler: { (action) in
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
 }

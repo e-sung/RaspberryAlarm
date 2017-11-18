@@ -32,7 +32,7 @@ struct AlarmTime{
     init(with date:Date) {
         let formatter = DateFormatter(); formatter.dateFormat = "HH:mm"
         let dateString = formatter.string(from: date)
-        
+
         self.hour = Int(dateString.split(separator: ":")[0])!
         self.minute = Int(dateString.split(separator: ":")[1])!
     }
