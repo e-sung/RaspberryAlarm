@@ -34,4 +34,30 @@ struct AlarmItem {
     init(on time:AlarmTime) {
         self.timeToWakeUp = time
     }
+    
+    
+    /**
+     ````
+     let todayAlarms = alarmsOfDay(with 0)
+     let tomorrowAlarms = alarmsOfDay(with 1)
+     ````
+     - parameter offSet: 내가 궁금한 날짜와 오늘 사이의 간격
+     - parameter shouldBeSorted : true로 설정하면, "가장 먼저 울릴 순"으로 정렬된 배열이 나옴
+     */
+    static func availableAlarms(on day:Day, given alarms:[AlarmItem], sorted:Bool = true)->[AlarmItem]{
+        var alarmsToReturn:[AlarmItem] = []
+        for item in alarms{
+            if item.repeatDays.contains(day){
+                alarmsToReturn.append(item)
+            }
+        }
+        if sorted == true {
+            alarmsToReturn.sort { (item1 , item2) -> Bool in
+                let wt1 = item1.timeToWakeUp.absoluteSeconds
+                let wt2 = item2.timeToWakeUp.absoluteSeconds
+                return wt1 < wt2
+            }
+        }
+        return alarmsToReturn
+    }
 }

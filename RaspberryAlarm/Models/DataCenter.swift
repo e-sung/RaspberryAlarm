@@ -31,13 +31,16 @@ class DataCenter{
     */
     var nearestAlarm:AlarmItem?{
         get{
-            let alarmsOfToday = alarmsOfDay(with: 0, shouldBeSorted: true)
-            for item in alarmsOfToday{
+            let today = Day(rawValue:Calendar.current.component(.weekday, from: Date()))!
+            let tomorrow = Day(rawValue:Calendar.current.component(.weekday, from:
+                Date(timeInterval: 24*60*60, since: Date())))!
+
+            for item in AlarmItem.availableAlarms(on: today, given: alarmItems){
                 if item.timeToWakeUp.absoluteSeconds > Timer.currentAbsoluteSecond{
                     return item
                 }
             }
-            let alarmsOfTomorrow = alarmsOfDay(with: 1, shouldBeSorted: true)
+            let alarmsOfTomorrow = AlarmItem.availableAlarms(on: tomorrow, given: alarmItems)
             if alarmsOfTomorrow.count > 0 {
                 return alarmsOfTomorrow[0]
             }else{
@@ -46,31 +49,6 @@ class DataCenter{
         }
     }
     
-    /**
-     ````
-     let todayAlarms = alarmsOfDay(with 0)
-     let tomorrowAlarms = alarmsOfDay(with 1)
-     ````
-     - parameter offSet: 내가 궁금한 날짜와 오늘 사이의 간격
-     - parameter shouldBeSorted : true로 설정하면, "가장 먼저 울릴 순"으로 정렬된 배열이 나옴
-     */
-    private func alarmsOfDay(with offSet:Int, shouldBeSorted:Bool)->[AlarmItem]{
-        var alarmsToReturn:[AlarmItem] = []
-        let day = (Calendar.current.component(.weekday, from: Date()))
-        for item in alarmItems{
-            if item.repeatDays.contains(Day(rawValue: day)!){
-                alarmsToReturn.append(item)
-            }
-        }
-        if shouldBeSorted {
-            alarmsToReturn.sort { (item1, item2) -> Bool in
-                let wt1 = item1.timeToWakeUp.absoluteSeconds
-                let wt2 = item2.timeToWakeUp.absoluteSeconds
-                return wt1 < wt2
-            }
-        }
-        return alarmsToReturn
-    }
 }
 
 extension Timer{
