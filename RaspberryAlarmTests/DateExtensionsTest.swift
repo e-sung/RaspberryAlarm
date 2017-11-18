@@ -51,4 +51,10 @@ class DateExtensionsTest: XCTestCase {
         XCTAssertEqual(minutes[1]!.absoluteSeconds, 60*60 + 1*60)
         XCTAssertEqual(minutes[30]!.absoluteSeconds, 60*60 + 30*60)
     }
+    
+    func testSecondsFormatting(){
+        XCTAssertEqual(Date.format(seconds: 0, with: "HH:mm:ss") , "00:00:00")
+        XCTAssertEqual(Date.format(seconds: 10, with: "HH:mm:ss") , "00:00:10")
+        XCTAssertEqual(Date.format(seconds: 2*60*60 + 4*60 + 3, with: "HH:mm:ss") , "02:04:03")
+    }
 }

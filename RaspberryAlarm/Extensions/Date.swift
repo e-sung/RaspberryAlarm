@@ -36,7 +36,7 @@ extension Date{
      - parameter dateFormat : "HH:mm:ss"등, [ISO8601](https://ko.wikipedia.org/wiki/ISO_8601) 표준을 따르는 형식
      ````
      format(seconds:10, with "HH:mm:ss") // 00:00:10
-     format(seconds:2*60*60+60*4+3, with "HH:mm:ss") // 02:04:3
+     format(seconds:2*60*60+60*4+3, with "HH:mm:ss") // 02:04:03
      ````
      - ToDo :
      seconds를 Double로 만들어야 함
