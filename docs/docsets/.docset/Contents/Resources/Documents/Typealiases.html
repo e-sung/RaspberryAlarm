@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Enumerations  Reference</title>
+    <title>Type Aliases  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,7 +10,7 @@
     
   </head>
   <body>
-    <a title="Enumerations  Reference"></a>
+    <a title="Type Aliases  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html"> Docs</a> (24% documented)</p>
@@ -20,7 +20,7 @@
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
         <img id="carat" src="img/carat.png" />
-        Enumerations  Reference
+        Type Aliases  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -121,8 +121,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Enumerations</h1>
-            <p>The following enumerations are available globally.</p>
+            <h1>Type Aliases</h1>
+            <p>The following type aliases are available globally.</p>
 
           </section>
           <section class="section task-group-section">
@@ -131,9 +131,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14RaspberryAlarm3DayO"></a>
-                    <a name="//apple_ref/swift/Enum/Day" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm3DayO">Day</a>
+                    <a name="/s:14RaspberryAlarm6Seconda"></a>
+                    <a name="//apple_ref/swift/Alias/Second" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14RaspberryAlarm6Seconda">Second</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -141,22 +141,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>월화수목금토일</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    Note :
-DateComponents(.day)도 Sunday를 &lsquo;1&#39;로 잡음
-특별한 이유가 있지 않으면, 여기에 설정된 rawValue를 바꾸지 말 것
+                        <p>알람을 울리는데 필요한 정보들</p>
 
-</div>
+<ol>
+<li>몇 시에 울릴지</li>
+<li>무슨 요일에 울릴지</li>
+<li>전기장판은 언제 켤지</li>
+<li>Snooze는 얼마나 할지</li>
+</ol>
 
-                        <a href="Enums/Day.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Day</span><span class="p">:</span><span class="kt">Int</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">Second</span> <span class="o">=</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>

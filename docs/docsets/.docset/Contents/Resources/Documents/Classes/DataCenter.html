@@ -14,7 +14,7 @@
     <a title="DataCenter Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (25% documented)</p>
+        <p><a href="../index.html"> Docs</a> (24% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -71,16 +71,22 @@
               <li class="nav-group-task">
                 <a href="../Enums/Day.html">Day</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Enums/Phase.html">Phase</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Timer.html">Timer</a>
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DateFormatter.html">DateFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIButton.html">UIButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
               </li>
             </ul>
           </li>
@@ -98,6 +104,17 @@
               <li class="nav-group-task">
                 <a href="../Structs/AlarmItem.html">AlarmItem</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AlarmTime.html">AlarmTime</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:14RaspberryAlarm6Seconda">Second</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -112,7 +129,8 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>초기화면에 표시해야 할 모든 &lsquo;알람&#39;아이템들의 객체를 가지고 있는 클래스
+싱글턴 패턴 활용</p>
 
           </section>
           <section class="section task-group-section">
@@ -131,7 +149,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>싱글턴 객체</p>
 
                       </div>
                       <div class="declaration">
@@ -139,33 +157,6 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">main</span><span class="p">:</span><span class="kt">DataCenter</span> <span class="o">=</span> <span class="kt">DataCenter</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm10DataCenterC07defaultB0AA0B4ItemVv"></a>
-                    <a name="//apple_ref/swift/Property/defaultAlarm" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm10DataCenterC07defaultB0AA0B4ItemVv">defaultAlarm</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">defaultAlarm</span> <span class="o">=</span> <span class="kt"><a href="../Structs/AlarmItem.html">AlarmItem</a></span><span class="p">((</span><span class="mi">6</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -185,7 +176,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>초기화면에 표시되어야 할 모든 알람들의 배열</p>
 
                       </div>
                       <div class="declaration">
@@ -212,7 +203,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Name tells Everything</p>
+                        <p>초기화면 우측하단의 초승달을 눌렀을 때, 실행되어야 할 알람</p>
+
+<ol>
+<li>오늘의 알람들을 시간순으로 정렬하고,</li>
+<li>가장 빨리 울릴 알람들부터 <q>현재시간</q>과 비교해서</li>
+<li>현재시간보다 늦게 울린다면, 그 알람을 리턴</li>
+<li>오늘의 알람 모두가 <q>현재시간</q>보다 빨리 울린다면</li>
+<li>내일 가장 먼저 울릴 알람을 리턴</li>
+<li>내일 울릴 알람이 아예 없다면</li>
+<li>nil을 리턴</li>
+</ol>
 
                       </div>
                       <div class="declaration">
@@ -231,7 +232,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-11-16)</p>
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-11-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

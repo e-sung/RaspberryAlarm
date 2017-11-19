@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DataCenter Class Reference</title>
+    <title>Date Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/DataCenter" class="dashAnchor"></a>
-    <a title="DataCenter Class Reference"></a>
+    <a name="//apple_ref/swift/Extension/Date" class="dashAnchor"></a>
+    <a title="Date Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (24% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        DataCenter Class Reference
+        Date Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -122,16 +122,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DataCenter</h1>
+            <h1>Date</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">DataCenter</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Date</span> <span class="p">:</span> <span class="kt">ReferenceConvertible</span><span class="p">,</span> <span class="kt">Comparable</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
 
                 </div>
               </div>
-            <p>초기화면에 표시해야 할 모든 &lsquo;알람&#39;아이템들의 객체를 가지고 있는 클래스
-싱글턴 패턴 활용</p>
-
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -139,9 +137,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14RaspberryAlarm10DataCenterC4mainACvZ"></a>
-                    <a name="//apple_ref/swift/Variable/main" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm10DataCenterC4mainACvZ">main</a>
+                    <a name="/s:10Foundation4DateV14RaspberryAlarmE04mainB6FormatSSvZ"></a>
+                    <a name="//apple_ref/swift/Variable/mainDateFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation4DateV14RaspberryAlarmE04mainB6FormatSSvZ">mainDateFormat</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -149,14 +147,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>싱글턴 객체</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">main</span><span class="p">:</span><span class="kt">DataCenter</span> <span class="o">=</span> <span class="kt">DataCenter</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">mainDateFormat</span> <span class="o">=</span> <span class="s">"HH:mm:ss"</span></code></pre>
 
                         </div>
                       </div>
@@ -166,9 +164,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14RaspberryAlarm10DataCenterC10alarmItemsSayAA0B4ItemVGv"></a>
-                    <a name="//apple_ref/swift/Property/alarmItems" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm10DataCenterC10alarmItemsSayAA0B4ItemVGv">alarmItems</a>
+                    <a name="/s:10Foundation4DateV14RaspberryAlarmE15absoluteSecondsSiv"></a>
+                    <a name="//apple_ref/swift/Property/absoluteSeconds" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation4DateV14RaspberryAlarmE15absoluteSecondsSiv">absoluteSeconds</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -176,14 +174,26 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>초기화면에 표시되어야 할 모든 알람들의 배열</p>
+                        <p>주어진 Date객체가 속한 날의 0시0분0초 부터 Date객체 본인까지의 Interval</p>
+<pre class="highlight plaintext"><code> 오늘자정.absoluteSeconds == 0
+ 내일자정.absoluteSeconds == 0
+ 오늘정오.absoluteSeconds == 12*60*60
+ 내일정오.absoluteSeconds == 12*60*60
+</code></pre>
+<div class="aside aside-to-do">
+    <p class="aside-title">To do</p>
+    ToDo :
+TimeInterval은 Double 타입으로 만들어져있음.
+&lsquo;초&#39;단위는 전부 정수형으로 만들었는데, 다 Double로 바꿔야 할 듯
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">alarmItems</span><span class="p">:[</span><span class="kt"><a href="../Structs/AlarmItem.html">AlarmItem</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">absoluteSeconds</span><span class="p">:</span><span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -193,9 +203,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14RaspberryAlarm10DataCenterC07nearestB0AA0B4ItemVSgv"></a>
-                    <a name="//apple_ref/swift/Property/nearestAlarm" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm10DataCenterC07nearestB0AA0B4ItemVSgv">nearestAlarm</a>
+                    <a name="/s:10Foundation4DateV14RaspberryAlarmE6formatSSSi7seconds_SS4withtFZ"></a>
+                    <a name="//apple_ref/swift/Method/format(seconds:with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation4DateV14RaspberryAlarmE6formatSSSi7seconds_SS4withtFZ">format(seconds:with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -203,26 +213,57 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>초기화면 우측하단의 초승달을 눌렀을 때, 실행되어야 할 알람</p>
+                        <p>초단위의 시간을 넣으면 dateFormat 형식의 문자열 반환</p>
+<div class="aside aside-to-do">
+    <p class="aside-title">To do</p>
+    ToDo :
+seconds를 Double로 만들어야 함
 
-<ol>
-<li>오늘의 알람들을 시간순으로 정렬하고,</li>
-<li>가장 빨리 울릴 알람들부터 <q>현재시간</q>과 비교해서</li>
-<li>현재시간보다 늦게 울린다면, 그 알람을 리턴</li>
-<li>오늘의 알람 모두가 <q>현재시간</q>보다 빨리 울린다면</li>
-<li>내일 가장 먼저 울릴 알람을 리턴</li>
-<li>내일 울릴 알람이 아예 없다면</li>
-<li>nil을 리턴</li>
-</ol>
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">nearestAlarm</span><span class="p">:</span><span class="kt"><a href="../Structs/AlarmItem.html">AlarmItem</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">format</span><span class="p">(</span><span class="nv">seconds</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">with</span> <span class="nv">dateFormat</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">String</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>seconds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>변환하고자 하는 초단위의 시간</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dateFormat</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><q>HH:mm:ss</q>등, <a href="https://ko.wikipedia.org/wiki/ISO_8601">ISO8601</a> 표준을 따르는 형식
+<code>
+format(seconds:10, with &quot;HH:mm:ss&quot;) // 00:00:10
+format(seconds:2*60*60+60*4+3, with &quot;HH:mm:ss&quot;) // 02:04:03
+</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

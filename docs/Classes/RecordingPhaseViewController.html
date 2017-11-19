@@ -14,7 +14,7 @@
     <a title="RecordingPhaseViewController Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (25% documented)</p>
+        <p><a href="../index.html"> Docs</a> (24% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -71,16 +71,22 @@
               <li class="nav-group-task">
                 <a href="../Enums/Day.html">Day</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Enums/Phase.html">Phase</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Timer.html">Timer</a>
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DateFormatter.html">DateFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIButton.html">UIButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
               </li>
             </ul>
           </li>
@@ -97,6 +103,17 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/AlarmItem.html">AlarmItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AlarmTime.html">AlarmTime</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:14RaspberryAlarm6Seconda">Second</a>
               </li>
             </ul>
           </li>
@@ -177,406 +194,6 @@
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC10alarmTimerSQySo0H0CGv"></a>
-                    <a name="//apple_ref/swift/Property/alarmTimer" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC10alarmTimerSQySo0H0CGv">alarmTimer</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">alarmTimer</span><span class="p">:</span><span class="kt">Timer</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC07currentD0SQyAA0D0OGv"></a>
-                    <a name="//apple_ref/swift/Property/currentPhase" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC07currentD0SQyAA0D0OGv">currentPhase</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>풀잠중인지 쪽잠중인지의 여부</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">currentPhase</span><span class="p">:</span><span class="kt"><a href="../Enums/Phase.html">Phase</a></span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC21remainingSnoozeAmountSiv"></a>
-                    <a name="//apple_ref/swift/Property/remainingSnoozeAmount" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC21remainingSnoozeAmountSiv">remainingSnoozeAmount</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>쪽잠 잘 시간이 얼마나 남았는지 : 쪽잠 Phase 때, 1초마다 줄어듬</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">remainingSnoozeAmount</span><span class="p">:</span><span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC19wakeUpTimeInSecondsSQySiGv"></a>
-                    <a name="//apple_ref/swift/Property/wakeUpTimeInSeconds" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC19wakeUpTimeInSecondsSQySiGv">wakeUpTimeInSeconds</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>일어날 때 까지 몇 초 남았는지</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">wakeUpTimeInSeconds</span><span class="p">:</span><span class="kt">Int</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/%EC%88%98%EB%A9%B4%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9E%91%EC%84%B1%EC%9D%84%20%EC%9C%84%ED%95%9C,%20%EA%B0%80%EC%86%8D%EB%8F%84%20%EC%84%BC%EC%84%9C%20%EA%B4%80%EB%A0%A8%20%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98%EB%93%A4"></a>
-                <a name="//apple_ref/swift/Section/수면그래프 작성을 위한, 가속도 센서 관련 전역변수들" class="dashAnchor"></a>
-                <a href="#/%EC%88%98%EB%A9%B4%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9E%91%EC%84%B1%EC%9D%84%20%EC%9C%84%ED%95%9C,%20%EA%B0%80%EC%86%8D%EB%8F%84%20%EC%84%BC%EC%84%9C%20%EA%B4%80%EB%A0%A8%20%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98%EB%93%A4">
-                  <h3 class="section-name">수면그래프 작성을 위한, 가속도 센서 관련 전역변수들</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC17motionSensingRateSdv"></a>
-                    <a name="//apple_ref/swift/Property/motionSensingRate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC17motionSensingRateSdv">motionSensingRate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>가속도 센서 확인할 주기 (단위 :Hz)</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">motionSensingRate</span> <span class="o">=</span> <span class="mf">10.0</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC17motionSensorTimerSQySo0I0CGv"></a>
-                    <a name="//apple_ref/swift/Property/motionSensorTimer" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC17motionSensorTimerSQySo0I0CGv">motionSensorTimer</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>motionSensingRate 마다 불리는 타이머</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">motionSensorTimer</span><span class="p">:</span><span class="kt">Timer</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC13motionManagerSo08CMMotionH0Cv"></a>
-                    <a name="//apple_ref/swift/Property/motionManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC13motionManagerSo08CMMotionH0Cv">motionManager</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>motion을 할 sensing 할 객체</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">motionManager</span><span class="p">:</span><span class="kt">CMMotionManager</span> <span class="o">=</span> <span class="kt">CMMotionManager</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC16chartRefreshRateSiv"></a>
-                    <a name="//apple_ref/swift/Property/chartRefreshRate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC16chartRefreshRateSiv">chartRefreshRate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>그래프를 새로 그릴 주기 (단위 :초)</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">chartRefreshRate</span> <span class="o">=</span> <span class="mi">1</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC9lastStateSiv"></a>
-                    <a name="//apple_ref/swift/Property/lastState" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC9lastStateSiv">lastState</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>핸드폰이 흔들렸는지 확인할 기준치 : <code>func startAccelerometers()</code>참고</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">lastState</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC11smInSecondsSiv"></a>
-                    <a name="//apple_ref/swift/Property/smInSeconds" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC11smInSecondsSiv">smInSeconds</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>1초동안 핸드폰이 흔들린 횟수 (sleep movements in seconds)</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">smInSeconds</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC9sleepDataSaySfGv"></a>
-                    <a name="//apple_ref/swift/Property/sleepData" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC9sleepDataSaySfGv">sleepData</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>이 데이터를 바탕으로 수면그래프를 그림</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">sleepData</span><span class="p">:[</span><span class="kt">Float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/IBOutlets"></a>
-                <a name="//apple_ref/swift/Section/IBOutlets" class="dashAnchor"></a>
-                <a href="#/IBOutlets">
-                  <h3 class="section-name">IBOutlets</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(py)currentTimeLB"></a>
-                    <a name="//apple_ref/swift/Property/currentTimeLB" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(py)currentTimeLB">currentTimeLB</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>현재 시간을 표시할 UILabel</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">currentTimeLB</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(py)remainingTimeLB"></a>
-                    <a name="//apple_ref/swift/Property/remainingTimeLB" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(py)remainingTimeLB">remainingTimeLB</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>일어날 때 까지 남은 시간을 표시할 UILabel</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">remainingTimeLB</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC5chartXev"></a>
-                    <a name="//apple_ref/swift/Property/chart" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC5chartXev">chart</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>뒤척임 기록을 보여주는 차트</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">chart</span><span class="p">:</span> <span class="kt">Chart</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -588,33 +205,6 @@
                 </a>
               </div>
               <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(im)cancelButtonHandler:"></a>
-                    <a name="//apple_ref/swift/Method/cancelButtonHandler(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(im)cancelButtonHandler:">cancelButtonHandler(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>수면기록을 중단하고, 이전 화면으로 돌아가는 버튼</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">cancelButtonHandler</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -683,9 +273,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(im)viewWillAppear:"></a>
-                    <a name="//apple_ref/swift/Method/viewWillAppear(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(im)viewWillAppear:">viewWillAppear(_:)</a>
+                    <a name="/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(im)viewDidAppear:"></a>
+                    <a name="//apple_ref/swift/Method/viewDidAppear(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RaspberryAlarm@objc(cs)RecordingPhaseViewController(im)viewDidAppear:">viewDidAppear(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -705,7 +295,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -741,214 +331,10 @@
                 </li>
               </ul>
             </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/%EB%A7%A4%201%EC%B4%88%EB%A7%88%EB%8B%A4%20%ED%95%B4%EC%95%BC%20%ED%95%A0%20%EC%9D%BC%20aka%20%EC%8B%9C%EA%B0%84%EA%B3%84%EC%82%B0%20%EB%B0%8F%20%ED%91%9C%EC%8B%9C"></a>
-                <a name="//apple_ref/swift/Section/매 1초마다 해야 할 일 aka 시간계산 및 표시" class="dashAnchor"></a>
-                <a href="#/%EB%A7%A4%201%EC%B4%88%EB%A7%88%EB%8B%A4%20%ED%95%B4%EC%95%BC%20%ED%95%A0%20%EC%9D%BC%20aka%20%EC%8B%9C%EA%B0%84%EA%B3%84%EC%82%B0%20%EB%B0%8F%20%ED%91%9C%EC%8B%9C">
-                  <h3 class="section-name">매 1초마다 해야 할 일 aka 시간계산 및 표시</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC08generateB5TimerSo0H0CyF"></a>
-                    <a name="//apple_ref/swift/Method/generateAlarmTimer()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC08generateB5TimerSo0H0CyF">generateAlarmTimer()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>매 초마다 해야 할 일들을 정의</p>
-<div class="aside aside-remark">
-    <p class="aside-title">Remark</p>
-    하는 일 목록
-
-</div>
-<li>남은 시간 계산 및 현재 시간 표시
-
-<ul>
-<li>풀잠 Phase냐, 쪽잠 Phase냐에 따라 remainingTime의 계산방식이 달라짐</li>
-</ul></li>
-<li>매 chartRefreshRate초 마다 그래프 새로 그리기</li>
-<li>알람 켤 시간/ 전기장판 킬 시간에 알람도 키고 전기장판도 키기.</li>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">generateAlarmTimer</span><span class="p">()</span><span class="o">-&gt;</span><span class="kt">Timer</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/%EB%A7%A4%201/10%EC%B4%88%EB%A7%88%EB%8B%A4%20%ED%95%B4%EC%95%BC%20%ED%95%A0%20%EC%9D%BC%20aka%20%EA%B0%80%EC%86%8D%EB%8F%84%EC%84%BC%EC%84%9C%EA%B0%90%EC%A7%80"></a>
-                <a name="//apple_ref/swift/Section/매 1/10초마다 해야 할 일 aka 가속도센서감지" class="dashAnchor"></a>
-                <a href="#/%EB%A7%A4%201/10%EC%B4%88%EB%A7%88%EB%8B%A4%20%ED%95%B4%EC%95%BC%20%ED%95%A0%20%EC%9D%BC%20aka%20%EA%B0%80%EC%86%8D%EB%8F%84%EC%84%BC%EC%84%9C%EA%B0%90%EC%A7%80">
-                  <h3 class="section-name">매 1/10초마다 해야 할 일 aka 가속도센서감지</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC19startAccelerometersyyF"></a>
-                    <a name="//apple_ref/swift/Method/startAccelerometers()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC19startAccelerometersyyF">startAccelerometers()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>가속도 센서를 통해, 뒤척임을 감지합니다.</p>
-
-<ol>
-<li>현시점의 핸드폰 상태 = x축값 + y축값 + z축값</li>
-<li>이 값을 <q>과거의 핸드폰 상태</q>와 비교</li>
-<li>비교 결과, 핸드폰이 움직였다고 한다면, 움직임을 smInSeconds(SleepMotionInSeconds)에 기록</li>
-<li>현시점의 핸드폰상태를 <q>과거의 핸드폰 상태</q> 변수에 저장.</li>
-<li>반복</li>
-</ol>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">startAccelerometers</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/%ED%8E%B8%EC%9D%98%EC%83%81%20%EB%A7%8C%EB%93%A0%20%ED%95%A8%EC%88%98%EB%93%A4"></a>
-                <a name="//apple_ref/swift/Section/편의상 만든 함수들" class="dashAnchor"></a>
-                <a href="#/%ED%8E%B8%EC%9D%98%EC%83%81%20%EB%A7%8C%EB%93%A0%20%ED%95%A8%EC%88%98%EB%93%A4">
-                  <h3 class="section-name">편의상 만든 함수들</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC5alertySS3msg_tF"></a>
-                    <a name="//apple_ref/swift/Method/alert(msg:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC5alertySS3msg_tF">alert(msg:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>UIAlertController 를 쉽게 쓰게 만드는 함수.</p>
-<div class="aside aside-to-do">
-    <p class="aside-title">To do</p>
-    ToDo : 더 쓰일 곳이 생기면, 파일 하나 새로 만들자.
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">alert</span><span class="p">(</span><span class="nv">msg</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC19generateHHmmssOutOfSSSiF"></a>
-                    <a name="//apple_ref/swift/Method/generateHHmmssOutOf(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC19generateHHmmssOutOfSSSiF">generateHHmmssOutOf(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>초단위의 시간을 넣으면 <q>HH:mm:ss</q> 형식의 문자열 반환</p>
-<div class="aside aside-remark">
-    <p class="aside-title">Remark</p>
-    Date랑 DateFormatter로 더 똑똑하게 처리할 방법이 있을 것인데&hellip;
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">generateHHmmssOutOf</span><span class="p">(</span><span class="n">_</span> <span class="nv">seconds</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14RaspberryAlarm28RecordingPhaseViewControllerC11reDrawChartyyF"></a>
-                    <a name="//apple_ref/swift/Method/reDrawChart()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14RaspberryAlarm28RecordingPhaseViewControllerC11reDrawChartyyF">reDrawChart()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>그래프 갱신하는 함수
- 사실 실제로 하는 일은 Chart객체에 새 데이터를 집어넣는 것 뿐.</p>
-<div class="aside aside-to-do">
-    <p class="aside-title">To do</p>
-    chart객체가 실제로 어떻게 View를 업데이트하는지 알아봐야겠다.
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">reDrawChart</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-11-16)</p>
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-11-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
