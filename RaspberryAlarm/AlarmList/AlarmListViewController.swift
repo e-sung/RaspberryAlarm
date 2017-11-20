@@ -13,9 +13,14 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
     
     @IBOutlet private weak var alarmListView:UITableView!
     @IBAction private func addButtonHandler(_ sender: UIButton) {
+        
         let newAlarmItem = AlarmItem()
         DataCenter.main.alarmItems.append(newAlarmItem)
         alarmListView.reloadData()
+        
+        var arrayInPlist = NSArray(contentsOfFile: DataCenter.main.documentPath) as! [Any]
+        arrayInPlist.append(try! PropertyListEncoder().encode(newAlarmItem))
+        NSArray(array: arrayInPlist).write(toFile: DataCenter.main.documentPath, atomically: true)
     }
     
     @IBAction private func recordButtonHandler(_ sender: UIButton) {

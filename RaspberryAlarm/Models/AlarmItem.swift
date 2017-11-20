@@ -15,7 +15,7 @@ import Foundation
  3. 전기장판은 언제 켤지(기본값 : 기상 30분 전)
  4. Snooze는 얼마나 할지(기본값 : 15분)
  */
-struct AlarmItem {
+struct AlarmItem: Codable {
     /// 일어날 시간 : 기본값 = 6시 30분
     var timeToWakeUp:TimeInterval = TimeInterval(6*60*60 + 30*60)
     /// 전기장판 킬 시간(단위 : 초)

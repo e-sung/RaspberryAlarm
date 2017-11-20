@@ -13,6 +13,16 @@ import Foundation
  싱글턴 패턴 활용
 */
 class DataCenter{
+    
+    let alarmListFileName = "alarmList.plist"
+    var documentUrl: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(alarmListFileName)
+    }
+    var documentPath: String {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                   .userDomainMask, true).first! + "/" + alarmListFileName
+    }
+    
     /// 싱글턴 객체
     static var main:DataCenter = DataCenter()
     /// 초기화면에 표시되어야 할 모든 알람들의 배열
@@ -45,4 +55,33 @@ class DataCenter{
         }
     }
     
+    private init(){
+        if !FileManager.default.fileExists(atPath: documentPath){
+            do{
+                try FileManager.default.copyItem(
+                    at: Bundle.main.url(forResource: "alarmList", withExtension: "plist")!,
+                    to: documentUrl)
+            }catch{
+                print("\(alarmListFileName) copy failed")
+            }
+        }
+        let decoder = PropertyListDecoder()
+        let loadedArray = loadContents(from: alarmListFileName)
+        for item in loadedArray as! [Data]{
+            if let alarmItem = try? decoder.decode(AlarmItem.self, from: item){
+                self.alarmItems.append(alarmItem)
+            }
+        }
+    }
+    
+    // 번들에서 plist 카피해서 다큐먼트에 넣
+    // 데이터 로드하기
+
+    func loadContents(from file:String)->NSArray? {
+        guard let documentRenewedPlistURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(file) else {
+            print("document renewed plist url wasn't generated")
+            return nil
+        }
+        return NSArray(contentsOf: documentRenewedPlistURL)
+    }
 }
