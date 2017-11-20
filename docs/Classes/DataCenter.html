@@ -14,7 +14,7 @@
     <a title="DataCenter Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (61% documented)</p>
+        <p><a href="../index.html"> Docs</a> (60% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -54,6 +54,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DateFormatter.html">DateFormatter</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/UIViewController.html">UIViewController</a>
@@ -172,6 +175,138 @@
                           <pre class="highlight"><code><span class="k">var</span> <span class="nv">nearestAlarm</span><span class="p">:</span><span class="kt"><a href="../Structs/AlarmItem.html">AlarmItem</a></span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14RaspberryAlarm10DataCenterCACyc33_40C036D25F59F7BDF9B11CEA197C5FC1Llfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14RaspberryAlarm10DataCenterCACyc33_40C036D25F59F7BDF9B11CEA197C5FC1Llfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>최초시작시에는, 번들에 있는 plist를 도큐멘트에 카피한다.
+그 이후에는 도큐먼트에 저장되어 있던 plist를 읽어와 self.alarmItems에 저장한다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14RaspberryAlarm10DataCenterC12loadContentsSo7NSArrayCSgSS4from_tF"></a>
+                    <a name="//apple_ref/swift/Method/loadContents(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14RaspberryAlarm10DataCenterC12loadContentsSo7NSArrayCSgSS4from_tF">loadContents(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>file path 에 저장되어 있던 배열을  가져온다.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">loadContents</span><span class="p">(</span><span class="n">from</span> <span class="nv">filePath</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">NSArray</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>filePath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>array를 담고있는 plist 파일이 저장된 filePath</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14RaspberryAlarm10DataCenterC5writeySayAA0B4ItemVG4list_SS2totF"></a>
+                    <a name="//apple_ref/swift/Method/write(list:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14RaspberryAlarm10DataCenterC5writeySayAA0B4ItemVG4list_SS2totF">write(list:to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>path에 저장된 file의 내용을 list로 다시 씀</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">write</span><span class="p">(</span><span class="nv">list</span><span class="p">:[</span><span class="kt"><a href="../Structs/AlarmItem.html">AlarmItem</a></span><span class="p">],</span> <span class="n">to</span> <span class="nv">path</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>list</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>새로 쓸 내용</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>path</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>쓸 장소</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

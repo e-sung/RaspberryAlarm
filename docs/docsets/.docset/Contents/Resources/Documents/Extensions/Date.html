@@ -14,7 +14,7 @@
     <a title="Date Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (61% documented)</p>
+        <p><a href="../index.html"> Docs</a> (60% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -54,6 +54,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DateFormatter.html">DateFormatter</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/UIViewController.html">UIViewController</a>
@@ -113,68 +116,6 @@
                           <pre class="highlight"><code><span class="k">var</span> <span class="nv">absoluteSeconds</span><span class="p">:</span><span class="kt">TimeInterval</span></code></pre>
 
                         </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10Foundation4DateV14RaspberryAlarmE6formatSSSd7seconds_SS4withtFZ"></a>
-                    <a name="//apple_ref/swift/Method/format(seconds:with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV14RaspberryAlarmE6formatSSSd7seconds_SS4withtFZ">format(seconds:with:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>초단위의 시간을 넣으면 dateFormat 형식의 문자열 반환</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">format</span><span class="p">(</span><span class="nv">seconds</span><span class="p">:</span><span class="kt">TimeInterval</span><span class="p">,</span> <span class="n">with</span> <span class="nv">dateFormat</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>seconds</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>변환하고자 하는 초단위의 시간</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>dateFormat</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p><q>HH:mm:ss</q>등, <a href="https://ko.wikipedia.org/wiki/ISO_8601">ISO8601</a> 표준을 따르는 형식
-<code>
-format(seconds:10.0, with &quot;HH:mm:ss&quot;) // 00:00:10
-format(seconds:2*60*60+60*4+3, with &quot;HH:mm:ss&quot;) // 02:04:03
-</code></p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>

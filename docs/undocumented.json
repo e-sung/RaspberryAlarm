@@ -113,10 +113,31 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Extensions/Date.swift",
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Extensions/DateFormatter.swift",
       "line": 12,
-      "symbol": "Date.mainDateFormat",
+      "symbol": "DateFormatter.mainDateFormat",
       "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/DataCenter.swift",
+      "line": 17,
+      "symbol": "DataCenter.alarmListFileName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/DataCenter.swift",
+      "line": 18,
+      "symbol": "DataCenter.documentUrl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/DataCenter.swift",
+      "line": 21,
+      "symbol": "DataCenter.documentPath",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -170,7 +191,7 @@
     },
     {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
-      "line": 170,
+      "line": 173,
       "symbol": "RecordingPhaseViewController.clarify(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
