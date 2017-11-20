@@ -16,7 +16,6 @@ class AlarmListViewController: UIViewController,  UITableViewDelegate, UITableVi
         let newAlarmItem = AlarmItem()
         DataCenter.main.alarmItems.append(newAlarmItem)
         alarmListView.reloadData()
-        DataCenter.main.save(item: newAlarmItem, to: DataCenter.main.documentPath)
     }
     
     @IBAction private func recordButtonHandler(_ sender: UIButton) {

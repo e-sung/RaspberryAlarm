@@ -26,7 +26,11 @@ class DataCenter{
     /// 싱글턴 객체
     static var main:DataCenter = DataCenter()
     /// 초기화면에 표시되어야 할 모든 알람들의 배열
-    var alarmItems:[AlarmItem] = []
+    var alarmItems:[AlarmItem] = []{
+        didSet(oldVal){
+            write(list: alarmItems, to: documentPath)
+        }
+    }
     /**
     초기화면 우측하단의 초승달을 눌렀을 때, 실행되어야 할 알람
     1. 오늘의 알람들을 시간순으로 정렬하고,
@@ -82,9 +86,12 @@ class DataCenter{
         return NSArray(contentsOf: documentRenewedPlistURL)
     }
     
-    func save(item:AlarmItem, to path:String){
-        var arrayInPlist = NSArray(contentsOfFile: path) as! [Any]
-        arrayInPlist.append(try! PropertyListEncoder().encode(item))
-        NSArray(array: arrayInPlist).write(toFile: path, atomically: true)
+    func write(list:[AlarmItem], to path:String){
+        var alarmsToSave:[Any] = []
+        for item in list{
+            let encodedItem = try! PropertyListEncoder().encode(item)
+            alarmsToSave.append(encodedItem)
+        }
+        NSArray(array: alarmsToSave).write(toFile: path, atomically: true)
     }
 }
