@@ -10,11 +10,12 @@ import UIKit
 
 class WakeUpTimeSetUpViewController: UIViewController {
 
-    /**
-     - ToDo
-     현재 아이템의 timeToWakeUp을 기본으로 시작하기
-    */
-    private var timeValue:TimeInterval!
+    var timeValue:TimeInterval!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        datePicker.setDate(Date(timeInterval: timeValue, since: Date().midnight) , animated: true)
+    }
     
     @IBAction private func timeChangeHandler(_ sender: UIDatePicker) {
         self.timeValue = sender.date.absoluteSeconds

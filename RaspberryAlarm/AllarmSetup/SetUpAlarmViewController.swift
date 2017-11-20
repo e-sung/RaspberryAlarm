@@ -96,6 +96,16 @@ extension SetUpAlarmViewController{
     }
 }
 
+extension SetUpAlarmViewController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextVC = segue.destination as? WakeUpTimeSetUpViewController{
+            nextVC.timeValue = alarmItem.timeToWakeUp
+        }else if let nextVC = segue.destination as? RepeatDaySetUpViewController{
+            nextVC.originalRepeatingDays = alarmItem.repeatDays
+        }
+    }
+}
+
 extension SetUpAlarmViewController:SliderSettingCellDelegate{
     func didSliderValueChanged(_ changer: String, _ changedValue: Float) {
         if changer == "스누즈 설정"{

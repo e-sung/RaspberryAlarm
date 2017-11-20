@@ -10,6 +10,7 @@ import UIKit
 
 class RepeatDaySetUpViewController: UIViewController{
     
+    var originalRepeatingDays:[Day]!
     private var dayButtons:[UIButton]{
         get{
             var buttonsToReturn:[UIButton] = []
@@ -17,13 +18,6 @@ class RepeatDaySetUpViewController: UIViewController{
                 buttonsToReturn.append(self.view.viewWithTag(i) as! UIButton)
             }
             return buttonsToReturn
-        }
-    }
-    private var originalRepeatingDays:[Day]{
-        get{
-            let navControllerVC = navigationController as! SetUpAlarmNavigationViewController
-            let alarmItem = DataCenter.main.alarmItems[navControllerVC.indexOfAlarmToSetUp]
-            return alarmItem.repeatDays
         }
     }
     private var newRepeatingDays:[Day]{
