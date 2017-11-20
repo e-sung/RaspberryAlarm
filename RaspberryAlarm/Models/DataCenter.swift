@@ -59,33 +59,38 @@ class DataCenter{
         }
     }
     
+    /**
+    * 최초시작시에는, 번들에 있는 plist를 도큐멘트에 카피한다.
+    * 그 이후에는 도큐먼트에 저장되어 있던 plist를 읽어와 self.alarmItems에 저장한다.
+    */
     private init(){
         if !FileManager.default.fileExists(atPath: documentPath){
-            do{
-                try FileManager.default.copyItem(
-                    at: Bundle.main.url(forResource: "alarmList", withExtension: "plist")!,
-                    to: documentUrl)
-            }catch{
-                print("\(alarmListFileName) copy failed")
-            }
-        }
-        let decoder = PropertyListDecoder()
-        let loadedArray = loadContents(from: alarmListFileName)
-        for item in loadedArray as! [Data]{
-            if let alarmItem = try? decoder.decode(AlarmItem.self, from: item){
-                self.alarmItems.append(alarmItem)
+            try! FileManager.default.copyItem(
+                at: Bundle.main.url(forResource: "alarmList", withExtension: "plist")!,
+                to: documentUrl)
+        }else{
+            let loadedArray = loadContents(from: alarmListFileName)
+            for item in loadedArray as! [Data]{
+                if let alarmItem = try? PropertyListDecoder().decode(AlarmItem.self, from: item){
+                    self.alarmItems.append(alarmItem)
+                }
             }
         }
     }
-    
-    func loadContents(from file:String)->NSArray? {
-        guard let documentRenewedPlistURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(file) else {
-            print("document renewed plist url wasn't generated")
-            return nil
-        }
+    /**
+    file path 에 저장되어 있던 배열을  가져온다.
+     - parameter filePath : array를 담고있는 plist 파일이 저장된 filePath
+     */
+    func loadContents(from filePath:String)->NSArray? {
+        guard let documentRenewedPlistURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(filePath) else { return nil }
         return NSArray(contentsOf: documentRenewedPlistURL)
     }
     
+    /**
+    path에 저장된 file의 내용을 list로 다시 씀
+     - parameter list : 새로 쓸 내용
+     - parameter path : 쓸 장소
+     */
     func write(list:[AlarmItem], to path:String){
         var alarmsToSave:[Any] = []
         for item in list{
