@@ -14,7 +14,7 @@
     <a title="Date Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (48% documented)</p>
+        <p><a href="../index.html"> Docs</a> (61% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -68,14 +68,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="../Typealiases.html">Type Aliases</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:14RaspberryAlarm6Seconda">Second</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -96,9 +88,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Foundation4DateV14RaspberryAlarmE15absoluteSecondsSiv"></a>
+                    <a name="/s:10Foundation4DateV14RaspberryAlarmE15absoluteSecondsSdv"></a>
                     <a name="//apple_ref/swift/Property/absoluteSeconds" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV14RaspberryAlarmE15absoluteSecondsSiv">absoluteSeconds</a>
+                    <a class="token" href="#/s:10Foundation4DateV14RaspberryAlarmE15absoluteSecondsSdv">absoluteSeconds</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -112,20 +104,13 @@
  오늘정오.absoluteSeconds == 12*60*60
  내일정오.absoluteSeconds == 12*60*60
 </code></pre>
-<div class="aside aside-to-do">
-    <p class="aside-title">To do</p>
-    ToDo :
-TimeInterval은 Double 타입으로 만들어져있음.
-&lsquo;초&#39;단위는 전부 정수형으로 만들었는데, 다 Double로 바꿔야 할 듯
-
-</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">absoluteSeconds</span><span class="p">:</span><span class="kt">Int</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">absoluteSeconds</span><span class="p">:</span><span class="kt">TimeInterval</span></code></pre>
 
                         </div>
                       </div>
@@ -135,9 +120,9 @@ TimeInterval은 Double 타입으로 만들어져있음.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Foundation4DateV14RaspberryAlarmE6formatSSSi7seconds_SS4withtFZ"></a>
+                    <a name="/s:10Foundation4DateV14RaspberryAlarmE6formatSSSd7seconds_SS4withtFZ"></a>
                     <a name="//apple_ref/swift/Method/format(seconds:with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV14RaspberryAlarmE6formatSSSi7seconds_SS4withtFZ">format(seconds:with:)</a>
+                    <a class="token" href="#/s:10Foundation4DateV14RaspberryAlarmE6formatSSSd7seconds_SS4withtFZ">format(seconds:with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -146,19 +131,13 @@ TimeInterval은 Double 타입으로 만들어져있음.
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>초단위의 시간을 넣으면 dateFormat 형식의 문자열 반환</p>
-<div class="aside aside-to-do">
-    <p class="aside-title">To do</p>
-    ToDo :
-seconds를 Double로 만들어야 함
-
-</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">format</span><span class="p">(</span><span class="nv">seconds</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">with</span> <span class="nv">dateFormat</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">format</span><span class="p">(</span><span class="nv">seconds</span><span class="p">:</span><span class="kt">TimeInterval</span><span class="p">,</span> <span class="n">with</span> <span class="nv">dateFormat</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -188,7 +167,7 @@ seconds를 Double로 만들어야 함
                                 <div>
                                   <p><q>HH:mm:ss</q>등, <a href="https://ko.wikipedia.org/wiki/ISO_8601">ISO8601</a> 표준을 따르는 형식
 <code>
-format(seconds:10, with &quot;HH:mm:ss&quot;) // 00:00:10
+format(seconds:10.0, with &quot;HH:mm:ss&quot;) // 00:00:10
 format(seconds:2*60*60+60*4+3, with &quot;HH:mm:ss&quot;) // 02:04:03
 </code></p>
                                 </div>
@@ -196,6 +175,33 @@ format(seconds:2*60*60+60*4+3, with &quot;HH:mm:ss&quot;) // 02:04:03
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation4DateV14RaspberryAlarmE8midnightACv"></a>
+                    <a name="//apple_ref/swift/Property/midnight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation4DateV14RaspberryAlarmE8midnightACv">midnight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Date 객체가 속한 날의 자정시점의 Date객체</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">midnight</span><span class="p">:</span><span class="kt">Date</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

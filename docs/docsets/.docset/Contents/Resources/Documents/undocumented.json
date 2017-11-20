@@ -8,6 +8,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmItemCell.swift",
+      "line": 51,
+      "symbol": "DateFormatter.formatHHmmss(alarmTime:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
       "line": null,
       "symbol": "AlarmListViewController",
@@ -37,7 +44,7 @@
     },
     {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 86,
+      "line": 92,
       "symbol": "UIButton.toggle()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -47,13 +54,6 @@
       "line": 11,
       "symbol": "SetUpAlarmNavigationViewController",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
-      "line": null,
-      "symbol": "SetUpAlarmViewController",
-      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
@@ -120,6 +120,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmTime.swift",
+      "line": 11,
+      "symbol": "AlarmTime",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/Day.swift",
       "line": 18,
       "symbol": "Day.Sun",
@@ -166,13 +173,6 @@
       "line": 24,
       "symbol": "Day.Sat",
       "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RecordingPhaseViewController.swift",
-      "line": 170,
-      "symbol": "RecordingPhaseViewController.clarify(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
