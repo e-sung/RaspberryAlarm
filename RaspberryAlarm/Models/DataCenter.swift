@@ -74,14 +74,17 @@ class DataCenter{
         }
     }
     
-    // 번들에서 plist 카피해서 다큐먼트에 넣
-    // 데이터 로드하기
-
     func loadContents(from file:String)->NSArray? {
         guard let documentRenewedPlistURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(file) else {
             print("document renewed plist url wasn't generated")
             return nil
         }
         return NSArray(contentsOf: documentRenewedPlistURL)
+    }
+    
+    func save(item:AlarmItem, to path:String){
+        var arrayInPlist = NSArray(contentsOfFile: path) as! [Any]
+        arrayInPlist.append(try! PropertyListEncoder().encode(item))
+        NSArray(array: arrayInPlist).write(toFile: path, atomically: true)
     }
 }
