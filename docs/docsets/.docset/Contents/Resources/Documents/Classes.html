@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (47% documented)</p>
+        <p><a href="index.html"> Docs</a> (48% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -29,6 +29,9 @@
           <li class="nav-group-name">
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes.html#/c:@M@RaspberryAlarm@objc(cs)AppDelegate">AppDelegate</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Classes/DataCenter.html">DataCenter</a>
               </li>
@@ -164,6 +167,70 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">class</span> <span class="kt">RecordingPhaseViewController</span><span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RaspberryAlarm@objc(cs)AppDelegate"></a>
+                    <a name="//apple_ref/swift/Class/AppDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RaspberryAlarm@objc(cs)AppDelegate">AppDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h1 id='overview' class='heading'>OverView</h1>
+<h2 id='1-alarmlistviewcontroller' class='heading'>1. AlarmListViewController</h2>
+
+<ul>
+<li>가장 먼저 보는 화면</li>
+<li>알람들의 리스트를 보여줌</li>
+<li>오른쪽 상단 <q>+</q> 버튼으로 새로운 알람 추가</li>
+<li>오른쪽 하단 <q>달모양</q> 버튼으로 <q>가장 가까운 알람</q> 실행(i.e RecordingPhaseViewController실행</li>
+<li>각각의 알람아이템을 클릭하면 SetUpAlarmNavViewController로 넘어감. 이 때 segue를 통해 현 아이템의 index.item을 전달함.</li>
+</ul>
+<h2 id='2-setupalarmviewcontroller' class='heading'>2. SetUpAlarmViewController</h2>
+
+<ul>
+<li>최초화면에서 각 알람아이템을 클릭하면 들어오는 화면</li>
+<li>현재 셋팅 대상이 되는 알람아이템을 가지고 있음</li>
+<li>WakeUpTimeSetupViewController하고는 segue를 통해 alarmItem.timeToWakeUp 만 주고받고</li>
+<li>RepeatDaysSetUpViewController와는 segue를 통해 alarmItem.repeatDays만을 주고받음</li>
+</ul>
+<h2 id='3-recordingphaseviewcontroller' class='heading'>3. RecordingPhaseViewController</h2>
+
+<ul>
+<li>DataCenter.main.nearestAlarm 이 계산해준, 가장 가까운 알람이 울릴 때 까지의 카운트다운을 보여줌</li>
+<li>몸이 뒤척일 때마다, 뒤척임에 반응하여 수면그래프를 그려줌</li>
+<li>수면그래프 기능은, CPU점유율을 너무 높이기 때문에, 현재 experiment 브랜치에만 사용가능</li>
+<li>alarmItem.timeToHeat 이 되면, 라즈베리파이에 HTTP 리퀘스트 발사(전기장판 켜기)</li>
+<li>alarmItem.timeToWakeUp 이 되면, RingingPhaseViewController 로 넘어감</li>
+</ul>
+<h2 id='4-ringingphaseviewcontroller' class='heading'>4. RingingPhaseViewCOntroller</h2>
+
+<ul>
+<li>알람을 울림</li>
+<li>스누즈 버튼을 누르면, 다시 RecordingPhase로 가서, alarmItem.snoozeAmount만큼 카운트다운 실시</li>
+<li>종료버튼을 누르면 다시한번 라즈베리파이에 HTTP리퀘스트 발사(전기장판 끄기) 하고 AlarmListViewController로 복귀</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span></code></pre>
 
                         </div>
                       </div>

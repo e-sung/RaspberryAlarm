@@ -100,9 +100,16 @@
     },
     {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
-      "line": 12,
-      "symbol": "AppDelegate",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "line": 42,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
+      "line": 44,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
