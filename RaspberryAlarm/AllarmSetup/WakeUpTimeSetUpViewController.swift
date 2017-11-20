@@ -14,10 +14,10 @@ class WakeUpTimeSetUpViewController: UIViewController {
      - ToDo
      현재 아이템의 timeToWakeUp을 기본으로 시작하기
     */
-    private var timeValue:AlarmTime!
+    private var timeValue:TimeInterval!
     
     @IBAction private func timeChangeHandler(_ sender: UIDatePicker) {
-        self.timeValue = AlarmTime(with: sender.date)
+        self.timeValue = sender.date.absoluteSeconds
     }
     
     @IBAction private func confirmButtonHandler(_ sender: UIBarButtonItem) {

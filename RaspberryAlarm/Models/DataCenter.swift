@@ -34,7 +34,7 @@ class DataCenter{
                 Date(timeInterval: 24*60*60, since: Date())))!
 
             for item in AlarmItem.availableAlarms(on: today, given: alarmItems){
-                if item.timeToWakeUp.absoluteSeconds > Date().absoluteSeconds{
+                if item.timeToWakeUp > Date().absoluteSeconds{
                     return item
                 }
             }

@@ -54,11 +54,11 @@ extension SetUpAlarmViewController{
         case 2:
             reuseId = "sliderCell"
             cellTitle = "스누즈 설정"
-            sliderValue = Float(alarmItem.snoozeAmount/60)
+            sliderValue = Float(alarmItem.snoozeAmount/60.0)
         case 3:
             reuseId = "sliderCell"
             cellTitle = "전기장판 설정"
-            sliderValue = Float(alarmItem.timeToHeat/60)
+            sliderValue = Float(alarmItem.timeToHeat/60.0)
         default:
             print("Unidentified indexPath")
         }
@@ -97,11 +97,11 @@ extension SetUpAlarmViewController{
 }
 
 extension SetUpAlarmViewController:SliderSettingCellDelegate{
-    func didSliderValueChanged(_ changer: String, _ changedValue: Int) {
+    func didSliderValueChanged(_ changer: String, _ changedValue: Float) {
         if changer == "스누즈 설정"{
-            self.alarmItem.snoozeAmount = changedValue*60
+            self.alarmItem.snoozeAmount = TimeInterval(Int(changedValue*60.0))
         }else{
-            self.alarmItem.timeToHeat = changedValue*60
+            self.alarmItem.timeToHeat =  TimeInterval(Int(changedValue*60.0))
         }
     }
 }

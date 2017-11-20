@@ -28,14 +28,14 @@ import SwiftChart
 class RecordingPhaseViewController: UIViewController {
     
     // MARK: 알람이 울릴 시간을 계산하는데 사용할 전역변수들
-    /// [AlarmItem](http://blog.e-sung.net/) 참조
+    /// DataCenter.main.nearestAlarm 이 계산해준 알람아이템
     var alarmItem:AlarmItem!
     /// 현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
     private var alarmTimer:Timer!
     /// 일어나야 할 시간(단위: 초)
-    private var wakeUpTimeInSeconds:Int!
+    private var wakeUpTimeInSeconds:TimeInterval!
     /// 일어날 때 까지 남은 시간(단위: 초)
-    private var remainingTimeInSeconds:Int{
+    private var remainingTimeInSeconds:TimeInterval{
         get{
             return self.wakeUpTimeInSeconds - Date().absoluteSeconds
         }
@@ -80,7 +80,7 @@ class RecordingPhaseViewController: UIViewController {
     /// 하는 일 : 각종 속성 초기화 실시
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.wakeUpTimeInSeconds = clarify(alarmItem.timeToWakeUp.absoluteSeconds)
+        self.wakeUpTimeInSeconds = clarify(alarmItem.timeToWakeUp)
     }
     
     /**
@@ -167,9 +167,9 @@ class RecordingPhaseViewController: UIViewController {
     
 
     // MARK: 편의상 만든 함수들
-    private func clarify(_ wakeUpSeconds:Int)->Int{
+    private func clarify(_ wakeUpSeconds:TimeInterval)->TimeInterval{
         if Date().absoluteSeconds > wakeUpSeconds{
-            return wakeUpSeconds + 24*60*60 //오늘 자고 내일 일어나는 경우
+            return wakeUpSeconds + TimeInterval(24*60*60) //오늘 자고 내일 일어나는 경우
         }else{
             return wakeUpSeconds //오늘 자고 오늘 일어나는 경우
         }
@@ -187,5 +187,3 @@ class RecordingPhaseViewController: UIViewController {
         self.chart.add(ChartSeries(self.sleepData))
     }
 }
-
-

@@ -34,7 +34,7 @@ class SliderSettingCell: UITableViewCell{
     
     @IBAction private func updateQuantity(_ sender:UISlider){
         quantityLB.text = "\(Int(sender.value))"
-        delegate.didSliderValueChanged(titleLB.text!, Int(sender.value))
+        delegate.didSliderValueChanged(titleLB.text!, sender.value)
     }
 
     override func awakeFromNib() {
@@ -44,5 +44,5 @@ class SliderSettingCell: UITableViewCell{
 }
 
 protocol SliderSettingCellDelegate {
-    func didSliderValueChanged(_ changer:String, _ changedValue:Int)
+    func didSliderValueChanged(_ changer:String, _ changedValue:Float)
 }

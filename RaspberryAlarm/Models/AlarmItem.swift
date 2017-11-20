@@ -20,14 +20,14 @@ typealias Second = Int
 /// 기본값 : 6시 30분에 일어나는 알람
 struct AlarmItem {
     /// 일어날 시간 : 기본값 = 6시 30분
-    var timeToWakeUp:AlarmTime = AlarmTime(hour: 6, minute: 30)
+    var timeToWakeUp:TimeInterval = TimeInterval(6*60*60 + 30*60)
     /// 전기장판 킬 시간(단위 : 초)
-    var timeToHeat:Second = 30*60
+    var timeToHeat:TimeInterval = TimeInterval(30*60)
     /// 활성화 여부 : 메인화면에서, 스위치를 토글함으로써 변경.
     /// - ToDo : 사실 스위치 토글은 아직 구현 안 됬음
     var isActive:Bool = true
     /// 스누즈 할 양(단위: 초)
-    var snoozeAmount:Second = 15*60
+    var snoozeAmount:TimeInterval = TimeInterval(15*60)
     /// 이 알람이 울려야 할 날들 : [월,화,수,목,금,토,일] 중 복수선택
     /// - ToDo : 생각해보니 더 적절한 변수명이 있을 것 같다.
     var repeatDays:[Day] = [.Mon,.Tue,.Wed,.Thu,.Fri]
@@ -48,8 +48,8 @@ struct AlarmItem {
         }
         if sorted == true {
             alarmsToReturn.sort { (item1 , item2) -> Bool in
-                let wt1 = item1.timeToWakeUp.absoluteSeconds
-                let wt2 = item2.timeToWakeUp.absoluteSeconds
+                let wt1 = item1.timeToWakeUp
+                let wt2 = item2.timeToWakeUp
                 return wt1 < wt2
             }
         }

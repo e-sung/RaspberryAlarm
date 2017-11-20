@@ -15,7 +15,7 @@ class AlarmItemCell: UITableViewCell {
         }
         set(newItem){
             self._alarmItem = newItem
-            self.timeLB.text = DateFormatter.formatHHmmss(alarmTime: newItem.timeToWakeUp)
+            self.timeLB.text = Date.format(seconds: newItem.timeToWakeUp, with:"HH:mm" )
             color(the: self.dayLabels, of: newItem.repeatDays)
         }
     }
@@ -45,12 +45,4 @@ class AlarmItemCell: UITableViewCell {
         }
     }
     
-}
-
-extension DateFormatter{
-    static func formatHHmmss(alarmTime:AlarmTime)->String{
-        let hour:String = alarmTime.hour<10 ? "0\(alarmTime.hour)" : "\(alarmTime.hour)"
-        let minute:String = alarmTime.minute<10 ? "0\(alarmTime.minute)" : "\(alarmTime.minute)"
-        return "\(hour):\(minute)"
-    }
 }
