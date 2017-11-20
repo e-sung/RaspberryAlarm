@@ -114,7 +114,7 @@ class RecordingPhaseViewController: UIViewController {
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             // 시간 표시
             self.currentTimeLB.text = self.dateFormatter.format(seconds: Date().absoluteSeconds, with: DateFormatter.mainDateFormat)
-            self.remainingTimeLB.text = self.dateFormatter.format(seconds: self.remainingTimeInSeconds, with: DateFormatter:.mainDateFormat)
+            self.remainingTimeLB.text = self.dateFormatter.format(seconds: self.remainingTimeInSeconds, with: DateFormatter.mainDateFormat)
 
             // 그래프 새로 그리기
 //            if remainingTime%self.chartRefreshRate == 0 {
