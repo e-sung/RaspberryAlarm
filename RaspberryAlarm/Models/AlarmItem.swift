@@ -10,14 +10,11 @@ import Foundation
 
 /**
 알람을 울리는데 필요한 정보들
- 1. 몇 시에 울릴지
- 2. 무슨 요일에 울릴지
- 3. 전기장판은 언제 켤지
- 4. Snooze는 얼마나 할지
+ 1. 몇 시에 울릴지(기본값 : 6시 30)
+ 2. 무슨 요일에 울릴지(기본값 : 월화수목금)
+ 3. 전기장판은 언제 켤지(기본값 : 기상 30분 전)
+ 4. Snooze는 얼마나 할지(기본값 : 15분)
  */
-
-typealias Second = Int
-/// 기본값 : 6시 30분에 일어나는 알람
 struct AlarmItem {
     /// 일어날 시간 : 기본값 = 6시 30분
     var timeToWakeUp:TimeInterval = TimeInterval(6*60*60 + 30*60)

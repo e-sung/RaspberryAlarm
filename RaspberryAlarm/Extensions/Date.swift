@@ -18,9 +18,6 @@ extension Date{
      오늘정오.absoluteSeconds == 12*60*60
      내일정오.absoluteSeconds == 12*60*60
      ````
-     - ToDo :
-     TimeInterval은 Double 타입으로 만들어져있음.
-     '초'단위는 전부 정수형으로 만들었는데, 다 Double로 바꿔야 할 듯
     */
     var absoluteSeconds:TimeInterval{
         get{
