@@ -47,6 +47,7 @@
 		FF9CF6FE1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6FD1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift */; };
 		FF9CF7001FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6FF1FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift */; };
 		FFCB4FBF1FC289FC004DE80F /* alarmList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFCB4FBE1FC289FC004DE80F /* alarmList.plist */; };
+		FFCB4FC11FC29CCD004DE80F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */; };
 		FFD257331FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */; };
 		FFF1C0711FB95B6A007C0093 /* RingingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */; };
 		FFF1C0B31FB9BA08007C0093 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */; };
@@ -108,6 +109,7 @@
 		FF9CF6FD1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpAlarmNavigationViewController.swift; sourceTree = "<group>"; };
 		FF9CF6FF1FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeUpTimeSetUpViewController.swift; sourceTree = "<group>"; };
 		FFCB4FBE1FC289FC004DE80F /* alarmList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = alarmList.plist; sourceTree = "<group>"; };
+		FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDaysSetUpViewController.swift; sourceTree = "<group>"; };
 		FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingPhaseViewController.swift; sourceTree = "<group>"; };
 		FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				FF881F0A1FC0183200EF25F2 /* Date.swift */,
 				FF881F0C1FC01AE200EF25F2 /* UIViewController.swift */,
+				FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCB4FC11FC29CCD004DE80F /* DateFormatter.swift in Sources */,
 				FF9CF6F11FB71E1B0033E3E3 /* DataCenter.swift in Sources */,
 				FF881F0B1FC0183200EF25F2 /* Date.swift in Sources */,
 				FF9CF6E71FB6F6040033E3E3 /* AlarmItemCell.swift in Sources */,

@@ -34,6 +34,8 @@ class RecordingPhaseViewController: UIViewController {
     private var alarmTimer:Timer!
     /// 일어나야 할 시간(단위: 초)
     private var wakeUpTimeInSeconds:TimeInterval!
+    /// 초를 HH:mm:ss 형식의 문자열로 바꿔줄 포매터
+    private var dateFormatter:DateFormatter!
     /// 일어날 때 까지 남은 시간(단위: 초)
     private var remainingTimeInSeconds:TimeInterval{
         get{
@@ -81,6 +83,7 @@ class RecordingPhaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.wakeUpTimeInSeconds = clarify(alarmItem.timeToWakeUp)
+        self.dateFormatter = DateFormatter()
     }
     
     /**
@@ -110,8 +113,8 @@ class RecordingPhaseViewController: UIViewController {
     private func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             // 시간 표시
-            self.currentTimeLB.text = Date.format(seconds: Date().absoluteSeconds, with: Date.mainDateFormat)
-            self.remainingTimeLB.text = Date.format(seconds: self.remainingTimeInSeconds, with: Date.mainDateFormat)
+            self.currentTimeLB.text = self.dateFormatter.format(seconds: Date().absoluteSeconds, with: DateFormatter.mainDateFormat)
+            self.remainingTimeLB.text = self.dateFormatter.format(seconds: self.remainingTimeInSeconds, with: DateFormatter:.mainDateFormat)
 
             // 그래프 새로 그리기
 //            if remainingTime%self.chartRefreshRate == 0 {

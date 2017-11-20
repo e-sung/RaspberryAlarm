@@ -15,7 +15,7 @@ class AlarmItemCell: UITableViewCell {
         }
         set(newItem){
             self._alarmItem = newItem
-            self.timeLB.text = Date.format(seconds: newItem.timeToWakeUp, with:"HH:mm" )
+            self.timeLB.text = DateFormatter().format(seconds: newItem.timeToWakeUp, with:"HH:mm" )
             color(the: self.dayLabels, of: newItem.repeatDays)
         }
     }
