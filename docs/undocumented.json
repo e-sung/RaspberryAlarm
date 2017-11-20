@@ -9,13 +9,6 @@
     },
     {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmItemCell.swift",
-      "line": 12,
-      "symbol": "AlarmItemCell.alarmItem",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmItemCell.swift",
       "line": 51,
       "symbol": "DateFormatter.formatHHmmss(alarmTime:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
@@ -43,150 +36,10 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 29,
-      "symbol": "AlarmListViewController.unwindToAlarmList(segue:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 32,
-      "symbol": "AlarmListViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 37,
-      "symbol": "AlarmListViewController.viewWillAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 43,
-      "symbol": "AlarmListViewController.prepare(for:sender:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 50,
-      "symbol": "AlarmListViewController.shouldPerformSegue(withIdentifier:sender:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 57,
-      "symbol": "AlarmListViewController.tableView(_:numberOfRowsInSection:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 61,
-      "symbol": "AlarmListViewController.tableView(_:cellForRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 67,
-      "symbol": "AlarmListViewController.tableView(_:heightForRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 71,
-      "symbol": "AlarmListViewController.tableView(_:didSelectRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AlarmList/AlarmListViewController.swift",
-      "line": 75,
-      "symbol": "AlarmListViewController.tableView(_:commit:forRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
       "line": 11,
       "symbol": "RepeatDaySetUpViewController",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 41,
-      "symbol": "RepeatDaySetUpViewController.confirmButtonHandler(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 45,
-      "symbol": "RepeatDaySetUpViewController.prepare(for:sender:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 50,
-      "symbol": "RepeatDaySetUpViewController.mondayTouchHandler(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 54,
-      "symbol": "RepeatDaySetUpViewController.tuesdayTouchHandler(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 58,
-      "symbol": "RepeatDaySetUpViewController.wedsdayTouchHandler(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 62,
-      "symbol": "RepeatDaySetUpViewController.thursdayTouchHandler(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 65,
-      "symbol": "RepeatDaySetUpViewController.fridayTouchHandler(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 69,
-      "symbol": "RepeatDaySetUpViewController.saterdayTouchHandler(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 73,
-      "symbol": "RepeatDaySetUpViewController.sundayTouchHandler(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/RepeatDaysSetUpViewController.swift",
-      "line": 77,
-      "symbol": "RepeatDaySetUpViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -204,13 +57,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmNavigationViewController.swift",
-      "line": 12,
-      "symbol": "SetUpAlarmNavigationViewController.indexOfAlarmToSetUp",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
       "line": null,
       "symbol": "SetUpAlarmViewController",
@@ -229,62 +75,6 @@
       "line": 11,
       "symbol": "SetUpAlarmViewController",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
-      "line": 13,
-      "symbol": "SetUpAlarmViewController.alarmItem",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
-      "line": 25,
-      "symbol": "SetUpAlarmViewController.unwindToSetUpAlarmVC(segue:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
-      "line": 28,
-      "symbol": "SetUpAlarmViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
-      "line": 38,
-      "symbol": "SetUpAlarmViewController.tableView(_:numberOfRowsInSection:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
-      "line": 42,
-      "symbol": "SetUpAlarmViewController.tableView(_:cellForRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
-      "line": 80,
-      "symbol": "SetUpAlarmViewController.tableView(_:heightForRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
-      "line": 87,
-      "symbol": "SetUpAlarmViewController.tableView(_:didSelectRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SetUpAlarmViewController.swift",
-      "line": 100,
-      "symbol": "SetUpAlarmViewController.didSliderValueChanged(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -296,44 +86,9 @@
     },
     {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
-      "line": 13,
-      "symbol": "SliderSettingCell.delegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
-      "line": 14,
-      "symbol": "SliderSettingCell.title",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
-      "line": 22,
-      "symbol": "SliderSettingCell.quantity",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
-      "line": 40,
-      "symbol": "SliderSettingCell.awakeFromNib()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
       "line": 46,
       "symbol": "SliderSettingCellDelegate",
       "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/SliderSettingCell.swift",
-      "line": 47,
-      "symbol": "SliderSettingCellDelegate.didSliderValueChanged(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -344,31 +99,10 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AllarmSetup/WakeUpTimeSetUpViewController.swift",
-      "line": 26,
-      "symbol": "WakeUpTimeSetUpViewController.prepare(for:sender:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
       "line": 12,
       "symbol": "AppDelegate",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
-      "line": 14,
-      "symbol": "AppDelegate.window",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/AppDelegate.swift",
-      "line": 16,
-      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -383,55 +117,6 @@
       "line": 11,
       "symbol": "AlarmTime",
       "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmTime.swift",
-      "line": 12,
-      "symbol": "AlarmTime.hour",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmTime.swift",
-      "line": 13,
-      "symbol": "AlarmTime.minute",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmTime.swift",
-      "line": 14,
-      "symbol": "AlarmTime.second",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmTime.swift",
-      "line": 15,
-      "symbol": "AlarmTime.absoluteSeconds",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmTime.swift",
-      "line": 21,
-      "symbol": "AlarmTime.init(hour:minute:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmTime.swift",
-      "line": 26,
-      "symbol": "AlarmTime.init(hour:minute:second:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/Models/AlarmTime.swift",
-      "line": 32,
-      "symbol": "AlarmTime.init(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -488,13 +173,6 @@
       "line": 11,
       "symbol": "RingingPhaseViewController",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lyuseongdu/Documents/RaspberryAlarm/RaspberryAlarm/RecordingPhase/RingingPhaseViewController.swift",
-      "line": 25,
-      "symbol": "RingingPhaseViewController.viewDidAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],
