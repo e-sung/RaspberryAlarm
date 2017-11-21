@@ -53,6 +53,7 @@
 		FFD257331FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */; };
 		FFF1C0711FB95B6A007C0093 /* RingingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */; };
 		FFF1C0B31FB9BA08007C0093 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */; };
+		FFF7BC7C1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		FFD257321FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDaysSetUpViewController.swift; sourceTree = "<group>"; };
 		FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingPhaseViewController.swift; sourceTree = "<group>"; };
 		FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				FF18C3971FC3DA98007141EF /* Main.storyboard */,
+				FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */,
 				FF18C3991FC3DADD007141EF /* MainViewController.swift */,
 			);
 			path = MainView;
@@ -618,6 +621,7 @@
 				FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */,
 				FF9CF6BB1FB6F5940033E3E3 /* AlarmListViewController.swift in Sources */,
 				FF9CF6FE1FB7F9710033E3E3 /* SetUpAlarmNavigationViewController.swift in Sources */,
+				FFF7BC7C1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift in Sources */,
 				FF18C39A1FC3DADD007141EF /* MainViewController.swift in Sources */,
 				FFD257331FB85D99002D6B25 /* RepeatDaysSetUpViewController.swift in Sources */,
 				FF9CF7001FB800CA0033E3E3 /* WakeUpTimeSetUpViewController.swift in Sources */,
