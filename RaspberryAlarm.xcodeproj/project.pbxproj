@@ -162,16 +162,15 @@
 			path = RecordingPhase;
 			sourceTree = "<group>";
 		};
-		FF18C39B1FC3DAE7007141EF /* MainView */ = {
+		FF18C39B1FC3DAE7007141EF /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				FF18C3971FC3DA98007141EF /* Main.storyboard */,
-				FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */,
-				FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */,
 				FF18C3991FC3DADD007141EF /* MainViewController.swift */,
-				FFF7BC7D1FC3F63F00C6B5D1 /* SetUpViewController.swift */,
+				FFF7BC7F1FC40F8800C6B5D1 /* SettingPhase */,
+				FF0B04AD1FB87178005DF58E /* RecordingPhase */,
 			);
-			path = MainView;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		FF881F091FC0182100EF25F2 /* Extensions */ = {
@@ -180,6 +179,7 @@
 				FF881F0A1FC0183200EF25F2 /* Date.swift */,
 				FF881F0C1FC01AE200EF25F2 /* UIViewController.swift */,
 				FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */,
+				FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,9 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */,
-				FF18C39B1FC3DAE7007141EF /* MainView */,
 				FF881F091FC0182100EF25F2 /* Extensions */,
-				FF0B04AD1FB87178005DF58E /* RecordingPhase */,
+				FF18C39B1FC3DAE7007141EF /* Main */,
 				FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */,
 				FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */,
 				FFCB4FBE1FC289FC004DE80F /* alarmList.plist */,
@@ -240,6 +239,15 @@
 				FF9CF6DA1FB6F5940033E3E3 /* Info.plist */,
 			);
 			path = RaspberryAlarmUITests;
+			sourceTree = "<group>";
+		};
+		FFF7BC7F1FC40F8800C6B5D1 /* SettingPhase */ = {
+			isa = PBXGroup;
+			children = (
+				FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */,
+				FFF7BC7D1FC3F63F00C6B5D1 /* SetUpViewController.swift */,
+			);
+			path = SettingPhase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
