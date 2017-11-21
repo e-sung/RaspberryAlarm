@@ -8,6 +8,9 @@
 
 import UIKit
 
+let nightTimeChanger = 1
+let morningTimeChanger = 2
+let snoozeTimeChanger = 3
 class SliderSettingCell: UITableViewCell{
 
     var delegate:SliderSettingCellDelegate!
@@ -25,7 +28,19 @@ class SliderSettingCell: UITableViewCell{
         }
         set(newVal){
             slider.value = newVal!
-            quantityLB.text = "\(Int(newVal!))"
+            quantityLB.text = "\(Int(newVal!))분 " + "\(self.suffix)"
+        }
+    }
+    private var suffix:String{
+        get{
+            switch self.tag {
+            case nightTimeChanger:
+                return "뒤"
+            case morningTimeChanger:
+                return "전"
+            default:
+                return ""
+            }
         }
     }
 
@@ -33,16 +48,11 @@ class SliderSettingCell: UITableViewCell{
     @IBOutlet private weak var quantityLB:UILabel!
     @IBOutlet private weak var slider:UISlider!
     @IBAction private func updateQuantity(_ sender:UISlider){
-        quantityLB.text = "\(Int(sender.value))"
-        delegate.didSliderValueChanged(titleLB.text!, sender.value)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        quantityLB.text = "\(Int(slider.value))"
+        quantityLB.text = "\(Int(sender.value))분 " + "\(self.suffix)"
+        delegate.didSliderValueChanged(self.tag , sender.value)
     }
 }
 
 protocol SliderSettingCellDelegate {
-    func didSliderValueChanged(_ changer:String, _ changedValue:Float)
+    func didSliderValueChanged(_ changer:Int, _ changedValue:Float)
 }

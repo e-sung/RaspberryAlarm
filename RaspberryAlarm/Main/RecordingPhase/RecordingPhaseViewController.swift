@@ -32,8 +32,10 @@ class RecordingPhaseViewController: UIViewController {
     private var alarmTimer:Timer!
     /// 일어나야 할 시간(단위: 초)
     private var timeToWakeUp:TimeInterval!
-    /// 전기장판 켤 시간(단위: 초)
-    private var timeToHeat:TimeInterval!
+    /// 아침에 전기장판 켤 시간(단위: 초)
+    private var timeToHeatBeforeAwake:TimeInterval!
+    /// 저녁에 전기장판 끌 시간(단위: 초)
+    private var timeToHeatAfterAsleep:TimeInterval!
     /// Snooze 할 시간(단위: 초)
     private var timeToSnooze:TimeInterval!
     /// 초를 HH:mm:ss 형식의 문자열로 바꿔줄 포매터
@@ -94,7 +96,8 @@ class RecordingPhaseViewController: UIViewController {
         self.timeToWakeUp = reflectAmPm(on: self.timeToWakeUp)
         self.timeToWakeUp = sanitize(self.timeToWakeUp)
         self.timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
-        self.timeToHeat = UserDefaults.standard.double(forKey: timeToHeatKey)
+        self.timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatAfterAleepKey)
+        self.timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
     }
     
     /**
@@ -129,19 +132,25 @@ class RecordingPhaseViewController: UIViewController {
             self.currentTimeLB.text = self.dateFormatter.format(seconds: Date().absoluteSeconds, with: DateFormatter.mainDateFormat)
             self.remainingTimeLB.text = self.dateFormatter.format(seconds: self.remainingTime, with: DateFormatter.mainDateFormat)
 
-            // 그래프 새로 그리기
-            if Int(self.remainingTime) % self.chartRefreshRate == 0 {
-                self.reDrawChart() //차트를 새로 그리고
-                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
+//            // 그래프 새로 그리기
+//            if Int(self.remainingTime) % self.chartRefreshRate == 0 {
+//                self.reDrawChart() //차트를 새로 그리고
+//                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
+//            }
+            
+            //잠든 뒤 timeToHeatAfterAsleep 뒤에 전기장판 끄기
+            self.timeToHeatAfterAsleep = self.timeToHeatAfterAsleep - 1.0
+            if Int(self.timeToHeatAfterAsleep) == 0 {
+                URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
             }
 
-            //전기장판 켜기
-            if self.remainingTime == self.timeToHeat{
+            //기상시간으로부터 timeToHeatBeforeAwake 전에 전기장판 켜기
+            if Int(self.remainingTime) == Int(self.timeToHeatBeforeAwake){
                 URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
             }
             
             //알람 울리기
-            if self.remainingTime == 0{
+            if Int(self.remainingTime) == 0{
                 timer.invalidate()
                 self.performSegue(withIdentifier: "showRingingPhase", sender: self)
             }

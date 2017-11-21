@@ -8,13 +8,16 @@
 
 import UIKit
 
+
+
 class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     
-    @IBOutlet weak var timeToHeaetSlider: SliderSettingCell!
+    @IBOutlet weak var timeToHeatAfterAsleepSlider: SliderSettingCell!
+    @IBOutlet weak var timeToHeatBeforeAwakeSlider: SliderSettingCell!
     @IBOutlet weak var timeToSnoozeSlider: SliderSettingCell!
-
     @IBAction func confirmButtonHandler(_ sender: UIBarButtonItem) {
-        UserDefaults.standard.set(TimeInterval(timeToHeat), forKey: timeToHeatKey)
+        UserDefaults.standard.set(TimeInterval(timeToHeatBeforeAwake), forKey: timeToHeatBeforeAwakeKey)
+        UserDefaults.standard.set(TimeInterval(timeToHeatAfterAsleep), forKey: timeToHeatAfterAleepKey)
         UserDefaults.standard.set(TimeInterval(timeToSnooze), forKey: timeToSnoozeKey)
         self.navigationController?.popViewController(animated: true)
     }
@@ -23,33 +26,49 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
         self.navigationController?.popViewController(animated: true)
     }
     
-    var timeToHeat:TimeInterval!
+    var timeToHeatBeforeAwake:TimeInterval!
+    var timeToHeatAfterAsleep:TimeInterval!
     var timeToSnooze:TimeInterval!
-    let defaultTimeToHeat = 30.0*60.0
+    
+    let defaultTimeToHeatBeforeAwake = 30.0*60.0
+    let defaultTimeToHeatAfterAsleep = 30.0*60.0
     let defaultTimeToSnooze = 15.0*60.0
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeToHeaetSlider.delegate = self
+        timeToHeatAfterAsleepSlider.delegate = self
+        timeToHeatBeforeAwakeSlider.delegate = self
         timeToSnoozeSlider.delegate = self
         
-        if UserDefaults.standard.object(forKey: timeToHeatKey) == nil {
-            timeToHeat = defaultTimeToHeat
+        if UserDefaults.standard.object(forKey: timeToHeatBeforeAwakeKey) == nil {
+            timeToHeatBeforeAwake = defaultTimeToHeatBeforeAwake
+            timeToHeatAfterAsleep = defaultTimeToHeatAfterAsleep
             timeToSnooze = defaultTimeToSnooze
         }else{
-            timeToHeat = UserDefaults.standard.double(forKey: timeToHeatKey)
+            timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
+            timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
             timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
         }
-        timeToHeaetSlider.quantity = Float(timeToHeat/60)
+        timeToHeatBeforeAwakeSlider.quantity = Float(timeToHeatBeforeAwake/60)
+        timeToHeatAfterAsleepSlider.quantity = Float(timeToHeatAfterAsleep/60)
         timeToSnoozeSlider.quantity = Float(timeToSnooze/60)
     }
 }
 
 extension SetUpViewController:SliderSettingCellDelegate{
-    func didSliderValueChanged(_ changer: String, _ changedValue: Float) {
-        if changer == "전기장판 시간" {
-            timeToHeat = TimeInterval(changedValue * 60.0)
-        }else if changer == "스누즈 시간"{
-            timeToSnooze = TimeInterval(changedValue * 60.0)
+    
+    func didSliderValueChanged(_ changer: Int, _ changedValue: Float) {
+        switch changer {
+        case nightTimeChanger:
+            timeToHeatAfterAsleep = TimeInterval(Int(changedValue) * 60)
+        case morningTimeChanger:
+            timeToHeatBeforeAwake = TimeInterval(Int(changedValue) * 60)
+        case snoozeTimeChanger:
+            timeToSnooze = TimeInterval(Int(changedValue) * 60)
+        default:
+            print("Unexpected changer tag")
         }
     }
 }

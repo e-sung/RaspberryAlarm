@@ -11,5 +11,6 @@ import Foundation
 let wakeUpHourKey = "wakeUpHour"
 let wakeUpMinuteKey = "wakeUpMinute"
 let timeToSnoozeKey = "timeToSnooze"
-let timeToHeatKey = "timeToHeat"
+let timeToHeatBeforeAwakeKey = "timeToHeatBeforeAwake"
+let timeToHeatAfterAleepKey = "timeToHeatAfterAsleep"
 let ampmKey = "ampm"
