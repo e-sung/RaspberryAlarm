@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="cTY-kp-B4g">
             <objects>
-                <viewController id="ujz-rh-fZT" sceneMemberID="viewController">
+                <viewController id="ujz-rh-fZT" customClass="MainViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="but-Hh-4Ir">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,9 +27,75 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gow-7i-aic" customClass="CircularSlider" customModule="HGCircularSlider">
                                 <rect key="frame" x="52.5" y="158" width="270" height="270"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUn-4a-MTF" customClass="CircularSlider" customModule="HGCircularSlider">
+                                        <rect key="frame" x="27" y="27" width="216" height="216"/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WUn-4a-MTF" secondAttribute="height" multiplier="1:1" id="VmM-Tz-kti"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
+                                                <color key="value" red="0.96470588239999999" green="0.70196078429999997" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                                <color key="value" red="0.16206160189999999" green="0.17293810840000001" blue="0.091077837679999996" alpha="0.70194777399999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endThumbTintColor">
+                                                <color key="value" red="1" green="0.99709838630000003" blue="0.95452862979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endThumbStrokeColor">
+                                                <color key="value" red="0.96470588239999999" green="0.70196078429999997" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thumbRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endThumbStrokeHighlightedColor">
+                                                <color key="value" red="0.96470588239999999" green="0.70196078429999997" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="backtrackLineWidth">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thumbLineWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="diskColor">
+                                                <color key="value" red="0.96470588239999999" green="0.70196078429999997" blue="0.32156862749999998" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                                <real key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwC-NG-N3a">
+                                        <rect key="frame" x="68" y="105" width="74" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" red="0.94108223915100098" green="0.68441802263259888" blue="0.3146568238735199" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkn-6Q-yZR">
+                                        <rect key="frame" x="142" y="105" width="61" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Bkn-6Q-yZR" firstAttribute="centerY" secondItem="wwC-NG-N3a" secondAttribute="centerY" id="CRw-Fi-RdE"/>
+                                    <constraint firstItem="Bkn-6Q-yZR" firstAttribute="leading" secondItem="wwC-NG-N3a" secondAttribute="trailing" id="IDx-qg-Q0k"/>
+                                    <constraint firstItem="wwC-NG-N3a" firstAttribute="centerX" secondItem="WUn-4a-MTF" secondAttribute="centerX" constant="-30" id="KdZ-Ia-Vq8"/>
+                                    <constraint firstItem="WUn-4a-MTF" firstAttribute="width" secondItem="gow-7i-aic" secondAttribute="width" multiplier="0.8" id="Nw8-3o-kuP"/>
+                                    <constraint firstItem="WUn-4a-MTF" firstAttribute="centerY" secondItem="gow-7i-aic" secondAttribute="centerY" id="Shc-q0-y0F"/>
+                                    <constraint firstItem="WUn-4a-MTF" firstAttribute="centerX" secondItem="gow-7i-aic" secondAttribute="centerX" id="W72-l5-SHt"/>
                                     <constraint firstAttribute="width" secondItem="gow-7i-aic" secondAttribute="height" multiplier="1:1" id="eZP-mB-Apq"/>
+                                    <constraint firstItem="wwC-NG-N3a" firstAttribute="centerY" secondItem="WUn-4a-MTF" secondAttribute="centerY" id="m5g-7o-JbR"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
@@ -64,60 +130,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUn-4a-MTF" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="79" y="185" width="216" height="216"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="WUn-4a-MTF" secondAttribute="height" multiplier="1:1" id="VmM-Tz-kti"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
-                                        <color key="value" red="0.96470588239999999" green="0.70196078429999997" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
-                                        <color key="value" red="0.16206160189999999" green="0.17293810840000001" blue="0.091077837679999996" alpha="0.70194777399999997" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endThumbTintColor">
-                                        <color key="value" red="1" green="0.99709838630000003" blue="0.95452862979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endThumbStrokeColor">
-                                        <color key="value" red="0.96470588239999999" green="0.70196078429999997" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endThumbStrokeHighlightedColor">
-                                        <color key="value" red="0.96470588239999999" green="0.70196078429999997" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="backtrackLineWidth">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbLineWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="diskColor">
-                                        <color key="value" red="0.96470588239999999" green="0.70196078429999997" blue="0.32156862749999998" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="I8e-OP-89L" firstAttribute="centerY" secondItem="MXH-rR-lfg" secondAttribute="centerY" constant="-50" id="400-l7-ztP"/>
-                            <constraint firstItem="WUn-4a-MTF" firstAttribute="centerX" secondItem="gow-7i-aic" secondAttribute="centerX" id="46X-U2-wbt"/>
                             <constraint firstItem="I8e-OP-89L" firstAttribute="width" secondItem="but-Hh-4Ir" secondAttribute="width" multiplier="0.8" id="AZC-Rh-hrz"/>
-                            <constraint firstItem="WUn-4a-MTF" firstAttribute="width" secondItem="gow-7i-aic" secondAttribute="width" multiplier="0.8" id="KsV-Yf-GQp"/>
                             <constraint firstItem="gow-7i-aic" firstAttribute="centerY" secondItem="I8e-OP-89L" secondAttribute="centerY" id="SqP-s6-kLi"/>
                             <constraint firstItem="I8e-OP-89L" firstAttribute="centerX" secondItem="MXH-rR-lfg" secondAttribute="centerX" id="e8r-Ye-rut"/>
                             <constraint firstItem="gow-7i-aic" firstAttribute="centerX" secondItem="I8e-OP-89L" secondAttribute="centerX" id="h16-37-wcK"/>
-                            <constraint firstItem="WUn-4a-MTF" firstAttribute="centerY" secondItem="gow-7i-aic" secondAttribute="centerY" id="t8V-8n-wTc"/>
                             <constraint firstItem="gow-7i-aic" firstAttribute="width" secondItem="I8e-OP-89L" secondAttribute="width" multiplier="0.9" id="yXP-y7-uLe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MXH-rR-lfg"/>
                     </view>
+                    <connections>
+                        <outlet property="hourIndicatingSlider" destination="gow-7i-aic" id="WxF-Zj-OEl"/>
+                        <outlet property="minuteIndicatingSlider" destination="WUn-4a-MTF" id="TuY-yX-V4M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBv-LX-lVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

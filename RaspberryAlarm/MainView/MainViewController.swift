@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import HGCircularSlider
 
 class MainViewController: UIViewController {
-
+    @IBOutlet weak var hourIndicatingSlider: CircularSlider!
+    
+    @IBOutlet weak var minuteIndicatingSlider: CircularSlider!
     override func viewDidLoad() {
         super.viewDidLoad()
 
