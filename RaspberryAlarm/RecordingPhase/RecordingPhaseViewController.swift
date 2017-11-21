@@ -28,18 +28,20 @@ import SwiftChart
 class RecordingPhaseViewController: UIViewController {
     
     // MARK: 알람이 울릴 시간을 계산하는데 사용할 전역변수들
-    /// DataCenter.main.nearestAlarm 이 계산해준 알람아이템
-    var alarmItem:AlarmItem!
     /// 현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
     private var alarmTimer:Timer!
     /// 일어나야 할 시간(단위: 초)
-    private var wakeUpTimeInSeconds:TimeInterval!
+    private var timeToWakeUp:TimeInterval!
+    /// 전기장판 켤 시간(단위: 초)
+    private var timeToHeat:TimeInterval!
+    /// Snooze 할 시간(단위: 초)
+    private var timeToSnooze:TimeInterval!
     /// 초를 HH:mm:ss 형식의 문자열로 바꿔줄 포매터
     private var dateFormatter:DateFormatter!
     /// 일어날 때 까지 남은 시간(단위: 초)
-    private var remainingTimeInSeconds:TimeInterval{
+    private var remainingTime:TimeInterval{
         get{
-            return self.wakeUpTimeInSeconds - Date().absoluteSeconds
+            return self.timeToWakeUp - Date().absoluteSeconds
         }
     }
 
@@ -75,15 +77,22 @@ class RecordingPhaseViewController: UIViewController {
     }
     /// 실제로 하는 일은 없음. 다른 화면에서 이곳으로 돌아오기 위한 등대의 역할
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
-        self.wakeUpTimeInSeconds = Date().absoluteSeconds + self.alarmItem.snoozeAmount
+        self.timeToWakeUp = Date().absoluteSeconds + self.timeToSnooze
     }
     
     // MARK: 생명주기
     /// 하는 일 : 각종 속성 초기화 실시
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.wakeUpTimeInSeconds = clarify(alarmItem.timeToWakeUp)
+        self.initTimes()
         self.dateFormatter = DateFormatter()
+    }
+    
+    private func initTimes(){
+        self.timeToWakeUp = clarify(TimeInterval(UserDefaults.standard.integer(forKey: wakeUpHourKey)*3600 +
+                                                 UserDefaults.standard.integer(forKey: wakeUpMinuteKey)*60))
+        self.timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
+        self.timeToHeat = UserDefaults.standard.double(forKey: timeToHeatKey)
     }
     
     /**
@@ -114,7 +123,7 @@ class RecordingPhaseViewController: UIViewController {
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             // 시간 표시
             self.currentTimeLB.text = self.dateFormatter.format(seconds: Date().absoluteSeconds, with: DateFormatter.mainDateFormat)
-            self.remainingTimeLB.text = self.dateFormatter.format(seconds: self.remainingTimeInSeconds, with: DateFormatter.mainDateFormat)
+            self.remainingTimeLB.text = self.dateFormatter.format(seconds: self.remainingTime, with: DateFormatter.mainDateFormat)
 
             // 그래프 새로 그리기
 //            if remainingTime%self.chartRefreshRate == 0 {
@@ -123,12 +132,12 @@ class RecordingPhaseViewController: UIViewController {
 //            }
 
             //전기장판 켜기
-            if self.remainingTimeInSeconds == self.alarmItem.timeToHeat{
+            if self.remainingTime == self.timeToHeat{
                 URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
             }
             
             //알람 울리기
-            if self.remainingTimeInSeconds == 0{
+            if self.remainingTime == 0{
                 timer.invalidate()
                 self.performSegue(withIdentifier: "showRingingPhase", sender: self)
             }

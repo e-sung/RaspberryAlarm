@@ -57,12 +57,7 @@ class MainViewController: UIViewController {
         minuteIndicatingSlider.endPointValue = CGFloat(minute)
         minuteLabel.text = minute > 10 ? "\(minute)" : "0\(minute)"
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     @IBAction func hourChangeHandler(_ sender: CircularSlider) {
         let hour = Int(sender.endPointValue)
         hourLabel.text = hour < 10 ? "0\(hour):" : "\(hour):"

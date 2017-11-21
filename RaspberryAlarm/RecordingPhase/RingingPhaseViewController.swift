@@ -16,10 +16,8 @@ class RingingPhaseViewController: UIViewController {
     }
     
     @IBAction private func terminateButtonHandler(_ sender: UIButton) {
+        URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
         self.performSegue(withIdentifier: "unwindToAlarmList", sender: nil)
-        let url = URL(string: "http://192.168.0.20:3030")!
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-        }.resume()
     }
     
     override func viewDidAppear(_ animated: Bool) {

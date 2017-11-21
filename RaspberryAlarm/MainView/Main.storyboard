@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ujz-rh-fZT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wxc-Lr-XsS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--라즈베리 알람-->
         <scene sceneID="cTY-kp-B4g">
             <objects>
                 <viewController id="ujz-rh-fZT" customClass="MainViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,13 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time_indicators" translatesAutoresizingMaskIntoConstraints="NO" id="I8e-OP-89L">
-                                <rect key="frame" x="37.5" y="143.5" width="300" height="300"/>
+                                <rect key="frame" x="37.5" y="165.5" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="I8e-OP-89L" secondAttribute="height" multiplier="1:1" id="RTA-0e-T04"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gow-7i-aic" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="52.5" y="158" width="270" height="270"/>
+                                <rect key="frame" x="52.5" y="180" width="270" height="270"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUn-4a-MTF" customClass="CircularSlider" customModule="HGCircularSlider">
                                         <rect key="frame" x="27" y="27" width="216" height="216"/>
@@ -142,6 +142,15 @@
                                     <action selector="hourChangeHandler:" destination="ujz-rh-fZT" eventType="valueChanged" id="EgT-MF-Wec"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFp-i7-ZUD">
+                                <rect key="frame" x="300" y="578" width="67" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="🌙"/>
+                                <connections>
+                                    <segue destination="GsH-Qa-ajg" kind="presentation" id="hK9-9a-h7y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -154,6 +163,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MXH-rR-lfg"/>
                     </view>
+                    <navigationItem key="navigationItem" title="라즈베리 알람" id="mjh-bm-feX">
+                        <barButtonItem key="rightBarButtonItem" image="Hamburger_icon" id="mHS-E4-rC7">
+                            <connections>
+                                <segue destination="SaD-hp-g9a" kind="show" id="pgO-Xe-jrO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="hourIndicatingSlider" destination="gow-7i-aic" id="WxF-Zj-OEl"/>
                         <outlet property="hourLabel" destination="wwC-NG-N3a" id="9x5-t8-FcM"/>
@@ -163,10 +179,154 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBv-LX-lVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-367.19999999999999" y="94.902548725637189"/>
+            <point key="canvasLocation" x="28" y="94.902548725637189"/>
+        </scene>
+        <!--RecordingPhase-->
+        <scene sceneID="sBI-lJ-inp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecordingPhase" id="GsH-Qa-ajg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXc-P0-9je" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="K4a-PA-37P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wxc-Lr-XsS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T4W-64-zaT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ujz-rh-fZT" kind="relationship" relationship="rootViewController" id="iuX-f1-ZPI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="trW-AT-irA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-695" y="95"/>
+        </scene>
+        <!--알람설정-->
+        <scene sceneID="0Jy-3P-myY">
+            <objects>
+                <viewController id="SaD-hp-g9a" customClass="SetUpViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bc0-Lt-Nqh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W4q-Z3-Hr3" customClass="SliderSettingCell" customModule="RaspberryAlarm" customModuleProvider="target">
+                                <rect key="frame" x="15" y="84" width="345" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전기장판 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vwg-Ob-O3p">
+                                        <rect key="frame" x="10" y="15" width="162.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBu-wM-igm">
+                                        <rect key="frame" x="271" y="15" width="64" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="tal-TD-8rb">
+                                        <rect key="frame" x="3" y="55" width="339" height="31"/>
+                                        <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="updateQuantity:" destination="W4q-Z3-Hr3" eventType="valueChanged" id="ka6-NF-ZSN"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EBu-wM-igm" secondAttribute="trailing" constant="10" id="2k9-Aq-3w9"/>
+                                    <constraint firstAttribute="bottom" secondItem="tal-TD-8rb" secondAttribute="bottom" constant="15" id="Ndp-tV-Gcu"/>
+                                    <constraint firstAttribute="trailing" secondItem="tal-TD-8rb" secondAttribute="trailing" constant="5" id="SOf-Ba-bZ5"/>
+                                    <constraint firstItem="EBu-wM-igm" firstAttribute="top" secondItem="W4q-Z3-Hr3" secondAttribute="top" constant="15" id="Uat-sO-Ggd"/>
+                                    <constraint firstItem="Vwg-Ob-O3p" firstAttribute="leading" secondItem="W4q-Z3-Hr3" secondAttribute="leading" constant="10" id="WkV-lV-L2U"/>
+                                    <constraint firstItem="tal-TD-8rb" firstAttribute="leading" secondItem="W4q-Z3-Hr3" secondAttribute="leading" constant="5" id="ZcS-zu-6UK"/>
+                                    <constraint firstItem="Vwg-Ob-O3p" firstAttribute="top" secondItem="W4q-Z3-Hr3" secondAttribute="top" constant="15" id="cwg-QU-j2N"/>
+                                    <constraint firstAttribute="height" constant="100" id="vEV-g2-IUW"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="quantityLB" destination="EBu-wM-igm" id="hNH-pV-RlL"/>
+                                    <outlet property="slider" destination="tal-TD-8rb" id="F3Y-ud-1is"/>
+                                    <outlet property="titleLB" destination="Vwg-Ob-O3p" id="81M-fr-wxl"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAE-v6-HY2" customClass="SliderSettingCell" customModule="RaspberryAlarm" customModuleProvider="target">
+                                <rect key="frame" x="15" y="186" width="345" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="스누즈 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="253-Wc-Iep">
+                                        <rect key="frame" x="10" y="15" width="162.5" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsl-yk-sRw">
+                                        <rect key="frame" x="271" y="15" width="64" height="32.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="AdP-e0-37a">
+                                        <rect key="frame" x="3" y="55" width="339" height="31"/>
+                                        <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="updateQuantity:" destination="hAE-v6-HY2" eventType="valueChanged" id="IJ8-hW-hSx"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="AdP-e0-37a" secondAttribute="trailing" constant="5" id="6TE-c4-5Kd"/>
+                                    <constraint firstItem="AdP-e0-37a" firstAttribute="leading" secondItem="hAE-v6-HY2" secondAttribute="leading" constant="5" id="K1l-2u-ess"/>
+                                    <constraint firstAttribute="bottom" secondItem="AdP-e0-37a" secondAttribute="bottom" constant="15" id="m5g-bY-CoB"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="quantityLB" destination="Wsl-yk-sRw" id="AzZ-eN-l3b"/>
+                                    <outlet property="slider" destination="AdP-e0-37a" id="44H-k9-t7j"/>
+                                    <outlet property="titleLB" destination="253-Wc-Iep" id="BIS-go-1ET"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16206160187721252" green="0.17293810844421387" blue="0.18737775087356567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hAE-v6-HY2" firstAttribute="height" secondItem="W4q-Z3-Hr3" secondAttribute="height" id="388-9V-kek"/>
+                            <constraint firstItem="dvK-Ih-kCC" firstAttribute="trailing" secondItem="W4q-Z3-Hr3" secondAttribute="trailing" constant="15" id="C69-yP-WKN"/>
+                            <constraint firstItem="hAE-v6-HY2" firstAttribute="top" secondItem="W4q-Z3-Hr3" secondAttribute="bottom" constant="2" id="DJf-Qv-Xgy"/>
+                            <constraint firstItem="W4q-Z3-Hr3" firstAttribute="leading" secondItem="dvK-Ih-kCC" secondAttribute="leading" constant="15" id="FsI-D2-Pha"/>
+                            <constraint firstItem="hAE-v6-HY2" firstAttribute="centerX" secondItem="W4q-Z3-Hr3" secondAttribute="centerX" id="Hba-6j-iZS"/>
+                            <constraint firstItem="W4q-Z3-Hr3" firstAttribute="top" secondItem="dvK-Ih-kCC" secondAttribute="top" constant="20" id="JY7-kq-XlQ"/>
+                            <constraint firstItem="hAE-v6-HY2" firstAttribute="width" secondItem="W4q-Z3-Hr3" secondAttribute="width" id="kgk-IM-ieh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dvK-Ih-kCC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="알람설정" id="FqV-EX-FrP">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="ybS-hN-ww8">
+                            <connections>
+                                <action selector="cancelButtonHandler:" destination="SaD-hp-g9a" id="2Z7-HJ-qCN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="확인" id="Dyb-be-WUs">
+                            <connections>
+                                <action selector="confirmButtonHandler:" destination="SaD-hp-g9a" id="W49-S5-vac"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="timeToHeaetSlider" destination="W4q-Z3-Hr3" id="z7Q-6T-mx5"/>
+                        <outlet property="timeToSnoozeSlider" destination="hAE-v6-HY2" id="sZV-Ws-B3s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RGb-cr-UEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781.60000000000002" y="94.902548725637189"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Hamburger_icon" width="32" height="32"/>
         <image name="time_indicators" width="301" height="300"/>
     </resources>
 </document>

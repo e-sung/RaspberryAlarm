@@ -28,15 +28,15 @@ class SliderSettingCell: UITableViewCell{
             quantityLB.text = "\(Int(newVal!))"
         }
     }
+
     @IBOutlet private weak var titleLB:UILabel!
     @IBOutlet private weak var quantityLB:UILabel!
     @IBOutlet private weak var slider:UISlider!
-    
     @IBAction private func updateQuantity(_ sender:UISlider){
         quantityLB.text = "\(Int(sender.value))"
         delegate.didSliderValueChanged(titleLB.text!, sender.value)
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         quantityLB.text = "\(Int(slider.value))"
