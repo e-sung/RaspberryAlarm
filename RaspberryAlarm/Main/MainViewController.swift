@@ -69,5 +69,8 @@ class MainViewController: UIViewController {
         minuteLabel.text = minute < 10 ? "0\(minute)" : "\(minute)"
         UserDefaults.standard.set(minute, forKey: wakeUpMinuteKey)
     }
-
+    
+    @IBAction func ampmChangeHandler(_ sender: UISegmentedControl) {
+        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: ampmKey)
+    }
 }

@@ -154,13 +154,29 @@
                                     <segue destination="GsH-Qa-ajg" kind="presentation" id="hK9-9a-h7y"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="V3K-hp-Vkl">
+                                <rect key="frame" x="137.5" y="99" width="100" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="w9d-VR-4Fs"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="AM"/>
+                                    <segment title="PM"/>
+                                </segments>
+                                <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="ampmChangeHandler:" destination="ujz-rh-fZT" eventType="valueChanged" id="tei-lG-oJm"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="I8e-OP-89L" firstAttribute="centerY" secondItem="MXH-rR-lfg" secondAttribute="centerY" constant="-50" id="400-l7-ztP"/>
                             <constraint firstItem="I8e-OP-89L" firstAttribute="width" secondItem="but-Hh-4Ir" secondAttribute="width" multiplier="0.8" id="AZC-Rh-hrz"/>
+                            <constraint firstItem="V3K-hp-Vkl" firstAttribute="centerX" secondItem="MXH-rR-lfg" secondAttribute="centerX" id="GsR-aR-3oS"/>
                             <constraint firstItem="gow-7i-aic" firstAttribute="centerY" secondItem="I8e-OP-89L" secondAttribute="centerY" id="SqP-s6-kLi"/>
                             <constraint firstItem="MXH-rR-lfg" firstAttribute="trailing" secondItem="wFp-i7-ZUD" secondAttribute="trailing" constant="10" id="b3v-JQ-Ltx"/>
+                            <constraint firstItem="I8e-OP-89L" firstAttribute="top" secondItem="V3K-hp-Vkl" secondAttribute="bottom" constant="38.5" id="brQ-Vk-GlC"/>
                             <constraint firstItem="I8e-OP-89L" firstAttribute="centerX" secondItem="MXH-rR-lfg" secondAttribute="centerX" id="e8r-Ye-rut"/>
                             <constraint firstItem="gow-7i-aic" firstAttribute="centerX" secondItem="I8e-OP-89L" secondAttribute="centerX" id="h16-37-wcK"/>
                             <constraint firstItem="gow-7i-aic" firstAttribute="width" secondItem="I8e-OP-89L" secondAttribute="width" multiplier="0.9" id="yXP-y7-uLe"/>

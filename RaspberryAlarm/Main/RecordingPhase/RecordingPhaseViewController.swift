@@ -89,8 +89,10 @@ class RecordingPhaseViewController: UIViewController {
     }
     
     private func initTimes(){
-        self.timeToWakeUp = clarify(TimeInterval(UserDefaults.standard.integer(forKey: wakeUpHourKey)*3600 +
+        self.timeToWakeUp = (TimeInterval(UserDefaults.standard.integer(forKey: wakeUpHourKey)*3600 +
                                                  UserDefaults.standard.integer(forKey: wakeUpMinuteKey)*60))
+        self.timeToWakeUp = reflectAmPm(on: self.timeToWakeUp)
+        self.timeToWakeUp = sanitize(self.timeToWakeUp)
         self.timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
         self.timeToHeat = UserDefaults.standard.double(forKey: timeToHeatKey)
     }
@@ -179,9 +181,18 @@ class RecordingPhaseViewController: UIViewController {
         }
     }
     
-
     // MARK: 편의상 만든 함수들
-    private func clarify(_ wakeUpSeconds:TimeInterval)->TimeInterval{
+    /// 오전/오후 반영
+    private func reflectAmPm(on time:TimeInterval)->TimeInterval{
+        var isAm:Bool = true
+        if UserDefaults.standard.object(forKey: ampmKey) != nil {
+            isAm = UserDefaults.standard.integer(forKey: ampmKey) == 0 ? true : false
+        }
+        return isAm ? time : time + 12.0*3600.0
+    }
+    
+    /// 오늘자고 내일일어나는 경우와, 오늘 자고 오늘 일어나는 경우 반영
+    private func sanitize(_ wakeUpSeconds:TimeInterval)->TimeInterval{
         if Date().absoluteSeconds > wakeUpSeconds{
             return wakeUpSeconds + TimeInterval(24*60*60) //오늘 자고 내일 일어나는 경우
         }else{
