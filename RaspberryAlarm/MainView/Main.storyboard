@@ -69,9 +69,12 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
-                                                <real key="value" value="11"/>
+                                                <real key="value" value="60"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="minuteChangeHandler:" destination="ujz-rh-fZT" eventType="valueChanged" id="f9P-T0-Ikt"/>
+                                        </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwC-NG-N3a">
                                         <rect key="frame" x="68" y="105" width="74" height="60"/>
@@ -128,7 +131,16 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="diskColor">
                                         <color key="value" red="0.96470588235294119" green="0.70196078431372544" blue="0.32156862745098036" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="hourChangeHandler:" destination="ujz-rh-fZT" eventType="valueChanged" id="EgT-MF-Wec"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
@@ -144,7 +156,9 @@
                     </view>
                     <connections>
                         <outlet property="hourIndicatingSlider" destination="gow-7i-aic" id="WxF-Zj-OEl"/>
+                        <outlet property="hourLabel" destination="wwC-NG-N3a" id="9x5-t8-FcM"/>
                         <outlet property="minuteIndicatingSlider" destination="WUn-4a-MTF" id="TuY-yX-V4M"/>
+                        <outlet property="minuteLabel" destination="Bkn-6Q-yZR" id="UUt-F2-Vwl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBv-LX-lVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
