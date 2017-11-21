@@ -38,7 +38,6 @@
 		FF9CF6CE1FB6F5940033E3E3 /* RaspberryAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6CD1FB6F5940033E3E3 /* RaspberryAlarmTests.swift */; };
 		FF9CF6D91FB6F5940033E3E3 /* RaspberryAlarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6D81FB6F5940033E3E3 /* RaspberryAlarmUITests.swift */; };
 		FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */; };
-		FFCB4FBF1FC289FC004DE80F /* alarmList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFCB4FBE1FC289FC004DE80F /* alarmList.plist */; };
 		FFCB4FC11FC29CCD004DE80F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */; };
 		FFF1C0711FB95B6A007C0093 /* RingingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */; };
 		FFF1C0B31FB9BA08007C0093 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */; };
@@ -93,7 +92,6 @@
 		FF9CF6D81FB6F5940033E3E3 /* RaspberryAlarmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspberryAlarmUITests.swift; sourceTree = "<group>"; };
 		FF9CF6DA1FB6F5940033E3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSettingCell.swift; sourceTree = "<group>"; };
-		FFCB4FBE1FC289FC004DE80F /* alarmList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = alarmList.plist; sourceTree = "<group>"; };
 		FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingPhaseViewController.swift; sourceTree = "<group>"; };
 		FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				FF18C39B1FC3DAE7007141EF /* Main */,
 				FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */,
 				FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */,
-				FFCB4FBE1FC289FC004DE80F /* alarmList.plist */,
 				FF9CF6C11FB6F5940033E3E3 /* LaunchScreen.storyboard */,
 				FF9CF6C41FB6F5940033E3E3 /* Info.plist */,
 			);
@@ -374,7 +371,6 @@
 				FF9CF6C31FB6F5940033E3E3 /* LaunchScreen.storyboard in Resources */,
 				FF9CF6C01FB6F5940033E3E3 /* Assets.xcassets in Resources */,
 				FF18C3981FC3DA98007141EF /* Main.storyboard in Resources */,
-				FFCB4FBF1FC289FC004DE80F /* alarmList.plist in Resources */,
 				FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */,
 				FFF1C0B31FB9BA08007C0093 /* alarm.mp3 in Resources */,
 			);
