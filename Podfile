@@ -6,6 +6,7 @@ target 'RaspberryAlarm' do
   use_frameworks!
 
   pod "SwiftChart"
+  pod 'HGCircularSlider', '~> 2.0.0'
 
   # Pods for RaspberryAlarm
 
