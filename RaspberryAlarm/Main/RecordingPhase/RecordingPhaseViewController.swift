@@ -104,10 +104,12 @@ class RecordingPhaseViewController: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = true //핸드폰 꺼지는 것 방지
         alarmTimer = generateAlarmTimer()
         alarmTimer.fire()
+        startAccelerometers()
     }
     /// 하는 일 : 다시 핸드폰이 꺼질 수 있는 상태로 복귀시킴
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.isIdleTimerDisabled = false //다시 핸드폰 꺼질 수 있는 상태로 복귀
+        motionManager.stopAccelerometerUpdates()
     }
     
     // MARK: 매 1초마다 해야 할 일 aka 시간계산 및 표시
@@ -126,10 +128,10 @@ class RecordingPhaseViewController: UIViewController {
             self.remainingTimeLB.text = self.dateFormatter.format(seconds: self.remainingTime, with: DateFormatter.mainDateFormat)
 
             // 그래프 새로 그리기
-//            if remainingTime%self.chartRefreshRate == 0 {
-//                self.reDrawChart() //차트를 새로 그리고
-//                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
-//            }
+            if Int(self.remainingTime) % self.chartRefreshRate == 0 {
+                self.reDrawChart() //차트를 새로 그리고
+                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
+            }
 
             //전기장판 켜기
             if self.remainingTime == self.timeToHeat{
