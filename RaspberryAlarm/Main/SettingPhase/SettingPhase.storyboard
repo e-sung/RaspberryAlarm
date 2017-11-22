@@ -182,7 +182,7 @@
                     <navigationItem key="navigationItem" title="알람설정" id="0ew-eq-ETZ">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="21u-8l-hzc">
                             <connections>
-                                <action selector="cancelButtonHandler:" destination="UyF-u1-b5N" id="mVb-xK-IwX"/>
+                                <action selector="cancelHandlerButton:" destination="UyF-u1-b5N" id="aQO-pe-SWd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="확인" id="6TB-AK-Ov6">
@@ -204,7 +204,7 @@
         <!--서버설정-->
         <scene sceneID="UR0-ms-EfW">
             <objects>
-                <viewController id="ROR-yz-EDp" sceneMemberID="viewController">
+                <viewController id="ROR-yz-EDp" customClass="ServerSetUpViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WgE-Mt-WPb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,8 +285,17 @@
                         <viewLayoutGuide key="safeArea" id="B70-TL-dI3"/>
                     </view>
                     <navigationItem key="navigationItem" title="서버설정" id="pib-vG-zyD">
-                        <barButtonItem key="rightBarButtonItem" title="확인" id="arf-G5-p7n"/>
+                        <barButtonItem key="rightBarButtonItem" title="확인" id="arf-G5-p7n">
+                            <connections>
+                                <action selector="confirmButtonHandler:" destination="ROR-yz-EDp" id="rvz-hA-BpR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outletCollection property="textFields" destination="uQ5-fW-sE2" collectionClass="NSMutableArray" id="f6w-os-lXF"/>
+                        <outletCollection property="textFields" destination="M3I-d6-xZs" collectionClass="NSMutableArray" id="Wgo-hz-Qv0"/>
+                        <outletCollection property="textFields" destination="fen-Ut-eFj" collectionClass="NSMutableArray" id="EpO-Ie-bEy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lng-Jt-RRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

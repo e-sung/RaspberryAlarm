@@ -19,6 +19,9 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
         savePropertiesInUserDefaults()
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction private func cancelHandlerButton(_ sender: UIBarButtonItem){
+        self.navigationController?.popViewController(animated: true)
+    }
 
     // MARK: 이 SetUpViewController에서 SetUp하고자 하는 속성들
     private var timeToHeatBeforeAwake:TimeInterval!

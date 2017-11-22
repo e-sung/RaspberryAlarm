@@ -13,4 +13,5 @@ let wakeUpMinuteKey = "wakeUpMinute"
 let timeToSnoozeKey = "timeToSnooze"
 let timeToHeatBeforeAwakeKey = "timeToHeatBeforeAwake"
 let timeToHeatAfterAleepKey = "timeToHeatAfterAsleep"
+let URLsKeys = ["hostURL","onURL","offURL"]
 let ampmKey = "ampm"
