@@ -15,17 +15,14 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var timeToHeatAfterAsleepSlider: SliderSettingCell!
     @IBOutlet weak var timeToHeatBeforeAwakeSlider: SliderSettingCell!
     @IBOutlet weak var timeToSnoozeSlider: SliderSettingCell!
+    
     @IBAction func confirmButtonHandler(_ sender: UIBarButtonItem) {
         UserDefaults.standard.set(TimeInterval(timeToHeatBeforeAwake), forKey: timeToHeatBeforeAwakeKey)
         UserDefaults.standard.set(TimeInterval(timeToHeatAfterAsleep), forKey: timeToHeatAfterAleepKey)
         UserDefaults.standard.set(TimeInterval(timeToSnooze), forKey: timeToSnoozeKey)
         self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
+
     var timeToHeatBeforeAwake:TimeInterval!
     var timeToHeatAfterAsleep:TimeInterval!
     var timeToSnooze:TimeInterval!
@@ -34,26 +31,39 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     let defaultTimeToHeatAfterAsleep = 30.0*60.0
     let defaultTimeToSnooze = 15.0*60.0
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         timeToHeatAfterAsleepSlider.delegate = self
         timeToHeatBeforeAwakeSlider.delegate = self
         timeToSnoozeSlider.delegate = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.object(forKey: timeToHeatBeforeAwakeKey) == nil {
-            timeToHeatBeforeAwake = defaultTimeToHeatBeforeAwake
-            timeToHeatAfterAsleep = defaultTimeToHeatAfterAsleep
-            timeToSnooze = defaultTimeToSnooze
+            initPropertiesFromDefaultValues()
         }else{
-            timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
-            timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
-            timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
+            initPropertiesFromUserDefaults()
         }
-        timeToHeatBeforeAwakeSlider.quantity = Float(timeToHeatBeforeAwake/60)
-        timeToHeatAfterAsleepSlider.quantity = Float(timeToHeatAfterAsleep/60)
-        timeToSnoozeSlider.quantity = Float(timeToSnooze/60)
+        setUpSliders()
+    }
+    
+    private func initPropertiesFromDefaultValues(){
+        timeToHeatBeforeAwake = defaultTimeToHeatBeforeAwake
+        timeToHeatAfterAsleep = defaultTimeToHeatAfterAsleep
+        timeToSnooze = defaultTimeToSnooze
+    }
+    
+    private func initPropertiesFromUserDefaults(){
+        timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
+        timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatAfterAleepKey)
+        timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
+    }
+    
+    private func setUpSliders(){
+        timeToHeatBeforeAwakeSlider.quantity = Float(Int(timeToHeatBeforeAwake/60))
+        timeToHeatAfterAsleepSlider.quantity = Float(Int(timeToHeatAfterAsleep/60))
+        timeToSnoozeSlider.quantity = Float(Int(timeToSnooze/60))
     }
 }
 

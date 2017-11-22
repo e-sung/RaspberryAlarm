@@ -187,7 +187,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="확인" id="6TB-AK-Ov6">
                             <connections>
-                                <action selector="confirmButtonHandler:" destination="UyF-u1-b5N" id="80v-ie-rrA"/>
+                                <action selector="confirmButtonHandler:" destination="UyF-u1-b5N" id="iOe-QU-thh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
