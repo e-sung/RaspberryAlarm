@@ -223,7 +223,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="mjh-bm-feX">
-                        <barButtonItem key="rightBarButtonItem" image="Hamburger_icon" style="plain" id="mHS-E4-rC7">
+                        <barButtonItem key="rightBarButtonItem" image="Hamburger_icon" style="done" id="mHS-E4-rC7">
                             <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="KVE-mh-zdx" kind="show" id="n0b-uv-NAD"/>
