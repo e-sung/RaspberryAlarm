@@ -51,6 +51,10 @@ class SliderSettingCell: UITableViewCell{
         quantityLB.text = "\(Int(sender.value))분 " + "\(self.suffix)"
         delegate.didSliderValueChanged(self.tag , sender.value)
     }
+    
+    override func awakeFromNib() {
+        self.selectionStyle = .none
+    }
 }
 
 protocol SliderSettingCellDelegate {

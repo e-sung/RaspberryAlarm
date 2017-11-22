@@ -25,9 +25,11 @@ class ServerSetUpViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        textFields[0].text = "\(UserDefaults.standard.url(forKey: URLsKeys[0])!)"
-        textFields[1].text = parseRelative(url: UserDefaults.standard.url(forKey: URLsKeys[1])!)
-        textFields[2].text = parseRelative(url: UserDefaults.standard.url(forKey: URLsKeys[2])!)
+        if UserDefaults.standard.url(forKey: URLsKeys[0]) != nil {
+            textFields[0].text = "\(UserDefaults.standard.url(forKey: URLsKeys[0])!)"
+            textFields[1].text = parseRelative(url: UserDefaults.standard.url(forKey: URLsKeys[1])!)
+            textFields[2].text = parseRelative(url: UserDefaults.standard.url(forKey: URLsKeys[2])!)
+        }
     }
     
     func parseRelative(url:URL)->String{
