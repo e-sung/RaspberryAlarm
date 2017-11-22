@@ -16,7 +16,8 @@ class RingingPhaseViewController: UIViewController {
     }
     
     @IBAction private func terminateButtonHandler(_ sender: UIButton) {
-        URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
+        let turnOffURL = UserDefaults.standard.url(forKey: URLsKeys[2])!
+        URLSession.shared.dataTask(with: turnOffURL).resume()
         self.performSegue(withIdentifier: "unwindToAlarmList", sender: nil)
     }
     

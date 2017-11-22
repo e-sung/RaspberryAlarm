@@ -46,6 +46,10 @@ class RecordingPhaseViewController: UIViewController {
             return self.timeToWakeUp - Date().absoluteSeconds
         }
     }
+    
+    // MARK: 전기장판 URL
+    private var turnOnUrl:URL!
+    private var turnOffURL:URL!
 
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
     /// 가속도 센서 확인할 주기 (단위 :Hz)
@@ -87,6 +91,7 @@ class RecordingPhaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTimes()
+        self.initURLs()
         self.dateFormatter = DateFormatter()
     }
     
@@ -98,6 +103,11 @@ class RecordingPhaseViewController: UIViewController {
         self.timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
         self.timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatAfterAleepKey)
         self.timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
+    }
+    
+    private func initURLs(){
+        self.turnOnUrl = UserDefaults.standard.url(forKey: URLsKeys[1])!
+        self.turnOffURL = UserDefaults.standard.url(forKey: URLsKeys[2])!
     }
     
     /**
@@ -141,12 +151,12 @@ class RecordingPhaseViewController: UIViewController {
             //잠든 뒤 timeToHeatAfterAsleep 뒤에 전기장판 끄기
             self.timeToHeatAfterAsleep = self.timeToHeatAfterAsleep - 1.0
             if Int(self.timeToHeatAfterAsleep) == 0 {
-                URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
+                URLSession.shared.dataTask(with: self.turnOffURL).resume()
             }
 
             //기상시간으로부터 timeToHeatBeforeAwake 전에 전기장판 켜기
             if Int(self.remainingTime) == Int(self.timeToHeatBeforeAwake){
-                URLSession.shared.dataTask(with: URL(string: "http://192.168.0.20:3030")!).resume()
+                URLSession.shared.dataTask(with: self.turnOnUrl).resume()
             }
             
             //알람 울리기
