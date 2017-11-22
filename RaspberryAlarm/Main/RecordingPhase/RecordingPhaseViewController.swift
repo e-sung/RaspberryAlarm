@@ -9,20 +9,10 @@
 import UIKit
 import CoreMotion
 import SwiftChart
-/**
- # OverView
- ## 1. 무엇을 하는 놈인가?
- 크게 두 가지 일을 합니다.
- 1. 현재시간과 기상시간을 표시:
+/** # 무엇을 하는 놈인가?
+ 1. 현재시간과 기상까지 남은 시간을 표시:
  2. 가속도 센서 감지/그래프 작성:
 
- ## 2. 그것을 어떻게 하는가?
- 1. 기상시간 계산 : `func generateAlarmTimer()` 참고
-    1. 가장 근시일에 울려야 할 알람은, DataCenter.main 의 계산속성을 통해서 알 수 있음.
-    2. 근데 이 알람이 울릴 시간이 현재시각보다 과거면(!), 내일 울릴 알람이라고 판단함.
-    3. 앱을 켜두고 잠드는 상황을 상정했기에, "내일 모레" 알람이 울리는 것은 상정하지 않음.
- 2. 그래프 작성 : `func startAccelerometers()`참고
- 
  - ToDo: HealthKit에 수면데이터 저장하기
 */
 class RecordingPhaseViewController: UIViewController {
@@ -30,17 +20,17 @@ class RecordingPhaseViewController: UIViewController {
     // MARK: 알람이 울릴 시간을 계산하는데 사용할 전역변수들
     /// 현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
     private var alarmTimer:Timer!
-    /// 일어나야 할 시간(단위: 초)
+    /// 일어나야 할 시간
     private var timeToWakeUp:TimeInterval!
-    /// 아침에 전기장판 켤 시간(단위: 초)
+    /// 아침에 전기장판 켤 시간
     private var timeToHeatBeforeAwake:TimeInterval!
-    /// 저녁에 전기장판 끌 시간(단위: 초)
+    /// 저녁에 전기장판 끌 시간
     private var timeToHeatAfterAsleep:TimeInterval!
-    /// Snooze 할 시간(단위: 초)
+    /// Snooze 할 시간
     private var timeToSnooze:TimeInterval!
     /// 초를 HH:mm:ss 형식의 문자열로 바꿔줄 포매터
     private var dateFormatter:DateFormatter!
-    /// 일어날 때 까지 남은 시간(단위: 초)
+    /// 일어날 때 까지 남은 시간
     private var remainingTime:TimeInterval{
         get{
             return self.timeToWakeUp - Date().absoluteSeconds
@@ -81,9 +71,11 @@ class RecordingPhaseViewController: UIViewController {
         alarmTimer.invalidate()
         self.dismiss(animated: true, completion: nil)
     }
-    /// 실제로 하는 일은 없음. 다른 화면에서 이곳으로 돌아오기 위한 등대의 역할
+    /// RingingPhase에서 이곳으로 넘어왔다는 것은, Snooze를 눌렀다는 뜻!
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
-        self.timeToWakeUp = Date().absoluteSeconds + self.timeToSnooze
+        if let _ = segue.source as? RingingPhaseViewController{
+            self.timeToWakeUp = Date().absoluteSeconds + self.timeToSnooze
+        }
     }
     
     // MARK: 생명주기

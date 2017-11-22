@@ -28,11 +28,6 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     private var timeToHeatAfterAsleep:TimeInterval!
     private var timeToSnooze:TimeInterval!
     
-    // MARK: 이 SetUpViewController에서 SetUp하고자 하는 속성들의 기본값
-    private let defaultTimeToHeatBeforeAwake = 30.0*60.0
-    private let defaultTimeToHeatAfterAsleep = 30.0*60.0
-    private let defaultTimeToSnooze = 15.0*60.0
-    
     // MARK: LifeCycle
     /// Delegate선언
     override func viewDidLoad() {
@@ -72,6 +67,8 @@ extension SetUpViewController:SliderSettingCellDelegate{
 }
 
 
+// MARK: 초기화 메서드들
+/// - Todo : IBOutletCollections 활용
 extension SetUpViewController{
     private func initPropertiesFromDefaultValues(){
         timeToHeatBeforeAwake = defaultTimeToHeatBeforeAwake
