@@ -23,32 +23,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3H-yo-T3w">
-                                <rect key="frame" x="161.5" y="596" width="52" height="30"/>
+                                <rect key="frame" x="161.5" y="587" width="52" height="30"/>
                                 <state key="normal" title="취소하기"/>
                                 <connections>
                                     <action selector="cancelButtonHandler:" destination="0gf-Va-GIK" eventType="touchUpInside" id="et1-Z9-m08"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-gD-ZEG">
-                                <rect key="frame" x="19" y="70" width="336.5" height="79.5"/>
+                                <rect key="frame" x="19.5" y="50" width="336.5" height="79.5"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="70"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gv5-gV-zHX">
-                                <rect key="frame" x="67" y="519" width="240.5" height="57"/>
+                                <rect key="frame" x="67.5" y="520" width="240.5" height="57"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="50"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남은 시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDO-XJ-76a">
-                                <rect key="frame" x="132" y="473" width="110.5" height="36"/>
+                                <rect key="frame" x="132.5" y="474" width="110.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1R-fD-U6R" customClass="Chart" customModule="SwiftChart">
-                                <rect key="frame" x="20" y="169.5" width="335" height="283.5"/>
+                                <rect key="frame" x="20" y="149.5" width="335" height="304.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -57,12 +57,20 @@
                             <constraint firstItem="Gv5-gV-zHX" firstAttribute="top" secondItem="YDO-XJ-76a" secondAttribute="bottom" constant="10" id="0LM-tL-p59"/>
                             <constraint firstItem="YDO-XJ-76a" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="1QF-iv-Qht"/>
                             <constraint firstItem="Gv5-gV-zHX" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="6CA-LK-fzA"/>
-                            <constraint firstItem="M3H-yo-T3w" firstAttribute="top" secondItem="Gv5-gV-zHX" secondAttribute="bottom" constant="20" id="Inn-RR-5oX"/>
-                            <constraint firstItem="e8p-CB-49I" firstAttribute="bottom" secondItem="M3H-yo-T3w" secondAttribute="bottom" constant="41" id="NdC-W5-joR"/>
-                            <constraint firstItem="Pfc-gD-ZEG" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="OQk-XG-IfO"/>
+                            <constraint firstItem="M3H-yo-T3w" firstAttribute="top" secondItem="Gv5-gV-zHX" secondAttribute="bottom" constant="20" id="Inn-RR-5oX">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="e8p-CB-49I" firstAttribute="bottom" secondItem="M3H-yo-T3w" secondAttribute="bottom" id="NdC-W5-joR">
+                                <variation key="widthClass=compact" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="Pfc-gD-ZEG" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="OQk-XG-IfO">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="e8p-CB-49I" firstAttribute="trailing" secondItem="u1R-fD-U6R" secondAttribute="trailing" constant="20" id="Qsw-ij-HeM"/>
                             <constraint firstItem="u1R-fD-U6R" firstAttribute="top" secondItem="Pfc-gD-ZEG" secondAttribute="bottom" constant="20" id="TCh-gK-dKy"/>
-                            <constraint firstItem="Pfc-gD-ZEG" firstAttribute="top" secondItem="e8p-CB-49I" secondAttribute="top" constant="50" id="YDE-oa-u6o"/>
+                            <constraint firstItem="Pfc-gD-ZEG" firstAttribute="top" secondItem="e8p-CB-49I" secondAttribute="top" constant="10" id="YDE-oa-u6o">
+                                <variation key="widthClass=compact" constant="30"/>
+                            </constraint>
                             <constraint firstItem="M3H-yo-T3w" firstAttribute="centerX" secondItem="e8p-CB-49I" secondAttribute="centerX" id="aTH-pf-qli"/>
                             <constraint firstItem="u1R-fD-U6R" firstAttribute="leading" secondItem="e8p-CB-49I" secondAttribute="leading" constant="20" id="ndv-VX-dhO"/>
                             <constraint firstItem="YDO-XJ-76a" firstAttribute="top" secondItem="u1R-fD-U6R" secondAttribute="bottom" constant="20" id="wt4-H3-BpI"/>
