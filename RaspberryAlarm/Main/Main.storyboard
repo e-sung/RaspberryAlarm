@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wxc-Lr-XsS">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,17 +16,17 @@
             <objects>
                 <viewController id="ujz-rh-fZT" customClass="MainViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="but-Hh-4Ir">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time_indicators" translatesAutoresizingMaskIntoConstraints="NO" id="I8e-OP-89L">
-                                <rect key="frame" x="37.5" y="165.5" width="300" height="300"/>
+                                <rect key="frame" x="183" y="53" width="301" height="301"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="I8e-OP-89L" secondAttribute="height" multiplier="1:1" id="RTA-0e-T04"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gow-7i-aic" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="52.5" y="180" width="270" height="270"/>
+                                <rect key="frame" x="198.5" y="68" width="270.5" height="270.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUn-4a-MTF" customClass="CircularSlider" customModule="HGCircularSlider">
                                         <rect key="frame" x="27" y="27" width="216" height="216"/>
@@ -143,7 +143,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFp-i7-ZUD">
-                                <rect key="frame" x="265" y="557" width="100" height="100"/>
+                                <rect key="frame" x="557" y="265" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0Ow-ZE-lQW"/>
                                     <constraint firstAttribute="width" constant="100" id="J67-2j-1I3"/>
@@ -155,8 +155,9 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="V3K-hp-Vkl">
-                                <rect key="frame" x="137.5" y="99" width="100" height="29"/>
+                                <rect key="frame" x="50" y="70" width="100" height="29"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="WR2-s6-Hk3"/>
                                     <constraint firstAttribute="width" constant="100" id="w9d-VR-4Fs"/>
                                 </constraints>
                                 <segments>
@@ -164,6 +165,17 @@
                                     <segment title="PM"/>
                                 </segments>
                                 <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WR2-s6-Hk3"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="WR2-s6-Hk3"/>
+                                        <exclude reference="w9d-VR-4Fs"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="ampmChangeHandler:" destination="ujz-rh-fZT" eventType="valueChanged" id="tei-lG-oJm"/>
                                 </connections>
@@ -171,18 +183,44 @@
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="I8e-OP-89L" firstAttribute="centerY" secondItem="MXH-rR-lfg" secondAttribute="centerY" constant="-50" id="400-l7-ztP"/>
-                            <constraint firstItem="I8e-OP-89L" firstAttribute="width" secondItem="but-Hh-4Ir" secondAttribute="width" multiplier="0.8" id="AZC-Rh-hrz"/>
+                            <constraint firstItem="I8e-OP-89L" firstAttribute="centerY" secondItem="MXH-rR-lfg" secondAttribute="centerY" constant="-50" id="400-l7-ztP">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="I8e-OP-89L" firstAttribute="width" secondItem="but-Hh-4Ir" secondAttribute="width" multiplier="0.8" id="7Rz-77-USd"/>
                             <constraint firstItem="V3K-hp-Vkl" firstAttribute="centerX" secondItem="MXH-rR-lfg" secondAttribute="centerX" id="GsR-aR-3oS"/>
+                            <constraint firstItem="V3K-hp-Vkl" firstAttribute="leading" secondItem="but-Hh-4Ir" secondAttribute="leading" constant="50" id="Nhm-Ck-yo0"/>
                             <constraint firstItem="gow-7i-aic" firstAttribute="centerY" secondItem="I8e-OP-89L" secondAttribute="centerY" id="SqP-s6-kLi"/>
                             <constraint firstItem="MXH-rR-lfg" firstAttribute="trailing" secondItem="wFp-i7-ZUD" secondAttribute="trailing" constant="10" id="b3v-JQ-Ltx"/>
                             <constraint firstItem="I8e-OP-89L" firstAttribute="top" secondItem="V3K-hp-Vkl" secondAttribute="bottom" constant="38.5" id="brQ-Vk-GlC"/>
                             <constraint firstItem="I8e-OP-89L" firstAttribute="centerX" secondItem="MXH-rR-lfg" secondAttribute="centerX" id="e8r-Ye-rut"/>
                             <constraint firstItem="gow-7i-aic" firstAttribute="centerX" secondItem="I8e-OP-89L" secondAttribute="centerX" id="h16-37-wcK"/>
+                            <constraint firstItem="V3K-hp-Vkl" firstAttribute="top" secondItem="but-Hh-4Ir" secondAttribute="top" constant="10" id="hpI-Ni-fmF">
+                                <variation key="heightClass=compact" constant="70"/>
+                            </constraint>
                             <constraint firstItem="gow-7i-aic" firstAttribute="width" secondItem="I8e-OP-89L" secondAttribute="width" multiplier="0.9" id="yXP-y7-uLe"/>
                             <constraint firstItem="MXH-rR-lfg" firstAttribute="bottom" secondItem="wFp-i7-ZUD" secondAttribute="bottom" constant="10" id="zQK-rk-7jg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MXH-rR-lfg"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7Rz-77-USd"/>
+                                <exclude reference="Nhm-Ck-yo0"/>
+                                <exclude reference="hpI-Ni-fmF"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="brQ-Vk-GlC"/>
+                                <exclude reference="GsR-aR-3oS"/>
+                                <include reference="Nhm-Ck-yo0"/>
+                                <include reference="hpI-Ni-fmF"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="7Rz-77-USd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="mjh-bm-feX">
                         <barButtonItem key="rightBarButtonItem" image="Hamburger_icon" style="plain" id="mHS-E4-rC7">
@@ -225,7 +263,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wxc-Lr-XsS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="T4W-64-zaT">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.16206160187721252" green="0.17293810844421387" blue="0.18737775087356567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
