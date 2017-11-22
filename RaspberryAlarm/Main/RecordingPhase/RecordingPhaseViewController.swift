@@ -97,7 +97,7 @@ class RecordingPhaseViewController: UIViewController {
     
     private func initTimes(){
         self.timeToWakeUp = (TimeInterval(UserDefaults.standard.integer(forKey: wakeUpHourKey)*3600 +
-                                                 UserDefaults.standard.integer(forKey: wakeUpMinuteKey)*60))
+                                          UserDefaults.standard.integer(forKey: wakeUpMinuteKey)*60))
         self.timeToWakeUp = reflectAmPm(on: self.timeToWakeUp)
         self.timeToWakeUp = sanitize(self.timeToWakeUp)
         self.timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
@@ -119,7 +119,7 @@ class RecordingPhaseViewController: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = true //핸드폰 꺼지는 것 방지
         alarmTimer = generateAlarmTimer()
         alarmTimer.fire()
-        startAccelerometers()
+        //startAccelerometers()
     }
     /// 하는 일 : 다시 핸드폰이 꺼질 수 있는 상태로 복귀시킴
     override func viewWillDisappear(_ animated: Bool) {
