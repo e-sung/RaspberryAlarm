@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UyF-u1-b5N">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--알람설정-->
+        <scene sceneID="pYP-JW-KJp">
+            <objects>
+                <viewController id="UyF-u1-b5N" customClass="SetUpViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1TC-4U-zQ0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hPt-Sz-fpv">
+                                <rect key="frame" x="15" y="40" width="345" height="427"/>
+                                <subviews>
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKl-Vd-CM0" customClass="SliderSettingCell" customModule="RaspberryAlarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="107"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Iy0-HO-P3V">
+                                                <rect key="frame" x="10" y="15" width="323.5" height="32.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="잠들고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIo-Xv-G77">
+                                                        <rect key="frame" x="0.0" y="0.0" width="70.5" height="32.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00분 뒤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLQ-R5-Xcz">
+                                                        <rect key="frame" x="80.5" y="0.0" width="86.5" height="32.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="전기장판 꺼짐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YL-f8-yta">
+                                                        <rect key="frame" x="177" y="0.0" width="146.5" height="32.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="QqS-nt-3XX">
+                                                <rect key="frame" x="3" y="55" width="339" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="updateQuantity:" destination="rKl-Vd-CM0" eventType="valueChanged" id="a0m-2U-UPi"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <connections>
+                                            <outlet property="quantityLB" destination="lLQ-R5-Xcz" id="cDh-qJ-dHi"/>
+                                            <outlet property="slider" destination="QqS-nt-3XX" id="33j-JX-Xni"/>
+                                            <outlet property="titleLB" destination="jIo-Xv-G77" id="dac-pb-wEJ"/>
+                                        </connections>
+                                    </view>
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-KZ-CQ6" customClass="SliderSettingCell" customModule="RaspberryAlarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="107" width="345" height="106.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ndm-dD-DN2">
+                                                <rect key="frame" x="10" y="15" width="346.5" height="32.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="일어나기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwn-Se-fh5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="32.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00분 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAz-wI-0mk">
+                                                        <rect key="frame" x="103.5" y="0.0" width="86.5" height="32.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="전기장판 켜짐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIu-vv-tJg">
+                                                        <rect key="frame" x="200" y="0.0" width="146.5" height="32.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                        <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Rwi-7D-6Hx">
+                                                <rect key="frame" x="3" y="55" width="339" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="updateQuantity:" destination="jVt-KZ-CQ6" eventType="valueChanged" id="QRG-M0-4J8"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <connections>
+                                            <outlet property="quantityLB" destination="MAz-wI-0mk" id="4hq-xX-Kbz"/>
+                                            <outlet property="slider" destination="Rwi-7D-6Hx" id="c1L-UL-10y"/>
+                                            <outlet property="titleLB" destination="pwn-Se-fh5" id="W3Y-ub-iN6"/>
+                                        </connections>
+                                    </view>
+                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLR-In-MfT" customClass="SliderSettingCell" customModule="RaspberryAlarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="213.5" width="345" height="107"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="스누즈 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sr-re-bTk">
+                                                <rect key="frame" x="10" y="15" width="163" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWc-Qm-Nex">
+                                                <rect key="frame" x="271" y="15" width="64" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="mPg-cM-Zcb">
+                                                <rect key="frame" x="3" y="55" width="339" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="updateQuantity:" destination="kLR-In-MfT" eventType="valueChanged" id="pxW-sC-TwU"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <connections>
+                                            <outlet property="quantityLB" destination="EWc-Qm-Nex" id="Mpj-Gp-eg3"/>
+                                            <outlet property="slider" destination="mPg-cM-Zcb" id="8m7-8q-g0T"/>
+                                            <outlet property="titleLB" destination="0sr-re-bTk" id="1am-h7-urd"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5U-S6-hgO" customClass="SliderSettingCell" customModule="RaspberryAlarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="320.5" width="345" height="106.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전기장판 세부 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5O-Tb-CIl">
+                                                <rect key="frame" x="10" y="15" width="221" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxk-Xp-cHW">
+                                                <rect key="frame" x="271" y="15" width="64" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <connections>
+                                            <outlet property="quantityLB" destination="kxk-Xp-cHW" id="Dmb-dj-i3L"/>
+                                            <outlet property="titleLB" destination="S5O-Tb-CIl" id="KCT-cN-XGV"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16206160189999999" green="0.17293810840000001" blue="0.1873777509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RoY-K1-4kb" firstAttribute="bottom" secondItem="hPt-Sz-fpv" secondAttribute="bottom" constant="200" id="6oi-Ad-PqW"/>
+                            <constraint firstItem="hPt-Sz-fpv" firstAttribute="top" secondItem="RoY-K1-4kb" secondAttribute="top" constant="20" id="T4Y-5A-14z"/>
+                            <constraint firstItem="RoY-K1-4kb" firstAttribute="trailing" secondItem="hPt-Sz-fpv" secondAttribute="trailing" constant="15" id="TI2-Ej-cja"/>
+                            <constraint firstItem="hPt-Sz-fpv" firstAttribute="leading" secondItem="RoY-K1-4kb" secondAttribute="leading" constant="15" id="UEu-ZC-cKx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RoY-K1-4kb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="알람설정" id="0ew-eq-ETZ">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="21u-8l-hzc">
+                            <connections>
+                                <action selector="cancelButtonHandler:" destination="UyF-u1-b5N" id="mVb-xK-IwX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="확인" id="6TB-AK-Ov6">
+                            <connections>
+                                <action selector="confirmButtonHandler:" destination="UyF-u1-b5N" id="80v-ie-rrA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="timeToHeatAfterAsleepSlider" destination="rKl-Vd-CM0" id="c1k-GJ-7Kn"/>
+                        <outlet property="timeToHeatBeforeAwakeSlider" destination="jVt-KZ-CQ6" id="Id2-Zj-G5t"/>
+                        <outlet property="timeToSnoozeSlider" destination="kLR-In-MfT" id="Plf-oh-yAV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qab-MT-Hia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781.60000000000002" y="94.902548725637189"/>
+        </scene>
+    </scenes>
+</document>

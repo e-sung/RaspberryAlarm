@@ -38,6 +38,7 @@
 		FF9CF6D91FB6F5940033E3E3 /* RaspberryAlarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6D81FB6F5940033E3E3 /* RaspberryAlarmUITests.swift */; };
 		FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */; };
 		FFCB4FC11FC29CCD004DE80F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */; };
+		FFE40D131FC53FD1006E2FAC /* SettingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE40D121FC53FD1006E2FAC /* SettingPhase.storyboard */; };
 		FFF1C0711FB95B6A007C0093 /* RingingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */; };
 		FFF1C0B31FB9BA08007C0093 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */; };
 		FFF7BC7C1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */; };
@@ -91,6 +92,7 @@
 		FF9CF6DA1FB6F5940033E3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSettingCell.swift; sourceTree = "<group>"; };
 		FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		FFE40D121FC53FD1006E2FAC /* SettingPhase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingPhase.storyboard; sourceTree = "<group>"; };
 		FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingPhaseViewController.swift; sourceTree = "<group>"; };
 		FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		FFF7BC7F1FC40F8800C6B5D1 /* SettingPhase */ = {
 			isa = PBXGroup;
 			children = (
+				FFE40D121FC53FD1006E2FAC /* SettingPhase.storyboard */,
 				FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */,
 				FFF7BC7D1FC3F63F00C6B5D1 /* SetUpViewController.swift */,
 			);
@@ -370,6 +373,7 @@
 				FF18C3981FC3DA98007141EF /* Main.storyboard in Resources */,
 				FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */,
 				FFF1C0B31FB9BA08007C0093 /* alarm.mp3 in Resources */,
+				FFE40D131FC53FD1006E2FAC /* SettingPhase.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

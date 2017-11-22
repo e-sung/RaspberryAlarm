@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var minuteIndicatingSlider: CircularSlider!
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var minuteLabel: UILabel!
+    
     let defaultWakeUpHour = 6
     let defaultWakeUpMinute = 30
     
