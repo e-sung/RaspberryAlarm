@@ -18,6 +18,9 @@ class ServerSetUpViewController: UIViewController {
         }
     }
     
+    @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
     private func save(_ urls:[URL?], with keys:[String], on userDefaults:UserDefaults){
         for i in 0..<urls.count{
             userDefaults.set(urls[i], forKey: keys[i])

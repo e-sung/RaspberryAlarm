@@ -187,11 +187,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="알람설정" id="0ew-eq-ETZ">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="21u-8l-hzc">
+                            <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelHandlerButton:" destination="UyF-u1-b5N" id="aQO-pe-SWd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="확인" id="6TB-AK-Ov6">
+                            <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="confirmButtonHandler:" destination="UyF-u1-b5N" id="iOe-QU-thh"/>
                             </connections>
@@ -291,7 +293,14 @@
                         <viewLayoutGuide key="safeArea" id="B70-TL-dI3"/>
                     </view>
                     <navigationItem key="navigationItem" title="서버설정" id="pib-vG-zyD">
+                        <barButtonItem key="leftBarButtonItem" title="뒤로가기" id="mpy-vd-M36">
+                            <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancelButtonHandler:" destination="ROR-yz-EDp" id="yi3-GP-fQk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="확인" id="arf-G5-p7n">
+                            <color key="tintColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="confirmButtonHandler:" destination="ROR-yz-EDp" id="rvz-hA-BpR"/>
                             </connections>
