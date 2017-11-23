@@ -49,7 +49,7 @@ class RecordingPhaseViewController: UIViewController {
     /// motion을 할 sensing 할 객체
     private let motionManager:CMMotionManager = CMMotionManager()
     /// 그래프를 새로 그릴 주기 (단위 :초)
-    private let chartRefreshRate = 1
+    private let chartRefreshRate = 10
     /// 핸드폰이 흔들렸는지 확인할 기준치 : `func startAccelerometers()`참고
     private var lastState = 0
     /// 1초동안 핸드폰이 흔들린 횟수 (sleep movements in seconds)
@@ -111,7 +111,7 @@ class RecordingPhaseViewController: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = true //핸드폰 꺼지는 것 방지
         alarmTimer = generateAlarmTimer()
         alarmTimer.fire()
-        //startAccelerometers()
+        startAccelerometers()
     }
     /// 하는 일 : 다시 핸드폰이 꺼질 수 있는 상태로 복귀시킴
     override func viewWillDisappear(_ animated: Bool) {
@@ -134,11 +134,11 @@ class RecordingPhaseViewController: UIViewController {
             self.currentTimeLB.text = self.dateFormatter.format(seconds: Date().absoluteSeconds, with: DateFormatter.mainDateFormat)
             self.remainingTimeLB.text = self.dateFormatter.format(seconds: self.remainingTime, with: DateFormatter.mainDateFormat)
 
-//            // 그래프 새로 그리기
-//            if Int(self.remainingTime) % self.chartRefreshRate == 0 {
-//                self.reDrawChart() //차트를 새로 그리고
-//                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
-//            }
+            // 그래프 새로 그리기
+            if Int(self.remainingTime) % self.chartRefreshRate == 0 {
+                self.reDrawChart() //차트를 새로 그리고
+                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
+            }
             
             //잠든 뒤 timeToHeatAfterAsleep 뒤에 전기장판 끄기
             self.timeToHeatAfterAsleep = self.timeToHeatAfterAsleep - 1.0
