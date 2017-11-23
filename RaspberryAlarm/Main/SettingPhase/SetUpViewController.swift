@@ -10,9 +10,7 @@ import UIKit
 class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     
     // MARK: IBOutlets
-    @IBOutlet private weak var timeToHeatAfterAsleepSlider: SliderSettingCell!
-    @IBOutlet private weak var timeToHeatBeforeAwakeSlider: SliderSettingCell!
-    @IBOutlet private weak var timeToSnoozeSlider: SliderSettingCell!
+    @IBOutlet var sliderCells: [SliderSettingCell]!
     
     // MARK: IBAction
     @IBAction private func confirmButtonHandler(_ sender: UIBarButtonItem) {
@@ -24,23 +22,26 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     }
 
     // MARK: 이 SetUpViewController에서 SetUp하고자 하는 속성들
-    private var timeToHeatBeforeAwake:TimeInterval!
-    private var timeToHeatAfterAsleep:TimeInterval!
-    private var timeToSnooze:TimeInterval!
-    
+    /// 1. 잠들고 전기장판 끌 시간
+    /// 2. 일어나기 전 전기장판 켤 시간
+    /// 3. 뒤척일 시간
+    private var timesToSet:[TimeInterval] = [
+        appDefault[timeTo.turnOn.rawValue],
+        appDefault[timeTo.turnOff.rawValue],
+        appDefault[timeTo.snooze.rawValue]
+    ]
+
     // MARK: LifeCycle
     /// Delegate선언
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeToHeatAfterAsleepSlider.delegate = self
-        timeToHeatBeforeAwakeSlider.delegate = self
-        timeToSnoozeSlider.delegate = self
+        for sliderCell in sliderCells{
+            sliderCell.delegate = self
+        }
     }
     /// 이 ViewController의 속성값들을 초기화하고, 이 속성값들을 바탕으로 슬라이더의 위치를 조정
     override func viewWillAppear(_ animated: Bool) {
-        if UserDefaults.standard.object(forKey: timeToHeatBeforeAwakeKey) == nil {
-            initPropertiesFromDefaultValues()
-        }else{
+        if UserDefaults.standard.object(forKey: keysForTimesToSetUpInSettingPhase[0]) != nil {
             initPropertiesFromUserDefaults()
         }
         setUpSlidersWithProperties()
@@ -50,19 +51,10 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
 // MARK : 슬라이더View의 Delegate
 extension SetUpViewController:SliderSettingCellDelegate{
     /// 슬라이더가 슬라이드 되었을 때마다 불리는 함수
-    /// - parameter changer : 슬라이드된 슬라이더의 식별자
+    /// - parameter changer : 슬라이드된 슬라이더의 Tag
     /// - parameter changedValue : 슬라이드된 값
     func didSliderValueChanged(_ changer: Int, _ changedValue: Float) {
-        switch changer {
-        case nightTimeChanger:
-            timeToHeatAfterAsleep = TimeInterval(Int(changedValue) * 60)
-        case morningTimeChanger:
-            timeToHeatBeforeAwake = TimeInterval(Int(changedValue) * 60)
-        case snoozeTimeChanger:
-            timeToSnooze = TimeInterval(Int(changedValue) * 60)
-        default:
-            print("Unexpected changer tag")
-        }
+        timesToSet[changer-1] = TimeInterval(Int(changedValue) * 60)
     }
 }
 
@@ -70,27 +62,27 @@ extension SetUpViewController:SliderSettingCellDelegate{
 // MARK: 초기화 메서드들
 /// - Todo : IBOutletCollections 활용
 extension SetUpViewController{
-    private func initPropertiesFromDefaultValues(){
-        timeToHeatBeforeAwake = defaultTimeToHeatBeforeAwake
-        timeToHeatAfterAsleep = defaultTimeToHeatAfterAsleep
-        timeToSnooze = defaultTimeToSnooze
-    }
-    
     private func initPropertiesFromUserDefaults(){
-        timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
-        timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatAfterAleepKey)
-        timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
+        for i in 0..<timesToSet.count{
+            timesToSet[i] = UserDefaults.standard.double(forKey: keysForTimesToSetUpInSettingPhase[i])
+        }
     }
     
     private func setUpSlidersWithProperties(){
-        timeToHeatBeforeAwakeSlider.quantity = Float(Int(timeToHeatBeforeAwake/60))
-        timeToHeatAfterAsleepSlider.quantity = Float(Int(timeToHeatAfterAsleep/60))
-        timeToSnoozeSlider.quantity = Float(Int(timeToSnooze/60))
+        for i in 0..<timesToSet.count{
+            sliderCells[i].quantity = Float(Int(timesToSet[i]/60))
+        }
     }
     
     private func savePropertiesInUserDefaults(){
-        UserDefaults.standard.set(TimeInterval(timeToHeatBeforeAwake), forKey: timeToHeatBeforeAwakeKey)
-        UserDefaults.standard.set(TimeInterval(timeToHeatAfterAsleep), forKey: timeToHeatAfterAleepKey)
-        UserDefaults.standard.set(TimeInterval(timeToSnooze), forKey: timeToSnoozeKey)
+        for i in 0..<timesToSet.count{
+            UserDefaults.standard.set(timesToSet[i], forKey: keysForTimesToSetUpInSettingPhase[i])
+        }
     }
+}
+
+enum timeTo:Int{
+    case turnOff = 0
+    case turnOn = 1
+    case snooze = 2
 }

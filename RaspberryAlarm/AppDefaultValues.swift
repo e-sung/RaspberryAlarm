@@ -8,9 +8,11 @@
 
 import Foundation
 
-let defaultTimeToHeatBeforeAwake = 30.0*60.0
-let defaultTimeToHeatAfterAsleep = 30.0*60.0
-let defaultTimeToSnooze = 15.0*60.0
+var appDefault:[TimeInterval] = [
+    30.0*60.0, // defaultTimeToHeatAfterAsleep
+    30.0*60.0, // defaultTimeToHeatBeforeAwake
+    15.0*60.0 // defaultTimeToSnooze
+]
 
 let defaultWakeUpHour = 6
 let defaultWakeUpMinute = 30

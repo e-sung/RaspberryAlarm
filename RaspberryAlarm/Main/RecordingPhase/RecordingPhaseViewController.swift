@@ -92,9 +92,9 @@ class RecordingPhaseViewController: UIViewController {
                                           UserDefaults.standard.integer(forKey: wakeUpMinuteKey)*60))
         self.timeToWakeUp = reflectAmPm(on: self.timeToWakeUp)
         self.timeToWakeUp = sanitize(self.timeToWakeUp)
-        self.timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
-        self.timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatAfterAleepKey)
-        self.timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
+        self.timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: keysForTimesToSetUpInSettingPhase[0])
+        self.timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: keysForTimesToSetUpInSettingPhase[1])
+        self.timeToSnooze = UserDefaults.standard.double(forKey: keysForTimesToSetUpInSettingPhase[2])
     }
     
     private func initURLs(){
