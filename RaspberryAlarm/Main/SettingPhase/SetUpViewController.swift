@@ -50,25 +50,24 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
 // MARK : 슬라이더View의 Delegate
 extension SetUpViewController:SliderSettingCellDelegate{
     /// 슬라이더가 슬라이드 되었을 때마다 불리는 함수
-    /// - parameter changer : 슬라이드된 슬라이더의 식별자
+    /// - parameter changer : 슬라이더의 Accesibility Hint 
     /// - parameter changedValue : 슬라이드된 값
-    func didSliderValueChanged(_ changer: Int, _ changedValue: Float) {
-        switch changer {
-        case nightTimeChanger:
+    func didSliderValueChanged(on changer: String?, _ changedValue: Float) {
+        switch changer{
+        case "잠든 뒤 전기장판 끄는 시간을 정하는 슬라이더"?:
             timeToHeatAfterAsleep = TimeInterval(Int(changedValue) * 60)
-        case morningTimeChanger:
+        case "일어나기 전 전기장핀 켜는 시간 정하는 슬라이더"?:
             timeToHeatBeforeAwake = TimeInterval(Int(changedValue) * 60)
-        case snoozeTimeChanger:
+        case "스누즈 시간을 정하는 슬라이더"?:
             timeToSnooze = TimeInterval(Int(changedValue) * 60)
         default:
-            print("Unexpected changer tag")
+            print("Unexpected changer")
         }
     }
 }
 
 
 // MARK: 초기화 메서드들
-/// - Todo : IBOutletCollections 활용
 extension SetUpViewController{
     private func initPropertiesFromDefaultValues(){
         timeToHeatBeforeAwake = defaultTimeToHeatBeforeAwake

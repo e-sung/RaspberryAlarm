@@ -8,9 +8,6 @@
 
 import UIKit
 
-let nightTimeChanger = 1
-let morningTimeChanger = 2
-let snoozeTimeChanger = 3
 class SliderSettingCell: UITableViewCell{
     // MARK: Delegate
     var delegate:SliderSettingCellDelegate?
@@ -20,8 +17,8 @@ class SliderSettingCell: UITableViewCell{
     @IBOutlet private weak var slider:UISlider!
     // MARK: IBActions
     @IBAction private func updateQuantity(_ sender:UISlider){
-        quantityLB.text = "\(Int(sender.value))분 " + "\(self.suffix)"
-        delegate?.didSliderValueChanged(self.tag , sender.value)
+        quantityLB.text = "\(Int(sender.value))"
+        delegate?.didSliderValueChanged(on: slider.accessibilityHint, sender.value)
     }
     
     // MARK: 초기화
@@ -30,40 +27,15 @@ class SliderSettingCell: UITableViewCell{
     }
 }
 
-// MARK: Label들에 표시될 정보를 계산하는 연산프로퍼티들
+// MARK: Label들에 표시될 정보를 계산하는 연산프로퍼티
 extension SliderSettingCell{
-    var title:String?{
-        get{
-            return titleLB.text
-        }
-        set(newVal){
-            titleLB.text = newVal
-        }
-    }
     var quantity:Float?{
-        get{
-            return slider.value
-        }
-        set(newVal){
-            slider.value = newVal!
-            quantityLB.text = "\(Int(newVal!))분 " + "\(self.suffix)"
-        }
+        get{return slider.value}
+        set(newVal){slider.value = newVal!;quantityLB.text = "\(Int(newVal!))"}
     }
-    private var suffix:String{
-        get{
-            switch self.tag {
-            case nightTimeChanger:
-                return "뒤"
-            case morningTimeChanger:
-                return "전"
-            default:
-                return ""
-            }
-        }
-    }
-
 }
 
+// MARK: Delegate 함수
 protocol SliderSettingCellDelegate {
-    func didSliderValueChanged(_ changer:Int, _ changedValue:Float)
+    func didSliderValueChanged(on changer:String?, _ changedValue:Float)
 }
