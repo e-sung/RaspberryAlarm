@@ -19,7 +19,7 @@ class RingingPhaseViewController: UIViewController {
     @IBAction private func terminateButtonHandler(_ sender: UIButton) {
         let turnOffURL = UserDefaults.standard.url(forKey: URLsKeys[2])!
         URLSession.shared.dataTask(with: turnOffURL).resume()
-        self.performSegue(withIdentifier: "unwindToAlarmList", sender: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: 알람이 울릴 때 행해져야 할 일들

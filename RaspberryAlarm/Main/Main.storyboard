@@ -203,17 +203,17 @@
                         <viewLayoutGuide key="safeArea" id="MXH-rR-lfg"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="7Rz-77-USd"/>
                                 <exclude reference="Nhm-Ck-yo0"/>
                                 <exclude reference="hpI-Ni-fmF"/>
+                                <exclude reference="7Rz-77-USd"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <exclude reference="brQ-Vk-GlC"/>
                                 <exclude reference="GsR-aR-3oS"/>
                                 <include reference="Nhm-Ck-yo0"/>
                                 <include reference="hpI-Ni-fmF"/>
+                                <exclude reference="brQ-Vk-GlC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
