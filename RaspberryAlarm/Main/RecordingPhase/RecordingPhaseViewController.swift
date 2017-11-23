@@ -49,7 +49,7 @@ class RecordingPhaseViewController: UIViewController {
     /// motion을 할 sensing 할 객체
     private let motionManager:CMMotionManager = CMMotionManager()
     /// 그래프를 새로 그릴 주기 (단위 :초)
-    private let chartRefreshRate = 10
+    private let chartRefreshRate = 60
     /// 핸드폰이 흔들렸는지 확인할 기준치 : `func startAccelerometers()`참고
     private var lastState = 0
     /// 1초동안 핸드폰이 흔들린 횟수 (sleep movements in seconds)
