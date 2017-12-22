@@ -20,7 +20,6 @@ class SliderSettingCell: UITableViewCell{
         quantityLB.text = "\(Int(sender.value))"
         delegate?.didSliderValueChanged(on: slider.accessibilityHint, sender.value)
     }
-    
     // MARK: 초기화
     override func awakeFromNib() {
         self.selectionStyle = .none

@@ -54,14 +54,14 @@ extension SetUpViewController:SliderSettingCellDelegate{
     /// - parameter changedValue : 슬라이드된 값
     func didSliderValueChanged(on changer: String?, _ changedValue: Float) {
         switch changer{
-        case "잠든 뒤 전기장판 끄는 시간을 정하는 슬라이더"?:
-            timeToHeatAfterAsleep = TimeInterval(Int(changedValue) * 60)
-        case "일어나기 전 전기장핀 켜는 시간 정하는 슬라이더"?:
-            timeToHeatBeforeAwake = TimeInterval(Int(changedValue) * 60)
-        case "스누즈 시간을 정하는 슬라이더"?:
-            timeToSnooze = TimeInterval(Int(changedValue) * 60)
-        default:
-            print("Unexpected changer")
+            case "잠든 뒤 전기장판 끄는 시간을 정하는 슬라이더"?:
+                timeToHeatAfterAsleep = TimeInterval(Int(changedValue) * 60)
+            case "일어나기 전 전기장핀 켜는 시간 정하는 슬라이더"?:
+                timeToHeatBeforeAwake = TimeInterval(Int(changedValue) * 60)
+            case "스누즈 시간을 정하는 슬라이더"?:
+                timeToSnooze = TimeInterval(Int(changedValue) * 60)
+            default:
+                print("Unexpected changer")
         }
     }
 }
