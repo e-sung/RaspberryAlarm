@@ -50,13 +50,13 @@ class RecordingPhaseViewController: UIViewController {
     private let motionManager:CMMotionManager = CMMotionManager()
     /// 그래프를 새로 그릴 주기 (단위 :초)
     /// 처음에는 그래프를 빨리빨리 그리지만, 유저가 잠든 이후에는 빨리 그릴 필요가 없으니, 점진적으로 chartRefreshRate는 늘어남
-    private var chartRefreshRate = 1
+    private var chartRefreshRate:TimeInterval = 1
     /// 최종 chartRefreshRate
-    private let maxChartRefreshRate = 120
+    private let maxChartRefreshRate:TimeInterval = 120
     /// 핸드폰이 흔들렸는지 확인할 기준치 : `func startAccelerometers()`참고
     private var lastState = 0
     /// 1초동안 핸드폰이 흔들린 횟수 (sleep movements in seconds)
-    private var smInSeconds = 0
+    private var smInSeconds:Float = 0
     /// 이 데이터를 바탕으로 수면그래프를 그림
     private var sleepData:[Float] = [0.0]
     
@@ -90,21 +90,6 @@ class RecordingPhaseViewController: UIViewController {
         self.dateFormatter = DateFormatter()
     }
     
-    private func initTimes(){
-        self.timeToWakeUp = (TimeInterval(UserDefaults.standard.integer(forKey: wakeUpHourKey)*3600 +
-                                          UserDefaults.standard.integer(forKey: wakeUpMinuteKey)*60))
-        self.timeToWakeUp = reflectAmPm(on: self.timeToWakeUp)
-        self.timeToWakeUp = sanitize(self.timeToWakeUp)
-        self.timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
-        self.timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatAfterAleepKey)
-        self.timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
-    }
-    
-    private func initURLs(){
-        self.turnOnUrl = UserDefaults.standard.url(forKey: URLsKeys[1])!
-        self.turnOffURL = UserDefaults.standard.url(forKey: URLsKeys[2])!
-    }
-    
     /**
      하는 일
      1. 핸드폰 꺼지는 것 방지
@@ -121,46 +106,31 @@ class RecordingPhaseViewController: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = false //다시 핸드폰 꺼질 수 있는 상태로 복귀
         motionManager.stopAccelerometerUpdates()
     }
+}
+
+// MARK: Initializers
+extension RecordingPhaseViewController{
+    private func initTimes(){
+        self.timeToWakeUp = (TimeInterval(UserDefaults.standard.integer(forKey: wakeUpHourKey)*3600 +
+            UserDefaults.standard.integer(forKey: wakeUpMinuteKey)*60))
+        self.timeToWakeUp = reflectAmPm(on: self.timeToWakeUp)
+        self.timeToWakeUp = sanitize(self.timeToWakeUp)
+        self.timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
+        self.timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatAfterAleepKey)
+        self.timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
+    }
     
-    // MARK: 매 1초마다 해야 할 일 aka 시간계산 및 표시
-    /**
-    매 초마다 해야 할 일들을 정의
-     
-     - Remark: 하는 일 목록
-     1. 시간 표시
-     2. 매 chartRefreshRate초 마다 그래프 새로 그리기
-     3. 알람 켤 시간/ 전기장판 킬 시간에 알람도 키고 전기장판도 키기.
-     */
+    private func initURLs(){
+        self.turnOnUrl = UserDefaults.standard.url(forKey: URLsKeys[1])!
+        self.turnOffURL = UserDefaults.standard.url(forKey: URLsKeys[2])!
+    }
+    
+    // MARK: 매 1초마다 해야 할 일들
     private func generateAlarmTimer()->Timer{
         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            // 시간 표시
-            self.currentTimeLB.text = self.dateFormatter.format(seconds: Date().absoluteSeconds, with: DateFormatter.mainDateFormat)
-            self.remainingTimeLB.text = self.dateFormatter.format(seconds: self.remainingTime, with: DateFormatter.mainDateFormat)
-
-            // 그래프 새로 그리기
-            if Int(self.remainingTime) % self.chartRefreshRate == 0 {
-                self.reDrawChart() //차트를 새로 그리고
-                self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
-            }
-            
-            if self.chartRefreshRate < self.maxChartRefreshRate{
-                if Int(Date().absoluteSeconds) % 10 == 0{ 
-                    self.chartRefreshRate += 2
-                }
-            }
-            
-            //잠든 뒤 timeToHeatAfterAsleep 뒤에 전기장판 끄기
-            self.timeToHeatAfterAsleep = self.timeToHeatAfterAsleep - 1.0
-            if Int(self.timeToHeatAfterAsleep) == 0 {
-                URLSession.shared.dataTask(with: self.turnOffURL).resume()
-            }
-
-            //기상시간으로부터 timeToHeatBeforeAwake 전에 전기장판 켜기
-            if Int(self.remainingTime) == Int(self.timeToHeatBeforeAwake){
-                URLSession.shared.dataTask(with: self.turnOnUrl).resume()
-            }
-            
-            //알람 울리기
+            self.refreshThingsToRefresh()
+            if Int(self.timeToHeatAfterAsleep) == 0 { self.turnHeater(on: false) }
+            if Int(self.remainingTime) == Int(self.timeToHeatBeforeAwake){ self.turnHeater(on: true) }
             if Int(self.remainingTime) == 0{
                 timer.invalidate()
                 self.performSegue(withIdentifier: "showRingingPhase", sender: self)
@@ -183,25 +153,77 @@ class RecordingPhaseViewController: UIViewController {
         if self.motionManager.isAccelerometerAvailable {
             self.motionManager.accelerometerUpdateInterval = 1.0 / self.motionSensingRate
             self.motionManager.startAccelerometerUpdates()
-
+            
             // Configure a timer to fetch the data.
             self.motionSensorTimer = Timer(fire: Date(), interval: (1.0/self.motionSensingRate), repeats: true,
-                block: { (timer) in
-                // Get the accelerometer data.
-                if let data = self.motionManager.accelerometerData {
-                    let x = data.acceleration.x;let y = data.acceleration.y;let z = data.acceleration.z
-                    let currentState = Int(abs((x + y + z)*10)) // 왜 저는 정수가 아니면 뭔가 안심이 안 되는 걸까요...
-                    if (currentState - self.lastState) != 0 {
-                        self.smInSeconds += 1
-                    }
-                    self.lastState = currentState
-                }
+                                           block: { (timer) in
+                                            // Get the accelerometer data.
+                                            if let data = self.motionManager.accelerometerData {
+                                                let x = data.acceleration.x;let y = data.acceleration.y;let z = data.acceleration.z
+                                                let currentState = Int(abs((x + y + z)*10))
+                                                if (currentState - self.lastState) != 0 { self.smInSeconds += 1 }
+                                                self.lastState = currentState
+                                            }
             })
             RunLoop.current.add(self.motionSensorTimer!, forMode: .defaultRunLoopMode)
         }
     }
+}
+
+// MARK: Refresh와 관련된 함수들
+extension RecordingPhaseViewController{
+    /// 시간표시 Label, Chart, 그리고 refreshRate등을 refresh 함
+    private func refreshThingsToRefresh(){
+        self.refreshTimeIndicators()
+        self.refresh(chart: self.chart, every: self.chartRefreshRate)
+        self.refreshRefreshRate(every: 10)
+    }
     
-    // MARK: 편의상 만든 함수들
+    /// 각종 시간과 시간이 표시되는 Label들을 refresh함
+    private func refreshTimeIndicators(){
+        currentTimeLB.text = dateFormatter.format(seconds: Date().absoluteSeconds, with: DateFormatter.mainDateFormat)
+        remainingTimeLB.text = dateFormatter.format(seconds: remainingTime, with: DateFormatter.mainDateFormat)
+        timeToHeatAfterAsleep = timeToHeatAfterAsleep - 1.0
+    }
+    /**
+     수면그래프를 refresh함.
+     - parameter chart : refresh 할 차트
+     - parameter seconds : 매 seconds 마다 chart를 refresh한다.
+    */
+    private func refresh(chart:Chart, every seconds:TimeInterval){
+        if Int(self.remainingTime) % Int(seconds) == 0 {
+            self.reDraw(chart: chart, with: self.smInSeconds)
+            self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
+        }
+    }
+    
+    /**
+     그래프 갱신하는 함수
+     사실 실제로 하는 일은 Chart객체에 새 데이터를 집어넣는 것 뿐.
+     - parameter chart : 그림이 그려질 차트
+     - parameter newData : 차트에 추가될 데이터
+     - ToDo:
+     chart객체가 실제로 어떻게 View를 업데이트하는지 알아봐야겠다.
+     */
+    private func reDraw(chart:Chart, with newData:Float){
+        sleepData.append(newData)
+        chart.add(ChartSeries(sleepData) )
+    }
+    
+    /// Chart 그리는 interval은 서서히 늘어나야 함. 그렇지 않으면, 그래프 그리는데 CPU 소모가 많이 들어 앱이 종료됨.
+    /// 따라서 이 Chart를 refresh할 refreshRate를 refresh 해야 함.
+    /// - parameter seconds : 매 seconds 마다 refreshRate를 refresh한다.
+    private func refreshRefreshRate(every seconds:TimeInterval){
+        if self.chartRefreshRate < self.maxChartRefreshRate{
+            if Int(Date().absoluteSeconds) % Int(seconds) == 0{
+                self.chartRefreshRate += 2
+            }
+        }
+    }
+}
+
+// MARK: 편의상 만든 함수들
+extension RecordingPhaseViewController{
     /// 오전/오후 반영
     private func reflectAmPm(on time:TimeInterval)->TimeInterval{
         var isAm:Bool = true
@@ -220,15 +242,9 @@ class RecordingPhaseViewController: UIViewController {
         }
     }
     
-
-    /**
-    그래프 갱신하는 함수
-     사실 실제로 하는 일은 Chart객체에 새 데이터를 집어넣는 것 뿐.
-     - ToDo:
-     chart객체가 실제로 어떻게 View를 업데이트하는지 알아봐야겠다.
-     */
-    private func reDrawChart(){
-        self.sleepData.append(Float(self.smInSeconds))
-        self.chart.add(ChartSeries(self.sleepData))
+    /// 정해진 URL로, 히터를 켜고 끄는 신호를 보냄
+    private func turnHeater(on value:Bool){
+        if value == true { URLSession.shared.dataTask(with: self.turnOnUrl).resume()
+        }else { URLSession.shared.dataTask(with: self.turnOffURL).resume() }
     }
 }
