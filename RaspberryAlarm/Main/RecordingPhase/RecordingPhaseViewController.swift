@@ -49,7 +49,10 @@ class RecordingPhaseViewController: UIViewController {
     /// motion을 할 sensing 할 객체
     private let motionManager:CMMotionManager = CMMotionManager()
     /// 그래프를 새로 그릴 주기 (단위 :초)
-    private let chartRefreshRate = 60
+    /// 처음에는 그래프를 빨리빨리 그리지만, 유저가 잠든 이후에는 빨리 그릴 필요가 없으니, 점진적으로 chartRefreshRate는 늘어남
+    private var chartRefreshRate = 1
+    /// 최종 chartRefreshRate
+    private let maxChartRefreshRate = 120
     /// 핸드폰이 흔들렸는지 확인할 기준치 : `func startAccelerometers()`참고
     private var lastState = 0
     /// 1초동안 핸드폰이 흔들린 횟수 (sleep movements in seconds)
@@ -138,6 +141,12 @@ class RecordingPhaseViewController: UIViewController {
             if Int(self.remainingTime) % self.chartRefreshRate == 0 {
                 self.reDrawChart() //차트를 새로 그리고
                 self.smInSeconds = 0 //smInSeconds(SleepMovementsInSeconds) 를 초기화
+            }
+            
+            if self.chartRefreshRate < self.maxChartRefreshRate{
+                if Int(Date().absoluteSeconds) % 10 == 0{ 
+                    self.chartRefreshRate += 2
+                }
             }
             
             //잠든 뒤 timeToHeatAfterAsleep 뒤에 전기장판 끄기
