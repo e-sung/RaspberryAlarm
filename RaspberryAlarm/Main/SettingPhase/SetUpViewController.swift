@@ -23,13 +23,12 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
         self.navigationController?.popViewController(animated: true)
     }
 
-    // MARK: 이 SetUpViewController에서 SetUp하고자 하는 속성들
+    // MARK: SetUp 될 것들
     private var timeToHeatBeforeAwake:TimeInterval!
     private var timeToHeatAfterAsleep:TimeInterval!
     private var timeToSnooze:TimeInterval!
     
     // MARK: LifeCycle
-    /// Delegate선언
     override func viewDidLoad() {
         super.viewDidLoad()
         timeToHeatAfterAsleepSlider.delegate = self
@@ -41,7 +40,7 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
         if UserDefaults.standard.object(forKey: timeToHeatBeforeAwakeKey) == nil {
             initPropertiesFromDefaultValues()
         }else{
-            initPropertiesFromUserDefaults()
+            initPropertiesFrom(UserDefaults.standard)
         }
         setUpSlidersWithProperties()
     }
@@ -75,12 +74,12 @@ extension SetUpViewController{
         timeToSnooze = defaultTimeToSnooze
     }
     
-    private func initPropertiesFromUserDefaults(){
-        timeToHeatBeforeAwake = UserDefaults.standard.double(forKey: timeToHeatBeforeAwakeKey)
-        timeToHeatAfterAsleep = UserDefaults.standard.double(forKey: timeToHeatAfterAleepKey)
-        timeToSnooze = UserDefaults.standard.double(forKey: timeToSnoozeKey)
+    private func initPropertiesFrom(_ userDefaults:UserDefaults){
+        timeToHeatBeforeAwake = userDefaults.double(forKey: timeToHeatBeforeAwakeKey)
+        timeToHeatAfterAsleep = userDefaults.double(forKey: timeToHeatAfterAleepKey)
+        timeToSnooze = userDefaults.double(forKey: timeToSnoozeKey)
     }
-    
+
     private func setUpSlidersWithProperties(){
         timeToHeatBeforeAwakeSlider.quantity = Float(Int(timeToHeatBeforeAwake/60))
         timeToHeatAfterAsleepSlider.quantity = Float(Int(timeToHeatAfterAsleep/60))

@@ -45,9 +45,7 @@ extension ServerSetUpViewController{
     private var allFormsAreFilled:Bool{
         get{
             for tf in textFields{
-                if tf.text == nil {
-                    return false
-                }
+                if tf.text == nil { return false }
             }
             return true
         }

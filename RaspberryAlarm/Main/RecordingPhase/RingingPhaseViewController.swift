@@ -26,9 +26,7 @@ class RingingPhaseViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         UIApplication.shared.isIdleTimerDisabled = true // 핸드폰 안 꺼지게 하는 설정
         guard let url = Bundle.main.url(forResource: "alarm", withExtension: "mp3") else {return}
-        let playerItem = AVPlayerItem(url: url)
-        player = AVPlayer(playerItem: playerItem) // TODO : Increase Volume continuously
-        //player?.play()
+        AVPlayer(url: url).play()
     }
     
     // MARK: 다시 핸드폰 꺼질 수 있는 상태로 복귀

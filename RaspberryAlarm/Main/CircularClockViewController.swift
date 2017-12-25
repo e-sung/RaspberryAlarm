@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  CircularClockViewController.swift
 //  RaspberryAlarm
 //
 //  Created by 류성두 on 2017. 11. 21..
@@ -9,7 +9,7 @@
 import UIKit
 import HGCircularSlider
 
-class MainViewController: UIViewController {
+class CircularClockViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet private weak var hourIndicatingSlider: CircularSlider!
     @IBOutlet private weak var minuteIndicatingSlider: CircularSlider!
@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
 }
 
 // MARK: 초기화 메서드들
-extension MainViewController{
+extension CircularClockViewController{
     private func initViews(){
         setUpHour(with: wakeUpHour)
         setUpMinute(with: wakeUpMinute)
@@ -60,23 +60,15 @@ extension MainViewController{
 }
 
 // MARK: UserDefaults저장된 "일어날 시간"을 가져오거나, 디폴트값을 가져옴
-extension MainViewController{
+extension CircularClockViewController{
     private var wakeUpHour:Int{
         get{
-            if UserDefaults.standard.object(forKey: wakeUpHourKey) == nil {
-                return defaultWakeUpHour
-            }else{
-                return UserDefaults.standard.integer(forKey: wakeUpHourKey)
-            }
+            return UserDefaults.standard.integer(forKey: wakeUpHourKey) ?? defaultWakeUpHour
         }
     }
     private var wakeUpMinute:Int{
         get{
-            if UserDefaults.standard.object(forKey: wakeUpMinuteKey) == nil {
-                return defaultWakeUpMinute
-            }else{
-                return UserDefaults.standard.integer(forKey: wakeUpMinuteKey)
-            }
+            return UserDefaults.standard.integer(forKey: wakeUpMinuteKey) ?? defaultWakeUpMinute
         }
     }
 }

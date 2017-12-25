@@ -27,7 +27,7 @@
 		FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */; };
 		FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */; };
 		FF18C3981FC3DA98007141EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF18C3971FC3DA98007141EF /* Main.storyboard */; };
-		FF18C39A1FC3DADD007141EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18C3991FC3DADD007141EF /* MainViewController.swift */; };
+		FF18C39A1FC3DADD007141EF /* CircularClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */; };
 		FF4511F91FC5B890006CDAF4 /* AppDefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4511F81FC5B890006CDAF4 /* AppDefaultValues.swift */; };
 		FF881F0B1FC0183200EF25F2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0A1FC0183200EF25F2 /* Date.swift */; };
 		FF881F0D1FC01AE300EF25F2 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0C1FC01AE200EF25F2 /* UIViewController.swift */; };
@@ -77,7 +77,7 @@
 		FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordingPhase.storyboard; sourceTree = "<group>"; };
 		FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPhaseViewController.swift; sourceTree = "<group>"; };
 		FF18C3971FC3DA98007141EF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		FF18C3991FC3DADD007141EF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularClockViewController.swift; sourceTree = "<group>"; };
 		FF4511F81FC5B890006CDAF4 /* AppDefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaultValues.swift; sourceTree = "<group>"; };
 		FF881F0A1FC0183200EF25F2 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FF881F0C1FC01AE200EF25F2 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FF18C3971FC3DA98007141EF /* Main.storyboard */,
-				FF18C3991FC3DADD007141EF /* MainViewController.swift */,
+				FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */,
 				FFF7BC7F1FC40F8800C6B5D1 /* SettingPhase */,
 				FF0B04AD1FB87178005DF58E /* RecordingPhase */,
 			);
@@ -574,7 +574,7 @@
 				FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */,
 				FFF7BC7C1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift in Sources */,
 				FFF7BC7E1FC3F63F00C6B5D1 /* SetUpViewController.swift in Sources */,
-				FF18C39A1FC3DADD007141EF /* MainViewController.swift in Sources */,
+				FF18C39A1FC3DADD007141EF /* CircularClockViewController.swift in Sources */,
 				FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */,
 				FF4511F91FC5B890006CDAF4 /* AppDefaultValues.swift in Sources */,
 				FFE40D151FC54E35006E2FAC /* ServerSetUpViewController.swift in Sources */,

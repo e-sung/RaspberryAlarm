@@ -32,9 +32,7 @@ class RecordingPhaseViewController: UIViewController {
     private var dateFormatter:DateFormatter!
     /// 일어날 때 까지 남은 시간
     private var remainingTime:TimeInterval{
-        get{
-            return self.timeToWakeUp - Date().absoluteSeconds
-        }
+        get{ return self.timeToWakeUp - Date().absoluteSeconds }
     }
     
     // MARK: 전기장판 URL

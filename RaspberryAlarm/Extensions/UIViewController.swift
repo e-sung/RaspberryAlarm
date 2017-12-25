@@ -11,8 +11,8 @@ import UIKit
 
 extension UIViewController{
     /**
-     UIAlertController 를 쉽게 쓰게 만드는 함수.
-     */
+     JavaScript 스타일의 alert
+    */
     func alert(msg:String){
         let alert = UIAlertController(title: "안내", message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .cancel , handler: { (action) in

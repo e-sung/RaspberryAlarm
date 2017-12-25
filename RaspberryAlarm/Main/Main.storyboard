@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wxc-Lr-XsS">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -11,25 +8,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Circular Clock View Controller-->
         <scene sceneID="cTY-kp-B4g">
             <objects>
-                <viewController id="ujz-rh-fZT" customClass="MainViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ujz-rh-fZT" customClass="CircularClockViewController" customModule="RaspberryAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="but-Hh-4Ir">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time_indicators" translatesAutoresizingMaskIntoConstraints="NO" id="I8e-OP-89L">
-                                <rect key="frame" x="37.5" y="165.5" width="300" height="300"/>
+                                <rect key="frame" x="149.5" y="131.5" width="301" height="301"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="I8e-OP-89L" secondAttribute="height" multiplier="1:1" id="RTA-0e-T04"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gow-7i-aic" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="53" y="180.5" width="269.5" height="269.5"/>
+                                <rect key="frame" x="165" y="146.5" width="270.5" height="270.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUn-4a-MTF" customClass="CircularSlider" customModule="HGCircularSlider">
-                                        <rect key="frame" x="27" y="27" width="215" height="215"/>
+                                        <rect key="frame" x="27" y="27" width="216" height="216"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WUn-4a-MTF" secondAttribute="height" multiplier="1:1" id="VmM-Tz-kti"/>
@@ -77,13 +74,13 @@
                                         </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwC-NG-N3a">
-                                        <rect key="frame" x="67.5" y="104.5" width="74" height="60"/>
+                                        <rect key="frame" x="68" y="105" width="74" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="textColor" red="0.94108223915100098" green="0.68441802263259888" blue="0.3146568238735199" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkn-6Q-yZR">
-                                        <rect key="frame" x="141.5" y="104.5" width="61" height="60"/>
+                                        <rect key="frame" x="142" y="105" width="61" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="textColor" red="0.9410822392" green="0.68441802259999995" blue="0.31465682389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -143,7 +140,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFp-i7-ZUD">
-                                <rect key="frame" x="265" y="557" width="100" height="100"/>
+                                <rect key="frame" x="490" y="490" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0Ow-ZE-lQW"/>
                                     <constraint firstAttribute="width" constant="100" id="J67-2j-1I3"/>
@@ -155,7 +152,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="V3K-hp-Vkl">
-                                <rect key="frame" x="137.5" y="99" width="100" height="29"/>
+                                <rect key="frame" x="250" y="65" width="100" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="WR2-s6-Hk3"/>
                                     <constraint firstAttribute="width" constant="100" id="w9d-VR-4Fs"/>
