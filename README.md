@@ -13,7 +13,10 @@
 * `open RaspberryAlarm.xcworkspace`
 * [라즈베리파이에 설치할 서버](https://github.com/e-sung/RaspberryAlarm-Server) 설치
 
-# 3. 어떤 기능이 추가될 예정인가요?
+# 3. 문서화
+* `jazzy --min-acl private`
+
+# 4. 어떤 기능이 추가될 예정인가요?
 * 기상시간 N분 전 부터 서서히 알람소리 커지기
 * 수면데이터 Health-Kit 과 연동
 * 수면데이터를 바탕으로 RAM 수면주기  파악->RAM 수면 중 기상알람 울리기
