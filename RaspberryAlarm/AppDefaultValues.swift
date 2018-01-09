@@ -12,5 +12,5 @@ let defaultTimeToHeatBeforeAwake = 30.0*60.0
 let defaultTimeToHeatAfterAsleep = 30.0*60.0
 let defaultTimeToSnooze = 15.0*60.0
 
-let defaultWakeUpHour = 6
+let defaultWakeUpHour = 7
 let defaultWakeUpMinute = 30

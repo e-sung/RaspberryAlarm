@@ -63,12 +63,18 @@ extension CircularClockViewController{
 extension CircularClockViewController{
     private var wakeUpHour:Int{
         get{
-            return UserDefaults.standard.integer(forKey: wakeUpHourKey) ?? defaultWakeUpHour
+            if let wakeUpHour = UserDefaults.standard.object(forKey: wakeUpHourKey){
+                return wakeUpHour as! Int
+            }
+            return defaultWakeUpHour
         }
     }
     private var wakeUpMinute:Int{
         get{
-            return UserDefaults.standard.integer(forKey: wakeUpMinuteKey) ?? defaultWakeUpMinute
+            if let wakeUpMinute = UserDefaults.standard.object(forKey: wakeUpMinuteKey){
+                return wakeUpMinute as! Int
+            }
+            return defaultWakeUpMinute
         }
     }
 }
