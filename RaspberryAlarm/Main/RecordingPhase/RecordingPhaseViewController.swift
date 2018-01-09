@@ -36,8 +36,8 @@ class RecordingPhaseViewController: UIViewController {
     }
     
     // MARK: 전기장판 URL
-    private var turnOnUrl:URL!
-    private var turnOffURL:URL!
+    private var turnOnUrl:URL?
+    private var turnOffURL:URL?
 
     // MARK: 수면그래프 작성을 위한, 가속도 센서 관련 전역변수들
     /// 가속도 센서 확인할 주기 (단위 :Hz)
@@ -119,8 +119,8 @@ extension RecordingPhaseViewController{
     }
     
     private func initURLs(){
-        self.turnOnUrl = UserDefaults.standard.url(forKey: URLsKeys[1])!
-        self.turnOffURL = UserDefaults.standard.url(forKey: URLsKeys[2])!
+        self.turnOnUrl = UserDefaults.standard.url(forKey: URLsKeys[1])
+        self.turnOffURL = UserDefaults.standard.url(forKey: URLsKeys[2])
     }
     
     // MARK: 매 1초마다 해야 할 일들
@@ -242,7 +242,12 @@ extension RecordingPhaseViewController{
     
     /// 정해진 URL로, 히터를 켜고 끄는 신호를 보냄
     private func turnHeater(on value:Bool){
-        if value == true { URLSession.shared.dataTask(with: self.turnOnUrl).resume()
-        }else { URLSession.shared.dataTask(with: self.turnOffURL).resume() }
+        if value == true {
+            guard let url = self.turnOnUrl else { return }
+            URLSession.shared.dataTask(with: url).resume()
+        }else {
+            guard let url = self.turnOffURL else { return }
+            URLSession.shared.dataTask(with: url).resume()
+        }
     }
 }
