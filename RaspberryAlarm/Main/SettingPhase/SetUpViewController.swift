@@ -16,7 +16,6 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     
     // MARK: IBAction
     @IBAction private func confirmButtonHandler(_ sender: UIBarButtonItem) {
-        savePropertiesInUserDefaults()
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction private func cancelHandlerButton(_ sender: UIBarButtonItem){
@@ -37,12 +36,14 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     }
     /// 이 ViewController의 속성값들을 초기화하고, 이 속성값들을 바탕으로 슬라이더의 위치를 조정
     override func viewWillAppear(_ animated: Bool) {
-        if UserDefaults.standard.object(forKey: timeToHeatBeforeAwakeKey) == nil {
-            initPropertiesFromDefaultValues()
-        }else{
-            initPropertiesFrom(UserDefaults.standard)
-        }
+        if UserDefaults.standard.object(forKey: timeToHeatBeforeAwakeKey) == nil { initPropertiesFromDefaultValues() }
+        else{ initPropertiesFrom(UserDefaults.standard) }
         setUpSlidersWithProperties()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        savePropertiesInUserDefaults()
     }
 }
 
