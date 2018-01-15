@@ -12,6 +12,7 @@
 * `pod install`
 * `open RaspberryAlarm.xcworkspace`
 * [라즈베리파이에 설치할 서버](https://github.com/e-sung/RaspberryAlarm-Server) 설치
+* [하드웨어 만들기](http://blog.e-sung.net/wordpress/archives/286)
 
 # 3. 문서화
 * `jazzy --min-acl private`
