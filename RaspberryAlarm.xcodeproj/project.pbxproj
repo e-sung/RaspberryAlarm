@@ -265,7 +265,6 @@
 				FF9CF6B21FB6F5940033E3E3 /* Frameworks */,
 				FF9CF6B31FB6F5940033E3E3 /* Resources */,
 				F97668872F479D8D3AED5BDF /* [CP] Embed Pods Frameworks */,
-				1D83BDEB64B552185ADC5C9D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,8 +283,6 @@
 				FF9CF6C51FB6F5940033E3E3 /* Sources */,
 				FF9CF6C61FB6F5940033E3E3 /* Frameworks */,
 				FF9CF6C71FB6F5940033E3E3 /* Resources */,
-				FA4FD6A6AD4203653EF6AFC1 /* [CP] Embed Pods Frameworks */,
-				5B3C5E23D28CF58770A065B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,8 +302,6 @@
 				FF9CF6D01FB6F5940033E3E3 /* Sources */,
 				FF9CF6D11FB6F5940033E3E3 /* Frameworks */,
 				FF9CF6D21FB6F5940033E3E3 /* Resources */,
-				8A9205D8B18E30AA3417FA6E /* [CP] Embed Pods Frameworks */,
-				28E162B530A33F3D9A329B26 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -418,51 +413,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1D83BDEB64B552185ADC5C9D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaspberryAlarm/Pods-RaspberryAlarm-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		28E162B530A33F3D9A329B26 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaspberryAlarmUITests/Pods-RaspberryAlarmUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B3C5E23D28CF58770A065B0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaspberryAlarmTests/Pods-RaspberryAlarmTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5CDC08298D04D75E162D924B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,21 +429,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A9205D8B18E30AA3417FA6E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaspberryAlarmUITests/Pods-RaspberryAlarmUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A27F411B7BC558C75A0716FC /* [CP] Check Pods Manifest.lock */ = {
@@ -532,21 +467,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaspberryAlarm/Pods-RaspberryAlarm-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA4FD6A6AD4203653EF6AFC1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaspberryAlarmTests/Pods-RaspberryAlarmTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF4328541FBC8A9700C8ACCA /* ShellScript */ = {
