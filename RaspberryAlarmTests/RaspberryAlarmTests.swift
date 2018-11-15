@@ -21,7 +21,10 @@ class RaspberryAlarmTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testMerging() {
+        XCTAssert(1 + 1 == 2)
+        XCTAssert(2 + 2 == 4)
+        XCTAssert("Hello" + "World" == "HelloWorld")
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
