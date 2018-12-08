@@ -26,6 +26,10 @@ class ServerSetUpViewController: UIViewController {
             userDefaults.set(urls[i], forKey: keys[i])
         }
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.url(forKey: URLsKeys[0]) != nil {
@@ -37,6 +41,12 @@ class ServerSetUpViewController: UIViewController {
     
     func parseRelative(url:URL)->String{
         return String("\(url)".split(separator: " ")[0])
+    }
+}
+
+extension ServerSetUpViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
 
