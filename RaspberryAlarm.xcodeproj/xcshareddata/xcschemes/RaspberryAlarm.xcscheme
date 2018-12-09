@@ -58,6 +58,16 @@
                ReferencedContainer = "container:RaspberryAlarm.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F051AC2221BCD59C003A1ED8"
+               BuildableName = "RAFoundationTests.xctest"
+               BlueprintName = "RAFoundationTests"
+               ReferencedContainer = "container:RaspberryAlarm.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

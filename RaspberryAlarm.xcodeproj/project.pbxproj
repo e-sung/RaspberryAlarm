@@ -30,13 +30,20 @@
 		F051AC0821BCD516003A1ED8 /* MainKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F051ABF821BCD516003A1ED8 /* MainKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F051AC0B21BCD516003A1ED8 /* MainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051ABF621BCD516003A1ED8 /* MainKit.framework */; };
 		F051AC0C21BCD516003A1ED8 /* MainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F051ABF621BCD516003A1ED8 /* MainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F051AC1521BCD587003A1ED8 /* CircularClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */; };
+		F051AC2421BCD59C003A1ED8 /* RAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051AC1B21BCD59B003A1ED8 /* RAFoundation.framework */; };
+		F051AC2B21BCD59C003A1ED8 /* RAFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051AC2A21BCD59C003A1ED8 /* RAFoundationTests.swift */; };
+		F051AC2D21BCD59C003A1ED8 /* RAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F051AC1D21BCD59B003A1ED8 /* RAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F051AC3021BCD59C003A1ED8 /* RAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051AC1B21BCD59B003A1ED8 /* RAFoundation.framework */; };
+		F051AC3121BCD59C003A1ED8 /* RAFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F051AC1B21BCD59B003A1ED8 /* RAFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F051AC3821BCD5A5003A1ED8 /* AppDefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4511F81FC5B890006CDAF4 /* AppDefaultValues.swift */; };
+		F051AC3921BCD5BE003A1ED8 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0A1FC0183200EF25F2 /* Date.swift */; };
+		F051AC3A21BCD5BE003A1ED8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0C1FC01AE200EF25F2 /* UIViewController.swift */; };
+		F051AC3B21BCD5BE003A1ED8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */; };
+		F051AC3C21BCD5BE003A1ED8 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */; };
 		FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */; };
 		FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */; };
 		FF18C3981FC3DA98007141EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF18C3971FC3DA98007141EF /* Main.storyboard */; };
-		FF18C39A1FC3DADD007141EF /* CircularClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */; };
-		FF4511F91FC5B890006CDAF4 /* AppDefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4511F81FC5B890006CDAF4 /* AppDefaultValues.swift */; };
-		FF881F0B1FC0183200EF25F2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0A1FC0183200EF25F2 /* Date.swift */; };
-		FF881F0D1FC01AE300EF25F2 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0C1FC01AE200EF25F2 /* UIViewController.swift */; };
 		FF881F0F1FC01D7E00EF25F2 /* DateExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0E1FC01D7E00EF25F2 /* DateExtensionsTest.swift */; };
 		FF9CF6B91FB6F5940033E3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */; };
 		FF9CF6C01FB6F5940033E3E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */; };
@@ -44,12 +51,10 @@
 		FF9CF6CE1FB6F5940033E3E3 /* RaspberryAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6CD1FB6F5940033E3E3 /* RaspberryAlarmTests.swift */; };
 		FF9CF6D91FB6F5940033E3E3 /* RaspberryAlarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6D81FB6F5940033E3E3 /* RaspberryAlarmUITests.swift */; };
 		FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CF6F71FB730F10033E3E3 /* SliderSettingCell.swift */; };
-		FFCB4FC11FC29CCD004DE80F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */; };
 		FFE40D131FC53FD1006E2FAC /* SettingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE40D121FC53FD1006E2FAC /* SettingPhase.storyboard */; };
 		FFE40D151FC54E35006E2FAC /* ServerSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE40D141FC54E35006E2FAC /* ServerSetUpViewController.swift */; };
 		FFF1C0711FB95B6A007C0093 /* RingingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1C0701FB95B6A007C0093 /* RingingPhaseViewController.swift */; };
 		FFF1C0B31FB9BA08007C0093 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */; };
-		FFF7BC7C1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */; };
 		FFF7BC7E1FC3F63F00C6B5D1 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7BC7D1FC3F63F00C6B5D1 /* SetUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +80,27 @@
 			remoteGlobalIDString = F051ABF521BCD516003A1ED8;
 			remoteInfo = MainKit;
 		};
+		F051AC2521BCD59C003A1ED8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F051AC1A21BCD59B003A1ED8;
+			remoteInfo = RAFoundation;
+		};
+		F051AC2721BCD59C003A1ED8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF9CF6B41FB6F5940033E3E3;
+			remoteInfo = RaspberryAlarm;
+		};
+		F051AC2E21BCD59C003A1ED8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F051AC1A21BCD59B003A1ED8;
+			remoteInfo = RAFoundation;
+		};
 		FF9CF6CA1FB6F5940033E3E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
@@ -98,6 +124,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F051AC3121BCD59C003A1ED8 /* RAFoundation.framework in Embed Frameworks */,
 				F051AC0C21BCD516003A1ED8 /* MainKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -121,6 +148,12 @@
 		F051ABFE21BCD516003A1ED8 /* MainKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F051AC0521BCD516003A1ED8 /* MainKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainKitTests.swift; sourceTree = "<group>"; };
 		F051AC0721BCD516003A1ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F051AC1B21BCD59B003A1ED8 /* RAFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RAFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F051AC1D21BCD59B003A1ED8 /* RAFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFoundation.h; sourceTree = "<group>"; };
+		F051AC1E21BCD59B003A1ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F051AC2321BCD59C003A1ED8 /* RAFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RAFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F051AC2A21BCD59C003A1ED8 /* RAFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAFoundationTests.swift; sourceTree = "<group>"; };
+		F051AC2C21BCD59C003A1ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7E1D04B0D4AAABC714C042C /* Pods-MainKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MainKit/Pods-MainKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FA8520551DF2C986D8BC9176 /* Pods-RaspberryAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarm/Pods-RaspberryAlarm.release.xcconfig"; sourceTree = "<group>"; };
 		FBD9532205C60E023543BC24 /* Pods-RaspberryAlarmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmUITests/Pods-RaspberryAlarmUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,11 +203,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F051AC1821BCD59B003A1ED8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F051AC2021BCD59C003A1ED8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F051AC2421BCD59C003A1ED8 /* RAFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF9CF6B21FB6F5940033E3E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F051AC0B21BCD516003A1ED8 /* MainKit.framework in Frameworks */,
+				F051AC3021BCD59C003A1ED8 /* RAFoundation.framework in Frameworks */,
 				16262C10571EEB3114A374F9 /* Pods_RaspberryAlarm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +274,26 @@
 				F051AC0721BCD516003A1ED8 /* Info.plist */,
 			);
 			path = MainKitTests;
+			sourceTree = "<group>";
+		};
+		F051AC1C21BCD59B003A1ED8 /* RAFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				FF4511F81FC5B890006CDAF4 /* AppDefaultValues.swift */,
+				FF881F091FC0182100EF25F2 /* Extensions */,
+				F051AC1D21BCD59B003A1ED8 /* RAFoundation.h */,
+				F051AC1E21BCD59B003A1ED8 /* Info.plist */,
+			);
+			path = RAFoundation;
+			sourceTree = "<group>";
+		};
+		F051AC2921BCD59C003A1ED8 /* RAFoundationTests */ = {
+			isa = PBXGroup;
+			children = (
+				F051AC2A21BCD59C003A1ED8 /* RAFoundationTests.swift */,
+				F051AC2C21BCD59C003A1ED8 /* Info.plist */,
+			);
+			path = RAFoundationTests;
 			sourceTree = "<group>";
 		};
 		F4544BE3E284B37FB973E6AB /* Pods */ = {
@@ -282,6 +351,8 @@
 				FF9CF6D71FB6F5940033E3E3 /* RaspberryAlarmUITests */,
 				F051ABF721BCD516003A1ED8 /* MainKit */,
 				F051AC0421BCD516003A1ED8 /* MainKitTests */,
+				F051AC1C21BCD59B003A1ED8 /* RAFoundation */,
+				F051AC2921BCD59C003A1ED8 /* RAFoundationTests */,
 				FF9CF6B61FB6F5940033E3E3 /* Products */,
 				F4544BE3E284B37FB973E6AB /* Pods */,
 				37249A5684C9E2C94AFEA4ED /* Frameworks */,
@@ -296,6 +367,8 @@
 				FF9CF6D41FB6F5940033E3E3 /* RaspberryAlarmUITests.xctest */,
 				F051ABF621BCD516003A1ED8 /* MainKit.framework */,
 				F051ABFE21BCD516003A1ED8 /* MainKitTests.xctest */,
+				F051AC1B21BCD59B003A1ED8 /* RAFoundation.framework */,
+				F051AC2321BCD59C003A1ED8 /* RAFoundationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,8 +377,6 @@
 			isa = PBXGroup;
 			children = (
 				FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */,
-				FF4511F81FC5B890006CDAF4 /* AppDefaultValues.swift */,
-				FF881F091FC0182100EF25F2 /* Extensions */,
 				FF18C39B1FC3DAE7007141EF /* Main */,
 				FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */,
 				FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */,
@@ -356,6 +427,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F051AC1621BCD59B003A1ED8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F051AC2D21BCD59C003A1ED8 /* RAFoundation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -397,6 +476,43 @@
 			productReference = F051ABFE21BCD516003A1ED8 /* MainKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F051AC1A21BCD59B003A1ED8 /* RAFoundation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F051AC3221BCD59C003A1ED8 /* Build configuration list for PBXNativeTarget "RAFoundation" */;
+			buildPhases = (
+				F051AC1621BCD59B003A1ED8 /* Headers */,
+				F051AC1721BCD59B003A1ED8 /* Sources */,
+				F051AC1821BCD59B003A1ED8 /* Frameworks */,
+				F051AC1921BCD59B003A1ED8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RAFoundation;
+			productName = RAFoundation;
+			productReference = F051AC1B21BCD59B003A1ED8 /* RAFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F051AC2221BCD59C003A1ED8 /* RAFoundationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F051AC3521BCD59C003A1ED8 /* Build configuration list for PBXNativeTarget "RAFoundationTests" */;
+			buildPhases = (
+				F051AC1F21BCD59C003A1ED8 /* Sources */,
+				F051AC2021BCD59C003A1ED8 /* Frameworks */,
+				F051AC2121BCD59C003A1ED8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F051AC2621BCD59C003A1ED8 /* PBXTargetDependency */,
+				F051AC2821BCD59C003A1ED8 /* PBXTargetDependency */,
+			);
+			name = RAFoundationTests;
+			productName = RAFoundationTests;
+			productReference = F051AC2321BCD59C003A1ED8 /* RAFoundationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF9CF6DD1FB6F5940033E3E3 /* Build configuration list for PBXNativeTarget "RaspberryAlarm" */;
@@ -412,6 +528,7 @@
 			);
 			dependencies = (
 				F051AC0A21BCD516003A1ED8 /* PBXTargetDependency */,
+				F051AC2F21BCD59C003A1ED8 /* PBXTargetDependency */,
 			);
 			name = RaspberryAlarm;
 			productName = RaspberryAlarm;
@@ -475,6 +592,15 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = FF9CF6B41FB6F5940033E3E3;
 					};
+					F051AC1A21BCD59B003A1ED8 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					F051AC2221BCD59C003A1ED8 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FF9CF6B41FB6F5940033E3E3;
+					};
 					FF4328501FBC8A4300C8ACCA = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -517,6 +643,8 @@
 				FF4328501FBC8A4300C8ACCA /* Documentation */,
 				F051ABF521BCD516003A1ED8 /* MainKit */,
 				F051ABFD21BCD516003A1ED8 /* MainKitTests */,
+				F051AC1A21BCD59B003A1ED8 /* RAFoundation */,
+				F051AC2221BCD59C003A1ED8 /* RAFoundationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -530,6 +658,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F051ABFC21BCD516003A1ED8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F051AC1921BCD59B003A1ED8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F051AC2121BCD59C003A1ED8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -693,21 +835,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F051AC1721BCD59B003A1ED8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F051AC3B21BCD5BE003A1ED8 /* DateFormatter.swift in Sources */,
+				F051AC3821BCD5A5003A1ED8 /* AppDefaultValues.swift in Sources */,
+				F051AC3C21BCD5BE003A1ED8 /* UserDefaultsKeys.swift in Sources */,
+				F051AC3921BCD5BE003A1ED8 /* Date.swift in Sources */,
+				F051AC3A21BCD5BE003A1ED8 /* UIViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F051AC1F21BCD59C003A1ED8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F051AC2B21BCD59C003A1ED8 /* RAFoundationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF9CF6B11FB6F5940033E3E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFCB4FC11FC29CCD004DE80F /* DateFormatter.swift in Sources */,
-				FF881F0B1FC0183200EF25F2 /* Date.swift in Sources */,
+				F051AC1521BCD587003A1ED8 /* CircularClockViewController.swift in Sources */,
 				FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */,
-				FFF7BC7C1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift in Sources */,
 				FFF7BC7E1FC3F63F00C6B5D1 /* SetUpViewController.swift in Sources */,
-				FF18C39A1FC3DADD007141EF /* CircularClockViewController.swift in Sources */,
 				FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */,
-				FF4511F91FC5B890006CDAF4 /* AppDefaultValues.swift in Sources */,
 				FFE40D151FC54E35006E2FAC /* ServerSetUpViewController.swift in Sources */,
 				FFF1C0711FB95B6A007C0093 /* RingingPhaseViewController.swift in Sources */,
-				FF881F0D1FC01AE300EF25F2 /* UIViewController.swift in Sources */,
 				FF9CF6B91FB6F5940033E3E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -746,6 +903,21 @@
 			isa = PBXTargetDependency;
 			target = F051ABF521BCD516003A1ED8 /* MainKit */;
 			targetProxy = F051AC0921BCD516003A1ED8 /* PBXContainerItemProxy */;
+		};
+		F051AC2621BCD59C003A1ED8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F051AC1A21BCD59B003A1ED8 /* RAFoundation */;
+			targetProxy = F051AC2521BCD59C003A1ED8 /* PBXContainerItemProxy */;
+		};
+		F051AC2821BCD59C003A1ED8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */;
+			targetProxy = F051AC2721BCD59C003A1ED8 /* PBXContainerItemProxy */;
+		};
+		F051AC2F21BCD59C003A1ED8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F051AC1A21BCD59B003A1ED8 /* RAFoundation */;
+			targetProxy = F051AC2E21BCD59C003A1ED8 /* PBXContainerItemProxy */;
 		};
 		FF9CF6CB1FB6F5940033E3E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -831,7 +1003,6 @@
 		F051AC1221BCD516003A1ED8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
@@ -851,7 +1022,6 @@
 		F051AC1321BCD516003A1ED8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
@@ -860,6 +1030,100 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.MainKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaspberryAlarm.app/RaspberryAlarm";
+			};
+			name = Release;
+		};
+		F051AC3321BCD59C003A1ED8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RAFoundation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RAFoundation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F051AC3421BCD59C003A1ED8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RAFoundation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RAFoundation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F051AC3621BCD59C003A1ED8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				INFOPLIST_FILE = RAFoundationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RAFoundationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaspberryAlarm.app/RaspberryAlarm";
+			};
+			name = Debug;
+		};
+		F051AC3721BCD59C003A1ED8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				INFOPLIST_FILE = RAFoundationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RAFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1000,6 +1264,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B79CC92DB481EE4CB44E99A /* Pods-RaspberryAlarm.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
@@ -1017,6 +1282,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA8520551DF2C986D8BC9176 /* Pods-RaspberryAlarm.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
@@ -1117,6 +1383,24 @@
 			buildConfigurations = (
 				F051AC1221BCD516003A1ED8 /* Debug */,
 				F051AC1321BCD516003A1ED8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F051AC3221BCD59C003A1ED8 /* Build configuration list for PBXNativeTarget "RAFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F051AC3321BCD59C003A1ED8 /* Debug */,
+				F051AC3421BCD59C003A1ED8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F051AC3521BCD59C003A1ED8 /* Build configuration list for PBXNativeTarget "RAFoundationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F051AC3621BCD59C003A1ED8 /* Debug */,
+				F051AC3721BCD59C003A1ED8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
