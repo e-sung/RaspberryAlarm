@@ -9,6 +9,7 @@
 import UIKit
 import RAFoundation
 import HGCircularSlider
+import HealthKitHelper
 
 public class CircularClockViewController: UIViewController {
     // MARK: IBOutlets
@@ -57,11 +58,9 @@ extension CircularClockViewController{
     }
     
     private func requestHealthKitAuthorization() {
-        let authRequestor = AuthRequestor()
-        authRequestor.request(completion: { [weak self] authorized, error in
-            if authorized == false && error != nil {
-                self?.alert(msg: error!.localizedDescription)
-            }
+        HealthKitHelper.shared.requestSleepAuthorization(completion: { authorized, error in
+            guard let error = error else { return }
+            print(error.localizedDescription)
         })
     }
     
