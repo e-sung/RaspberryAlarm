@@ -27,6 +27,7 @@ public class CircularClockViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         initViews()
+        requestHealthKitAuthorization()
     }
     
     // MARK: IBActions
@@ -53,6 +54,15 @@ extension CircularClockViewController{
     private func initViews(){
         setUpHour(with: wakeUpHour)
         setUpMinute(with: wakeUpMinute)
+    }
+    
+    private func requestHealthKitAuthorization() {
+        let authRequestor = AuthRequestor()
+        authRequestor.request(completion: { [weak self] authorized, error in
+            if authorized == false && error != nil {
+                self?.alert(msg: error!.localizedDescription)
+            }
+        })
     }
     
     private func setUpHour(with hour:Int){

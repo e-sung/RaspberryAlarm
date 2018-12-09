@@ -42,6 +42,8 @@
 		F051AC3B21BCD5BE003A1ED8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */; };
 		F051AC3C21BCD5BE003A1ED8 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */; };
 		F051AC3D21BCD65F003A1ED8 /* CircularClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */; };
+		F051AC3F21BCEB84003A1ED8 /* AuthorizationRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051AC3E21BCEB84003A1ED8 /* AuthorizationRequestor.swift */; };
+		F051AC4221BCEEDB003A1ED8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051AC4121BCEEDB003A1ED8 /* HealthKit.framework */; };
 		FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */; };
 		FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */; };
 		FF18C3981FC3DA98007141EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF18C3971FC3DA98007141EF /* Main.storyboard */; };
@@ -158,6 +160,9 @@
 		F051AC2321BCD59C003A1ED8 /* RAFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RAFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F051AC2A21BCD59C003A1ED8 /* RAFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAFoundationTests.swift; sourceTree = "<group>"; };
 		F051AC2C21BCD59C003A1ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F051AC3E21BCEB84003A1ED8 /* AuthorizationRequestor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRequestor.swift; sourceTree = "<group>"; };
+		F051AC4021BCEEDB003A1ED8 /* RaspberryAlarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RaspberryAlarm.entitlements; sourceTree = "<group>"; };
+		F051AC4121BCEEDB003A1ED8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		F7E1D04B0D4AAABC714C042C /* Pods-MainKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MainKit/Pods-MainKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FA8520551DF2C986D8BC9176 /* Pods-RaspberryAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarm/Pods-RaspberryAlarm.release.xcconfig"; sourceTree = "<group>"; };
 		FBD9532205C60E023543BC24 /* Pods-RaspberryAlarmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmUITests/Pods-RaspberryAlarmUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F051AC0B21BCD516003A1ED8 /* MainKit.framework in Frameworks */,
+				F051AC4221BCEEDB003A1ED8 /* HealthKit.framework in Frameworks */,
 				F051AC3021BCD59C003A1ED8 /* RAFoundation.framework in Frameworks */,
 				16262C10571EEB3114A374F9 /* Pods_RaspberryAlarm.framework in Frameworks */,
 			);
@@ -255,6 +261,7 @@
 		37249A5684C9E2C94AFEA4ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F051AC4121BCEEDB003A1ED8 /* HealthKit.framework */,
 				B9E8C999EB4677086B5803E0 /* Pods_RaspberryAlarm.framework */,
 				32C1396DAED653B163FA1890 /* Pods_RaspberryAlarmTests.framework */,
 				453E638BBB752F176AC67A43 /* Pods_RaspberryAlarmUITests.framework */,
@@ -268,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */,
+				F051AC3E21BCEB84003A1ED8 /* AuthorizationRequestor.swift */,
 				F051ABF821BCD516003A1ED8 /* MainKit.h */,
 				F051ABF921BCD516003A1ED8 /* Info.plist */,
 			);
@@ -384,6 +392,7 @@
 		FF9CF6B71FB6F5940033E3E3 /* RaspberryAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				F051AC4021BCEEDB003A1ED8 /* RaspberryAlarm.entitlements */,
 				FF9CF6B81FB6F5940033E3E3 /* AppDelegate.swift */,
 				FF18C39B1FC3DAE7007141EF /* Main */,
 				FF9CF6BF1FB6F5940033E3E3 /* Assets.xcassets */,
@@ -619,6 +628,11 @@
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					FF9CF6C81FB6F5940033E3E3 = {
 						CreatedOnToolsVersion = 9.1;
@@ -878,6 +892,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F051AC3F21BCEB84003A1ED8 /* AuthorizationRequestor.swift in Sources */,
 				F051AC3D21BCD65F003A1ED8 /* CircularClockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1328,6 +1343,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RaspberryAlarm/RaspberryAlarm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = RaspberryAlarm/Info.plist;
@@ -1346,6 +1362,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RaspberryAlarm/RaspberryAlarm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = RaspberryAlarm/Info.plist;
