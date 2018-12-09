@@ -13,7 +13,7 @@
         <!--Circular Clock View Controller-->
         <scene sceneID="cTY-kp-B4g">
             <objects>
-                <viewController id="ujz-rh-fZT" customClass="CircularClockViewController" customModule="MainKit" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CircularClockViewController" id="ujz-rh-fZT" customClass="CircularClockViewController" customModule="MainKit" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="but-Hh-4Ir">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,6 +230,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="amPmSgementControl" destination="V3K-hp-Vkl" id="Lgk-iI-EhO"/>
                         <outlet property="hourIndicatingSlider" destination="gow-7i-aic" id="WxF-Zj-OEl"/>
                         <outlet property="hourLabel" destination="wwC-NG-N3a" id="9x5-t8-FcM"/>
                         <outlet property="minuteIndicatingSlider" destination="WUn-4a-MTF" id="TuY-yX-V4M"/>

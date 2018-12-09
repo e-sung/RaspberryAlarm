@@ -1,6 +1,6 @@
 PODS:
   - HGCircularSlider (2.0.0)
-  - SwiftChart (0.5.0)
+  - SwiftChart (1.0.1)
 
 DEPENDENCIES:
   - HGCircularSlider (~> 2.0.0)
@@ -13,8 +13,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   HGCircularSlider: 92e2ee098c814709f455b8f46cd9008147f6a869
-  SwiftChart: d1d22d2b1c4582f4d561edf97a210059c00ee256
+  SwiftChart: ba767a678d568a5ee22d419e146a0582865e1aff
 
-PODFILE CHECKSUM: ba5caf7e4c81cc988a2113f4337bd3efc24bd240
+PODFILE CHECKSUM: 033fd2fc309001a2e932d944ed0b2b55bf1ce1e9
 
 COCOAPODS: 1.5.3

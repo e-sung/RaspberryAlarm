@@ -12,10 +12,16 @@ import HGCircularSlider
 
 public class CircularClockViewController: UIViewController {
     // MARK: IBOutlets
+    @IBOutlet var amPmSgementControl: UISegmentedControl!
     @IBOutlet var hourIndicatingSlider: CircularSlider!
     @IBOutlet var minuteIndicatingSlider: CircularSlider!
     @IBOutlet var hourLabel: UILabel!
     @IBOutlet var minuteLabel: UILabel!
+    
+    public static var storyboardInstance: CircularClockViewController {
+        let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+        return sb.instantiateViewController(withIdentifier: "CircularClockViewController") as! CircularClockViewController
+    }
 
     // MARK: 생명주기
     override public func viewDidLoad() {

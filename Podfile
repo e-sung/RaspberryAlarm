@@ -27,3 +27,8 @@ target 'MainKit' do
   use_frameworks!
   pod 'HGCircularSlider', '~> 2.0.0'
 end
+
+target 'MainKitTests' do
+  use_frameworks!
+  pod 'HGCircularSlider', '~> 2.0.0'
+end

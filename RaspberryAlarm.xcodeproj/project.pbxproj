@@ -24,6 +24,7 @@
 		15036C6794EF631E5F3CBED2 /* Pods_MainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEDC68132D5A916D78D32FE /* Pods_MainKit.framework */; };
 		16262C10571EEB3114A374F9 /* Pods_RaspberryAlarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E8C999EB4677086B5803E0 /* Pods_RaspberryAlarm.framework */; };
 		258055991C2C96E12343D041 /* Pods_RaspberryAlarmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C1396DAED653B163FA1890 /* Pods_RaspberryAlarmTests.framework */; };
+		57BACCC57B4DADAFFFC9A9CD /* Pods_MainKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF6EF515ABF1AC1737C2E5E /* Pods_MainKitTests.framework */; };
 		6D34AE57226B1D387722F965 /* Pods_RaspberryAlarmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453E638BBB752F176AC67A43 /* Pods_RaspberryAlarmUITests.framework */; };
 		F051ABFF21BCD516003A1ED8 /* MainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051ABF621BCD516003A1ED8 /* MainKit.framework */; };
 		F051AC0621BCD516003A1ED8 /* MainKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051AC0521BCD516003A1ED8 /* MainKitTests.swift */; };
@@ -134,11 +135,14 @@
 
 /* Begin PBXFileReference section */
 		0B79CC92DB481EE4CB44E99A /* Pods-RaspberryAlarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarm/Pods-RaspberryAlarm.debug.xcconfig"; sourceTree = "<group>"; };
+		2BEF85B69D8117AAD3C0CF3C /* Pods-MainKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MainKitTests/Pods-MainKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2CF6EF515ABF1AC1737C2E5E /* Pods_MainKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MainKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C1396DAED653B163FA1890 /* Pods_RaspberryAlarmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaspberryAlarmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E15613DAB14E5C21BDDF81B /* Pods-RaspberryAlarmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmUITests/Pods-RaspberryAlarmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		40BAB54D6283341EC270A31C /* Pods-RaspberryAlarmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmTests/Pods-RaspberryAlarmTests.debug.xcconfig"; sourceTree = "<group>"; };
 		413FBF34DC800F4FD8BEF462 /* Pods-MainKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MainKit/Pods-MainKit.release.xcconfig"; sourceTree = "<group>"; };
 		453E638BBB752F176AC67A43 /* Pods_RaspberryAlarmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaspberryAlarmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99DDA9C5E8FA688E19302748 /* Pods-MainKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MainKitTests/Pods-MainKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9E8C999EB4677086B5803E0 /* Pods_RaspberryAlarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaspberryAlarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0DA70632578378C3102332 /* Pods-RaspberryAlarmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmTests/Pods-RaspberryAlarmTests.release.xcconfig"; sourceTree = "<group>"; };
 		EDEDC68132D5A916D78D32FE /* Pods_MainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F051ABFF21BCD516003A1ED8 /* MainKit.framework in Frameworks */,
+				57BACCC57B4DADAFFFC9A9CD /* Pods_MainKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +259,7 @@
 				32C1396DAED653B163FA1890 /* Pods_RaspberryAlarmTests.framework */,
 				453E638BBB752F176AC67A43 /* Pods_RaspberryAlarmUITests.framework */,
 				EDEDC68132D5A916D78D32FE /* Pods_MainKit.framework */,
+				2CF6EF515ABF1AC1737C2E5E /* Pods_MainKitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 		F051ABF721BCD516003A1ED8 /* MainKit */ = {
 			isa = PBXGroup;
 			children = (
+				FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */,
 				F051ABF821BCD516003A1ED8 /* MainKit.h */,
 				F051ABF921BCD516003A1ED8 /* Info.plist */,
 			);
@@ -307,6 +314,8 @@
 				FBD9532205C60E023543BC24 /* Pods-RaspberryAlarmUITests.release.xcconfig */,
 				F7E1D04B0D4AAABC714C042C /* Pods-MainKit.debug.xcconfig */,
 				413FBF34DC800F4FD8BEF462 /* Pods-MainKit.release.xcconfig */,
+				2BEF85B69D8117AAD3C0CF3C /* Pods-MainKitTests.debug.xcconfig */,
+				99DDA9C5E8FA688E19302748 /* Pods-MainKitTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -325,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				FF18C3971FC3DA98007141EF /* Main.storyboard */,
-				FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */,
 				FFF7BC7F1FC40F8800C6B5D1 /* SettingPhase */,
 				FF0B04AD1FB87178005DF58E /* RecordingPhase */,
 			);
@@ -461,9 +469,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F051AC1121BCD516003A1ED8 /* Build configuration list for PBXNativeTarget "MainKitTests" */;
 			buildPhases = (
+				E0C1DC663338A476997F9380 /* [CP] Check Pods Manifest.lock */,
 				F051ABFA21BCD516003A1ED8 /* Sources */,
 				F051ABFB21BCD516003A1ED8 /* Frameworks */,
 				F051ABFC21BCD516003A1ED8 /* Resources */,
+				DE8F7E1128EBD6EBD6C2B2B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -762,6 +772,50 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DE8F7E1128EBD6EBD6C2B2B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MainKitTests/Pods-MainKitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HGCircularSlider/HGCircularSlider.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGCircularSlider.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MainKitTests/Pods-MainKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0C1DC663338A476997F9380 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MainKitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F5D7410EC05FE87B5C1C051C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -947,6 +1001,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F7E1D04B0D4AAABC714C042C /* Pods-MainKit.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -976,6 +1031,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 413FBF34DC800F4FD8BEF462 /* Pods-MainKit.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1002,8 +1058,9 @@
 		};
 		F051AC1221BCD516003A1ED8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BEF85B69D8117AAD3C0CF3C /* Pods-MainKitTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
@@ -1022,8 +1079,9 @@
 		};
 		F051AC1321BCD516003A1ED8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99DDA9C5E8FA688E19302748 /* Pods-MainKitTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
@@ -1042,6 +1100,7 @@
 		F051AC3321BCD59C003A1ED8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1070,6 +1129,7 @@
 		F051AC3421BCD59C003A1ED8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1266,7 +1326,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B79CC92DB481EE4CB44E99A /* Pods-RaspberryAlarm.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
@@ -1284,7 +1344,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA8520551DF2C986D8BC9176 /* Pods-RaspberryAlarm.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;

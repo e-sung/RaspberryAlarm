@@ -1,34 +1,88 @@
-//
-//  MainKitTests.swift
-//  MainKitTests
-//
-//  Created by 류성두 on 09/12/2018.
-//  Copyright © 2018 류성두. All rights reserved.
-//
-
 import XCTest
+import HGCircularSlider
 @testable import MainKit
 
-class MainKitTests: XCTestCase {
 
+class CircularClockSliderTests: XCTestCase {
+    
+    let sut = CircularClockViewController.storyboardInstance
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        sut.view.layoutIfNeeded()
+    }
+    
+    
+    func testChangeHourLessThan10() {
+        // Given
+        let slider = sut.hourIndicatingSlider!
+        slider.endPointValue = 8
+        
+        // When
+        sut.hourChangeHandler(slider)
+        
+        // Then
+        XCTAssert(sut.hourLabel.text == "08:")
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testChangeHourBiggerThan10() {
+        // Given
+        let slider = sut.hourIndicatingSlider!
+        slider.endPointValue = 11
+        
+        // When
+        sut.hourChangeHandler(slider)
+        
+        // Then
+        XCTAssert(sut.hourLabel.text == "11:")
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testChangeMinuteLessThan10() {
+        // Given
+        let slider = sut.minuteIndicatingSlider!
+        slider.endPointValue = 8
+        
+        // When
+        sut.minuteChangeHandler(slider)
+        
+        // Then
+        XCTAssert(sut.minuteLabel.text == "08")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testChangeMinuteBiggerThan10() {
+        // Given
+        let slider = sut.minuteIndicatingSlider!
+        slider.endPointValue = 11
+        
+        // When
+        sut.minuteChangeHandler(slider)
+        
+        // Then
+        XCTAssert(sut.minuteLabel.text == "11")
+    }
+    
+    
+    func testAMselected() {
+        // Given
+        let segControl = sut.amPmSgementControl!
+        segControl.selectedSegmentIndex = 0
+        
+        // When
+        sut.ampmChangeHandler(segControl)
+        
+        // Then
+        XCTAssert(UserDefaults.standard.integer(forKey: "ampm") == 0)
+    }
+    
+    func testPMselected() {
+        // Given
+        let segControl = sut.amPmSgementControl!
+        segControl.selectedSegmentIndex = 1
+        
+        // When
+        sut.ampmChangeHandler(segControl)
+        
+        // Then
+        XCTAssert(UserDefaults.standard.integer(forKey: "ampm") == 1)
     }
 
 }
