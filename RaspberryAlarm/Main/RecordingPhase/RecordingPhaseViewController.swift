@@ -9,6 +9,7 @@
 import UIKit
 import CoreMotion
 import SwiftChart
+import RAFoundation
 /** # 무엇을 하는 놈인가?
  1. 현재시간과 기상까지 남은 시간을 표시:
  2. 가속도 센서 감지/그래프 작성:

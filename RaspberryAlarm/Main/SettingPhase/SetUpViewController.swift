@@ -6,6 +6,7 @@
 //  Copyright © 2017년 류성두. All rights reserved.
 //
 import UIKit
+import RAFoundation
 
 class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     
