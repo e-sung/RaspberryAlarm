@@ -8,19 +8,19 @@
 import UIKit
 import RAFoundation
 
-class SetUpViewController: UIViewController, UINavigationControllerDelegate{
+class SetUpViewController: UITableViewController, UINavigationControllerDelegate{
     
     // MARK: IBOutlets
-    @IBOutlet private weak var timeToHeatAfterAsleepSlider: SliderSettingCell!
-    @IBOutlet private weak var timeToHeatBeforeAwakeSlider: SliderSettingCell!
-    @IBOutlet private weak var timeToSnoozeSlider: SliderSettingCell!
+    @IBOutlet private var timeToHeatAfterAsleepSlider: SliderSettingCell!
+    @IBOutlet private var timeToHeatBeforeAwakeSlider: SliderSettingCell!
+    @IBOutlet private var timeToSnoozeSlider: SliderSettingCell!
     
     // MARK: IBAction
     @IBAction private func confirmButtonHandler(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     @IBAction private func cancelHandlerButton(_ sender: UIBarButtonItem){
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 
     // MARK: SetUp 될 것들
@@ -35,6 +35,7 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
         timeToHeatAfterAsleepSlider.delegate = self
         timeToHeatBeforeAwakeSlider.delegate = self
         timeToSnoozeSlider.delegate = self
+        tableView.tableFooterView = UIView()
     }
     /// 이 ViewController의 속성값들을 초기화하고, 이 속성값들을 바탕으로 슬라이더의 위치를 조정
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +47,10 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         savePropertiesInUserDefaults()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 

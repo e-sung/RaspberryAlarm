@@ -12,9 +12,9 @@ class SliderSettingCell: UITableViewCell{
     // MARK: Delegate
     var delegate:SliderSettingCellDelegate?
     //MARK: IBOutlets
-    @IBOutlet private weak var titleLB:UILabel!
-    @IBOutlet private weak var quantityLB:UILabel!
-    @IBOutlet private weak var slider:UISlider!
+    @IBOutlet private var titleLB:UILabel!
+    @IBOutlet private var quantityLB:UILabel!
+    @IBOutlet private var slider:UISlider!
     // MARK: IBActions
     @IBAction private func updateQuantity(_ sender:UISlider){
         quantityLB.text = "\(Int(sender.value))"
