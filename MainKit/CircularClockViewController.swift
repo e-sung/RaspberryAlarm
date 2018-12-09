@@ -9,6 +9,7 @@
 import UIKit
 import RAFoundation
 import HGCircularSlider
+import HealthKit
 import HealthKitHelper
 
 public class CircularClockViewController: UIViewController {
@@ -19,6 +20,8 @@ public class CircularClockViewController: UIViewController {
     @IBOutlet var hourLabel: UILabel!
     @IBOutlet var minuteLabel: UILabel!
     
+    var authRequestor: HealthKitAuthRequestor = HealthKitHelper.shared
+
     public static var storyboardInstance: CircularClockViewController {
         let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
         return sb.instantiateViewController(withIdentifier: "CircularClockViewController") as! CircularClockViewController
@@ -28,7 +31,10 @@ public class CircularClockViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         initViews()
-        requestHealthKitAuthorization()
+        authRequestor.requestSleepAuthorization(completion: { authorized, error in
+            guard let error = error else { return }
+            print(error.localizedDescription)
+        })
     }
     
     // MARK: IBActions
@@ -52,16 +58,9 @@ public class CircularClockViewController: UIViewController {
 
 // MARK: 초기화 메서드들
 extension CircularClockViewController{
-    private func initViews(){
+    func initViews(){
         setUpHour(with: wakeUpHour)
         setUpMinute(with: wakeUpMinute)
-    }
-    
-    private func requestHealthKitAuthorization() {
-        HealthKitHelper.shared.requestSleepAuthorization(completion: { authorized, error in
-            guard let error = error else { return }
-            print(error.localizedDescription)
-        })
     }
     
     private func setUpHour(with hour:Int){

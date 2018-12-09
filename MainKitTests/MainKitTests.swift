@@ -1,22 +1,32 @@
 import XCTest
 import HGCircularSlider
+import HealthKitHelper
 @testable import MainKit
 
 
 class CircularClockSliderTests: XCTestCase {
     
     let sut = CircularClockViewController.storyboardInstance
-    override func setUp() {
-        super.setUp()
-        sut.view.layoutIfNeeded()
-    }
     
+    func test1Authorization() {
+        // Given
+        let mockAuthRequestor = MockAuthRequestor()
+        sut.authRequestor = mockAuthRequestor
+        
+        // When
+        sut.view.layoutIfNeeded()
+        
+        // THen
+        XCTAssert(mockAuthRequestor.authorized == false)
+        
+    }
     
     func testChangeHourLessThan10() {
         // Given
+        sut.view.layoutIfNeeded()
         let slider = sut.hourIndicatingSlider!
         slider.endPointValue = 8
-        
+
         // When
         sut.hourChangeHandler(slider)
         
@@ -26,9 +36,10 @@ class CircularClockSliderTests: XCTestCase {
 
     func testChangeHourBiggerThan10() {
         // Given
+        sut.view.layoutIfNeeded()
         let slider = sut.hourIndicatingSlider!
         slider.endPointValue = 11
-        
+
         // When
         sut.hourChangeHandler(slider)
         
@@ -38,9 +49,10 @@ class CircularClockSliderTests: XCTestCase {
     
     func testChangeMinuteLessThan10() {
         // Given
+        sut.view.layoutIfNeeded()
         let slider = sut.minuteIndicatingSlider!
         slider.endPointValue = 8
-        
+
         // When
         sut.minuteChangeHandler(slider)
         
@@ -50,9 +62,10 @@ class CircularClockSliderTests: XCTestCase {
     
     func testChangeMinuteBiggerThan10() {
         // Given
+        sut.view.layoutIfNeeded()
         let slider = sut.minuteIndicatingSlider!
         slider.endPointValue = 11
-        
+
         // When
         sut.minuteChangeHandler(slider)
         
@@ -63,9 +76,10 @@ class CircularClockSliderTests: XCTestCase {
     
     func testAMselected() {
         // Given
+        sut.view.layoutIfNeeded()
         let segControl = sut.amPmSgementControl!
         segControl.selectedSegmentIndex = 0
-        
+
         // When
         sut.ampmChangeHandler(segControl)
         
@@ -75,9 +89,10 @@ class CircularClockSliderTests: XCTestCase {
     
     func testPMselected() {
         // Given
+        sut.view.layoutIfNeeded()
         let segControl = sut.amPmSgementControl!
         segControl.selectedSegmentIndex = 1
-        
+
         // When
         sut.ampmChangeHandler(segControl)
         
@@ -85,4 +100,19 @@ class CircularClockSliderTests: XCTestCase {
         XCTAssert(UserDefaults.standard.integer(forKey: "ampm") == 1)
     }
 
+}
+
+class MockAuthRequestor: HealthKitAuthRequestor {
+    var authorized = true
+    func requestSleepAuthorization(completion: @escaping (Bool, Error?) -> Void) {
+        authorized = false
+        completion(authorized, MockError.unkown)
+    }
+    
+    enum MockError: Error {
+        case unkown
+        var localizedDescription: String {
+            return "Unknwon Error Occured!"
+        }
+    }
 }
