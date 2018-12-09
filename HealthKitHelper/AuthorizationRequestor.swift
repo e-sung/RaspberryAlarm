@@ -2,7 +2,15 @@ import Foundation
 import HealthKit
 
 public let HEALTH_STORE = HKHealthStore()
-public class HealthKitHelper {
+public protocol HealthKitAuthRequestor {
+    func requestSleepAuthorization(completion: @escaping (_ authorized:Bool, _ error: Error?) -> Void)
+}
+
+public protocol SleepDataStore {
+    func saveSleepAnalysis(from startDate: Date)
+}
+
+public class HealthKitHelper: HealthKitAuthRequestor, SleepDataStore{
     
     public static var shared = HealthKitHelper()
 
