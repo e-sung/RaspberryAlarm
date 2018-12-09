@@ -21,9 +21,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		15036C6794EF631E5F3CBED2 /* Pods_MainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEDC68132D5A916D78D32FE /* Pods_MainKit.framework */; };
 		16262C10571EEB3114A374F9 /* Pods_RaspberryAlarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E8C999EB4677086B5803E0 /* Pods_RaspberryAlarm.framework */; };
 		258055991C2C96E12343D041 /* Pods_RaspberryAlarmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C1396DAED653B163FA1890 /* Pods_RaspberryAlarmTests.framework */; };
 		6D34AE57226B1D387722F965 /* Pods_RaspberryAlarmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453E638BBB752F176AC67A43 /* Pods_RaspberryAlarmUITests.framework */; };
+		F051ABFF21BCD516003A1ED8 /* MainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051ABF621BCD516003A1ED8 /* MainKit.framework */; };
+		F051AC0621BCD516003A1ED8 /* MainKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051AC0521BCD516003A1ED8 /* MainKitTests.swift */; };
+		F051AC0821BCD516003A1ED8 /* MainKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F051ABF821BCD516003A1ED8 /* MainKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F051AC0B21BCD516003A1ED8 /* MainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051ABF621BCD516003A1ED8 /* MainKit.framework */; };
+		F051AC0C21BCD516003A1ED8 /* MainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F051ABF621BCD516003A1ED8 /* MainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */; };
 		FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */; };
 		FF18C3981FC3DA98007141EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF18C3971FC3DA98007141EF /* Main.storyboard */; };
@@ -48,6 +54,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F051AC0021BCD516003A1ED8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F051ABF521BCD516003A1ED8;
+			remoteInfo = MainKit;
+		};
+		F051AC0221BCD516003A1ED8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF9CF6B41FB6F5940033E3E3;
+			remoteInfo = RaspberryAlarm;
+		};
+		F051AC0921BCD516003A1ED8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F051ABF521BCD516003A1ED8;
+			remoteInfo = MainKit;
+		};
 		FF9CF6CA1FB6F5940033E3E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF9CF6AD1FB6F5940033E3E3 /* Project object */;
@@ -64,14 +91,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F051AC1021BCD516003A1ED8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F051AC0C21BCD516003A1ED8 /* MainKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0B79CC92DB481EE4CB44E99A /* Pods-RaspberryAlarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarm/Pods-RaspberryAlarm.debug.xcconfig"; sourceTree = "<group>"; };
 		32C1396DAED653B163FA1890 /* Pods_RaspberryAlarmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaspberryAlarmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E15613DAB14E5C21BDDF81B /* Pods-RaspberryAlarmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmUITests/Pods-RaspberryAlarmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		40BAB54D6283341EC270A31C /* Pods-RaspberryAlarmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmTests/Pods-RaspberryAlarmTests.debug.xcconfig"; sourceTree = "<group>"; };
+		413FBF34DC800F4FD8BEF462 /* Pods-MainKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MainKit/Pods-MainKit.release.xcconfig"; sourceTree = "<group>"; };
 		453E638BBB752F176AC67A43 /* Pods_RaspberryAlarmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaspberryAlarmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E8C999EB4677086B5803E0 /* Pods_RaspberryAlarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaspberryAlarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0DA70632578378C3102332 /* Pods-RaspberryAlarmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmTests/Pods-RaspberryAlarmTests.release.xcconfig"; sourceTree = "<group>"; };
+		EDEDC68132D5A916D78D32FE /* Pods_MainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F051ABF621BCD516003A1ED8 /* MainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F051ABF821BCD516003A1ED8 /* MainKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainKit.h; sourceTree = "<group>"; };
+		F051ABF921BCD516003A1ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F051ABFE21BCD516003A1ED8 /* MainKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F051AC0521BCD516003A1ED8 /* MainKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainKitTests.swift; sourceTree = "<group>"; };
+		F051AC0721BCD516003A1ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E1D04B0D4AAABC714C042C /* Pods-MainKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MainKit/Pods-MainKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FA8520551DF2C986D8BC9176 /* Pods-RaspberryAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarm/Pods-RaspberryAlarm.release.xcconfig"; sourceTree = "<group>"; };
 		FBD9532205C60E023543BC24 /* Pods-RaspberryAlarmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmUITests/Pods-RaspberryAlarmUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordingPhase.storyboard; sourceTree = "<group>"; };
@@ -104,10 +154,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F051ABF321BCD516003A1ED8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15036C6794EF631E5F3CBED2 /* Pods_MainKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F051ABFB21BCD516003A1ED8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F051ABFF21BCD516003A1ED8 /* MainKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF9CF6B21FB6F5940033E3E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F051AC0B21BCD516003A1ED8 /* MainKit.framework in Frameworks */,
 				16262C10571EEB3114A374F9 /* Pods_RaspberryAlarm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +204,27 @@
 				B9E8C999EB4677086B5803E0 /* Pods_RaspberryAlarm.framework */,
 				32C1396DAED653B163FA1890 /* Pods_RaspberryAlarmTests.framework */,
 				453E638BBB752F176AC67A43 /* Pods_RaspberryAlarmUITests.framework */,
+				EDEDC68132D5A916D78D32FE /* Pods_MainKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F051ABF721BCD516003A1ED8 /* MainKit */ = {
+			isa = PBXGroup;
+			children = (
+				F051ABF821BCD516003A1ED8 /* MainKit.h */,
+				F051ABF921BCD516003A1ED8 /* Info.plist */,
+			);
+			path = MainKit;
+			sourceTree = "<group>";
+		};
+		F051AC0421BCD516003A1ED8 /* MainKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				F051AC0521BCD516003A1ED8 /* MainKitTests.swift */,
+				F051AC0721BCD516003A1ED8 /* Info.plist */,
+			);
+			path = MainKitTests;
 			sourceTree = "<group>";
 		};
 		F4544BE3E284B37FB973E6AB /* Pods */ = {
@@ -150,6 +236,8 @@
 				DD0DA70632578378C3102332 /* Pods-RaspberryAlarmTests.release.xcconfig */,
 				3E15613DAB14E5C21BDDF81B /* Pods-RaspberryAlarmUITests.debug.xcconfig */,
 				FBD9532205C60E023543BC24 /* Pods-RaspberryAlarmUITests.release.xcconfig */,
+				F7E1D04B0D4AAABC714C042C /* Pods-MainKit.debug.xcconfig */,
+				413FBF34DC800F4FD8BEF462 /* Pods-MainKit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -192,6 +280,8 @@
 				FF9CF6B71FB6F5940033E3E3 /* RaspberryAlarm */,
 				FF9CF6CC1FB6F5940033E3E3 /* RaspberryAlarmTests */,
 				FF9CF6D71FB6F5940033E3E3 /* RaspberryAlarmUITests */,
+				F051ABF721BCD516003A1ED8 /* MainKit */,
+				F051AC0421BCD516003A1ED8 /* MainKitTests */,
 				FF9CF6B61FB6F5940033E3E3 /* Products */,
 				F4544BE3E284B37FB973E6AB /* Pods */,
 				37249A5684C9E2C94AFEA4ED /* Frameworks */,
@@ -204,6 +294,8 @@
 				FF9CF6B51FB6F5940033E3E3 /* RaspberryAlarm.app */,
 				FF9CF6C91FB6F5940033E3E3 /* RaspberryAlarmTests.xctest */,
 				FF9CF6D41FB6F5940033E3E3 /* RaspberryAlarmUITests.xctest */,
+				F051ABF621BCD516003A1ED8 /* MainKit.framework */,
+				F051ABFE21BCD516003A1ED8 /* MainKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,7 +347,56 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		F051ABF121BCD516003A1ED8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F051AC0821BCD516003A1ED8 /* MainKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		F051ABF521BCD516003A1ED8 /* MainKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F051AC0D21BCD516003A1ED8 /* Build configuration list for PBXNativeTarget "MainKit" */;
+			buildPhases = (
+				F5D7410EC05FE87B5C1C051C /* [CP] Check Pods Manifest.lock */,
+				F051ABF121BCD516003A1ED8 /* Headers */,
+				F051ABF221BCD516003A1ED8 /* Sources */,
+				F051ABF321BCD516003A1ED8 /* Frameworks */,
+				F051ABF421BCD516003A1ED8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MainKit;
+			productName = MainKit;
+			productReference = F051ABF621BCD516003A1ED8 /* MainKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F051ABFD21BCD516003A1ED8 /* MainKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F051AC1121BCD516003A1ED8 /* Build configuration list for PBXNativeTarget "MainKitTests" */;
+			buildPhases = (
+				F051ABFA21BCD516003A1ED8 /* Sources */,
+				F051ABFB21BCD516003A1ED8 /* Frameworks */,
+				F051ABFC21BCD516003A1ED8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F051AC0121BCD516003A1ED8 /* PBXTargetDependency */,
+				F051AC0321BCD516003A1ED8 /* PBXTargetDependency */,
+			);
+			name = MainKitTests;
+			productName = MainKitTests;
+			productReference = F051ABFE21BCD516003A1ED8 /* MainKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF9CF6DD1FB6F5940033E3E3 /* Build configuration list for PBXNativeTarget "RaspberryAlarm" */;
@@ -265,10 +406,12 @@
 				FF9CF6B21FB6F5940033E3E3 /* Frameworks */,
 				FF9CF6B31FB6F5940033E3E3 /* Resources */,
 				F97668872F479D8D3AED5BDF /* [CP] Embed Pods Frameworks */,
+				F051AC1021BCD516003A1ED8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F051AC0A21BCD516003A1ED8 /* PBXTargetDependency */,
 			);
 			name = RaspberryAlarm;
 			productName = RaspberryAlarm;
@@ -319,10 +462,19 @@
 		FF9CF6AD1FB6F5940033E3E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "류성두";
 				TargetAttributes = {
+					F051ABF521BCD516003A1ED8 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					F051ABFD21BCD516003A1ED8 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FF9CF6B41FB6F5940033E3E3;
+					};
 					FF4328501FBC8A4300C8ACCA = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -363,11 +515,27 @@
 				FF9CF6C81FB6F5940033E3E3 /* RaspberryAlarmTests */,
 				FF9CF6D31FB6F5940033E3E3 /* RaspberryAlarmUITests */,
 				FF4328501FBC8A4300C8ACCA /* Documentation */,
+				F051ABF521BCD516003A1ED8 /* MainKit */,
+				F051ABFD21BCD516003A1ED8 /* MainKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F051ABF421BCD516003A1ED8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F051ABFC21BCD516003A1ED8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF9CF6B31FB6F5940033E3E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,6 +620,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F5D7410EC05FE87B5C1C051C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MainKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F97668872F479D8D3AED5BDF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,6 +678,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F051ABF221BCD516003A1ED8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F051ABFA21BCD516003A1ED8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F051AC0621BCD516003A1ED8 /* MainKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF9CF6B11FB6F5940033E3E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -527,6 +732,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F051AC0121BCD516003A1ED8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F051ABF521BCD516003A1ED8 /* MainKit */;
+			targetProxy = F051AC0021BCD516003A1ED8 /* PBXContainerItemProxy */;
+		};
+		F051AC0321BCD516003A1ED8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */;
+			targetProxy = F051AC0221BCD516003A1ED8 /* PBXContainerItemProxy */;
+		};
+		F051AC0A21BCD516003A1ED8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F051ABF521BCD516003A1ED8 /* MainKit */;
+			targetProxy = F051AC0921BCD516003A1ED8 /* PBXContainerItemProxy */;
+		};
 		FF9CF6CB1FB6F5940033E3E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FF9CF6B41FB6F5940033E3E3 /* RaspberryAlarm */;
@@ -551,6 +771,102 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F051AC0E21BCD516003A1ED8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7E1D04B0D4AAABC714C042C /* Pods-MainKit.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MainKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.MainKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F051AC0F21BCD516003A1ED8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 413FBF34DC800F4FD8BEF462 /* Pods-MainKit.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MainKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.MainKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F051AC1221BCD516003A1ED8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				INFOPLIST_FILE = MainKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.MainKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaspberryAlarm.app/RaspberryAlarm";
+			};
+			name = Debug;
+		};
+		F051AC1321BCD516003A1ED8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				INFOPLIST_FILE = MainKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.MainKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaspberryAlarm.app/RaspberryAlarm";
+			};
+			name = Release;
+		};
 		FF4328511FBC8A4300C8ACCA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -787,6 +1103,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F051AC0D21BCD516003A1ED8 /* Build configuration list for PBXNativeTarget "MainKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F051AC0E21BCD516003A1ED8 /* Debug */,
+				F051AC0F21BCD516003A1ED8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F051AC1121BCD516003A1ED8 /* Build configuration list for PBXNativeTarget "MainKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F051AC1221BCD516003A1ED8 /* Debug */,
+				F051AC1321BCD516003A1ED8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FF4328531FBC8A4300C8ACCA /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
