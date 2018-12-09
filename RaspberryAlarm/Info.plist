@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We want to Share your Health REcord!!</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We want to Udpate your Health Record!!</string>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>We want your Health Record!!!</string>
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
 	<key>NSAppTransportSecurity</key>

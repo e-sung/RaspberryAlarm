@@ -21,6 +21,8 @@ class RecordingPhaseViewController: UIViewController {
     // MARK: 알람이 울릴 시간을 계산하는데 사용할 전역변수들
     /// 현재시간과 남은 시간 계산을 위해 1초마다 불리는 타이머
     private var alarmTimer:Timer!
+    /// 잠든 시간
+    private let timeWentToBed = Date()
     /// 일어나야 할 시간
     private var timeToWakeUp:TimeInterval!
     /// 아침에 전기장판 켤 시간
@@ -75,8 +77,9 @@ class RecordingPhaseViewController: UIViewController {
     }
     /// RingingPhase에서 이곳으로 넘어왔다는 것은, Snooze를 눌렀다는 뜻!
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
-        if let _ = segue.source as? RingingPhaseViewController{
+        if let nextVC = segue.source as? RingingPhaseViewController{
             self.timeToWakeUp = Date().absoluteSeconds + self.timeToSnooze
+            nextVC.startDate = timeWentToBed
         }
     }
     
