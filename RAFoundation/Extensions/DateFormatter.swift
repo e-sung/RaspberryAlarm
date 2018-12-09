@@ -9,7 +9,7 @@
 import Foundation
 
 extension DateFormatter{
-    static let mainDateFormat = "HH:mm:ss"
+    public static let mainDateFormat = "HH:mm:ss"
     /**
      초단위의 시간을 넣으면 dateFormat 형식의 문자열 반환
      - parameter seconds : 변환하고자 하는 초단위의 시간
@@ -19,7 +19,7 @@ extension DateFormatter{
      format(seconds:2*60*60+60*4+3, with "HH:mm:ss") // 02:04:03
      ````
      */
-    func format(seconds:TimeInterval, with dateFormat:String)->String{
+    public func format(seconds:TimeInterval, with dateFormat:String)->String{
         self.dateFormat = dateFormat
         let today = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
         return self.string(from: Date(timeInterval: seconds, since: today))

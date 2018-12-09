@@ -6,6 +6,7 @@
 //  Copyright © 2017년 류성두. All rights reserved.
 //
 import UIKit
+import RAFoundation
 
 class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     
@@ -30,6 +31,7 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         timeToHeatAfterAsleepSlider.delegate = self
         timeToHeatBeforeAwakeSlider.delegate = self
         timeToSnoozeSlider.delegate = self
@@ -44,6 +46,12 @@ class SetUpViewController: UIViewController, UINavigationControllerDelegate{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         savePropertiesInUserDefaults()
+    }
+}
+
+extension SetUpViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
 

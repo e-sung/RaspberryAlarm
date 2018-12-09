@@ -18,18 +18,14 @@ extension Date{
      내일정오.absoluteSeconds == 12*60*60
      ````
     */
-    var absoluteSeconds:TimeInterval{
-        get{
-            let hour = Calendar.current.component(.hour, from: self)
-            let minute = Calendar.current.component(.minute, from: self)
-            let second = Calendar.current.component(.second, from: self)
-            return TimeInterval(hour*60*60 + minute*60 + second)
-        }
+    public var absoluteSeconds:TimeInterval{
+        let hour = Calendar.current.component(.hour, from: self)
+        let minute = Calendar.current.component(.minute, from: self)
+        let second = Calendar.current.component(.second, from: self)
+        return TimeInterval(hour*60*60 + minute*60 + second)
     }
     /// Date 객체가 속한 날의 자정시점의 Date객체
-    var midnight:Date{
-        get{
-            return Calendar.current.date(bySetting: .hour, value: 0, of: self)!
-        }
+    public var midnight:Date{
+        return Calendar.current.date(bySetting: .hour, value: 0, of: self)!
     }
 }

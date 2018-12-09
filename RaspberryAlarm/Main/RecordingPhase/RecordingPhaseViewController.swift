@@ -9,6 +9,7 @@
 import UIKit
 import CoreMotion
 import SwiftChart
+import RAFoundation
 /** # 무엇을 하는 놈인가?
  1. 현재시간과 기상까지 남은 시간을 표시:
  2. 가속도 센서 감지/그래프 작성:
@@ -54,9 +55,9 @@ class RecordingPhaseViewController: UIViewController {
     /// 핸드폰이 흔들렸는지 확인할 기준치 : `func startAccelerometers()`참고
     private var lastState = 0
     /// 1초동안 핸드폰이 흔들린 횟수 (sleep movements in seconds)
-    private var smInSeconds:Float = 0
+    private var smInSeconds:Double = 0
     /// 이 데이터를 바탕으로 수면그래프를 그림
-    private var sleepData:[Float] = [0.0]
+    private var sleepData:[Double] = [0.0]
     
     // MARK: IBOutlets
     /// 현재 시간을 표시할 UILabel
@@ -163,7 +164,7 @@ extension RecordingPhaseViewController{
                                                 self.lastState = currentState
                                             }
             })
-            RunLoop.current.add(self.motionSensorTimer!, forMode: .defaultRunLoopMode)
+            RunLoop.current.add(self.motionSensorTimer!, forMode: RunLoop.Mode.default)
         }
     }
 }
@@ -203,7 +204,7 @@ extension RecordingPhaseViewController{
      - ToDo:
      chart객체가 실제로 어떻게 View를 업데이트하는지 알아봐야겠다.
      */
-    private func reDraw(chart:Chart, with newData:Float){
+    private func reDraw(chart:Chart, with newData:Double){
         sleepData.append(newData)
         chart.add(ChartSeries(sleepData) )
     }
