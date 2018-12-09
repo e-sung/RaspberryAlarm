@@ -30,7 +30,6 @@
 		F051AC0821BCD516003A1ED8 /* MainKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F051ABF821BCD516003A1ED8 /* MainKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F051AC0B21BCD516003A1ED8 /* MainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051ABF621BCD516003A1ED8 /* MainKit.framework */; };
 		F051AC0C21BCD516003A1ED8 /* MainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F051ABF621BCD516003A1ED8 /* MainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F051AC1521BCD587003A1ED8 /* CircularClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */; };
 		F051AC2421BCD59C003A1ED8 /* RAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051AC1B21BCD59B003A1ED8 /* RAFoundation.framework */; };
 		F051AC2B21BCD59C003A1ED8 /* RAFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051AC2A21BCD59C003A1ED8 /* RAFoundationTests.swift */; };
 		F051AC2D21BCD59C003A1ED8 /* RAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F051AC1D21BCD59B003A1ED8 /* RAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +40,7 @@
 		F051AC3A21BCD5BE003A1ED8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF881F0C1FC01AE200EF25F2 /* UIViewController.swift */; };
 		F051AC3B21BCD5BE003A1ED8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB4FC01FC29CCD004DE80F /* DateFormatter.swift */; };
 		F051AC3C21BCD5BE003A1ED8 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7BC7B1FC3ED9B00C6B5D1 /* UserDefaultsKeys.swift */; };
+		F051AC3D21BCD65F003A1ED8 /* CircularClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18C3991FC3DADD007141EF /* CircularClockViewController.swift */; };
 		FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */; };
 		FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */; };
 		FF18C3981FC3DA98007141EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF18C3971FC3DA98007141EF /* Main.storyboard */; };
@@ -824,6 +824,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F051AC3D21BCD65F003A1ED8 /* CircularClockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,7 +860,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F051AC1521BCD587003A1ED8 /* CircularClockViewController.swift in Sources */,
 				FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */,
 				FFF7BC7E1FC3F63F00C6B5D1 /* SetUpViewController.swift in Sources */,
 				FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */,
@@ -1003,6 +1003,7 @@
 		F051AC1221BCD516003A1ED8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
@@ -1022,6 +1023,7 @@
 		F051AC1321BCD516003A1ED8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
@@ -1051,7 +1053,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RAFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1079,7 +1081,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RAFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.RAFoundation;
