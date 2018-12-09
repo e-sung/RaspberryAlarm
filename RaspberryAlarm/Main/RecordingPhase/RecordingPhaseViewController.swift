@@ -163,7 +163,7 @@ extension RecordingPhaseViewController{
                                                 self.lastState = currentState
                                             }
             })
-            RunLoop.current.add(self.motionSensorTimer!, forMode: .defaultRunLoopMode)
+            RunLoop.current.add(self.motionSensorTimer!, forMode: RunLoop.Mode.default)
         }
     }
 }
