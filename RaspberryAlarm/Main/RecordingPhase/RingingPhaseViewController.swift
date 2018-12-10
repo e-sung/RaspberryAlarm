@@ -14,6 +14,7 @@ import HealthKitHelper
 import MediaPlayer
 
 
+
 class RingingPhaseViewController: UIViewController {
 
     var startDate: Date!
@@ -33,7 +34,6 @@ class RingingPhaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     // MARK: 알람이 울릴 때 행해져야 할 일들
@@ -41,7 +41,7 @@ class RingingPhaseViewController: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = true // 핸드폰 안 꺼지게 하는 설정
         volumeIncrementerTimer = Timer.scheduledTimer(withTimeInterval: 10,
                                                       repeats: true,
-                                                      block: { _ in self.incremntVolume()})
+                                                      block: { [weak self] _ in self?.incremntVolume()})
         setUpAlarmPlayer()
         startPlayingAlarm()
     }
@@ -76,16 +76,18 @@ class RingingPhaseViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         UIApplication.shared.isIdleTimerDisabled = false
     }
-}
-
-
-func setMasterVolume(value: Float, completion: (()->Void)?) {
-    let volumeView = MPVolumeView()
-    if let slider = volumeView.subviews.first as? UISlider
-    {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
-            slider.value = value
-            completion?()
+    
+    func setMasterVolume(value: Float, completion: (()->Void)?) {
+        let volumeView = MPVolumeView()
+        if let slider = volumeView.subviews.first as? UISlider
+        {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                slider.value = value
+                completion?()
+            }
         }
     }
 }
+
+
+
