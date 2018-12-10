@@ -54,6 +54,9 @@ public class CircularClockViewController: UIViewController {
         UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: ampmKey)
     }
     
+    @IBAction func unwindToCicularClock(_ unwindSegue: UIStoryboardSegue) {
+    }
+    
 }
 
 // MARK: 초기화 메서드들

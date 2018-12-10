@@ -120,7 +120,7 @@
                         <outlet property="chart" destination="u1R-fD-U6R" id="qog-UE-K1G"/>
                         <outlet property="currentTimeLB" destination="Pfc-gD-ZEG" id="fcC-fK-hTY"/>
                         <outlet property="remainingTimeLB" destination="Gv5-gV-zHX" id="tle-dJ-2U5"/>
-                        <segue destination="95C-OT-JPt" kind="presentation" identifier="" id="Tva-cF-c6Y"/>
+                        <segue destination="95C-OT-JPt" kind="presentation" identifier="showRingingPhase" id="Tva-cF-c6Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qar-lu-IKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,6 +201,7 @@
                     <connections>
                         <segue destination="uvB-wJ-mjh" kind="unwind" identifier="unwindToRecordingPhase" unwindAction="unwindToRecordingPhaseWithSegue:" id="D5O-Bi-nFY"/>
                         <segue destination="uvB-wJ-mjh" kind="unwind" identifier="unwindToAlarmList" unwindAction="unwindToAlarmListWithSegue:" id="EVI-i3-vzN"/>
+                        <segue destination="uvB-wJ-mjh" kind="unwind" identifier="unwindToCicularClock" unwindAction="unwindToCicularClock:" id="uM9-JU-c6l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="as3-YA-4qq" userLabel="First Responder" sceneMemberID="firstResponder"/>

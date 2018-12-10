@@ -77,8 +77,13 @@ class RecordingPhaseViewController: UIViewController {
     }
     /// RingingPhase에서 이곳으로 넘어왔다는 것은, Snooze를 눌렀다는 뜻!
     @IBAction func unwindToRecordingPhase(segue:UIStoryboardSegue) {
-        if let nextVC = segue.source as? RingingPhaseViewController{
+        if let _ = segue.source as? RingingPhaseViewController{
             self.timeToWakeUp = Date().absoluteSeconds + self.timeToSnooze
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextVC = segue.destination as? RingingPhaseViewController {
             nextVC.startDate = timeWentToBed
         }
     }
