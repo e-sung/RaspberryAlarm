@@ -24,10 +24,9 @@ class RingingPhaseViewController: UIViewController {
     
     @IBAction private func terminateButtonHandler(_ sender: UIButton) {
         HealthKitHelper.shared.saveSleepAnalysis(from: startDate)
-        self.dismiss(animated: true, completion: {
-            guard let turnOffURL = UserDefaults.standard.url(forKey: URLsKeys[2]) else { return }
-            URLSession.shared.dataTask(with: turnOffURL).resume()
-        })
+        performSegue(withIdentifier: "unwindToCicularClock", sender: nil)
+        guard let turnOffURL = UserDefaults.standard.url(forKey: URLsKeys[2]) else { return }
+        URLSession.shared.dataTask(with: turnOffURL).resume()
     }
     
     override func viewDidLoad() {
