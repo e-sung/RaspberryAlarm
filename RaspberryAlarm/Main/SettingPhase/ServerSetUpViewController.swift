@@ -9,7 +9,7 @@
 import UIKit
 import RAFoundation
 
-class ServerSetUpViewController: UIViewController {
+class ServerSetUpViewController: UITableViewController {
     
     @IBOutlet var textFields: [UITextField]!
     @IBAction func confirmButtonHandler(_ sender: UIBarButtonItem) {
@@ -30,6 +30,7 @@ class ServerSetUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
