@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Intents
 import CoreMotion
 import SwiftChart
 import RAFoundation
+
 /** # 무엇을 하는 놈인가?
  1. 현재시간과 기상까지 남은 시간을 표시:
  2. 가속도 센서 감지/그래프 작성:
@@ -32,7 +34,7 @@ class RecordingPhaseViewController: UIViewController {
     /// Snooze 할 시간
     private var timeToSnooze:TimeInterval!
     /// 초를 HH:mm:ss 형식의 문자열로 바꿔줄 포매터
-    private var dateFormatter:DateFormatter!
+    private var dateFormatter = DateFormatter()
     /// 일어날 때 까지 남은 시간
     private var remainingTime:TimeInterval{
         get{ return self.timeToWakeUp - Date().absoluteSeconds }
@@ -92,9 +94,19 @@ class RecordingPhaseViewController: UIViewController {
     /// 하는 일 : 각종 속성 초기화 실시
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initTimes()
-        self.initURLs()
-        self.dateFormatter = DateFormatter()
+        initTimes()
+        initURLs()
+        if #available(iOS 12.0, *) {
+            donateIntent()
+        }
+    }
+    
+    @available(iOS 12.0, *)
+    private func donateIntent() {
+        let intent = StartRecordingIntent()
+        intent.suggestedInvocationPhrase = "수면 기록 시작"
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate(completion: nil)
     }
     
     /**
