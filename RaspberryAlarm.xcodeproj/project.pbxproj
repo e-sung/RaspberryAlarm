@@ -47,6 +47,7 @@
 		F051AC5D21BCF21E003A1ED8 /* HealthKitHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F051AC4821BCF21D003A1ED8 /* HealthKitHelper.framework */; };
 		F051AC5E21BCF21E003A1ED8 /* HealthKitHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F051AC4821BCF21D003A1ED8 /* HealthKitHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F051AC6521BCF233003A1ED8 /* AuthorizationRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051AC3E21BCEB84003A1ED8 /* AuthorizationRequestor.swift */; };
+		F0F3E16021BFDF4B006D2C55 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F0F3E15F21BFDF4B006D2C55 /* Intents.intentdefinition */; };
 		FF0B04AA1FB87151005DF58E /* RecordingPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0B04A91FB87151005DF58E /* RecordingPhase.storyboard */; };
 		FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B04AB1FB8715D005DF58E /* RecordingPhaseViewController.swift */; };
 		FF18C3981FC3DA98007141EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF18C3971FC3DA98007141EF /* Main.storyboard */; };
@@ -179,6 +180,7 @@
 		F051AC4B21BCF21D003A1ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F051AC5721BCF21E003A1ED8 /* HealthKitHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitHelperTests.swift; sourceTree = "<group>"; };
 		F051AC5921BCF21E003A1ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F3E15F21BFDF4B006D2C55 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		F7E1D04B0D4AAABC714C042C /* Pods-MainKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MainKit/Pods-MainKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FA8520551DF2C986D8BC9176 /* Pods-RaspberryAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarm/Pods-RaspberryAlarm.release.xcconfig"; sourceTree = "<group>"; };
 		FBD9532205C60E023543BC24 /* Pods-RaspberryAlarmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryAlarmUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaspberryAlarmUITests/Pods-RaspberryAlarmUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				FFF1C0B21FB9BA07007C0093 /* alarm.mp3 */,
 				FF9CF6C11FB6F5940033E3E3 /* LaunchScreen.storyboard */,
 				FF9CF6C41FB6F5940033E3E3 /* Info.plist */,
+				F0F3E15F21BFDF4B006D2C55 /* Intents.intentdefinition */,
 			);
 			path = RaspberryAlarm;
 			sourceTree = "<group>";
@@ -1020,6 +1023,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F3E16021BFDF4B006D2C55 /* Intents.intentdefinition in Sources */,
 				FF0B04AC1FB8715D005DF58E /* RecordingPhaseViewController.swift in Sources */,
 				FFF7BC7E1FC3F63F00C6B5D1 /* SetUpViewController.swift in Sources */,
 				FF9CF6F81FB730F10033E3E3 /* SliderSettingCell.swift in Sources */,
